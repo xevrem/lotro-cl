@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './CharacterPanel.css';
 
 import characters from '../data/characters.json';
-import {List, Panel} from './Common';
+import {List, Panel, Button} from './Common';
 
 
 
@@ -25,6 +25,10 @@ class CharacterPanel extends Component{
         }
     }
 
+    handle_add_character(){
+        console.log('buton clicked...');
+    }
+
     render (){
         let character_list = this.state.characters.map((character, i) =>{
             return (
@@ -35,6 +39,7 @@ class CharacterPanel extends Component{
 
         return(
             <Panel panel_class='character-panel'>
+                <Button button_class='add-character-button' text='Add Character' on_click={this.handle_add_character}/>
                 <List list_class='character-list' list_item_class='character-list-item'>
                     {character_list}
                 </List>

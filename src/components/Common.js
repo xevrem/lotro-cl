@@ -41,4 +41,12 @@ function DoublePanel(props){
     );
 }
 
-export {DoublePanel, List, Panel};
+function Button(props){
+    return(
+        <button className={props.button_class} onClick={props.on_click}>
+            {props.text}
+        </button>
+    );
+}
+
+export {DoublePanel, List, Panel, Button};

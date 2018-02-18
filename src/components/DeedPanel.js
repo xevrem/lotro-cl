@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import './DeedPanel.css';
 
 import {DoublePanel, List, Panel} from './Common';
+
 
 
 class DeedPanel extends Component{

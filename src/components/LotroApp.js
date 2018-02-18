@@ -8,7 +8,7 @@ class LotroApp extends Component {
   constructor(){
     super();
     this.state = {
-      greeting: 'hello world'
+      greeting: 'Lotro Character Log'
     }
   }
 

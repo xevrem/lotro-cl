@@ -3,7 +3,12 @@
 
 .character-list-item {
   list-style: none;
-  background-color: red; }
+  background-color: red;
+  float: left;
+  margin: 5px; }
 
 .character {
   background-color: orange; }
+
+.add-character-button {
+  height: 50px; }
