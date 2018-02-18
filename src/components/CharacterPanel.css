@@ -1,0 +1,9 @@
+.character-list {
+  display: inline-block; }
+
+.character-list-item {
+  list-style: none;
+  background-color: red; }
+
+.character {
+  background-color: orange; }

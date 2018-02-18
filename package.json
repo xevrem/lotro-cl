@@ -12,6 +12,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "sass": "sass --watch src/:src/"
+    "sass": "node-sass-chokidar src/ -o src/ --watch --recursive"
+  },
+  "devDependencies": {
+    "node-sass-chokidar": "^0.0.3"
   }
 }

@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import './CharacterPanel.css';
 
 import characters from '../data/characters.json';
+import List from './Common';
+
+
 
 const Character = props =>{
     return (
@@ -17,7 +21,6 @@ class CharacterPanel extends Component{
     constructor(){
         super();
         this.state = {
-            name: 'Character Panel',
             characters: characters
         }
     }
@@ -25,17 +28,16 @@ class CharacterPanel extends Component{
     render (){
         let character_list = this.state.characters.map((character, i) =>{
             return (
-                <li key={i}>
-                    <Character name={character.name} race={character.race} class={character.class} level={character.level}/>
-                </li>
+                <Character name={character.name} race={character.race} 
+                           class={character.class} level={character.level}/>
             );
         });
 
         return(
             <div className='character-panel'>
-                <ul>
+                <List list_class='character-list' list_item_class='character-list-item'>
                     {character_list}
-                </ul>
+                </List>
             </div>
         );
     }
