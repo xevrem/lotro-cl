@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './CharacterPanel.css';
 
 import characters from '../data/characters.json';
-import List from './Common';
+import {List, Panel} from './Common';
 
 
 
@@ -34,11 +34,11 @@ class CharacterPanel extends Component{
         });
 
         return(
-            <div className='character-panel'>
+            <Panel panel_class='character-panel'>
                 <List list_class='character-list' list_item_class='character-list-item'>
                     {character_list}
                 </List>
-            </div>
+            </Panel>
         );
     }
 }
