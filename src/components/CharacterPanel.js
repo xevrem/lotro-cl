@@ -4,6 +4,7 @@ import './CharacterPanel.css';
 import characters from '../data/characters.json';
 import {List, Panel, Button} from './Common';
 
+import {get_store} from './../Store';
 
 
 const Character = props =>{
@@ -27,6 +28,7 @@ class CharacterPanel extends Component{
 
     handle_add_character(){
         console.log('buton clicked...');
+        get_store().update_state({message:'Lotro Character Log'});
     }
 
     render (){
