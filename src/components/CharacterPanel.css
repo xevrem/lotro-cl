@@ -8,7 +8,8 @@
   margin: 5px; }
 
 .character {
-  background-color: orange; }
+  background-color: orange;
+  display: block; }
 
 .add-character-button {
   height: 50px; }

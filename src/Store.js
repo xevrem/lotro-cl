@@ -26,11 +26,17 @@ class Store{
         }else{
             this.listeners[action] = [listener];
         }
+
+        return function unsubscribe(){
+            this.listeners[action] = this.listeners[action].filter(callback=>{
+               return callback !== listener 
+            });
+        }.bind(this);
     }
 
     issue_action(action, data){
         let update_state = this._update_state.bind(this);
-            new Promise((resolve,reject)=>{
+        new Promise((resolve,reject)=>{
             resolve(update_state(data));
         })
         .then(store=>{
@@ -40,7 +46,7 @@ class Store{
                 });
             }
         }).catch(error=>{
-            console.log('something broke during action issue:',error);
+            console.log('something broke during Store.issue_action:',error);
         });
         
         //OLD WAY

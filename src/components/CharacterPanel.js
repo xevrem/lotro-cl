@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import './CharacterPanel.css';
 
 import characters from '../data/characters.json';
-import {List, Panel, Button} from './Common';
-
+import {List, Panel, Button, SelectObject} from './Common';
+import {RACES, CLASSES} from './../constants'
 import {get_store} from './../Store';
+
 
 
 const Character = props =>{
     return (
         <div className='character'>
             <p>{props.name}</p>
-            <p>{props.race}</p>
-            <p>{props.class}</p>
+            <SelectObject select_name='race-selector' object={RACES} default={props.race} />
+            <SelectObject select_name='class-selector' object={CLASSES} default={props.class} />
             <p>{props.level}</p>
         </div>
     );
@@ -29,7 +30,8 @@ class CharacterPanel extends Component{
 
     componentDidMount(){
         let message_handler = this.handle_message.bind(this);
-        get_store().subscribe('message', message_handler);
+        let unsub = get_store().subscribe('message', message_handler);
+        unsub();
     }
 
     handle_message(state, action){

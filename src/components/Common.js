@@ -49,4 +49,31 @@ function Button(props){
     );
 }
 
-export {DoublePanel, List, Panel, Button};
+/**
+ * @param  {} props.object
+ * @param  {} props.select_name
+ * @param  {} props.default 
+ */
+function SelectObject(props){
+    let key_list = Object.keys(props.object);
+    let options = key_list.map((key, i)=>{
+        let item = props.object[key];
+        if (item.id === props.default){
+            return(
+                <option value={item.id} selected>{item.text}</option>
+            );
+        }else{
+            return(
+                <option value={item.id}>{item.text}</option>
+            );
+        }
+    })
+
+    return(
+        <select name={props.select_name}>
+            {options}
+        </select>
+    );
+}
+
+export {DoublePanel, List, Panel, Button, SelectObject};

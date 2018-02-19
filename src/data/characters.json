@@ -1,14 +1,14 @@
 [
     {
         "name":"Aehelgyth",
-        "race":"High Elf",
-        "class":"Rune Keeper",
+        "race":"HIGH_ELF",
+        "class":"RUNE_KEEPER",
         "level":105
     },
     {
         "name":"Azdalen",
-        "race":"Human",
-        "class":"Lore Master",
+        "race":"HUMAN",
+        "class":"LORE_MASTER",
         "level":84
     }
 ]
