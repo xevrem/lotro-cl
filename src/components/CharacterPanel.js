@@ -22,13 +22,25 @@ class CharacterPanel extends Component{
     constructor(){
         super();
         this.state = {
-            characters: characters
+            characters: characters,
+            message: 'test...'
         }
+    }
+
+    componentDidMount(){
+        let message_handler = this.handle_message.bind(this);
+        get_store().subscribe('message', message_handler);
+    }
+
+    handle_message(state, action){
+        this.setState({
+            message: state.message
+        })
     }
 
     handle_add_character(){
         console.log('buton clicked...');
-        get_store().update_state({message:'Lotro Character Log'});
+        get_store().issue_action('message',{message:'hello world!'});
     }
 
     render (){
@@ -41,6 +53,7 @@ class CharacterPanel extends Component{
 
         return(
             <Panel panel_class='character-panel'>
+                {this.state.message}
                 <Button button_class='add-character-button' text='Add Character' on_click={this.handle_add_character}/>
                 <List list_class='character-list' list_item_class='character-list-item'>
                     {character_list}

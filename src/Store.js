@@ -17,14 +17,24 @@ class Store{
     constructor(starting_state={}){
         this.state = starting_state;
         this.subscribers = {}
+        this.listeners = {}
     }
 
     subscribe(action, listener){
-
+        if(this.listeners.hasOwnProperty(action)){
+            this.listeners[action].push(listener);
+        }else{
+            this.listeners[action] = [listener];
+        }
     }
 
     issue_action(action, data){
-
+        this._update_state(data);
+        if(this.listeners.hasOwnProperty(action)){
+            this.listeners[action].forEach(callback=>{
+                callback(this.state, action);
+            });
+        }
     }
 
     unsubscribe(){
@@ -35,8 +45,11 @@ class Store{
         return this.state;
     }
 
-    update_state(update){
-        this.state = update;
+    _update_state(update){
+        let keys = Object.keys(update);
+        for(let key of keys){
+            this.state[key] = update[key];
+        }
     }
 }
 

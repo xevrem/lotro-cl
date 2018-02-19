@@ -8,7 +8,7 @@ import {create_store, get_store} from './../Store';
 
 
 let foo = {message:'hello world'};
-let store = create_store(foo);
+create_store(foo);
 
 class LotroApp extends Component {
   constructor(){
@@ -20,15 +20,21 @@ class LotroApp extends Component {
   }
 
   componentDidMount(){
+    let message_handler = this.handle_message_update.bind(this);
+    get_store().subscribe('message', message_handler);
+  }
+
+  handle_message_update(state, action){
+    console.log('handler called')
     this.setState({
-      store: get_store()
-    });
+      greeting: state.message
+    })
   }
 
   render() {
     return (
       <div className="lotro-app">
-        <h1>{this.state.store?this.state.store.state.message:this.state.greeting}</h1>
+        <h1>{this.state.greeting}</h1>
         <CharacterPanel />
         <DeedPanel />
       </div>
