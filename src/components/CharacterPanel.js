@@ -46,7 +46,7 @@ class CharacterPanel extends Component{
     render (){
         let character_list = this.state.characters.map((character, i) =>{
             return (
-                <Character name={character.name} race={character.race} 
+                <Character key={i} name={character.name} race={character.race} 
                            class={character.class} level={character.level}/>
             );
         });

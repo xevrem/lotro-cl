@@ -15,17 +15,12 @@ class DeedPanel extends Component{
     }
 
     render(){
-        let foo = this.state.deeds.map((item,i) => {
-            return (
-                <p>{item}</p>
-            );
-        });
 
         return(
             <DoublePanel panel_class='deed-panel' left_class='deed-panel-left' 
             left={
                 <List list_class='deed-list' list_item_class='deed-list-item'>
-                    {foo}
+                    {this.state.deeds}
                 </List>
             } right_class='deed-panel-right' 
             right={
