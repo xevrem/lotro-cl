@@ -1,10 +1,33 @@
-.deed-panel {
-  display: inline-block; }
+.panel {
+  margin-top: 5px;
+  border: 1px solid black;
+  border-radius: 5px; }
 
 .deed-panel-left {
-  float: left;
   margin: 5px; }
 
+.deed {
+  margin-bottom: 5px;
+  padding: 2px;
+  border: 2px solid #8f7641;
+  border-radius: 5px;
+  background-color: #f7e2b5; }
+
 .deed-panel-right {
-  float: left;
-  margin: 5px; }
+  margin: 5px;
+  padding: 2px;
+  border-radius: 5px;
+  border: 2px solid #8f7641;
+  background-color: #f7e2b5; }
+
+.deed-list {
+  padding: 0px;
+  margin: 0px; }
+
+.deed-list-item {
+  list-style: none; }
+
+.deed-details-panel {
+  margin: 0px;
+  padding: 5px;
+  text-align: left; }

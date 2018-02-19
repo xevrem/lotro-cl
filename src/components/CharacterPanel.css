@@ -1,15 +1,17 @@
+.panel {
+  margin-top: 5px;
+  border: 1px solid black;
+  border-radius: 5px; }
+
 .character-list {
-  display: inline-block; }
+  padding: 0px; }
 
 .character-list-item {
   list-style: none;
-  background-color: red;
-  float: left;
-  margin: 5px; }
+  margin: 5px;
+  display: inline-flex; }
 
 .character {
-  background-color: orange;
-  display: block; }
-
-.add-character-button {
-  height: 50px; }
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px; }

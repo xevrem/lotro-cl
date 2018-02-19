@@ -1,15 +1,41 @@
 @import '../common.scss';
 
 .deed-panel{
-    display: inline-block;
 }
 
 .deed-panel-left{
-    float:left;
+    // float:left;
     margin: 5px;
 }
 
+.deed{
+    margin-bottom: 5px;
+    padding: 2px;
+    border: 2px solid rgb(143, 118, 65);
+    border-radius: 5px;
+    background-color: rgb(247, 226, 181);
+}
+
 .deed-panel-right{
-    float:left;
+    // float:left;
     margin: 5px;
+    padding: 2px;
+    border-radius: 5px;
+    border: 2px solid rgb(143, 118, 65);
+    background-color: rgb(247, 226, 181);
+}
+
+.deed-list{
+    padding:0px;
+    margin: 0px;
+}
+
+.deed-list-item{
+    list-style: none;
+}
+
+.deed-details-panel{
+    margin: 0px;
+    padding: 5px;
+    text-align: left;
 }

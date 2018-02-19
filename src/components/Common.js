@@ -31,6 +31,7 @@ function Panel(props) {
 function DoublePanel(props){
     return(
         <Panel panel_class={props.panel_class}>
+            {props.children}
             <div className={props.left_class}>
                 {props.left}
             </div>
@@ -43,7 +44,7 @@ function DoublePanel(props){
 
 function Button(props){
     return(
-        <button className={props.button_class} onClick={props.on_click}>
+        <button className={props.className} onClick={props.on_click}>
             {props.text}
         </button>
     );
@@ -70,10 +71,23 @@ function SelectObject(props){
     })
 
     return(
-        <select name={props.select_name}>
-            {options}
-        </select>
+        <div className='form-inline'>
+            <label className={props.label_class} htmlFor={props.id}>{props.label}</label>
+            <select className={props.className} name={props.select_name}>
+                {options}
+            </select>
+        </div>
+        
     );
 }
 
-export {DoublePanel, List, Panel, Button, SelectObject};
+function TextInput(props){
+    return(
+        <div className="form-inline">
+            <label className={props.label_class} htmlFor={props.id}>{props.label}</label>
+            <input className={props.className} type='text' id={props.id} name={props.name} value={props.value} placeholder={props.placeholder} />
+        </div>
+    );
+}
+
+export {DoublePanel, List, Panel, Button, SelectObject, TextInput};

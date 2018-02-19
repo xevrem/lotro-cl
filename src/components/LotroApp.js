@@ -3,6 +3,7 @@ import './LotroApp.css';
 
 import CharacterPanel from './CharacterPanel';
 import DeedPanel from './DeedPanel';
+import SummaryPanel from './SummaryPanel';
 
 import {create_store, get_store} from './../Store';
 
@@ -34,8 +35,9 @@ class LotroApp extends Component {
   render() {
     return (
       <div className="lotro-app">
-        <h1>{this.state.greeting}</h1>
+        <h1 className='page-title'>{this.state.greeting}</h1>
         <CharacterPanel />
+        <SummaryPanel />
         <DeedPanel />
       </div>
     );

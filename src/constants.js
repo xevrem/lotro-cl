@@ -1,5 +1,6 @@
 
 const RACES = {
+    NONE:{id:'NONE', text:''},
     BEORNING: {id:'BEORNING', text:'Beorning'},
     DWARF: {id:'DWARF',text:'Dwarf'},
     HIGH_ELF:{id:'HIGH_ELF',text:'High Elf'},
@@ -9,6 +10,7 @@ const RACES = {
 }
 
 const CLASSES = {
+    NONE:{id:'NONE', text:''},
     BEORNING: {id:'BEORNING', text:'Beorning'},
     BURGLAR:{id:'BURGLAR', text:'Burglar'},
     CAPTAIN:{id:'CAPTAIN', text: 'Captain'},
@@ -22,4 +24,11 @@ const CLASSES = {
 
 }
 
-export {RACES, CLASSES};
+const ACTION_TYPES = {
+    CHARACTER_ADDED:'CHARACTER_ADDED',
+    CHARACTER_SELECTED: 'CHARACTER_SELECTED',
+    CHARACTER_UPDATE:'CHARACTER_UPDATE',
+    DEED_UPDATE:'DEED_UPDATE'
+}
+
+export {RACES, CLASSES, ACTION_TYPES};
