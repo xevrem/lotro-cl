@@ -6,88 +6,87 @@
 import React, { Component } from 'react';
 
 function List(props) {
-    let list_items = props.children.map((item, i) =>{
-        return(
-            <li key={i} className={props.list_item_class}>
-                {item}
-            </li>
-        );
-    });
-    return (
-        <ul className={props.list_class}>
-            {list_items}
-        </ul>
+  let list_items = props.children.map((item, i) =>{
+    return(
+      <li key={i} className={props.list_item_class}>
+        {item}
+      </li>
     );
+  });
+  return (
+    <ul className={props.list_class}>
+      {list_items}
+    </ul>
+  );
 }
 
 function Panel(props) {
-    return (
-        <div className={props.panel_class}>
-            {props.children}
-        </div>
-    );
+  return (
+    <div className={props.panel_class}>
+      {props.children}
+    </div>
+  );
 }
 
 function DoublePanel(props){
-    return(
-        <Panel panel_class={props.panel_class}>
-            {props.children}
-            <div className={props.left_class}>
-                {props.left}
-            </div>
-            <div className={props.right_class}>
-                {props.right}
-            </div>
-        </Panel>
-    );
+  return(
+    <Panel panel_class={props.panel_class}>
+      {props.children}
+      <div className={props.left_class}>
+        {props.left}
+      </div>
+      <div className={props.right_class}>
+        {props.right}
+      </div>
+    </Panel>
+  );
 }
 
 function Button(props){
-    return(
-        <button className={props.className} onClick={props.on_click}>
-            {props.text}
-        </button>
-    );
+  return(
+    <button className={props.className} onClick={props.onClick}>
+      {props.text}
+    </button>
+  );
 }
 
 /**
  * @param  {} props.object
  * @param  {} props.select_name
- * @param  {} props.default 
+ * @param  {} props.default
  */
 function SelectObject(props){
-    let key_list = Object.keys(props.object);
-    let options = key_list.map((key, i)=>{
-        let item = props.object[key];
-        if (item.id === props.default){
-            return(
-                <option value={item.id} selected>{item.text}</option>
-            );
-        }else{
-            return(
-                <option value={item.id}>{item.text}</option>
-            );
-        }
-    })
+  let key_list = Object.keys(props.object);
+  let options = key_list.map((key, i)=>{
+    let item = props.object[key];
+    if (item.id === props.default){
+      return(
+        <option key={i} value={item.id} selected>{item.text}</option>
+      );
+    }else{
+      return(
+        <option key={i} value={item.id}>{item.text}</option>
+      );
+    }
+  })
 
-    return(
-        <div className='form-inline'>
-            <label className={props.label_class} htmlFor={props.id}>{props.label}</label>
-            <select className={props.className} name={props.select_name}>
-                {options}
-            </select>
-        </div>
-        
-    );
+  return(
+    <div className='form-inline'>
+      <label className={props.label_class} htmlFor={props.id}>{props.label}</label>
+      <select className={props.className} name={props.name} onChange={props.onChange}>
+        {options}
+      </select>
+    </div>
+  );
 }
 
 function TextInput(props){
-    return(
-        <div className="form-inline">
-            <label className={props.label_class} htmlFor={props.id}>{props.label}</label>
-            <input className={props.className} type='text' id={props.id} name={props.name} value={props.value} placeholder={props.placeholder} />
-        </div>
-    );
+  return(
+    <div className="form-inline">
+      <label className={props.label_class} htmlFor={props.id}>{props.label}</label>
+      <input className={props.className} type='text' id={props.id} value={props.value} onChange={props.onChange} name={props.name} placeholder={props.placeholder} />
+    </div>
+  );
 }
 
 export {DoublePanel, List, Panel, Button, SelectObject, TextInput};
