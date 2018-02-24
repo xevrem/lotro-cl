@@ -47,9 +47,9 @@ class DeedPanel extends Component{
     //build nav bar selecting active tab
     let deed_types = this.props.deed_types.map((deed_type,i)=>{
       return i === this.props.deed_nav ? ( 
-        <a key={i} className='nav-link active' href='#none' target='_self' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</a>
+        <p key={i} className='nav-link active' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>
       ):(
-        <a key={i} className='nav-link' href='#none' target='_self' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</a>
+        <p key={i} className='nav-link' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>
       )
     });
 
