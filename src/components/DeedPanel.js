@@ -19,56 +19,45 @@ const Deed = props =>{
 class DeedPanel extends Component{
   constructor(){
     super();
-    this.state = {
-      name:'Deed Panel',
-      deeds: ['Totam vero officia dolorum iure minus nisi',
-      'nostrum provident reiciendis laudantium voluptatibus',
-      'expedita laborum recusandae quasi esse sit enim suscipit'],
-      deed_types:['Class','Race','Epic','Reputation','Eriador', 'Rhovanion',
-       'Gondor', 'Mordor', 'Skirmish', 'Instances', 'Hobbies'],
-      deed_text:['Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam vero officia dolorum iure minus nisi, nostrum provident reiciendis laudantium voluptatibus expedita laborum recusandae quasi esse sit enim suscipit mollitia odio?',
-      'nostrum provident reiciendis laudantium voluptatibus expedita laborum recusandae quasi esse sit enim suscipit mollitia odio? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam vero officia dolorum iure minus nisi,',
-      'voluptatibus expedita laborum recusandae quasi esse sit enim suscipit mollitia odio? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam vero officia dolorum iure minus nisi, nostrum provident reiciendis laudantium'],
-      completed:[false,false,false]
-    }
-    this.nav_click_handler = this.handle_nav_click.bind(this);
     this.deed_complete_handler = this.handle_deed_complete.bind(this);
   }
 
-  handle_nav_click(event){
-      console.log('nav clicked...', event.target.text);
+  handle_nav_click(index, event){
+      // console.log('nav clicked...', event.target.text);
+      get_store().issue_action(ACTION_TYPES.DEED_NAV_CHANGED,{deed_nav:index});
   }
 
   handle_deed_complete(event){
-    console.log('deed complete...', this.props.selected_deed);
-    let update = this.state.completed
-    update[this.props.selected_deed] = update[this.props.selected_deed] ? false:true;
-    this.setState({
-      completed: update
-    })
+    // console.log('deed complete...', this.props.selected_deed);
+    let update = this.props.completed
+    update[this.props.selected_deed] = update[this.props.selected_deed] ? false : true;
+    get_store().issue_action(ACTION_TYPES.DEED_COMPLETED,{completed:update});
   }
 
-  selected_handler(index, event){
+  handle_selected(index, event){
     get_store().issue_action(ACTION_TYPES.DEED_SELECTED, {selected_deed:index});
   }
 
   render(){
-    let deed_list = this.state.deeds.map((deed,i)=>{
-      return <Deed key={i} name={deed} selected={i === this.props.selected_deed} onClick={this.selected_handler.bind(this,i)}/>
+    //build list of deeds to display
+    let deed_list = this.props.deeds.map((deed,i)=>{
+      return <Deed key={i} name={deed} selected={i === this.props.selected_deed} onClick={this.handle_selected.bind(this,i)}/>
     })
 
-    let deed_types = this.state.deed_types.map((deed_type,i)=>{
-      if (i === 0 ){
-        return <a key={i} className='nav-link active' href='#' target='_self' onClick={this.nav_click_handler}>{deed_type}</a>
-      }else{
-        return <a key={i} className='nav-link' href='#' target='_self' onClick={this.nav_click_handler}>{deed_type}</a>
-      }
+    //build nav bar selecting active tab
+    let deed_types = this.props.deed_types.map((deed_type,i)=>{
+      return i === this.props.deed_nav ? ( 
+        <a key={i} className='nav-link active' href='#none' target='_self' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</a>
+      ):(
+        <a key={i} className='nav-link' href='#none' target='_self' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</a>
+      )
     });
 
+    //render the completed deed panel
     return(
       <div className='container panel deed-panel'>
         <h3>Deed Panel</h3>
-        <List list_class='nav nav-tabs' list_item_class='nav-item'>
+        <List list_class='nav nav-pills' list_item_class='nav-item'>
           {deed_types}
         </List>
         <DoublePanel panel_class='row' left_class='col deed-panel-left'
@@ -76,14 +65,14 @@ class DeedPanel extends Component{
             <List list_class='deed-list' list_item_class='deed-list-item'>
               {deed_list}
             </List>
-          } right_class={this.state.completed[this.props.selected_deed]?'col deed-panel-right completed':'col deed-panel-right'}
+          } right_class={this.props.completed[this.props.selected_deed]?'col deed-panel-right completed':'col deed-panel-right'}
           right={
             <Panel panel_class='deed-details-panel'>
-              <p className='deed-text'>{this.state.deed_text[this.props.selected_deed]}</p>
-              {this.state.completed[this.props.selected_deed] ? (
-                <Button className='btn btn-success' text='Completed!' onClick={this.deed_complete_handler}/>
+              <p className='deed-text'>{this.props.deed_text[this.props.selected_deed]}</p>
+              {this.props.completed[this.props.selected_deed] ? (
+                <Button className='deed-completed-btn btn btn-success' text='Completed!' onClick={this.deed_complete_handler}/>
               ):(
-                <Button className='btn btn-primary' text='Complete?' onClick={this.deed_complete_handler}/>
+                <Button className='deed-completed-btn btn btn-primary' text='Complete?' onClick={this.deed_complete_handler}/>
               )}
             </Panel>
           }/>

@@ -59,15 +59,11 @@ function SelectObject(props){
   let key_list = Object.keys(props.object);
   let options = key_list.map((key, i)=>{
     let item = props.object[key];
-    if (item.id === props.default){
-      return(
-        <option key={i} value={item.id} selected>{item.text}</option>
-      );
-    }else{
-      return(
-        <option key={i} value={item.id}>{item.text}</option>
-      );
-    }
+    return item.id === props.default ? (
+      <option key={i} value={item.id} selected>{item.text}</option>
+    ):(
+      <option key={i} value={item.id}>{item.text}</option>
+    );
   })
 
   return(

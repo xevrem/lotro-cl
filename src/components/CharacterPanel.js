@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './CharacterPanel.css';
 
-import characters from '../data/characters.json';
-
 import {List, Panel, Button, SelectObject, TextInput} from './Common';
 import {RACES, CLASSES, ACTION_TYPES} from './../constants'
 import {get_store} from './../Store';
@@ -29,14 +27,12 @@ const Character = props =>{
 class CharacterPanel extends Component{
   constructor(props){
     super(props);
-    this.state = {
-        characters: characters,
-    }
+    
     this.add_character_handler = this.handle_add_character.bind(this);
   }
 
   componentDidMount(){
-    console.log(this.state.characters)
+    console.log(this.props.characters)
   }
 
   handle_add_character(){
@@ -47,25 +43,21 @@ class CharacterPanel extends Component{
       name:'',
       race:'',
       class:'',
-      level: undefined
+      level: 1
     };
 
-    //update local state
-    this.setState((prev, props)=>{
-      prev.characters.push(character)
-      return{
-        characters: prev.characters
-      };
-    });
+    let characters = this.props.characters;
+    characters.push(character);
 
     //update global state
-    get_store().issue_action(ACTION_TYPES.CHARACTER_ADDED, {'character':character});
+    get_store().issue_action(ACTION_TYPES.CHARACTER_ADDED, {characters:characters});
   }
 
   ///called whenever character information is changed
   handle_change(index, event){
-    //console.log('change...', event.target, index)
-    let characters = this.state.characters;
+    console.log('handle_change called', index);
+    let characters = this.props.characters;
+    //determine what to update
     switch(event.target.name){
       case 'character-name':
         characters[index].name = event.target.value
@@ -83,20 +75,17 @@ class CharacterPanel extends Component{
         break;
     }
 
-    this.setState({
-      characters: characters
-    });
-
-    //FIXME: this may be an issue later, so remove if never used
-    get_store().issue_action(ACTION_TYPES.CHARACTER_UPDATE, characters);
+    get_store().issue_action(ACTION_TYPES.CHARACTER_UPDATED, {characters: characters});
   }
 
+  //update global state with current selected character index
   selected_handler(index, event){
     get_store().issue_action(ACTION_TYPES.CHARACTER_SELECTED, {selected_character:index})
   }
 
   render (){
-    let character_list = this.state.characters.map((character, i) =>{
+    //build character list
+    let character_list = this.props.characters.map((character, i) =>{
       return (
         <Character key={i} name={character.name} race={character.race}
           class={character.class} level={character.level}
@@ -111,7 +100,7 @@ class CharacterPanel extends Component{
         <h3>Character Panel</h3>
         <div className='row'>
           <div className='col-3'>
-            <h3>Characters:</h3>
+            <h4>Actions:</h4>
             <Button className='btn btn-primary' text='Add Character' onClick={this.add_character_handler}/>
             <Button className='btn btn-success' text='Save All'/>
             <Button className='btn btn-danger' text='Delete Selected'/>
