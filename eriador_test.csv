@@ -1,0 +1,87 @@
+Region,Subregion,Type,Deed,LP,Trait,Details,Title
+Eriador,Bree-land,M,Deeds of Bree-land,-,-,Complete 2 meta deeds and 1 quest deed in Bree-land,
+Eriador,Bree-land,M,Explorer of Bree-land,-,-,Complete 3 explorer and 3 lore deeds in Bree-land,
+Eriador,Bree-land,M,Slayer of Bree-land,-,-,Complete 8 slayer deeds in Bree-land,
+Eriador,Bree-land,E,The Barrow Downs,5,Patience,Find 5 points of interest in Barrow Downs,
+Eriador,Bree-land,E,The Old Forest,5,Wisdom,Find 5 points of interest in The Old Forest,
+Eriador,Bree-land,E,The Ruins of Bree-land,5,Patience,Find 10 points of interest in Bree-land,
+Eriador,Bree-land,L,Flowers of the Old Forest,10,Idealism,Find and use 8 flowers of the Ent wives,
+Eriador,Bree-land,L,Lore of the Cardolan Prince,10,Wisdom,Collect 6 pages of the Journal of the Cardolan Prince,
+Eriador,Bree-land,L,One Thing Drives Out Another,-,-,"Auto-bestowed – In Their Absence quest chain, level 65",Reminder
+Eriador,Bree-land,L,The History of the Dunedain,10,Idealism,Find and use 6 Dunedain relics,
+Eriador,Bree-land,R,Bree-land Adventurer,10,Empathy,Complete quests within Bree-land (15),
+Eriador,Bree-land,R,Bree-land Adventurer (advanced),10,Charity,Complete quests within Bree-land (30),
+Eriador,Bree-land,R,Bree-land Adventurer (final),15,Loyalty,Complete quests within Bree-land (45),
+Eriador,Bree-land,S,Barghest-slayer,5,-,Defeat Barghest in Bree-land (30) [Barrow-downs],Barrow-downs Hunter
+Eriador,Bree-land,S,Barghest-slayer (advanced),10,Determination,Defeat Barghest in Bree-land (60) [Barrow-downs],
+Eriador,Bree-land,S,Bree-land Woodsman,5,-,Defeat Awakened Trees in The Old Forest (20),Root-hewer
+Eriador,Bree-land,S,Bree-land Woodsman (advanced),10,Fortitude,Defeat Awakened Trees in The Old Forest (40),
+Eriador,Bree-land,S,Brigand-slayer,5,-,Defeat Brigands in Bree-land (30),Watcher of Roads
+Eriador,Bree-land,S,Brigand-slayer (advanced),10,Justice,Defeat Brigands in Bree-land (60),
+Eriador,Bree-land,S,Brood-hunter,5,-,Defeat Barrow-spiders in Barrow of Taradan (30),Brood-hunter
+Eriador,Bree-land,S,Brood-hunter (advanced),10,Zeal,Defeat Barrow-spiders in Barrow of Taradan (60),
+Eriador,Bree-land,S,Executioner of the Wicked,10,-,Defeat 6 leaders of Barrow Downs,Executioner of the Wicked
+Eriador,Bree-land,S,Grave-digger,5,-,Defeat Barrow-wardens in the Barrow-downs (50) [Haudh Iarchith],Grave-digger
+Eriador,Bree-land,S,Grave-digger (advanced),10,Mercy,Defeat Barrow-wardens in the Barrow-downs (100) [Haudh Iarchith],
+Eriador,Bree-land,S,Neekerbreeker-slayer,5,-,Defeat Neekerbreekers in Bree-land (30),Shell-breaker
+Eriador,Bree-land,S,Neekerbreeker-slayer (advanced),10,Fortitude,Defeat Neekerbreekers in Bree-land (60),
+Eriador,Bree-land,S,Nemesis of the Fallen,5,-,Defeat Barrow-spirits in the Barrows (50) [Haudh Iarchith],Nemesis of the Fallen
+Eriador,Bree-land,S,Nemesis of the Fallen (advanced),10,Mercy,Defeat Barrow-spirits in the Barrows (100) [Haudh Iarchith],
+Eriador,Bree-land,S,Orc-slayer,5,-,Defeat Orcs in Bree-land (30),Defender of Bree-land
+Eriador,Bree-land,S,Orc-slayer (advanced),10,Valour,Defeat Orcs in Bree-land (60),
+Eriador,Bree-land,S,Sickle-fly Slayer,5,-,Defeat Sickle-flies in Bree-land (20),Fly-swatter
+Eriador,Bree-land,S,Sickle-fly Slayer (advanced),10,Discipline,Defeat Sickle-flies in Bree-land (40),
+Eriador,Bree-land,S,Spider-slayer,5,-,Defeat Spiders in Bree-land (30),Spider-foe
+Eriador,Bree-land,S,Spider-slayer (advanced),10,Honour,Defeat Spiders in Bree-land (60),
+Eriador,Bree-land,S,Wight-slayer,5,-,Defeat Wights in Bree-land (30) [Barrow-downs],Bane of the Barrows
+Eriador,Bree-land,S,Wight-slayer (advanced),10,Mercy,Defeat Wights in Bree-land (60) [Barrow-downs],
+Eriador,The Shire,M,Deeds of the Shire,-,-,Complete 2 meta deeds and 4 quest deeds in the Shire,
+Eriador,The Shire,M,Explorer of the Shire,-,-,Complete 2 explorer deeds in the Shire,
+Eriador,The Shire,M,Slayer of the Shire,-,-,Complete 6 slayer deeds in the Shire,
+Eriador,The Shire,E,The Farms of the Shire,5,Tolerance,Find 6 farms in the Shire,
+Eriador,The Shire,E,The Sights of the Shire,5,Fidelity,Find 6 points of interest in the Shire,
+Eriador,The Shire,R,No Place for Spoiled Pies,5,Patience,Complete No Place for Spoiled Pies quest chain,Pie-runner
+Eriador,The Shire,R,Restoring the Quickposts,5,Patience,Complete Restoring the Quickpost quest chain,Friend of the Quickpost
+Eriador,The Shire,R,Shire Brewmaster [Hidden],5,-,Complete quests for 5 Innkeepers in the Shire,Shire Brewmaster
+Eriador,The Shire,R,The Life of a Bounder,10,Compassion,Complete quests within the Shire (15),
+Eriador,The Shire,R,The Life of a Bounder (advanced),10,Empathy,Complete quests within the Shire (40),
+Eriador,The Shire,R,The Life of a Bounder (final),15,Innocence,Complete quests within the Shire (75),Honorary Shirriff
+Eriador,The Shire,S,Brigand-slayer,5,-,Defeat Brigands in the Shire (30),Bounder's-friend
+Eriador,The Shire,S,Brigand-slayer (advanced),10,Justice,Defeat Brigands in the Shire (60),
+Eriador,The Shire,S,Goblin-slayer,5,-,Defeat Goblins in the Shire (30),Protector of the Shire
+Eriador,The Shire,S,Goblin-slayer (advanced),10,Valour,Defeat Goblins in the Shire (60),
+Eriador,The Shire,S,Harvest-fly Slayer,5,-,Defeat Harvest-flies in the Shire (20),Crop-saviour
+Eriador,The Shire,S,Harvest-fly Slayer (advanced),10,Fortitude,Defeat Harvest-flies in the Shire (40),
+Eriador,The Shire,S,Slug-slayer,5,-,Defeat Slugs in the Shire (20),Slug-squasher
+Eriador,The Shire,S,Slug-slayer (advanced),10,Determination,Defeat Slugs in the Shire (40),
+Eriador,The Shire,S,Spider-slayer,5,-,Defeat Spiders in the Shire (20),Spider-sting
+Eriador,The Shire,S,Spider-slayer (advanced),10,Honour,Defeat Spiders in the Shire (40),
+Eriador,The Shire,S,Wolf-slayer,5,-,Defeat Wolves in the Shire (30),Fur-cutter
+Eriador,The Shire,S,Wolf-slayer (advanced),10,Discipline,Defeat Wolves in the Shire (60),
+Eriador,Ered Luin,M,Deeds of Ered Luin,-,-,Complete 2 meta deeds and 1 quest deed in Ered Luin,
+Eriador,Ered Luin,M,Explorer of Ered Luin,-,-,Complete 4 explorer deeds in Ered Luin,
+Eriador,Ered Luin,M,Slayer of Ered Luin,-,-,Complete 5 slayer deeds in Ered Luin,
+Eriador,Ered Luin,E,Elf Ruins Exploration,5,Wisdom,Find 4 Elvish ruins in Ered Luin,
+Eriador,Ered Luin,E,Places of the Dwarves,5,Patience,Find 5 Dwarvin points of interest in Ered Luin,
+Eriador,Ered Luin,E,Rath Teraig Exploration,5,Confidence,Find 5 points of interest in Rath Teraig,
+Eriador,Ered Luin,E,Scouting the Dourhands,5,Fidelity,Find 4 Dourhand camps in Ered Luin,
+Eriador,Ered Luin,L,Avenger of Sarnur,10,-,Defeat 6 leaders in Sarnur,Avenger of Sarnur
+Eriador,Ered Luin,R,Ally of Ered Luin,10,Charity,Complete quests within Ered Luin (10),
+Eriador,Ered Luin,R,Defender of Ered Luin,10,Compassion,Complete quests within Ered Luin (20),
+Eriador,Ered Luin,R,Hero of Ered Luin,15,Charity,Complete quests within Ered Luin (30),
+Eriador,Ered Luin,S,Betrayer's Bane,5,-,Defeat Dourhands in Sarnur (80),Betrayer's Bane
+Eriador,Ered Luin,S,Betrayer's Bane (advanced),10,Justice,Defeat Dourhands in Sarnur (160),
+Eriador,Ered Luin,S,Brigand-slayer,5,-,Defeat Brigands in Ered Luin (30),Defender of the Halls
+Eriador,Ered Luin,S,Brigand-slayer (advanced),10,Justice,Defeat Brigands in Ered Luin (60),
+Eriador,Ered Luin,S,Goblin-slayer,5,-,Defeat Goblins in Ered Luin (30),Guardian of Ered Luin
+Eriador,Ered Luin,S,Goblin-slayer (advanced),10,Zeal,Defeat Goblins in Ered Luin (60),
+Eriador,Ered Luin,S,Hendroval-slayer,5,-,Defeat Hendrevial in Ered Luin (20),Feather-foe
+Eriador,Ered Luin,S,Hendroval-slayer (advanced),10,Discipline,Defeat Hendrevial in Ered Luin (40),
+Eriador,Ered Luin,S,Master of Beasts,5,-,Defeat Beasts in Sarnur (80),Master of Beasts
+Eriador,Ered Luin,S,Master of Beasts (advanced),10,Discipline,Defeat Beasts in Sarnur (160),
+Eriador,Ered Luin,S,Spider-slayer,5,-,Defeat Spiders in Ered Luin (30),Web-slasher
+Eriador,Ered Luin,S,Spider-slayer (advanced),10,Zeal,Defeat Spiders in Ered Luin (60),
+Eriador,Ered Luin,S,Troll-kicker,5,-,Defeat Snow-trolls in Sarnur (40),Troll-kicker
+Eriador,Ered Luin,S,Troll-kicker (advanced),10,Valour,Defeat Snow-trolls in Sarnur (80),
+Eriador,Ered Luin,S,Wolf-slayer,5,-,Defeat Wolves in Ered Luin (30),Wolf-tamer
+Eriador,Ered Luin,S,Wolf-slayer (advanced),10,Determination,Defeat Wolves in Ered Luin (60),

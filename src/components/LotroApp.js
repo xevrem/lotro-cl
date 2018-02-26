@@ -9,6 +9,7 @@ import {create_store, get_store} from './../Store';
 import {ACTION_TYPES} from './../constants';
 
 import characters from '../data/characters.json';
+import eriador from '../data/eriador.json';
 
 let initial_state = {
   selected_character:0,
