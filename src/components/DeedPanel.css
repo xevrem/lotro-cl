@@ -42,5 +42,7 @@
   height: 100%; }
 
 .deed-completed-btn {
-  position: absolute;
   bottom: 7px; }
+
+.clickable {
+  cursor: pointer; }

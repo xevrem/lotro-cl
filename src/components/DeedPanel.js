@@ -8,9 +8,8 @@ import {get_store} from './../Store';
 
 const Deed = props =>{
   return(
-    <div className={props.selected?'deed row selected':'deed row'}>
-      <p className='col text-left'>{props.name}</p>
-      <Button className='col-2 btn btn-primary' text='select' onClick={props.onClick}/>
+    <div className={props.selected?'deed clickable row selected':'deed clickable row'} onClick={props.onClick}>
+      <p className='col text-left' >{props.name}</p>
     </div>
   );
 }
@@ -47,9 +46,9 @@ class DeedPanel extends Component{
     //build nav bar selecting active tab
     let deed_types = this.props.deed_types.map((deed_type,i)=>{
       return i === this.props.deed_nav ? ( 
-        <p key={i} className='nav-link active' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>
+        <p key={i} className='clickable nav-link active' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>
       ):(
-        <p key={i} className='nav-link' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>
+        <p key={i} className='clickable nav-link' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>
       )
     });
 

@@ -8,17 +8,17 @@ import {get_store} from './../Store';
 
 const Character = props =>{
   return (
-    <div className={props.selected ? 'character col selected':'character col'}>
-      <TextInput className='form-control col-sm-9' label_class='col-form-label col-sm-3'
+    <div className={props.selected ? 'character selected':'character'}>
+      <TextInput div_class='character-form-div' className='character-form' label_class='character-label'
         name='character-name' value={props.name} label='Name: ' onChange={props.onChange}/>
-      <SelectObject className='form-control col-sm-9' label_class='col-form-label col-sm-3'
+      <SelectObject div_class='character-form-div' className='character-form' label_class='character-label'
         name='character-race' object={RACES} default={props.race} label='Race: ' onChange={props.onChange}/>
-      <SelectObject className='form-control col-sm-9' label_class='col-form-label col-sm-3'
+      <SelectObject div_class='character-form-div' className='character-form' label_class='character-label'
         name='character-class' object={CLASSES} default={props.class} label='Class: ' onChange={props.onChange}/>
-      <TextInput className='form-control col-sm-9' label_class='col-form-label col-sm-3'
+      <TextInput div_class='character-form-div' className='character-form' label_class='character-label'
         name='character-level' value={props.level} label='Level: ' onChange={props.onChange}/>
-      <div className='form-inline'>
-        <Button className='form-control col btn btn-primary' text='Select' onClick={props.onSelected}/>
+      <div className='character-form-div'>
+        <Button className='character-form' text='Select' onClick={props.onSelected}/>
       </div>
     </div>
   );
@@ -98,14 +98,14 @@ class CharacterPanel extends Component{
     return(
       <Panel panel_class='container panel character-panel'>
         <h3>Character Panel</h3>
-        <div className='row'>
-          <div className='col-3'>
+        <div className='character-grid'>
+          <div className='character-actions'>
             <h4>Actions:</h4>
             <Button className='btn btn-primary' text='Add Character' onClick={this.add_character_handler}/>
             <Button className='btn btn-success' text='Save All'/>
             <Button className='btn btn-danger' text='Delete Selected'/>
           </div>
-          <div className='col'>
+          <div className='character-area'>
             <List list_class='character-list' list_item_class='character-list-item'>
               {character_list}
             </List>

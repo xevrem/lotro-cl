@@ -1,4 +1,4 @@
-@import '../common.scss';
+@import './../common.scss';
 
 .deed-panel{
 }
@@ -52,6 +52,10 @@
 }
 
 .deed-completed-btn{
-    position: absolute;
+    // position: absolute;
     bottom: 7px;
+}
+
+.clickable{
+  cursor: pointer;
 }

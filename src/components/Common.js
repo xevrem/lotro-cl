@@ -67,7 +67,7 @@ function SelectObject(props){
   })
 
   return(
-    <div className='form-inline'>
+    <div className={props.div_class}>
       <label className={props.label_class} htmlFor={props.id}>{props.label}</label>
       <select className={props.className} name={props.name} onChange={props.onChange}>
         {options}
@@ -78,7 +78,7 @@ function SelectObject(props){
 
 function TextInput(props){
   return(
-    <div className="form-inline">
+    <div className={props.div_class}>
       <label className={props.label_class} htmlFor={props.id}>{props.label}</label>
       <input className={props.className} type='text' id={props.id} value={props.value} onChange={props.onChange} name={props.name} placeholder={props.placeholder} />
     </div>
