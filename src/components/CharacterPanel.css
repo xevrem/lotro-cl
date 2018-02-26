@@ -1,7 +1,12 @@
 .panel {
-  margin-top: 5px;
-  border: 1px solid black;
-  border-radius: 5px; }
+  margin: 10px 10px;
+  border: 1px solid #8f7641;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 5px 5px rgba(156, 156, 156, 0.788); }
+
+.panel-header {
+  font-size: 1.75em; }
 
 .character-list {
   padding: 0px; }
@@ -52,7 +57,7 @@ button.character-form {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto 1fr 3fr;
-      grid-template-areas: "content-head content-head" "main header" "main sidebar" "footer footer"; }
+      grid-template-areas: "content-head content-head" "main header" "main sidebar" "footer footer"; }
     .masthead {
       grid-area: header; }
     .page-title {
@@ -66,4 +71,4 @@ button.character-form {
   @media screen and (min-width: 1200px) {
     .site {
       grid-template-columns: 2fr 1fr 1fr;
-      grid-template-areas: "content-head content-head content-head" "main header header" "main sidebar footer"; } } }
+      grid-template-areas: "content-head content-head content-head" "main header header" "main sidebar footer"; } } }

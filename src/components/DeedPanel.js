@@ -46,17 +46,17 @@ class DeedPanel extends Component{
     //build nav bar selecting active tab
     let deed_types = this.props.deed_types.map((deed_type,i)=>{
       return i === this.props.deed_nav ? ( 
-        <p key={i} className='clickable nav-link active' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>
+        <p key={i} className='clickable deed-nav-link active' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>
       ):(
-        <p key={i} className='clickable nav-link' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>
+        <p key={i} className='clickable deed-nav-link' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>
       )
     });
 
     //render the completed deed panel
     return(
       <div className='container panel deed-panel'>
-        <h3>Deed Panel</h3>
-        <List list_class='nav nav-pills' list_item_class='nav-item'>
+        <h3 className='panel-header'>Deed Panel</h3>
+        <List list_class='deed-nav' list_item_class='deed-nav-item'>
           {deed_types}
         </List>
         <DoublePanel panel_class='row' left_class='col deed-panel-left'

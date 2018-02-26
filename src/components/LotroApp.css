@@ -1,7 +1,12 @@
 .panel {
-  margin-top: 5px;
-  border: 1px solid black;
-  border-radius: 5px; }
+  margin: 10px 10px;
+  border: 1px solid #8f7641;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 5px 5px rgba(156, 156, 156, 0.788); }
+
+.panel-header {
+  font-size: 1.75em; }
 
 .lotro-app {
   text-align: center;

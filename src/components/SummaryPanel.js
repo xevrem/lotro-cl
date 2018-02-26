@@ -14,7 +14,7 @@ class SummaryPanel extends Component{
     render(){
         return(
             <Panel panel_class='container panel summary-panel'>
-                <h3>Summary Panel</h3>
+                <h3 className='panel-header'>Summary Panel</h3>
             </Panel>
         );
     }

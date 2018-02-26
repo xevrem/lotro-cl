@@ -1,7 +1,35 @@
 .panel {
-  margin-top: 5px;
-  border: 1px solid black;
-  border-radius: 5px; }
+  margin: 10px 10px;
+  border: 1px solid #8f7641;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 5px 5px rgba(156, 156, 156, 0.788); }
+
+.panel-header {
+  font-size: 1.75em; }
+
+.deed-nav {
+  width: auto;
+  margin: 5px;
+  padding: 0px;
+  font-size: 1.2em; }
+
+.deed-nav-item {
+  display: inline-flex;
+  list-style: none;
+  vertical-align: middle; }
+
+.deed-nav-link {
+  margin: 5px 5px;
+  padding: 10px 10px;
+  border: 2px solid #8f7641;
+  border-radius: 5px;
+  color: rgba(58, 58, 58, 0.788);
+  background-color: #f7e2b5; }
+
+.deed-nav-link.active {
+  border: 2px solid #28a745;
+  box-shadow: 0px 0px 15px #28a745; }
 
 .deed-panel-left {
   margin: 5px; }
