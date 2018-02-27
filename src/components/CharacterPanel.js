@@ -96,7 +96,7 @@ class CharacterPanel extends Component{
     });
 
     return(
-      <Panel panel_class='container panel character-panel'>
+      <Panel panel_class='panel character-panel'>
         <h3 className='panel-header'>Character Panel</h3>
         <div className='character-grid'>
           <div className='character-actions'>

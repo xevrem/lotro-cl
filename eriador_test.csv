@@ -1,87 +1,447 @@
-Region,Subregion,Type,Deed,LP,Trait,Details,Title
-Eriador,Bree-land,M,Deeds of Bree-land,-,-,Complete 2 meta deeds and 1 quest deed in Bree-land,
-Eriador,Bree-land,M,Explorer of Bree-land,-,-,Complete 3 explorer and 3 lore deeds in Bree-land,
-Eriador,Bree-land,M,Slayer of Bree-land,-,-,Complete 8 slayer deeds in Bree-land,
-Eriador,Bree-land,E,The Barrow Downs,5,Patience,Find 5 points of interest in Barrow Downs,
-Eriador,Bree-land,E,The Old Forest,5,Wisdom,Find 5 points of interest in The Old Forest,
-Eriador,Bree-land,E,The Ruins of Bree-land,5,Patience,Find 10 points of interest in Bree-land,
-Eriador,Bree-land,L,Flowers of the Old Forest,10,Idealism,Find and use 8 flowers of the Ent wives,
-Eriador,Bree-land,L,Lore of the Cardolan Prince,10,Wisdom,Collect 6 pages of the Journal of the Cardolan Prince,
-Eriador,Bree-land,L,One Thing Drives Out Another,-,-,"Auto-bestowed â€“ In Their Absence quest chain, level 65",Reminder
-Eriador,Bree-land,L,The History of the Dunedain,10,Idealism,Find and use 6 Dunedain relics,
-Eriador,Bree-land,R,Bree-land Adventurer,10,Empathy,Complete quests within Bree-land (15),
-Eriador,Bree-land,R,Bree-land Adventurer (advanced),10,Charity,Complete quests within Bree-land (30),
-Eriador,Bree-land,R,Bree-land Adventurer (final),15,Loyalty,Complete quests within Bree-land (45),
-Eriador,Bree-land,S,Barghest-slayer,5,-,Defeat Barghest in Bree-land (30) [Barrow-downs],Barrow-downs Hunter
-Eriador,Bree-land,S,Barghest-slayer (advanced),10,Determination,Defeat Barghest in Bree-land (60) [Barrow-downs],
-Eriador,Bree-land,S,Bree-land Woodsman,5,-,Defeat Awakened Trees in The Old Forest (20),Root-hewer
-Eriador,Bree-land,S,Bree-land Woodsman (advanced),10,Fortitude,Defeat Awakened Trees in The Old Forest (40),
-Eriador,Bree-land,S,Brigand-slayer,5,-,Defeat Brigands in Bree-land (30),Watcher of Roads
-Eriador,Bree-land,S,Brigand-slayer (advanced),10,Justice,Defeat Brigands in Bree-land (60),
-Eriador,Bree-land,S,Brood-hunter,5,-,Defeat Barrow-spiders in Barrow of Taradan (30),Brood-hunter
-Eriador,Bree-land,S,Brood-hunter (advanced),10,Zeal,Defeat Barrow-spiders in Barrow of Taradan (60),
-Eriador,Bree-land,S,Executioner of the Wicked,10,-,Defeat 6 leaders of Barrow Downs,Executioner of the Wicked
-Eriador,Bree-land,S,Grave-digger,5,-,Defeat Barrow-wardens in the Barrow-downs (50) [Haudh Iarchith],Grave-digger
-Eriador,Bree-land,S,Grave-digger (advanced),10,Mercy,Defeat Barrow-wardens in the Barrow-downs (100) [Haudh Iarchith],
-Eriador,Bree-land,S,Neekerbreeker-slayer,5,-,Defeat Neekerbreekers in Bree-land (30),Shell-breaker
-Eriador,Bree-land,S,Neekerbreeker-slayer (advanced),10,Fortitude,Defeat Neekerbreekers in Bree-land (60),
-Eriador,Bree-land,S,Nemesis of the Fallen,5,-,Defeat Barrow-spirits in the Barrows (50) [Haudh Iarchith],Nemesis of the Fallen
-Eriador,Bree-land,S,Nemesis of the Fallen (advanced),10,Mercy,Defeat Barrow-spirits in the Barrows (100) [Haudh Iarchith],
-Eriador,Bree-land,S,Orc-slayer,5,-,Defeat Orcs in Bree-land (30),Defender of Bree-land
-Eriador,Bree-land,S,Orc-slayer (advanced),10,Valour,Defeat Orcs in Bree-land (60),
-Eriador,Bree-land,S,Sickle-fly Slayer,5,-,Defeat Sickle-flies in Bree-land (20),Fly-swatter
-Eriador,Bree-land,S,Sickle-fly Slayer (advanced),10,Discipline,Defeat Sickle-flies in Bree-land (40),
-Eriador,Bree-land,S,Spider-slayer,5,-,Defeat Spiders in Bree-land (30),Spider-foe
-Eriador,Bree-land,S,Spider-slayer (advanced),10,Honour,Defeat Spiders in Bree-land (60),
-Eriador,Bree-land,S,Wight-slayer,5,-,Defeat Wights in Bree-land (30) [Barrow-downs],Bane of the Barrows
-Eriador,Bree-land,S,Wight-slayer (advanced),10,Mercy,Defeat Wights in Bree-land (60) [Barrow-downs],
-Eriador,The Shire,M,Deeds of the Shire,-,-,Complete 2 meta deeds and 4 quest deeds in the Shire,
-Eriador,The Shire,M,Explorer of the Shire,-,-,Complete 2 explorer deeds in the Shire,
-Eriador,The Shire,M,Slayer of the Shire,-,-,Complete 6 slayer deeds in the Shire,
-Eriador,The Shire,E,The Farms of the Shire,5,Tolerance,Find 6 farms in the Shire,
-Eriador,The Shire,E,The Sights of the Shire,5,Fidelity,Find 6 points of interest in the Shire,
-Eriador,The Shire,R,No Place for Spoiled Pies,5,Patience,Complete No Place for Spoiled Pies quest chain,Pie-runner
-Eriador,The Shire,R,Restoring the Quickposts,5,Patience,Complete Restoring the Quickpost quest chain,Friend of the Quickpost
-Eriador,The Shire,R,Shire Brewmaster [Hidden],5,-,Complete quests for 5 Innkeepers in the Shire,Shire Brewmaster
-Eriador,The Shire,R,The Life of a Bounder,10,Compassion,Complete quests within the Shire (15),
-Eriador,The Shire,R,The Life of a Bounder (advanced),10,Empathy,Complete quests within the Shire (40),
-Eriador,The Shire,R,The Life of a Bounder (final),15,Innocence,Complete quests within the Shire (75),Honorary Shirriff
-Eriador,The Shire,S,Brigand-slayer,5,-,Defeat Brigands in the Shire (30),Bounder's-friend
-Eriador,The Shire,S,Brigand-slayer (advanced),10,Justice,Defeat Brigands in the Shire (60),
-Eriador,The Shire,S,Goblin-slayer,5,-,Defeat Goblins in the Shire (30),Protector of the Shire
-Eriador,The Shire,S,Goblin-slayer (advanced),10,Valour,Defeat Goblins in the Shire (60),
-Eriador,The Shire,S,Harvest-fly Slayer,5,-,Defeat Harvest-flies in the Shire (20),Crop-saviour
-Eriador,The Shire,S,Harvest-fly Slayer (advanced),10,Fortitude,Defeat Harvest-flies in the Shire (40),
-Eriador,The Shire,S,Slug-slayer,5,-,Defeat Slugs in the Shire (20),Slug-squasher
-Eriador,The Shire,S,Slug-slayer (advanced),10,Determination,Defeat Slugs in the Shire (40),
-Eriador,The Shire,S,Spider-slayer,5,-,Defeat Spiders in the Shire (20),Spider-sting
-Eriador,The Shire,S,Spider-slayer (advanced),10,Honour,Defeat Spiders in the Shire (40),
-Eriador,The Shire,S,Wolf-slayer,5,-,Defeat Wolves in the Shire (30),Fur-cutter
-Eriador,The Shire,S,Wolf-slayer (advanced),10,Discipline,Defeat Wolves in the Shire (60),
-Eriador,Ered Luin,M,Deeds of Ered Luin,-,-,Complete 2 meta deeds and 1 quest deed in Ered Luin,
-Eriador,Ered Luin,M,Explorer of Ered Luin,-,-,Complete 4 explorer deeds in Ered Luin,
-Eriador,Ered Luin,M,Slayer of Ered Luin,-,-,Complete 5 slayer deeds in Ered Luin,
-Eriador,Ered Luin,E,Elf Ruins Exploration,5,Wisdom,Find 4 Elvish ruins in Ered Luin,
-Eriador,Ered Luin,E,Places of the Dwarves,5,Patience,Find 5 Dwarvin points of interest in Ered Luin,
-Eriador,Ered Luin,E,Rath Teraig Exploration,5,Confidence,Find 5 points of interest in Rath Teraig,
-Eriador,Ered Luin,E,Scouting the Dourhands,5,Fidelity,Find 4 Dourhand camps in Ered Luin,
-Eriador,Ered Luin,L,Avenger of Sarnur,10,-,Defeat 6 leaders in Sarnur,Avenger of Sarnur
-Eriador,Ered Luin,R,Ally of Ered Luin,10,Charity,Complete quests within Ered Luin (10),
-Eriador,Ered Luin,R,Defender of Ered Luin,10,Compassion,Complete quests within Ered Luin (20),
-Eriador,Ered Luin,R,Hero of Ered Luin,15,Charity,Complete quests within Ered Luin (30),
-Eriador,Ered Luin,S,Betrayer's Bane,5,-,Defeat Dourhands in Sarnur (80),Betrayer's Bane
-Eriador,Ered Luin,S,Betrayer's Bane (advanced),10,Justice,Defeat Dourhands in Sarnur (160),
-Eriador,Ered Luin,S,Brigand-slayer,5,-,Defeat Brigands in Ered Luin (30),Defender of the Halls
-Eriador,Ered Luin,S,Brigand-slayer (advanced),10,Justice,Defeat Brigands in Ered Luin (60),
-Eriador,Ered Luin,S,Goblin-slayer,5,-,Defeat Goblins in Ered Luin (30),Guardian of Ered Luin
-Eriador,Ered Luin,S,Goblin-slayer (advanced),10,Zeal,Defeat Goblins in Ered Luin (60),
-Eriador,Ered Luin,S,Hendroval-slayer,5,-,Defeat Hendrevial in Ered Luin (20),Feather-foe
-Eriador,Ered Luin,S,Hendroval-slayer (advanced),10,Discipline,Defeat Hendrevial in Ered Luin (40),
-Eriador,Ered Luin,S,Master of Beasts,5,-,Defeat Beasts in Sarnur (80),Master of Beasts
-Eriador,Ered Luin,S,Master of Beasts (advanced),10,Discipline,Defeat Beasts in Sarnur (160),
-Eriador,Ered Luin,S,Spider-slayer,5,-,Defeat Spiders in Ered Luin (30),Web-slasher
-Eriador,Ered Luin,S,Spider-slayer (advanced),10,Zeal,Defeat Spiders in Ered Luin (60),
-Eriador,Ered Luin,S,Troll-kicker,5,-,Defeat Snow-trolls in Sarnur (40),Troll-kicker
-Eriador,Ered Luin,S,Troll-kicker (advanced),10,Valour,Defeat Snow-trolls in Sarnur (80),
-Eriador,Ered Luin,S,Wolf-slayer,5,-,Defeat Wolves in Ered Luin (30),Wolf-tamer
-Eriador,Ered Luin,S,Wolf-slayer (advanced),10,Determination,Defeat Wolves in Ered Luin (60),
+Region,Subregion,Faction,Type,Deed,LP,Trait,Details,Title,Level,Party
+Eriador,Bree-land,Men of Bree,M,Deeds of Bree-land,-,-,Complete 2 meta deeds and 1 quest deed in Bree-land,,,
+Eriador,Bree-land,Men of Bree,M,Explorer of Bree-land,-,-,Complete 3 explorer and 3 lore deeds in Bree-land,,,
+Eriador,Bree-land,Men of Bree,M,Slayer of Bree-land,-,-,Complete 8 slayer deeds in Bree-land,,,
+Eriador,Bree-land,Men of Bree,E,The Barrow Downs,5,Patience,Find 5 points of interest in Barrow Downs,,,
+Eriador,Bree-land,Men of Bree,E,The Old Forest,5,Wisdom,Find 5 points of interest in The Old Forest,,,
+Eriador,Bree-land,Men of Bree,E,The Ruins of Bree-land,5,Patience,Find 10 points of interest in Bree-land,,,
+Eriador,Bree-land,Men of Bree,L,Flowers of the Old Forest,10,Idealism,Find and use 8 flowers of the Ent wives,,,
+Eriador,Bree-land,Men of Bree,L,Lore of the Cardolan Prince,10,Wisdom,Collect 6 pages of the Journal of the Cardolan Prince,,,
+Eriador,Bree-land,Men of Bree,L,One Thing Drives Out Another,-,-,"Auto-bestowed â€“ In Their Absence quest chain, level 65",Reminder,,
+Eriador,Bree-land,Men of Bree,L,The History of the Dunedain,10,Idealism,Find and use 6 Dunedain relics,,,
+Eriador,Bree-land,Men of Bree,R,Bree-land Adventurer,10,Empathy,Complete quests within Bree-land (15),,,
+Eriador,Bree-land,Men of Bree,R,Bree-land Adventurer (advanced),10,Charity,Complete quests within Bree-land (30),,,
+Eriador,Bree-land,Men of Bree,R,Bree-land Adventurer (final),15,Loyalty,Complete quests within Bree-land (45),,,
+Eriador,Bree-land,Men of Bree,S,Barghest-slayer,5,-,Defeat Barghest in Bree-land (30) [Barrow-downs],Barrow-downs Hunter,,
+Eriador,Bree-land,Men of Bree,S,Barghest-slayer (advanced),10,Determination,Defeat Barghest in Bree-land (60) [Barrow-downs],,,
+Eriador,Bree-land,Men of Bree,S,Bree-land Woodsman,5,-,Defeat Awakened Trees in The Old Forest (20),Root-hewer,,
+Eriador,Bree-land,Men of Bree,S,Bree-land Woodsman (advanced),10,Fortitude,Defeat Awakened Trees in The Old Forest (40),,,
+Eriador,Bree-land,Men of Bree,S,Brigand-slayer,5,-,Defeat Brigands in Bree-land (30),Watcher of Roads,,
+Eriador,Bree-land,Men of Bree,S,Brigand-slayer (advanced),10,Justice,Defeat Brigands in Bree-land (60),,,
+Eriador,Bree-land,Men of Bree,S,Brood-hunter,5,-,Defeat Barrow-spiders in Barrow of Taradan (30),Brood-hunter,,
+Eriador,Bree-land,Men of Bree,S,Brood-hunter (advanced),10,Zeal,Defeat Barrow-spiders in Barrow of Taradan (60),,,
+Eriador,Bree-land,Men of Bree,S,Executioner of the Wicked,10,-,Defeat 6 leaders of Barrow Downs,Executioner of the Wicked,,
+Eriador,Bree-land,Men of Bree,S,Grave-digger,5,-,Defeat Barrow-wardens in the Barrow-downs (50) [Haudh Iarchith],Grave-digger,,
+Eriador,Bree-land,Men of Bree,S,Grave-digger (advanced),10,Mercy,Defeat Barrow-wardens in the Barrow-downs (100) [Haudh Iarchith],,,
+Eriador,Bree-land,Men of Bree,S,Neekerbreeker-slayer,5,-,Defeat Neekerbreekers in Bree-land (30),Shell-breaker,,
+Eriador,Bree-land,Men of Bree,S,Neekerbreeker-slayer (advanced),10,Fortitude,Defeat Neekerbreekers in Bree-land (60),,,
+Eriador,Bree-land,Men of Bree,S,Nemesis of the Fallen,5,-,Defeat Barrow-spirits in the Barrows (50) [Haudh Iarchith],Nemesis of the Fallen,,
+Eriador,Bree-land,Men of Bree,S,Nemesis of the Fallen (advanced),10,Mercy,Defeat Barrow-spirits in the Barrows (100) [Haudh Iarchith],,,
+Eriador,Bree-land,Men of Bree,S,Orc-slayer,5,-,Defeat Orcs in Bree-land (30),Defender of Bree-land,,
+Eriador,Bree-land,Men of Bree,S,Orc-slayer (advanced),10,Valour,Defeat Orcs in Bree-land (60),,,
+Eriador,Bree-land,Men of Bree,S,Sickle-fly Slayer,5,-,Defeat Sickle-flies in Bree-land (20),Fly-swatter,,
+Eriador,Bree-land,Men of Bree,S,Sickle-fly Slayer (advanced),10,Discipline,Defeat Sickle-flies in Bree-land (40),,,
+Eriador,Bree-land,Men of Bree,S,Spider-slayer,5,-,Defeat Spiders in Bree-land (30),Spider-foe,,
+Eriador,Bree-land,Men of Bree,S,Spider-slayer (advanced),10,Honour,Defeat Spiders in Bree-land (60),,,
+Eriador,Bree-land,Men of Bree,S,Wight-slayer,5,-,Defeat Wights in Bree-land (30) [Barrow-downs],Bane of the Barrows,,
+Eriador,Bree-land,Men of Bree,S,Wight-slayer (advanced),10,Mercy,Defeat Wights in Bree-land (60) [Barrow-downs],,,
+Eriador,The Shire,Mathom House,M,Deeds of the Shire,-,-,Complete 2 meta deeds and 4 quest deeds in the Shire,,,
+Eriador,The Shire,Mathom House,M,Explorer of the Shire,-,-,Complete 2 explorer deeds in the Shire,,,
+Eriador,The Shire,Mathom House,M,Slayer of the Shire,-,-,Complete 6 slayer deeds in the Shire,,,
+Eriador,The Shire,Mathom House,E,The Farms of the Shire,5,Tolerance,Find 6 farms in the Shire,,,
+Eriador,The Shire,Mathom House,E,The Sights of the Shire,5,Fidelity,Find 6 points of interest in the Shire,,,
+Eriador,The Shire,Mathom House,R,No Place for Spoiled Pies,5,Patience,Complete No Place for Spoiled Pies quest chain,Pie-runner,,
+Eriador,The Shire,Mathom House,R,Restoring the Quickposts,5,Patience,Complete Restoring the Quickpost quest chain,Friend of the Quickpost,,
+Eriador,The Shire,Mathom House,R,Shire Brewmaster [Hidden],5,-,Complete quests for 5 Innkeepers in the Shire,Shire Brewmaster,,
+Eriador,The Shire,Mathom House,R,The Life of a Bounder,10,Compassion,Complete quests within the Shire (15),,,
+Eriador,The Shire,Mathom House,R,The Life of a Bounder (advanced),10,Empathy,Complete quests within the Shire (40),,,
+Eriador,The Shire,Mathom House,R,The Life of a Bounder (final),15,Innocence,Complete quests within the Shire (75),Honorary Shirriff,,
+Eriador,The Shire,Mathom House,S,Brigand-slayer,5,-,Defeat Brigands in the Shire (30),Bounder's-friend,,
+Eriador,The Shire,Mathom House,S,Brigand-slayer (advanced),10,Justice,Defeat Brigands in the Shire (60),,,
+Eriador,The Shire,Mathom House,S,Goblin-slayer,5,-,Defeat Goblins in the Shire (30),Protector of the Shire,,
+Eriador,The Shire,Mathom House,S,Goblin-slayer (advanced),10,Valour,Defeat Goblins in the Shire (60),,,
+Eriador,The Shire,Mathom House,S,Harvest-fly Slayer,5,-,Defeat Harvest-flies in the Shire (20),Crop-saviour,,
+Eriador,The Shire,Mathom House,S,Harvest-fly Slayer (advanced),10,Fortitude,Defeat Harvest-flies in the Shire (40),,,
+Eriador,The Shire,Mathom House,S,Slug-slayer,5,-,Defeat Slugs in the Shire (20),Slug-squasher,,
+Eriador,The Shire,Mathom House,S,Slug-slayer (advanced),10,Determination,Defeat Slugs in the Shire (40),,,
+Eriador,The Shire,Mathom House,S,Spider-slayer,5,-,Defeat Spiders in the Shire (20),Spider-sting,,
+Eriador,The Shire,Mathom House,S,Spider-slayer (advanced),10,Honour,Defeat Spiders in the Shire (40),,,
+Eriador,The Shire,Mathom House,S,Wolf-slayer,5,-,Defeat Wolves in the Shire (30),Fur-cutter,,
+Eriador,The Shire,Mathom House,S,Wolf-slayer (advanced),10,Discipline,Defeat Wolves in the Shire (60),,,
+Eriador,Ered Luin,Thorin’s Hall,M,Deeds of Ered Luin,-,-,Complete 2 meta deeds and 1 quest deed in Ered Luin,,,
+Eriador,Ered Luin,Thorin’s Hall,M,Explorer of Ered Luin,-,-,Complete 4 explorer deeds in Ered Luin,,,
+Eriador,Ered Luin,Thorin’s Hall,M,Slayer of Ered Luin,-,-,Complete 5 slayer deeds in Ered Luin,,,
+Eriador,Ered Luin,Thorin’s Hall,E,Elf Ruins Exploration,5,Wisdom,Find 4 Elvish ruins in Ered Luin,,,
+Eriador,Ered Luin,Thorin’s Hall,E,Places of the Dwarves,5,Patience,Find 5 Dwarvin points of interest in Ered Luin,,,
+Eriador,Ered Luin,Thorin’s Hall,E,Rath Teraig Exploration,5,Confidence,Find 5 points of interest in Rath Teraig,,,
+Eriador,Ered Luin,Thorin’s Hall,E,Scouting the Dourhands,5,Fidelity,Find 4 Dourhand camps in Ered Luin,,,
+Eriador,Ered Luin,Thorin’s Hall,L,Avenger of Sarnur,10,-,Defeat 6 leaders in Sarnur,Avenger of Sarnur,,
+Eriador,Ered Luin,Thorin’s Hall,R,Ally of Ered Luin,10,Charity,Complete quests within Ered Luin (10),,,
+Eriador,Ered Luin,Thorin’s Hall,R,Defender of Ered Luin,10,Compassion,Complete quests within Ered Luin (20),,,
+Eriador,Ered Luin,Thorin’s Hall,R,Hero of Ered Luin,15,Charity,Complete quests within Ered Luin (30),,,
+Eriador,Ered Luin,Thorin’s Hall,S,Betrayer's Bane,5,-,Defeat Dourhands in Sarnur (80),Betrayer's Bane,,
+Eriador,Ered Luin,Thorin’s Hall,S,Betrayer's Bane (advanced),10,Justice,Defeat Dourhands in Sarnur (160),,,
+Eriador,Ered Luin,Thorin’s Hall,S,Brigand-slayer,5,-,Defeat Brigands in Ered Luin (30),Defender of the Halls,,
+Eriador,Ered Luin,Thorin’s Hall,S,Brigand-slayer (advanced),10,Justice,Defeat Brigands in Ered Luin (60),,,
+Eriador,Ered Luin,Thorin’s Hall,S,Goblin-slayer,5,-,Defeat Goblins in Ered Luin (30),Guardian of Ered Luin,,
+Eriador,Ered Luin,Thorin’s Hall,S,Goblin-slayer (advanced),10,Zeal,Defeat Goblins in Ered Luin (60),,,
+Eriador,Ered Luin,Thorin’s Hall,S,Hendroval-slayer,5,-,Defeat Hendrevial in Ered Luin (20),Feather-foe,,
+Eriador,Ered Luin,Thorin’s Hall,S,Hendroval-slayer (advanced),10,Discipline,Defeat Hendrevial in Ered Luin (40),,,
+Eriador,Ered Luin,Thorin’s Hall,S,Master of Beasts,5,-,Defeat Beasts in Sarnur (80),Master of Beasts,,
+Eriador,Ered Luin,Thorin’s Hall,S,Master of Beasts (advanced),10,Discipline,Defeat Beasts in Sarnur (160),,,
+Eriador,Ered Luin,Thorin’s Hall,S,Spider-slayer,5,-,Defeat Spiders in Ered Luin (30),Web-slasher,,
+Eriador,Ered Luin,Thorin’s Hall,S,Spider-slayer (advanced),10,Zeal,Defeat Spiders in Ered Luin (60),,,
+Eriador,Ered Luin,Thorin’s Hall,S,Troll-kicker,5,-,Defeat Snow-trolls in Sarnur (40),Troll-kicker,,
+Eriador,Ered Luin,Thorin’s Hall,S,Troll-kicker (advanced),10,Valour,Defeat Snow-trolls in Sarnur (80),,,
+Eriador,Ered Luin,Thorin’s Hall,S,Wolf-slayer,5,-,Defeat Wolves in Ered Luin (30),Wolf-tamer,,
+Eriador,Ered Luin,Thorin’s Hall,S,Wolf-slayer (advanced),10,Determination,Defeat Wolves in Ered Luin (60),,,
+Eriador,Lone Lands,The Eglain,M,Deeds of the Lone Lands,-,-,Complete 2 meta deeds and 1 quest deed in the Lone Lands,,,
+Eriador,Lone Lands,The Eglain,M,Explorer of the Lone Lands,-,-,Complete 4 explorer deeds in the Lone Lands,,,
+Eriador,Lone Lands,The Eglain,M,Slayer of the Lone Lands,-,-,Complete 8 slayer deeds in the Lone Lands,,,
+Eriador,Lone Lands,The Eglain,E,Defenses of the Lone Lands,5,Fidelity,Find 9 ancient ruins in Lone Lands,,,
+Eriador,Lone Lands,The Eglain,E,Garth Argawen Exploration,10,Confidence,Find 6 points of interest in Garth Argawen,,,
+Eriador,Lone Lands,The Eglain,E,The Grimfens,5,Confidence,Find 2 locations in the Grimfens,,,
+Eriador,Lone Lands,The Eglain,E,Weathertop Exploration,5,Wisdom,Find 4 points of interest around Weathertop,,,
+Eriador,Lone Lands,The Eglain,R,Tales of the Lonely Road,10,Charity,Complete quests within Lone Lands (15),,,
+Eriador,Lone Lands,The Eglain,R,Tales of the Lonely Road (advanced),10,Compassion,Complete quests within Lone Lands (30),,,
+Eriador,Lone Lands,The Eglain,R,Tales of the Lonely Road (final),15,Idealism,Complete quests within Lone Lands (45),,,
+Eriador,Lone Lands,The Eglain,S,Bog Lurker Slayer,5,-,Defeat Bog-lurkers in Lone-lands (30),Bog-hunter,,
+Eriador,Lone Lands,The Eglain,S,Bog Lurker Slayer (advanced),10,Discipline,Defeat Bog-lurkers in Lone-lands (60),,,
+Eriador,Lone Lands,The Eglain,S,Craban-slayer,5,-,Defeat Craban in Lone-lands (50),Wing-cutter,,
+Eriador,Lone Lands,The Eglain,S,Craban-slayer (advanced),10,Honesty,Defeat Craban in Lone-lands (100),,,
+Eriador,Lone Lands,The Eglain,S,Goblin-slayer,5,-,Defeat Goblins in Lone-lands (60),Goblin-hewer,,
+Eriador,Lone Lands,The Eglain,S,Goblin-slayer (advanced),10,Valour,Defeat Goblins in Lone-lands (120),,,
+Eriador,Lone Lands,The Eglain,S,Orc-slayer,5,-,Defeat Orcs in Lone-lands (60),Champion of the Lone-lands,,
+Eriador,Lone Lands,The Eglain,S,Orc-slayer (advanced),10,Valour,Defeat Orcs in Lone-lands (120),,,
+Eriador,Lone Lands,The Eglain,S,Spider-slayer,5,-,Defeat Spiders in Lone-lands (60),Spider-bane,,
+Eriador,Lone Lands,The Eglain,S,Spider-slayer (advanced),10,Honour,Defeat Spiders in Lone-lands (120),,,
+Eriador,Lone Lands,The Eglain,S,Troll-slayer,5,-,Defeat Trolls in Lone-lands (40),Troll-beater,,
+Eriador,Lone Lands,The Eglain,S,Troll-slayer (advanced),10,Honesty,Defeat Trolls in Lone-lands (80),,,
+Eriador,Lone Lands,The Eglain,S,Warg-slayer,5,-,Defeat Wargs in Lone-lands (50),Warg-hunter,,
+Eriador,Lone Lands,The Eglain,S,Warg-slayer (advanced),10,Fortitude,Defeat Wargs in Lone-lands (100),,,
+Eriador,Lone Lands,The Eglain,S,Wight-slayer,5,-,Defeat Wights in Lone-lands (60),Enemy of the Dead,,
+Eriador,Lone Lands,The Eglain,S,Wight-slayer (advanced),10,Mercy,Defeat Wights in Lone-lands (120),,,
+Eriador,North Downs,Rangers of Esteldin,M,Deeds of the North Downs,-,-,Complete 2 meta deeds and 1 quest deed in the North Downs,,,
+Eriador,North Downs,Rangers of Esteldin,M,Explorer of the North Downs,-,-,Complete 4 explorer deeds in the North Downs,,,
+Eriador,North Downs,Rangers of Esteldin,M,Slayer of the North Downs,-,-,Complete 6 slayer deeds in the North Downs,,,
+Eriador,North Downs,Rangers of Esteldin,E,Strongholds Exploration,5,Confidence,Find 5 strongholds in North Downs,,,
+Eriador,North Downs,Rangers of Esteldin,E,The Eastern Ruins,5,Patience,Find 5 ruins in East North Downs,,,
+Eriador,North Downs,Rangers of Esteldin,E,The Villages of the Earth-kin,5,Tolerance,Find 4 Earth-kin villages,,,
+Eriador,North Downs,Rangers of Esteldin,E,The Western Ruins,5,Wisdom,Find 7 ruins in West North Downs,,,
+Eriador,North Downs,Rangers of Esteldin,E,Treasure Seeker of North Downs,10,Patience,Find 12 Treasure Caches in North Downs (lvl 90),Treasure Seeker of the North Downs,,
+Eriador,North Downs,Rangers of Esteldin,L,North Downs Roving Enemies,5,Discipline,Complete 3 Roving Threats quests (lvl 100),Roving Defender of the North Downs,,
+Eriador,North Downs,Rangers of Esteldin,R,Of Glories Long Past,10,Empathy,Complete quests within North Downs (15),,,
+Eriador,North Downs,Rangers of Esteldin,R,Of Glories Long Past (advanced),10,Charity,Complete quests within North Downs (30),,,
+Eriador,North Downs,Rangers of Esteldin,R,Of Glories Long Past (final),15,Loyalty,Complete quests within North Downs (45),,,
+Eriador,North Downs,Rangers of Esteldin,S,Goblin-slayer,5,-,Defeat Goblins in North Downs (60),Cleaver of Goblins,,
+Eriador,North Downs,Rangers of Esteldin,S,Goblin-slayer (advanced),10,Zeal,Defeat Goblins in North Downs (120),,,
+Eriador,North Downs,Rangers of Esteldin,S,Orc-slayer,5,-,Defeat Orcs in North Downs (60),Hero/Heroine of the North Downs,,
+Eriador,North Downs,Rangers of Esteldin,S,Orc-slayer (advanced),10,Justice,Defeat Orcs in North Downs (120),,,
+Eriador,North Downs,Rangers of Esteldin,S,Redeemer,5,-,Defeat Shades in North Downs (60),Foe of Night,,
+Eriador,North Downs,Rangers of Esteldin,S,Redeemer (advanced),10,Mercy,Defeat Shades in North Downs (120),,,
+Eriador,North Downs,Rangers of Esteldin,S,Troll-slayer,5,-,Defeat Trolls in North Downs (40),Troll-hewer,,
+Eriador,North Downs,Rangers of Esteldin,S,Troll-slayer (advanced),10,Fortitude,Defeat Trolls in North Downs (80),,,
+Eriador,North Downs,Rangers of Esteldin,S,Warg-slayer,5,-,Defeat Wargs in North Downs (60),Warg-foe,,
+Eriador,North Downs,Rangers of Esteldin,S,Warg-slayer (advanced),10,Determination,Defeat Wargs in North Downs (120),,,
+Eriador,North Downs,Rangers of Esteldin,S,Worm-slayer,5,-,Defeat Worms in North Downs (60),Worm-slayer,,
+Eriador,North Downs,Rangers of Esteldin,S,Worm-slayer (advanced),10,Honour,Defeat Worms in North Downs (120),,,
+Eriador,The Shire,Mathom House,Q,Free Range,,,Sandson's Farm – George (chicken),Crosser of Roads,6,Solo
+Eriador,The Shire,Mathom House,Q,Spoiled Pie from Little Delving,,,Little Delving – Wydo Boffin,,5,Solo
+Eriador,The Shire,Mathom House,Q,Spoiled Pie from Bywater,,,Bywater – Gerd Whitfoot,,6,Solo
+Eriador,The Shire,Mathom House,Q,Spoiled Pie from The Party Field,,,The Party Tree – Opal Goodbody,,6,Solo
+Eriador,The Shire,Mathom House,Q,Spoiled Pie from Michel Delving,,,Michel Delving – Hugo Broadbelt,,7,Solo
+Eriador,The Shire,Mathom House,Q,Spoiled Pie from Needlehole,,,Needlehole – Iris Chubb,,7,Solo
+Eriador,The Shire,Mathom House,Q,Spoiled Pie from Tuckborough,,,Tuckborough – Edilina Proudfoot,,8,Solo
+Eriador,The Shire,Mathom House,Q,Spoiled Pie from Budgeford,,,Budgeford – Sapphira Bolger,,9,Solo
+Eriador,The Shire,Mathom House,Q,Spoiled Pie from Frogmorton,,,Frogmorton – Myrtle Oddfoot,,9,Solo
+Eriador,The Shire,Mathom House,Q,Spoiled Pie from Stock,,,Stock – Primrose Proudfoot,,9,Solo
+Eriador,The Shire,Mathom House,Q,Spoiled Pie from Woodhall,,,Woodhall – Daisy Hornblower,,9,Solo
+Eriador,The Shire,Mathom House,Q,Spoiled Pie from Brockenborings,,,Brockenborings – Ivo Brockhouse,,10,Solo
+Eriador,The Shire,Mathom House,Q,Spoiled Pie from Scary,,,Scary – Poppy Chubb,,10,Solo
+Eriador,The Shire,Mathom House,Q,Bundle for Waymeet,,,Michel Delving – Postmaster Proudfoot,,6,Solo
+Eriador,The Shire,Mathom House,Q,Bundle for Michel Delving,,,Little Delving – Postman Newbuck,,7,Solo
+Eriador,The Shire,Mathom House,Q,Bundle for Needlehole,,,Waymeet – Postman Twofoot,,7,Solo
+Eriador,The Shire,Mathom House,Q,Bundle for Michel Delving,,,Needlehole – Postman Redsmith,,8,Solo
+Eriador,The Shire,Mathom House,Q,Bundle for Tuckborough,,,Michel Delving – Postmaster Proudfoot,,8,Solo
+Eriador,The Shire,Mathom House,Q,Bundle for Hobbiton,,,Tuckborough – Postman Took,,8,Solo
+Eriador,The Shire,Mathom House,Q,Bundle for Overhill,,,Hobbiton – Postman Grubb,,9,Solo
+Eriador,The Shire,Mathom House,Q,Bundle for Bywater,,,Overhill – Postman Boffin,,9,Solo
+Eriador,The Shire,Mathom House,Q,Bundle for Woodhall,,,Progmorton – Postman Oddfoot,,10,Solo
+Eriador,The Shire,Mathom House,Q,Bundle for Stock,,,Woodhall – Postman Spinner,,10,Solo
+Eriador,The Shire,Mathom House,Q,Bundle for Budgeford,,,Stock – Postman Smallburrow,,10,Solo
+Eriador,The Shire,Mathom House,Q,Bundle for Scary,,,Budgeford – Postman Bolger,,11,Solo
+Eriador,The Shire,Mathom House,Q,Bundle for Brockenborings,,,Scary – Postman Digswell,,12,Solo
+Eriador,The Shire,Mathom House,Q,The Bird and Baby,,,The Bird and Baby Inn – Carlo Blagrove,,7,Solo
+Eriador,The Shire,Mathom House,Q,The Green Dragon,,,The Green Dragon Inn – Barmy Rootknot,,8,Solo
+Eriador,The Shire,Mathom House,Q,The Floating Log,,,The Floating Log Inn – Ponto Hopsbloom,,9,Solo
+Eriador,The Shire,Mathom House,Q,The Golden Perch,,,The Golden Perch Inn – Gunderic Grubb,,10,Solo
+Eriador,The Shire,Mathom House,Q,The Plough and Stars,,,The Plough and Stars Inn – Halson Tubwort,,11,Solo
+Eriador,North Downs,Rangers of Esteldin,Q,The Troll-keeper,,,Lin Giliath – Thaliollang [auto-bestowed upon entering troll-cave],,33,Fellow
+Eriador,North Downs,Rangers of Esteldin,Q,"Durlum, the Disturbed",,,Esteldin - Othwen,,100,Small Fellow
+Eriador,North Downs,Rangers of Esteldin,Q,"Rotspittle, the Corrupted",,,Esteldin - Othwen,,100,Fellow
+Eriador,North Downs,Rangers of Esteldin,Q,"Valikas, the Misguided",,,Esteldin - Othwen,,100,Small Fellow
+Eriador,Trollshaws,Elves of Rivendell,M,Deeds of the Trollshaws,-,-,Complete 2 meta deeds and 1 quest deed in the Trollshaws,,,
+Eriador,Trollshaws,Elves of Rivendell,M,Explorer of the Trollshaws,-,-,Complete 3 explorer deeds in the Trollshaws,,,
+Eriador,Trollshaws,Elves of Rivendell,M,Slayer of the Trollshaws,-,-,Complete 6 slayer deeds in the Trollshaws,,,
+Eriador,Trollshaws,Elves of Rivendell,E,Ruins of Trollshaws,5,Tolerance,Find 8 ruins in Trollshaws,,,
+Eriador,Trollshaws,Elves of Rivendell,E,The Road to Rivendell,5,Fidelity,Find 4 points of interest on your way to Rivendell,,,
+Eriador,Trollshaws,Elves of Rivendell,E,The Wilds of Tal Bruinen,10,Honesty,Find 6 points of interest in the wilderness of the Trollshaws,,,
+Eriador,Trollshaws,Elves of Rivendell,R,Deeds in the Wilderness,10,Innocence,Complete quests within Trollshaws (10),,,
+Eriador,Trollshaws,Elves of Rivendell,R,Deeds in the Wilderness (advanced),10,Loyalty,Complete quests within Trollshaws (20),,,
+Eriador,Trollshaws,Elves of Rivendell,R,Deeds in the Wilderness (final),15,Idealism,Complete quests within Trollshaws (30),,,
+Eriador,Trollshaws,Elves of Rivendell,S,Crawler-slayer,5,-,Defeat Crawlers in Trollshaws (60),Chitin-smasher,,
+Eriador,Trollshaws,Elves of Rivendell,S,Crawler-slayer (advanced),10,Determination,Defeat Crawlers in Trollshaws (120),,,
+Eriador,Trollshaws,Elves of Rivendell,S,Giant-slayer,5,-,Defeat Giants in Trollshaws (40),Giant-slayer,,
+Eriador,Trollshaws,Elves of Rivendell,S,Giant-slayer (advanced),10,Fortitude,Defeat Giants in Trollshaws (80),,,
+Eriador,Trollshaws,Elves of Rivendell,S,Troll-slayer,5,-,Defeat Trolls in Trollshaws (80),Troll-slayer,,
+Eriador,Trollshaws,Elves of Rivendell,S,Troll-slayer (advanced),10,Zeal,Defeat Trolls in Trollshaws (160),,,
+Eriador,Trollshaws,Elves of Rivendell,S,Wight-slayer,5,-,Defeat Wights in Trollshaws (60),the Purifier,,
+Eriador,Trollshaws,Elves of Rivendell,S,Wight-slayer (advanced),10,Mercy,Defeat Wights in Trollshaws (120),,,
+Eriador,Trollshaws,Elves of Rivendell,S,Wolf-slayer,5,-,Defeat Wolves in Trollshaws (60),Tail-cleaver,,
+Eriador,Trollshaws,Elves of Rivendell,S,Wolf-slayer (advanced),10,Discipline,Defeat Wolves in Trollshaws (120),,,
+Eriador,Trollshaws,Elves of Rivendell,S,Worm-slayer,5,-,Defeat Worms in Trollshaws (80),Worm-carver,,
+Eriador,Trollshaws,Elves of Rivendell,S,Worm-slayer (advanced),10,Valour,Defeat Worms in Trollshaws (160),,,
+Eriador,Misty Mountains,,M,Deeds of the Misty Mountains,-,-,Complete 2 meta deeds and 1 quest deed in the Misty Mountains,,,
+Eriador,Misty Mountains,,M,Explorer of the Misty Mountains,-,-,Complete 5 explorer and 1 lore deed in the Misty Mountains,,,
+Eriador,Misty Mountains,,M,Slayer of the Misty Mountains,-,-,Complete 4 slayer deeds in the Misty Mountains,,,
+Eriador,Misty Mountains,,E,Goblin Town,10,Honesty,Find 7 locations in Goblin-town,,,
+Eriador,Misty Mountains,,E,Ruins of the Misty Mountains,5,Tolerance,Find 4 ruins in Misty Mountains,,,
+Eriador,Misty Mountains,,E,The Forbidding Heights,5,Honesty,Find 8 mountain peaks in Misty Mountains,,,
+Eriador,Misty Mountains,,E,The High Passes,5,Wisdom,Find 3 mountain passes in Misty Mountains,,,
+Eriador,Misty Mountains,,E,Treasure of the Misty Mountains,10,Fortitude,Find 12 Treasure Caches in Misty Mountains (lvl 100),Treasure Seeker of the Misty Mountains,,
+Eriador,Misty Mountains,,E,Where Giants Dwell,10,Confidence,Find 5 points of interest in Giant Halls,,,
+Eriador,Misty Mountains,,L,Bilbos Buttons,10,Honesty,Find Bilbo's 8 missing buttons in Goblin-town,,,
+Eriador,Misty Mountains,,L,The Misty Mountains' Roving Enemies,5,Confidence,Complete 4 Roving Threats quests (lvl 100),Roving Defender of the Misty Mountains,,
+Eriador,Misty Mountains,,R,Perils of the Mountain,10,Compassion,Complete quests within Misty Mountains (10),,,
+Eriador,Misty Mountains,,R,Perils of the Mountain (advanced),10,Empathy,Complete quests within Misty Mountains (20),,,
+Eriador,Misty Mountains,,R,Perils of the Mountain (final),15,Innocence,Complete quests within Misty Mountains (30),,,
+Eriador,Misty Mountains,,S,Bear-slayer,5,-,Defeat Bears in Misty Mountains (80),Bear-wrestler,,
+Eriador,Misty Mountains,,S,Bear-slayer (advanced),10,Fortitude,Defeat Bears in Misty Mountains (160),,,
+Eriador,Misty Mountains,,S,Giant-slayer,5,-,Defeat Giants in Misty Mountains (50),Bane of Titans,,
+Eriador,Misty Mountains,,S,Giant-slayer (advanced),10,Zeal,Defeat Giants in Misty Mountains (100),,,
+Eriador,Misty Mountains,,S,Snow-beast Slayer,5,-,Defeat Snow-beasts in Misty Mountains (100),Beast-hunter,,
+Eriador,Misty Mountains,,S,Snow-beast Slayer (advanced),10,Determination,Defeat Snow-beasts in Misty Mountains (200),,,
+Eriador,Misty Mountains,,S,Troll-slayer,5,-,Defeat Trolls in Misty Mountains (50),Vanquisher of Trolls,,
+Eriador,Misty Mountains,,S,Troll-slayer (advanced),10,Valour,Defeat Trolls in Misty Mountains (100),,,
+Eriador,Misty Mountains,,S,Warg-slayer,5,-,Defeat Wargs in Misty Mountains (100),Warg-hunter,,
+Eriador,Misty Mountains,,S,Warg-slayer (advanced),10,Justice,Defeat Wargs in Misty Mountains (200),,,
+Eriador,Misty Mountains,,S,Worm-slayer,5,-,Defeat Worms in Misty Mountains (100),Worm-bane,,
+Eriador,Misty Mountains,,S,Worm-slayer (advanced),10,Honour,Defeat Worms in Misty Mountains (200),,,
+Eriador,Misty Mountains,,Q,"Krabakam, the Master Hunter",,,Gloin's Camp - Authi,,100,Small Fellow
+Eriador,Misty Mountains,,Q,"Sútmoth, the Ice Giant",,,Gloin's Camp - Authi,,100,Fellow
+Eriador,Misty Mountains,,Q,"Hrimdyr, the Beast King",,,Gloin's Camp - Authi,,100,Small Fellow
+Eriador,Misty Mountains,,Q,Gróthurs the Stone Giant,,,Gloin's Camp - Authi,,100,Fellow
+Eriador,Evendim,Wardens of Annuminas,M,Deeds of Evendim,-,-,Complete 2 meta deeds and 1 quest deed in Evendim,,,
+Eriador,Evendim,Wardens of Annuminas,M,Explorer of Evendim,-,-,Complete 4 explorer and 1 lore deed in Evendim,,,
+Eriador,Evendim,Wardens of Annuminas,M,Slayer of Evendim,-,-,Complete 10 slayer deeds in Evendim,,,
+Eriador,Evendim,Wardens of Annuminas,E,Ruins of Evendim,5,Fidelity,Find 8 ruins in Evendim,,,
+Eriador,Evendim,Wardens of Annuminas,E,The City of Kings,5,Loyalty,Find 8 points of interest within Annuminas,,,
+Eriador,Evendim,Wardens of Annuminas,E,Tombs of Evendim,5,Fidelity,Find 8 tombs of the Dunedain kings,,,
+Eriador,Evendim,Wardens of Annuminas,E,Treasure of Evendim,10,Justice,Find 12 Treasure Caches in Evendim (lvl 90),Treasure Seeker of Evendim,,
+Eriador,Evendim,Wardens of Annuminas,E,Wilds of Evendim,5,Patience,Find 8 points of interest in wilds of Evendim,,,
+Eriador,Evendim,Wardens of Annuminas,L,Evendim's Roving Enemies,5,Mercy,Complete 3 Roving Threats quests (lvl 100),Roving Defender of Evendim,,
+Eriador,Evendim,Wardens of Annuminas,L,Markers of the Sunken City,5,-,Collect and use 6 plaques of Annuminas,Sage of the Sunken City,,
+Eriador,Evendim,Wardens of Annuminas,M,Warden of Annuminas [Hidden],10,-,Complete 6 deeds in Annuminas,Warden of Annuminas,,
+Eriador,Evendim,Wardens of Annuminas,R,Pilgrim of Evendim,10,Innocence,Complete quests within Evendim (60),,,
+Eriador,Evendim,Wardens of Annuminas,R,Wanderer of Evendim,10,Compassion,Complete quests within Evendim (30),,,
+Eriador,Evendim,Wardens of Annuminas,R,Warden of Evendim,15,Compassion,Complete quests within Evendim (90),,,
+Eriador,Evendim,Wardens of Annuminas,S,Brutes of the North,5,-,Defeat Gertheryg in Annuminas (40),the Formidable,,
+Eriador,Evendim,Wardens of Annuminas,S,Brutes of the North (advanced),10,Fortitude,Defeat Gertheryg in Annuminas (80),,,
+Eriador,Evendim,Wardens of Annuminas,S,Gauradan-slayer,5,-,Defeat Gauredain in Evendim (90),Slayer of the Gauredain,,
+Eriador,Evendim,Wardens of Annuminas,S,Gauradan-slayer (advanced),10,Fortitude,Defeat Gauredain in Evendim (180),,,
+Eriador,Evendim,Wardens of Annuminas,S,Giant-slayer,5,-,Defeat Giants in Evendim (40),Enemy of the Giants,,
+Eriador,Evendim,Wardens of Annuminas,S,Giant-slayer (advanced),10,Honour,Defeat Giants in Evendim (80),,,
+Eriador,Evendim,Wardens of Annuminas,S,Goblin-slayer,5,-,Defeat Goblins in Evendim (90),Goblin-foe,,
+Eriador,Evendim,Wardens of Annuminas,S,Goblin-slayer (advanced),10,Justice,Defeat Goblins in Evendim (180),,,
+Eriador,Evendim,Wardens of Annuminas,S,Invaders from Angmar,5,-,Defeat Angmarim in Annuminas (90),the Merciful,,
+Eriador,Evendim,Wardens of Annuminas,S,Invaders from Angmar (advanced),10,Wisdom,Defeat Angmarim in Annuminas (180),,,
+Eriador,Evendim,Wardens of Annuminas,S,Kergrim-slayer,5,-,Defeat Kergrim in Evendim (50),Bane of the Kergrim,,
+Eriador,Evendim,Wardens of Annuminas,S,Kergrim-slayer (advanced),10,Zeal,Defeat Kergrim in Evendim (100),,,
+Eriador,Evendim,Wardens of Annuminas,S,Leaders of the Invasion,5,-,Defeat the 5 Angmarim leaders in Annuminas,Defender of Annuminas,,
+Eriador,Evendim,Wardens of Annuminas,S,Leaders of the Invasion (advanced),10,Innocence,Defeat the 5 leaders in the 3 instances,Protector of Annuminas,,
+Eriador,Evendim,Wardens of Annuminas,S,Limrafn-slayer,5,-,Defeat Limrafn in Evendim (50),Keeper of Mysteries,,
+Eriador,Evendim,Wardens of Annuminas,S,Limrafn-slayer (advanced),10,Mercy,Defeat Limrafn in Evendim (100),,,
+Eriador,Evendim,Wardens of Annuminas,S,Salamander-slayer,5,-,Defeat Salamanders in Evendim (90),Quencher of Flames,,
+Eriador,Evendim,Wardens of Annuminas,S,Salamander-slayer (advanced),10,Determination,Defeat Salamanders in Evendim (180),,,
+Eriador,Evendim,Wardens of Annuminas,S,Spirits Aiding Angmar,5,-,Defeat The Dead in Annuminas (50) [Glinghant or Ost Elendil],the Righteous,,
+Eriador,Evendim,Wardens of Annuminas,S,Spirits Aiding Angmar (advanced),10,Tolerance,Defeat The Dead in Annuminas (100) [Glinghant or Ost Elendil],,,
+Eriador,Evendim,Wardens of Annuminas,S,Tomb-defender,5,-,Defeat Tomb-robbers in Evendim (90),Tomb-warden,,
+Eriador,Evendim,Wardens of Annuminas,S,Tomb-defender (advanced),10,Discipline,Defeat Tomb-robbers in Evendim (180),,,
+Eriador,Evendim,Wardens of Annuminas,Q,A Formal Complaint,,,Glass-blowers Camp – Hob Hillbrow (quest 3 of chain),Servant of Process,32,Solo
+Eriador,Evendim,Wardens of Annuminas,Q,"Droghus, the Chieftain",,,Tinnudir - Brangil,,100,Small Fellow
+Eriador,Evendim,Wardens of Annuminas,Q,"Sunath, the Treacherous",,,Tinnudir - Brangil,,100,Small Fellow
+Eriador,Evendim,Wardens of Annuminas,Q,"Tarlug, the Servant",,,Tinnudir - Brangil,,100,Fellow
+Eriador,Angmar,The Council of the North / The Eldgang,M,Deeds of Angmar,-,-,Complete 2 meta deeds and 1 quest deed in Angmar,,,
+Eriador,Angmar,The Council of the North / The Eldgang,M,Explorer of Angmar,-,-,Complete 3 explorer and 1 lore deed in Angmar,,,
+Eriador,Angmar,The Council of the North / The Eldgang,M,Slayer of Angmar,-,-,Complete 7 slayer deeds in Angmar,,,
+Eriador,Angmar,The Council of the North / The Eldgang,E,Bastions of Hope,5,Tolerance,Find 5 outposts of the Free Peoples,,,
+Eriador,Angmar,The Council of the North / The Eldgang,E,The Circle of Despair,5,Fidelity,Find 8 towers of Despair,,,
+Eriador,Angmar,The Council of the North / The Eldgang,E,The Road to War,5,Confidence,Find 6 points of interest on the road to Carn Dum,,,
+Eriador,Angmar,The Council of the North / The Eldgang,E,Treasure of Angmar,10,Determination,Find 12 Treasure Caches in Angmar (lvl 100),Treasure Seeker of Angmar,,
+Eriador,Angmar,The Council of the North / The Eldgang,L,The Seven Swords,10,-,Recover the 7 missing swords,Sage of Rhudaur,,
+Eriador,Angmar,The Council of the North / The Eldgang,L,Angmar's Roving Enemies,5,Idealism,Complete 6 Roving Threats quests (lvl 100),Roving Defender of Angmar,,
+Eriador,Angmar,The Council of the North / The Eldgang,R,Marching into Shadow,10,Loyalty,Complete 10 quests in Angmar,,,
+Eriador,Angmar,The Council of the North / The Eldgang,R,Marching into Shadow (advanced),10,Idealism,Complete 20 quests in Angmar,,,
+Eriador,Angmar,The Council of the North / The Eldgang,R,Marching into Shadow (final),15,Empathy,Complete 30 quests in Angmar,,,
+Eriador,Angmar,The Council of the North / The Eldgang,S,Angmarim-slayer,5,-,Defeat Angmarim in Angmar (100),Doom of the Angmarim,,
+Eriador,Angmar,The Council of the North / The Eldgang,S,Angmarim-slayer (advanced),10,Justice,Defeat Angmarim in Angmar (200),,,
+Eriador,Angmar,The Council of the North / The Eldgang,S,Orc-slayer,5,-,Defeat Orcs in Angmar (100),Bane of the Orcs,,
+Eriador,Angmar,The Council of the North / The Eldgang,S,Orc-slayer (advanced),10,Zeal,Defeat Orcs in Angmar (200),,,
+Eriador,Angmar,The Council of the North / The Eldgang,S,Troll-slayer,5,-,Defeat Trolls in Angmar (50),Bane of Trolls,,
+Eriador,Angmar,The Council of the North / The Eldgang,S,Troll-slayer (advanced),10,Discipline,Defeat Trolls in Angmar (100),,,
+Eriador,Angmar,The Council of the North / The Eldgang,S,Uruk-slayer,5,-,Defeat Uruks in Angmar (100),Warlord of Angmar,,
+Eriador,Angmar,The Council of the North / The Eldgang,S,Uruk-slayer (advanced),10,Honour,Defeat Uruks in Angmar (200),,,
+Eriador,Angmar,The Council of the North / The Eldgang,S,Warg-slayer,5,-,Defeat Wargs in Angmar (100),Lord/Lady of Fangs,,
+Eriador,Angmar,The Council of the North / The Eldgang,S,Warg-slayer (advanced),10,Determination,Defeat Wargs in Angmar (200),,,
+Eriador,Angmar,The Council of the North / The Eldgang,S,Wight-slayer,5,-,Defeat Wights in Angmar (100),Destiny of the Accursed,,
+Eriador,Angmar,The Council of the North / The Eldgang,S,Wight-slayer (advanced),10,Mercy,Defeat Wights in Angmar (200),,,
+Eriador,Angmar,The Council of the North / The Eldgang,S,Worm-slayer,5,-,Defeat Worms in Angmar (100),Weird of the Worms,,
+Eriador,Angmar,The Council of the North / The Eldgang,S,Worm-slayer (advanced),10,Valour,Defeat Worms in Angmar (200),,,
+Eriador,Angmar,The Council of the North / The Eldgang,Q,The Secret of the Swords,,,Gabilshathur – Banfuir,,47,Solo
+Eriador,Angmar,The Council of the North / The Eldgang,Q,-> The Sword of Abb,,,Dropped Item – Owen,,47,Solo
+Eriador,Angmar,The Council of the North / The Eldgang,Q,-> The Sword of Anraig,,,Dropped Item – Tobaid,,47,Solo
+Eriador,Angmar,The Council of the North / The Eldgang,Q,-> The Sword of Innis,,,Dropped Item – Brekhim,,47,Solo
+Eriador,Angmar,The Council of the North / The Eldgang,Q,-> The Sword of Guinokh,,,Dropped Item – Dugald,,47,Solo
+Eriador,Angmar,The Council of the North / The Eldgang,Q,-> The Sword of Kevoka,,,Dropped Item – Frangan,,47,Solo
+Eriador,Angmar,The Council of the North / The Eldgang,Q,-> The Sword of Kolmak,,,Dropped Item – Ruraikh,,47,Solo
+Eriador,Angmar,The Council of the North / The Eldgang,Q,-> The Sword of Manas,,,Dropped Item – Huisdan,,47,Solo
+Eriador,Angmar,The Council of the North / The Eldgang,Q,The Seven Swords,,,Krusle Lannan – Nethraw,,47,Small Fellow
+Eriador,Angmar,The Council of the North / The Eldgang,Q,"Khruthakh, the Untiring",,,Aughaire - Cánnakh,,100,Small Fellow
+Eriador,Angmar,The Council of the North / The Eldgang,Q,"Shakatrog, the Dreaded",,,Aughaire - Cánnakh,,100,Small Fellow
+Eriador,Angmar,The Council of the North / The Eldgang,Q,"Vélnas, the Seer",,,Aughaire - Cánnakh,,100,Fellow
+Eriador,Angmar,The Council of the North / The Eldgang,Q,"Ulkharn, the Commander",,,Aughaire - Cánnakh,,100,Fellow
+Eriador,Angmar,The Council of the North / The Eldgang,Q,"Ashthrock, the Fire Seeker",,,Aughaire - Cánnakh,,100,
+Eriador,Angmar,The Council of the North / The Eldgang,Q,"Amardam, the Ancient Evil",,,Aughaire - Cánnakh,,100,Fellow
+Eriador,Forochel,Lossoth of Forochel,M,Deeds of Forochel,-,-,Complete 2 meta deeds and 2 quest deeds in Forochel,,,
+Eriador,Forochel,Lossoth of Forochel,M,Explorer of Forochel,-,-,Complete 2 explorer deeds in Forochel,,,
+Eriador,Forochel,Lossoth of Forochel,M,Slayer of Forochel,-,-,Complete 6 slayer deeds in Forochel,,,
+Eriador,Forochel,Lossoth of Forochel,E,Ancient Stones of Forochel,5,Patience,Find 5 ancient structures in Forochel,,,
+Eriador,Forochel,Lossoth of Forochel,E,The Battle for Forochel,5,Wisdom,Find 4 Gauradan camps,,,
+Eriador,Forochel,Lossoth of Forochel,E,Treasure of Forochel,10,Patience,Find 12 Treasure Caches in Forochel (lvl 100),Treasure Seeker of Forochel,,
+Eriador,Forochel,Lossoth of Forochel,L,Forochel's Roving Enemies,5,Mercy,Complete 4 Roving Threats quests in Forochel (lvl 100),Roving Defender of Forochel,,
+Eriador,Forochel,Lossoth of Forochel,R,Forochel Expeditonary,10,Charity,Complete quests within Forochel (10),,,
+Eriador,Forochel,Lossoth of Forochel,R,Forochel Pioneer,15,Compassion,Complete quests within Forochel (30),,,
+Eriador,Forochel,Lossoth of Forochel,R,Forochel Survivor,10,Empathy,Complete quests within Forochel (20),,,
+Eriador,Forochel,Lossoth of Forochel,R,The Lost Fellowship,5,-,Aid the members of the Lost Fellowship,Hero/Heroine of the Lost,,
+Eriador,Forochel,Lossoth of Forochel,S,Angmarim-slayer,5,-,Defeat Angmarim in Forochel (100),Angmar's Bane,,
+Eriador,Forochel,Lossoth of Forochel,S,Angmarim-slayer (advanced),10,Confidence,Defeat Angmarim in Forochel (200),,,
+Eriador,Forochel,Lossoth of Forochel,S,Dourhand-slayer,5,-,Defeat Dourhands in Forochel (100),Warden of the Mines,,
+Eriador,Forochel,Lossoth of Forochel,S,Dourhand-slayer (advanced),10,Fidelity,Defeat Dourhands in Forochel (200),,,
+Eriador,Forochel,Lossoth of Forochel,S,Gauradan-slayer,5,-,Defeat Gauredain in Forochel (100),Repulser of Savages,,
+Eriador,Forochel,Lossoth of Forochel,S,Gauradan-slayer (advanced),10,Idealism,Defeat Gauredain in Forochel (200),,,
+Eriador,Forochel,Lossoth of Forochel,S,Grim-slayer,5,-,Defeat Grims in Forochel (40),the Ice-render,,
+Eriador,Forochel,Lossoth of Forochel,S,Grim-slayer (advanced),10,Mercy,Defeat Grims in Forochel (80),,,
+Eriador,Forochel,Lossoth of Forochel,S,Sabre-tooth Slayer,5,-,Defeat Sabre-tooths in Forochel (100),Fang-breaker,,
+Eriador,Forochel,Lossoth of Forochel,S,Sabre-tooth Slayer (advanced),10,Fortitude,Defeat Sabre-tooths in Forochel (200),,,
+Eriador,Forochel,Lossoth of Forochel,S,Worm-slayer,5,-,Defeat Worms in Forochel (100),Wrath of Winter,,
+Eriador,Forochel,Lossoth of Forochel,S,Worm-slayer (advanced),10,Zeal,Defeat Worms in Forochel (200),,,
+Eriador,Forochel,Lossoth of Forochel,Q,The Raven,,,Kauppa-kohta – Cenlieg,,44,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,Hungry Bear-friend,,,Kauppa-kohta – Cenlieg,,44,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,The Choicest Cut,,,Kauppa-kohta – Cenlieg,,45,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,My Sister's Sword,,,Pynti-peldot – Deornyd,,45,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,A Sword Shivered,,,Pynti-peldot – Deornyd,,47,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,Three Sheets to the Wind,,,Janis-leiri – Burgthryth,,47,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,All Strung Out,,,Janis-leiri – Burgthryth,,48,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,Lost My Marbles,,,Zigilgund – Warstang,,47,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,Who Burgles the Burglar,,,Zigilgund – Warstang,,47,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,The Finest Shield in Land,,,Suri-kyla – Nef,,47,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,Time for a New Shield,,,Suri-kyla – Nef,,48,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,An Unheralded Hero,,,Suri-kyla – Reginald Ward,,48,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,Falling Standards,,,Ja-rannit – Reginald's Ward,,48,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,Thurmaer's Lucky Arrow,,,Kuru-leiri – Thurmaer,,49,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,On the Road to Misfortune,,,Kuru-leiri – Thurmaer,,49,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,Hero of the Lost,,,Any member of the Lost Fellowship,,50,Solo
+Eriador,Forochel,Lossoth of Forochel,Q,"Gronkerna, The Juggernaut Slave",,,Suri-kyla - Ostasänt,,100,Fellow
+Eriador,Forochel,Lossoth of Forochel,Q,"Krevchal, the Brutal Chieftain",,,Suri-kyla - Ostasänt,,100,Fellow
+Eriador,Forochel,Lossoth of Forochel,Q,"Mustarka, the Treacherous Wight",,,Suri-kyla - Ostasänt,,100,Fellow
+Eriador,Forochel,Lossoth of Forochel,Q,"Ukko Surma, the Undying Giant",,,Suri-kyla - Ostasänt,,100,Fellow
+Eriador,Eregion,,M,Protector of Eregion [Hidden],10,-,Complete 11 deeds in Eregion,Protector of Hollin,,
+Eriador,Eregion,,E,Dens of the Beasts,5,Patience,Find 7 dens of beasts in Eregion,,,
+Eriador,Eregion,,E,Exploration from Top to Bottom,5,-,Completely explore Minas Elendur and Delotham,the Thorough,,
+Eriador,Eregion,,L,Ridge-racer [Hidden],5,-,"Find and run the Hollin Ridge – starts 42.8 S, 10.8 W",Ridge-racer,,
+Eriador,Eregion,,L,Ring-lore of Eregion,5,Fidelity,Find 6 pages of Ring-lore in Eregion,Lore-seeker,,
+Eriador,Eregion,,E,The Ring Goes South,5,Honesty,Find 5 campfires visited by the Fellowship,,,
+Eriador,Eregion,,E,The Ruins of Eregion,5,Wisdom,Find 6 ruins in Eregion,,,
+Eriador,Eregion,,R,Silent and Restless,10,Honesty,Complete quests within Eregion (10),,,
+Eriador,Eregion,,R,Silent and Restless (advanced),15,Compassion,Complete quests within Eregion (40),,,
+Eriador,Eregion,,R,Silent and Restless (final),20,Empathy,Complete quests within Eregion (60),,,
+Eriador,Eregion,,R,Silent and Restless (intermediate),10,Charity,Complete quests within Eregion (20),,,
+Eriador,Eregion,,S,Craban-slayer,5,-,Defeat Crebain in Eregion (90),Feather-duster,,
+Eriador,Eregion,,S,Craban-slayer (advanced),10,Loyalty,Defeat Crebain in Eregion (180),,,
+Eriador,Eregion,,S,Dunlending-slayer,5,-,Defeat Dunlendings in Eregion (90),Bane of Dunland,,
+Eriador,Eregion,,S,Dunlending-slayer (advanced),10,Honour,Defeat Dunlendings in Eregion (180),,,
+Eriador,Eregion,,S,Half-orc Slayer,5,-,Defeat Half-orcs in Eregion (90),the Just,,
+Eriador,Eregion,,S,Half-orc Slayer (advanced),10,Justice,Defeat Half-orcs in Eregion (180),,,
+Eriador,Eregion,,S,Lizard and Crawler-slayer,5,-,Defeat Lizards or Crawlers in Eregion (90),Vermin-bane,,
+Eriador,Eregion,,S,Lizard and Crawler-slayer (advanced),10,Determination,Defeat Lizards or Crawlers in Eregion (180),,,
+Eriador,Eregion,,S,Uruk Captains of Eregion,5,Determination,Defeat 7 Uruk captains in Eregion,Defender of Hollin,,
+Eriador,Eregion,,S,Wolf and Warg-slayer,5,-,Defeat Wolves or Wargs in Eregion (90),Fang-breaker,,
+Eriador,Eregion,,S,Wolf and Warg-slayer (advanced),10,Discipline,Defeat Wolves or Wargs in Eregion (180),,,
+Eriador,Enedwaith,The Grey Company / Algraig,M,Protector of Enedwaith [Hidden],10,-,Complete 11 deeds in Enedwaith,Protector of Enedwaith,,
+Eriador,Enedwaith,The Grey Company / Algraig,E,Exiles from the Lonely Mountain,5,-,Find the 6 Dwarf-markers,Exile of Erebor,,
+Eriador,Enedwaith,The Grey Company / Algraig,E,The Fisher-king,5,-,"Find The Fishing Hole – 63.2 S, 23.9 W",Fisher-king/queen,,
+Eriador,Enedwaith,The Grey Company / Algraig,E,Little Wonders,10,-,Find 6 Hobbit artifacts in Gloomglens,Little Wonder,,
+Eriador,Enedwaith,The Grey Company / Algraig,E,Path of the Grey Company,5,-,Find 5 locations of the Grey Company,Ambassador of the Grey Company,,
+Eriador,Enedwaith,The Grey Company / Algraig,E,The Long Road of the Hobbits,5,-,Find 4 Lamp-post markers of the Hobbits,Follower of the Long Road,,
+Eriador,Enedwaith,The Grey Company / Algraig,L,Master of Stairs,10,-,Climb Nar's Peak 5 times,Master/Mistress of Stairs,,
+Eriador,Enedwaith,The Grey Company / Algraig,L,The Cartevs of Enedwaith,5,-,Find 5 homesteads in Enedwaith,Homesteader of Enedwaith,,
+Eriador,Enedwaith,The Grey Company / Algraig,L,The Odiferous [Hidden],10,-,Complete Miraculous Growth - repeatable quest (10),The Odiferous,,
+Eriador,Enedwaith,The Grey Company / Algraig,R,Mysteries of Enedwaith,10,Confidence,Complete quests within Enedwaith (10),Explorer of Enedwaith,,
+Eriador,Enedwaith,The Grey Company / Algraig,R,Mysteries of Enedwaith (advanced),15,Patience,Complete quests within Enedwaith (30),Champion of Enedwaith,,
+Eriador,Enedwaith,The Grey Company / Algraig,R,Mysteries of Enedwaith (final),20,Honour,Complete quests within Enedwaith (40),Victor of Enedwaith,,
+Eriador,Enedwaith,The Grey Company / Algraig,R,Mysteries of Enedwaith (intermediate),10,Charity,Complete quests within Enedwaith (20),Defender of Enedwaith,,
+Eriador,Enedwaith,The Grey Company / Algraig,S,Cuthraul and Elhudan-slayer,5,-,Defeat Cuthraul or Elhudan in Enedwaith (90),Basher of Spirits,,
+Eriador,Enedwaith,The Grey Company / Algraig,S,Cuthraul and Elhudan-slayer (advanced),10,Mercy,Defeat Cuthraul or Elhudan in Enedwaith (180),Banisher of Dread,,
+Eriador,Enedwaith,The Grey Company / Algraig,S,Dunlending-slayer,5,-,Defeat Dunlendings in Enedwaith (100),Foe of the White Hand,,
+Eriador,Enedwaith,The Grey Company / Algraig,S,Dunlending-slayer (advanced),10,Discipline,Defeat Dunlendings in Enedwaith (200),Bane of the Draig-luth,,
+Eriador,Enedwaith,The Grey Company / Algraig,S,Giant-slayer,5,-,Defeat Giants in Enedwaith (40),Defender of Zudrugund,,
+Eriador,Enedwaith,The Grey Company / Algraig,S,Giant Slayer (advanced),10,-,Defeat Giants in Enedwaith (80),Hero of Zudrugund,,
+Eriador,Enedwaith,The Grey Company / Algraig,S,Gwiber-slayer,5,-,Defeat Gwiber in Enedwaith (40),Bane of the Gwiber,,
+Eriador,Enedwaith,The Grey Company / Algraig,S,Gwiber Slayer (advanced),10,-,Defeat Gwiber in Enedwaith (80),Scourge of the Gwiber,,
+Eriador,Enedwaith,The Grey Company / Algraig,S,Half-orc Slayer,5,-,Defeat Half-orcs in Enedwaith (100),Enemy of the White Hand,,
+Eriador,Enedwaith,The Grey Company / Algraig,S,Half-orc Slayer (advanced),10,Justice,Defeat Half-orcs in Enedwaith (200),Avenger of Uch-luth,,
+Eriador,Enedwaith,The Grey Company / Algraig,S,Wolf and Shadow-wolf Slayer,5,-,Defeat Wolves or Shadow-wolves in Enedwaith (100),Shadow-foe,,
+Eriador,Enedwaith,The Grey Company / Algraig,S,Wolf and Shadow-wolf Slayer (advanced),10,Confidence,Defeat Wolves or Shadow-wolves in Enedwaith (200),Dark Hunter,,
+Eriador,Enedwaith,The Grey Company / Algraig,S,Wood-troll Slayer,5,-,Defeat Wood-trolls in Enedwaith (50),Wood-chipper,,
+Eriador,Enedwaith,The Grey Company / Algraig,S,Wood-troll Slayer (advanced),10,Zeal,Defeat Wood-trolls in Enedwaith (100),Clear-cutter,,
+Eriador,Enedwaith,The Grey Company / Algraig,Q,Miraculous Growth – repeatable,,,Maur Tulhau – Iago Glennudh,,62,Solo
+Eriador,Dunland,Men of Dunland / Riders of Theodred,M,Deeds of Dunland,10,Idealism,Complete 3 meta deeds in Dunland,Master of the Untamed Lands,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,M,Quests of Dunland,10,Charity,Complete 10 quest deeds in Dunland,Pilgrim of Dunland,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,M,Explorer of Dunland,10,Empathy,Complete 10 explorer deeds in Dunland,Explorer of Dunland,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,M,Slayer of Dunland,10,Compassion,Complete 9 slayer deeds in Dunland,Foe-bane of Dunland,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,E,Exploring Carregyln,5,Zeal,Find 7 points of interest in Carregyln,,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,E,Exploring Nan Curunir,5,Empathy,Find 6 points of interest in Nan Curunir,,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,E,Exploring Pren Gwydh,5,Compassion,Find 6 points of interest in Pren Gwydh,,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,E,Exploring Starkmoor,5,Charity,Find 6 points of interest in Starkmoor,,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,E,Exploring the Bonevales,5,Innocence,Find 5 points of interest in the Bonevales,,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,E,Exploring the Dunbog,5,Honour,Find 5 points of interest in the Dunbog,,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,E,Exploring the Gravenwood,5,Discipline,Find 7 points of interest in the Gravenwood,,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,E,Exploring the Heathfells,5,Fortitude,Find 7 points of interest in the Heathfells,,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,E,Exploring the Isendale,5,Mercy,Find 4 points of interest in the Isendale,,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,E,Exploring Trum Dreng,5,Idealism,Find 6 points of interest in Trum Dreng,,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,R,Quests in Carregyln,5,Innocence,Complete quests within Carregyln (23),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,R,Quests in Nan Curunir,5,Tolerance,Complete quests within Nan Curunir (25),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,R,Quests in Pren Gwydh,5,Determination,Complete quests within Pren Gwydh (27),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,R,Quests in the Bonevales,5,Zeal,Complete quests within the Bonevales (30),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,R,Quests in the Dunbog,5,Justice,Complete quests within the Dunbog (25),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,R,Quests in the Gravenwood,5,Honour,Complete quests within the Gravenwood (20),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,R,Quests in the Heathfells,5,Fortitude,Complete quests within the Heathfells (26),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,R,Quests in the Isendale,5,Discipline,Complete quests within the Isendale (30),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,R,Quests in the Starkmoor,5,Mercy,Complete quests within the Starkmoor (24),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,R,Quests in Trum Dreng,5,Confidence,Complete quests within Trum Dreng (32),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,R,Tracking an Old Goat,5,Honour,Complete Tracking an Old Goat quest chain,,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Beast-slayer,5,-,Defeat wild beasts in Dunland (100),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Beast-slayer (advanced),5,Loyalty,Defeat wild beasts in Dunland (200),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Craban-slayer,5,-,Defeat Crebain in Dunland (50),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Craban-slayer (advanced),5,Wisdom,Defeat Crebain in Dunland (100),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Dunlending-slayer,5,-,Defeat Hostile Dunlendings in Dunland (100),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Dunlending-slayer (advanced),5,Fidelity,Defeat Hostile Dunlendings in Dunland (200),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Goblin-slayer,5,-,Defeat Goblins in Dunland (100),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Goblin-slayer (advanced),5,Charity,Defeat Goblins in Dunland (200),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Half-orc Slayer,5,-,Defeat Half-orcs in Dunland (100),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Half-orc Slayer (advanced),5,Empathy,Defeat Half-orcs in Dunland (200),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Orc-slayer,5,-,Defeat Orcs in Dunland (100),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Orc-slayer (advanced),5,Idealism,Defeat Orcs in Dunland (200),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Slayer of the Dead,5,-,Defeat the Dead in Dunland (100),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Slayer of the Dead (advanced),5,Patience,Defeat the Dead in Dunland (200),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,The Gatekeepers of Isengard,5,-,Defeat Ufdragh and Barashal ,Gatecrasher,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Uruk-hai Slayer,5,-,Defeat Uruk-hai in Dunland (100),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Uruk-hai Slayer (advanced),5,Honesty,Defeat Uruk-hai in Dunland (200),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Warg-slayer,5,-,Defeat Wargs in Dunland (100),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,S,Warg-slayer (advanced),5,Confidence,Defeat Wargs in Dunland (200),,,
+Eriador,Dunland,Men of Dunland / Riders of Theodred,Q,A Dark and Lonely Forest,,,Gravenwood – Amlan [Read Comment!!],,72,Solo
+Eriador,Dunland,Men of Dunland / Riders of Theodred,Q,-> Cruel Traps,,,Andreg - Gravenwood [81.9 S 12.1 W],,72,Solo
+Eriador,Dunland,Men of Dunland / Riders of Theodred,Q,-> A Grave Corruption,,,Andreg - Gravenwood [83.1 S 14.6 W],,72,Solo
+Eriador,Dunland,Men of Dunland / Riders of Theodred,Q,-> Hunting the Pack,,,Andreg - Gravenwood [83.0 S 14.2 W],,72,Solo
+Eriador,Dunland,Men of Dunland / Riders of Theodred,Q,-> Lost Caws,,,Andreg - Gravenwood [82.6 S 14.0 W],,72,Solo
+Eriador,Dunland,Men of Dunland / Riders of Theodred,Q,-> Orc-mischief,,,Andreg - Gravenwood [81.9 S 12.1 W],,72,Solo

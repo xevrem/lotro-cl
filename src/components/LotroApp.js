@@ -43,6 +43,18 @@ class LotroApp extends Component {
     get_store().subscribe(ACTION_TYPES.DEED_SELECTED, this.handle_deed_selected.bind(this));
     get_store().subscribe(ACTION_TYPES.DEED_COMPLETED, this.handle_deed_completed.bind(this));
     get_store().subscribe(ACTION_TYPES.DEED_NAV_CHANGED, this.handle_deed_nav_changed.bind(this));
+
+    this.build_deed_data();
+  }
+
+  build_deed_data(){
+    console.log('build_deed_data called...');
+    let data = eriador;
+  }
+
+  load_changed_nav_data(data){
+    console.log('load_changed_nav_data called...', data);
+    //TODO: async load deed data to reflect the changed nav target
   }
 
   handle_character_added(state, data){
@@ -73,6 +85,8 @@ class LotroApp extends Component {
   handle_deed_nav_changed(state, data){
     console.log('handle_deed_nav_changed called...', data);
     this.setState(data);
+    //TODO: this needs to be fixed
+    this.load_changed_nav_data(data)
   }
 
   render() {
