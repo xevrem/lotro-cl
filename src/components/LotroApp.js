@@ -8,14 +8,14 @@ import SummaryPanel from './SummaryPanel';
 import {create_store, get_store} from './../Store';
 import {ACTION_TYPES} from './../constants';
 
-import characters from '../data/characters.json';
-import eriador from '../data/eriador.json';
+//import characters from '../data/characters.json';
+//import eriador from '../data/eriador.json';
 
 let initial_state = {
   selected_character:0,
   selected_deed:0,
   deed_nav: 0,
-  characters: characters,
+  characters: null,
   deeds: ['Totam vero officia dolorum iure minus nisi',
       'nostrum provident reiciendis laudantium voluptatibus',
       'expedita laborum recusandae quasi esse sit enim suscipit'],
@@ -43,18 +43,43 @@ class LotroApp extends Component {
     get_store().subscribe(ACTION_TYPES.DEED_SELECTED, this.handle_deed_selected.bind(this));
     get_store().subscribe(ACTION_TYPES.DEED_COMPLETED, this.handle_deed_completed.bind(this));
     get_store().subscribe(ACTION_TYPES.DEED_NAV_CHANGED, this.handle_deed_nav_changed.bind(this));
+    get_store().subscribe('initialization', this.handle_initialization.bind(this));
 
     this.build_deed_data();
   }
 
   build_deed_data(){
     console.log('build_deed_data called...');
-    let data = eriador;
+
+    //create character data fetch
+    let chjson = fetch('/data/characters.json')
+    .then(resp=>{
+      return resp.json();
+    });
+
+    //chreate eriador data fetch
+    let erjson = fetch('/data/eriador.json')
+    .then(resp=>{
+      return resp.json();
+    });
+
+    //run both promises async and set the data
+    Promise.all([chjson, erjson]).then(values=>{
+      get_store().issue_action('initialization', {
+        characters: values[0],
+        deeds: values[1]
+      })
+    })
   }
 
   load_changed_nav_data(data){
     console.log('load_changed_nav_data called...', data);
     //TODO: async load deed data to reflect the changed nav target
+  }
+
+  handle_initialization(state, data){
+    console.log('handle_initialization called...', data);
+    this.setState(data);
   }
 
   handle_character_added(state, data){

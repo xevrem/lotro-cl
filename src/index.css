@@ -8,6 +8,23 @@
 .panel-header {
   font-size: 1.75em; }
 
+.btn {
+  width: 120px;
+  padding: 5px;
+  margin: 0px;
+  border: 1px solid rgba(58, 58, 58, 0.788);
+  border-radius: 3px; }
+
+.btn-success {
+  background-color: #40ad2a;
+  color: white;
+  border: 1px solid #40ad2a; }
+
+.btn-primary {
+  background-color: #3c6dff;
+  color: white;
+  border: 1px solid #3c6dff; }
+
 @font-face {
   font-family: 'lotro';
   src: url("./lotro.woff") format("woff"); }

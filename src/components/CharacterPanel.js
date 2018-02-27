@@ -84,6 +84,9 @@ class CharacterPanel extends Component{
   }
 
   render (){
+    //if no characters, there is nothing to render
+    if(!this.props.characters) return('');
+    
     //build character list
     let character_list = this.props.characters.map((character, i) =>{
       return (
@@ -93,7 +96,7 @@ class CharacterPanel extends Component{
           onChange={this.handle_change.bind(this, i)}
           onSelected={this.selected_handler.bind(this, i)}/>
       );
-    });
+    })
 
     return(
       <Panel panel_class='panel character-panel'>
@@ -104,6 +107,8 @@ class CharacterPanel extends Component{
             <Button className='btn btn-primary' text='Add Character' onClick={this.add_character_handler}/>
             <Button className='btn btn-success' text='Save All'/>
             <Button className='btn btn-danger' text='Delete Selected'/>
+            <Button className='btn' text='Load From File'/>
+            <Button className='btn' text='Download Character'/>
           </div>
           <div className='character-area'>
             <List list_class='character-list' list_item_class='character-list-item'>

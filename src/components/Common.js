@@ -59,17 +59,13 @@ function SelectObject(props){
   let key_list = Object.keys(props.object);
   let options = key_list.map((key, i)=>{
     let item = props.object[key];
-    return item.id === props.default ? (
-      <option key={i} value={item.id} selected>{item.text}</option>
-    ):(
-      <option key={i} value={item.id}>{item.text}</option>
-    );
+    return <option key={i} value={item.id}>{item.text}</option>
   })
 
   return(
     <div className={props.div_class}>
       <label className={props.label_class} htmlFor={props.id}>{props.label}</label>
-      <select className={props.className} name={props.name} onChange={props.onChange}>
+      <select className={props.className} name={props.name} value={props.default} onChange={props.onChange}>
         {options}
       </select>
     </div>
