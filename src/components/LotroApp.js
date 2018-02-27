@@ -45,10 +45,10 @@ class LotroApp extends Component {
     get_store().subscribe(ACTION_TYPES.DEED_NAV_CHANGED, this.handle_deed_nav_changed.bind(this));
     get_store().subscribe('initialization', this.handle_initialization.bind(this));
 
-    this.build_deed_data();
+    this.retrieve_app_data();
   }
 
-  build_deed_data(){
+  retrieve_app_data(){
     console.log('build_deed_data called...');
 
     //create character data fetch
@@ -63,7 +63,7 @@ class LotroApp extends Component {
       return resp.json();
     });
 
-    //run both promises async and set the data
+    //run promises async and set the data
     Promise.all([chjson, erjson]).then(values=>{
       get_store().issue_action('initialization', {
         characters: values[0],
