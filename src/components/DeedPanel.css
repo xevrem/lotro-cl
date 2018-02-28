@@ -1,19 +1,21 @@
 .panel {
   margin: 10px 10px;
-  border: 1px solid #8f7641;
-  border-radius: 5px;
   background-color: white;
-  box-shadow: 0px 5px 5px rgba(156, 156, 156, 0.788); }
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28); }
 
 .panel-header {
   font-size: 1.75em; }
+
+.clickable {
+  cursor: pointer; }
 
 .btn {
   width: 120px;
   padding: 5px;
   margin: 0px;
   border: 1px solid rgba(58, 58, 58, 0.788);
-  border-radius: 3px; }
+  border-radius: 3px;
+  font-family: lotro; }
 
 .btn-success {
   background-color: #40ad2a;
@@ -52,27 +54,23 @@
   margin: 5px; }
 
 .deed {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   padding: 2px;
-  border: 2px solid #8f7641;
-  border-radius: 5px;
-  background-color: #f7e2b5; }
+  background-color: #f7e2b5;
+  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24); }
 
 .deed.selected {
-  border: 2px solid #28a745;
-  box-shadow: 0px 0px 10px #28a745; }
+  box-shadow: 0px 0px 2px #28a745, 0 2px 4px rgba(40, 167, 69, 0.24), 0 4px 6px rgba(40, 167, 69, 0.48); }
 
 .deed-details {
   margin: 5px;
   padding: 5px;
-  border-radius: 5px;
-  border: 2px solid #8f7641;
   background-color: #f7e2b5;
-  text-align: left; }
+  text-align: left;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24); }
 
 .deed-details.completed {
-  border: 2px solid #28a745;
-  box-shadow: 0px 0px 10px #28a745; }
+  box-shadow: 0px 0px 2px #28a745, 0 2px 4px rgba(40, 167, 69, 0.24), 0 4px 6px rgba(40, 167, 69, 0.48); }
 
 .deed-stats {
   display: inline-flex;
@@ -91,6 +89,3 @@
 .deed-completed-btn {
   display: block;
   bottom: 7px; }
-
-.clickable {
-  cursor: pointer; }

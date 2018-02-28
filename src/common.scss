@@ -9,14 +9,21 @@ $primary: rgb(60, 109, 255);
 
 .panel{
     margin: 10px 10px;
-    border: 1px solid $border;
-    border-radius: 5px;
+    // border: 1px solid $border;
+    // border-radius: 5px;
     background-color: white;
-    box-shadow: 0px 5px 5px $shadow;
+    // box-shadow: 0px 5px 5px $shadow;
+    // box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0,0,0,.12), 0 2px 4px rgba(0,0,0,.24);
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+
 }
 
 .panel-header{
   font-size: 1.75em;
+}
+
+.clickable{
+  cursor: pointer;
 }
 
 .btn{
@@ -25,6 +32,7 @@ $primary: rgb(60, 109, 255);
   margin: 0px;
   border: 1px solid $fg-color;
   border-radius: 3px;
+  font-family: lotro;
 }
 
 .btn-success{
