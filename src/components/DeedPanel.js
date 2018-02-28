@@ -7,22 +7,25 @@ import {ACTION_TYPES} from './../constants';
 import {get_store} from './../Store';
 
 /**
- * [Deed description]
- * @param {[type]} props [description]
+ * 
+ * @param {boolean} props.selected is this deed currently selected
+ * @param {callback} props.onClick called when clicked
+ * @param {string} props.name deed name
+ * @param {JSX.Element} props.children the child elemnts contained within the deed div
  */
-const Deed = props =>{
+const Deed = ({selected, onClick, name, children}) =>{
   return(
-    <div className={props.selected?'deed clickable selected':'deed clickable'} onClick={props.onClick}>
-      <p className='col text-left' >{props.name}</p>
-      {props.children}
+    <div className={selected?'deed clickable selected':'deed clickable'} onClick={onClick}>
+      <p className='col text-left' >{name}</p>
+      {children}
     </div>
   );
 }
 
 
 class DeedPanel extends Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.deed_complete_handler = this.handle_deed_complete.bind(this);
   }
 

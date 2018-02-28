@@ -1,10 +1,12 @@
 .panel {
   margin: 10px 10px;
   background-color: white;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28); }
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+  padding: 5px; }
 
 .panel-header {
-  font-size: 1.75em; }
+  font-size: 1.75em;
+  margin: 5px; }
 
 .clickable {
   cursor: pointer; }
@@ -27,6 +29,9 @@
   color: white;
   border: 1px solid #3c6dff; }
 
+button:focus {
+  outline: 0; }
+
 .character-actions {
   display: block; }
 
@@ -39,12 +44,13 @@
   display: inline-flex; }
 
 .character {
+  margin: 5px;
   padding: 5px;
   width: 250px;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.24), 0 2px 4px rgba(0, 0, 0, 0.48); }
+  box-shadow: 0 0px 2px #7f7f7f, 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.24); }
 
 .character.selected {
-  box-shadow: 0px 0px 2px #28a745, 0 2px 4px rgba(40, 167, 69, 0.24), 0 4px 6px rgba(40, 167, 69, 0.48); }
+  box-shadow: 0px 0px 6px #28a745, 0 2px 8px rgba(19, 82, 34, 0.24), 0 4px 10px rgba(19, 82, 34, 0.48); }
 
 .character-form-div {
   display: inline-flex;

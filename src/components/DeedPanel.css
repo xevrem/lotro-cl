@@ -1,10 +1,12 @@
 .panel {
   margin: 10px 10px;
   background-color: white;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28); }
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+  padding: 5px; }
 
 .panel-header {
-  font-size: 1.75em; }
+  font-size: 1.75em;
+  margin: 5px; }
 
 .clickable {
   cursor: pointer; }
@@ -27,6 +29,9 @@
   color: white;
   border: 1px solid #3c6dff; }
 
+button:focus {
+  outline: 0; }
+
 .deed-nav {
   width: auto;
   margin: 5px;
@@ -41,14 +46,12 @@
 .deed-nav-link {
   margin: 5px 5px;
   padding: 10px 10px;
-  border: 2px solid #8f7641;
-  border-radius: 5px;
   color: rgba(58, 58, 58, 0.788);
-  background-color: #f7e2b5; }
+  background-color: #f7e2b5;
+  box-shadow: 0 0px 2px #7f7f7f, 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.24); }
 
 .deed-nav-link.active {
-  border: 2px solid #28a745;
-  box-shadow: 0px 0px 15px #28a745; }
+  box-shadow: 0px 0px 6px #28a745, 0 2px 8px rgba(19, 82, 34, 0.24), 0 4px 10px rgba(19, 82, 34, 0.48); }
 
 .deed-panel-left {
   margin: 5px; }
@@ -57,27 +60,26 @@
   margin-bottom: 8px;
   padding: 2px;
   background-color: #f7e2b5;
-  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24); }
+  box-shadow: 0 0px 2px #7f7f7f, 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.24); }
 
 .deed.selected {
-  box-shadow: 0px 0px 2px #28a745, 0 2px 4px rgba(40, 167, 69, 0.24), 0 4px 6px rgba(40, 167, 69, 0.48); }
+  box-shadow: 0px 0px 6px #28a745, 0 2px 8px rgba(19, 82, 34, 0.24), 0 4px 10px rgba(19, 82, 34, 0.48); }
 
 .deed-details {
   margin: 5px;
   padding: 5px;
   background-color: #f7e2b5;
   text-align: left;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24); }
+  box-shadow: 0 0 2px #7f7f7f, 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.24); }
 
 .deed-details.completed {
-  box-shadow: 0px 0px 2px #28a745, 0 2px 4px rgba(40, 167, 69, 0.24), 0 4px 6px rgba(40, 167, 69, 0.48); }
+  box-shadow: 0 0 6px #28a745, 0 2px 8px rgba(19, 82, 34, 0.24), 0 4px 10px rgba(19, 82, 34, 0.48); }
 
 .deed-stats {
   display: inline-flex;
   margin: 5px;
   padding: 5px 10px;
-  border: 1px solid #8f7641;
-  border-radius: 3px; }
+  box-shadow: 0 0 1px #8f7641; }
 
 .deed-list {
   padding: 0px;

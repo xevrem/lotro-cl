@@ -1,10 +1,12 @@
 .panel {
   margin: 10px 10px;
   background-color: white;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28); }
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+  padding: 5px; }
 
 .panel-header {
-  font-size: 1.75em; }
+  font-size: 1.75em;
+  margin: 5px; }
 
 .clickable {
   cursor: pointer; }
@@ -26,3 +28,6 @@
   background-color: #3c6dff;
   color: white;
   border: 1px solid #3c6dff; }
+
+button:focus {
+  outline: 0; }
