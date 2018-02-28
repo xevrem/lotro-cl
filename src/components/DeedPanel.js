@@ -6,6 +6,10 @@ import {ACTION_TYPES} from './../constants';
 
 import {get_store} from './../Store';
 
+/**
+ * [Deed description]
+ * @param {[type]} props [description]
+ */
 const Deed = props =>{
   return(
     <div className={props.selected?'deed clickable selected':'deed clickable'} onClick={props.onClick}>
@@ -70,7 +74,7 @@ class DeedPanel extends Component{
 
     //build nav bar selecting active tab
     let deed_types = this.props.deed_types.map((deed_type,i)=>{
-      return i === this.props.deed_nav ? ( 
+      return i === this.props.deed_nav ? (
         <p key={i} className='clickable deed-nav-link active' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>
       ):(
         <p key={i} className='clickable deed-nav-link' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>
