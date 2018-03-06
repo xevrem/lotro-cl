@@ -1,0 +1,525 @@
+Category,Subcategory,Faction,Type,Deed,LP,Trait,Details,Title,Level,Party
+Class,Beorning,,C,Class Deeds – Tier 1,-,,"Complete Get Your Bearings, Quick Slash, and Full Force - 1 Class Trait Point",,5,
+Class,Beorning,,C,Get Your Bearings,5,,Use Skin-change (100) – 10/day,,5,
+Class,Beorning,,C,Quick Slash,5,,Hit with Slash (300) – 30/day,,5,
+Class,Beorning,,C,Full Force,5,,Hit with Slam (300) – 30/day,,5,
+Class,Beorning,,C,Class Deeds – Tier 2,-,,"Complete A Buidling Rage, Hearten!, and Hearth and Home - 1 Class Trait Point",,10,
+Class,Beorning,,C,A Building Rage,5,,Hit with Thrash - Tier 3 (100) – 10/day,,10,
+Class,Beorning,,C,Hearten!,5,,Use Hearten (300) – 30/day,,10,
+Class,Beorning,,C,Hearth and Home,5,,Bake Honey-cakes (100) - Racial skill equip requirement – 10/day,,15,
+Class,Beorning,,C,Class Deeds – Tier 3,-,,"Complete The Speech of Animals, Rattling Roar, and Master the Basics - 1 Class Trait Point",,15,
+Class,Beorning,,C,The Speech of Animals,-,,See Beorning Quests - 1 Class Trait Point,,15,
+Class,Beorning,,C,Rattling Roar,5,,Use Ferocious Roar (150) – 15/day,,16,
+Class,Beorning,,C,Master the Basics,5,,Hit with Slash (500) – 50/day,,10,
+Class,Beorning,,C,Class Deeds – Tier 4,-,,"Complete Beorn's Gift, Unexpectedly Agile, and Weight on Their Shoulders - 1 Class Trait Point",,20,
+Class,Beorning,,C,Beorn's Gift,5,,Use Skin-change (500) – 50/day,,20,
+Class,Beorning,,C,Unexpectedly Agile,5,,Parry or Evade enemy attacks (300) – 30/day,,20,
+Class,Beorning,,C,Weight on Thier Shoulders,5,,Hit with Slam (500) – 50/day,,20,
+Class,Beorning,,C,Class Deeds – Tier 5,-,,"Complete Hatred of Bear and Man, A Thousand Stingers, and Overbearing Presence - 1 Class Trait Point",,30,
+Class,Beorning,,C,Hatred of Bear and Man,-,,See Beorning Quests - 1 Class Trait Point,,30,
+Class,Beorning,,C,A Thousand Stingers,5,,Hit with Bee Swarm (300) – 30/day,,30,
+Class,Beorning,,C,Overbearing Presence,5,,Use Feral Presence (50) - Racial skill equip requirement – 5/day,,30,
+Class,Beorning,,C,Class Deeds – Tier 6,-,,"Complete Overwhelming Strength, To Battle!, and Stand Firm - 1 Class Trait Point",,40,
+Class,Beorning,,C,Overwhelming Strength,5,,Hit with Relentless Maul (150) – 15/day,,30,
+Class,Beorning,,C,To Battle!,5,,Use Rush (250) – 25/day,,36,
+Class,Beorning,,C,Stand Firm,5,,Use Bracing Roar (50) - Racial skill equip requirement – 5/day,,40,
+Class,Beorning,,C,Class Deeds – Tier 7,-,,"Complete Not the Bees!, Impervious, and Natural Beorn Leadership - 1 Class Trait Point",,40,
+Class,Beorning,,C,Not the Bees!,5,,Hit with Bee Swarm (500) – 50/day,,44,
+Class,Beorning,,C,Impervious,5,,Parry of Evade enemy attacks (500) – 50/day,,40,
+Class,Beorning,,C,Natural Beorn Leadership,5,,Use Hearten (500) – 50/day,,40,
+Class,Beorning,,C,Class Deeds – Tier 8,-,,"Complete The Path Homeward, Bear in Mind and Spirit, and Beorn's Might - 1 Class Trait Point",,50,
+Class,Beorning,,C,The Path Homeward,-,,See Beorning Quests - 1 Class Trait Point,,58,
+Class,Beorning,,C,Bear in Mind and Spirit,5,,Use Skin-change (500) – 50/day,,50,
+Class,Beorning,,C,Beorn's Might,5,,"Use Thickened Hide, Call to Wild, or Nature's Bond (150) – 15/day",,50,
+Class,Beorning,,C,A Hobbit's Holiday,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Beorning,,C,A Study of the Skin Changer,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Beorning,,C,Geneology of the Beorning,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Beorning,,C,Articles and Implements,-,,See Beorning Quests - 1 Class Trait Point,,45,
+Class,Beorning,,C,The Mines of Moria,20,,Complete Mines of Moria - Books 1-6 - 1 Class Trait Point,,-,
+Class,Beorning,,C,Promotion Points 1,-,,Earn 100 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Beorning,,C,Promotion Points 2,-,,Earn 200 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Beorning,,Q,The Speech of Animals,,,Adso's Camp – Clothar Sandheaver – involves instance,,15,Solo
+Class,Beorning,,Q,Hatred of Bear and Man,,,Ost Guruth – Langhar – involves instance,,30,Solo
+Class,Beorning,,Q,Grimbeorn's Challenge,,,Rivendell – Sterkist,,45,Solo
+Class,Beorning,,Q,-> Articles of Resilience,,,Rivendell – Sterkist,,45,Solo
+Class,Beorning,,Q,-> Implements of Ferocity,,,Rivendell – Sterkist,,45,Solo
+Class,Beorning,,Q,The Path Homeward,,,The Orc-watch – Vartmath,,58,Solo
+Class,Burglar,,C,Class Deeds – Tier 1,-,,"Complete Hidden Dagger, Cunning Wound, and Swift and Subtle - 1 Class Trait Point",,5,
+Class,Burglar,,C,Hidden Dagger,5,,Hit with attack while in stealth (300) - 100/day,,5,
+Class,Burglar,,C,Cunning Wound,5,,Hit with Cunning Attack (500) - 167/day,,5,
+Class,Burglar,,C,Swift and Subtle,5,,Hit with Subtle Stab (1250) - 417/day,,5,
+Class,Burglar,,C,Class Deeds – Tier 2,-,,"Complete Leaf-walker, Side-step, and Perplexing Riddle - 1 Class Trait Point",,10,
+Class,Burglar,,C,Leaf-walker,5,,Use Sneak (250) - 25/day,,10,
+Class,Burglar,,C,Side-step,5,,Evade enemy attacks (1250) - 250/day,,10,
+Class,Burglar,,C,Perplexing Riddle,5,,"Hit with ""Riddle"" skill (200) - 67/day",,10,
+Class,Burglar,,C,Class Deeds – Tier 3,-,,"Complete A Thief in the Night, Cruel Odds, and Bleeding is Better - 1 Class Trait Point",,15,
+Class,Burglar,,C,A Thief in the Night,-,,See Burglar Quests,,15,
+Class,Burglar,,C,Cruel Odds,5,,Achieve a critical hit with any skill unlocked by a critical hit (200) - 50/day,,10,
+Class,Burglar,,C,Bleeding is Better,5,,Hit with skills that apply Bleed debuff (750) - 150/day,,10,
+Class,Burglar,,C,Class Deeds – Tier 4,-,,"Complete Strike from Shadows, Mass Confusion, and Trickster - 1 Class Trait Point",,20,
+Class,Burglar,,C,Strike from Shadows,5,,Achieve a critical hit with skills used in stealth (400) - 80/day,,10,
+Class,Burglar,,C,Mass Confusion,5,,Hit with Addle (600) - 90/day,,20,
+Class,Burglar,,C,Trickster,5,,"Hit with ""Trick"" skills (1000) - 200/day",,10,
+Class,Burglar,,C,Class Deeds – Tier 5,-,,"Complete A Burglar's Errand, Footpad, and Opportunist - 1 Class Trait Point",,30,
+Class,Burglar,,C,A Burglar's Errand,-,,See Burglar Quests,,30,
+Class,Burglar,,C,Footpad,5,,Hit successfully with Diversion (500) - 75/day,,20,
+Class,Burglar,,C,Opportunist,5,,Hit with Reveal Weakness (350) - 55/day,,22,
+Class,Burglar,,C,Class Deeds – Tier 6,-,,"Complete Quick Wrist, No Time for Games, and Burglarize - 1 Class Trait Point",,40,
+Class,Burglar,,C,Quick Wrist,5,,Parry enemy attacks (1250) - 125/day,,30,
+Class,Burglar,,C,No Time for Games,5,,"Hit with Provoke [lvl 34] or any ""Trick"" removal skill (400) - 40/day",,30,
+Class,Burglar,,C,Burglarize,5,,Hit with Burgle (250) - 25/day,,30,
+Class,Burglar,,C,Class Deeds – Tier 7,-,,"Complete Better and Better, Resistance is Futile, and Finish What You Started - 1 Class Trait Point",,40,
+Class,Burglar,,C,Better and Better,5,,Hit with Critical Hit chain opening skills (150) - 15/day,,40,
+Class,Burglar,,C,Resistance is Futile,5,,"Have ""Riddle"" or ""Trick"" removal skills resisted (75) - 15/day",,40,
+Class,Burglar,,C,Finish What You Started,5,,Hit with Critical Hit chain finishing skills (150) - 15/day,,30,
+Class,Burglar,,C,Class Deeds – Tier 8,-,,"Complete An Unpleasant Surprise, Insult to Injury, and On the Move - 1 Class Trait Point",,50,
+Class,Burglar,,C,Unpleasant Surprise,5,,Hit with Surprise Strike (200) - 20/day,,50,
+Class,Burglar,,C,Insult to Injury,5,,Achieve critical hit with a Critical Hit chain skill (200) - 20/day,,50,
+Class,Burglar,,C,On the Move,5,,Use Touch and Go (35) - 5/day,,50,
+Class,Burglar,,C,The Expert's Guide to Dirty Fighting,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Burglar,,C,The Book of Knives,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Burglar,,C,Knee-breaker's Manual,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Burglar,,C,Articles and Implements,-,,See Burglar Quests - 1 Class Trait Point,,45,
+Class,Burglar,,C,The Path of the Mischief-maker,20,,See Burglar Quests - 1 Class Trait Point,,58,
+Class,Burglar,,C,A Guide to the Quiet Knife,20,,Purchase class specific book from Iron Garrison Guards reputation merchant [kindred required],,-,
+Class,Burglar,,C,The Mines of Moria,20,,Complete Mines of Moria - Books 1-6 - 1 Class Trait Point,,-,
+Class,Burglar,,C,Promotion Points 1,-,,Earn 100 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Burglar,,C,Promotion Points 2,-,,Earn 200 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Burglar,,Q,A Thief in the Night,,,Albra Lowbanks - The Lowbank's Estate,Thief in the Night,15,Solo
+Class,Burglar,,Q,A Burglar's Errand,,,Albra Lowbanks - The Lowbank's Estate,Trickster,30,Solo
+Class,Burglar,,Q,The Truest Course is Awareness,,,Sterling Proudfoot – Buckland,,45,Solo
+Class,Burglar,,Q,-> Articles of Cunning,,,Sterling Proudfoot – Buckland,Evasive Artist,45,Solo
+Class,Burglar,,Q,-> Implements of the Night,,,Sterling Proudfoot – Buckland,,45,Solo
+Class,Burglar,,Q,A Lesson from Bilbo Baggins,,,Sterling Proudfoot – Buckland,,45,Solo
+Class,Burglar,,Q,The Path of the Mischief-maker,,,Celofa – The Shadowed Refuge,,58,Solo
+Class,Burglar,,Q,-> A Bag of Tricks,,,Celofa – The Shadowed Refuge,,58,Solo
+Class,Burglar,,Q,-> Tracking Treasure,,,Celofa – The Shadowed Refuge,,58,Solo
+Class,Burglar,,Q,-> A Startling Twist,,,Celofa – The Shadowed Refuge,,58,Solo
+Class,Burglar,,Q,-> A Confounding Riddle,,,Celofa – The Shadowed Refuge – involves The Sixteenth Hall,Mischief-maker,58,Fellow
+Class,Captain,,C,Class Deeds - Tier 1,-,,"Complete Renewed Voice, Devastation, and Absolute Certainty - 1 Class Trait Point",,5,
+Class,Captain,,C,Renewed Voice,5,,Hit with Battle-shout (650) - 225/day,,5,
+Class,Captain,,C,Devastation,5,,Achieve critical hit or devastating hit with Devastating Blow (250) - 85/day,,5,
+Class,Captain,,C,With Absolute Certainty,5,,Hit with Sure Strike (300) - 100/day,,5,
+Class,Captain,,C,Class Deeds - Tier 2,-,,"Complete A Sense of Urgency, A Call to Arms, and Fear No Darkness - 1 Class Trait Point",,10,
+Class,Captain,,C,A Sense of Urgency,5,,Use Make Haste (500) - 165/day,,8,
+Class,Captain,,C,A Call to Arms,5,,Summon Herald ally (60) - 30/day,,10,
+Class,Captain,,C,Fear No Darkness,5,,Use Words of Courage (500) - 100/day,,14,
+Class,Captain,,C,Class Deeds - Tier 3,-,,"Complete An Inspiration to Men, Valour, and Strong Voice - 1 Class Trait Point",,15,
+Class,Captain,,C,An Inspiration to Men,-,,See Captain Quests,,15,
+Class,Captain,,C,Valour,5,,Achieve critical heal with Words of Courage or Rallying Cry (250) - 25/day,,10,
+Class,Captain,,C,Strong Voice,5,,Use Muster Courage (200) - 50/day,,16,
+Class,Captain,,C,Class Deeds - Tier 4,-,,"Complete Improved Rallying Cry, Expert Attacks, and Brother in Arms - 1 Class Trait Point",,20,
+Class,Captain,,C,Improved Routing Cry,5,,Hit with Routing Cry (750) - 100/day,,20,
+Class,Captain,,C,Expert Attacks,5,,Achieve critical hit with Devastating Blow (100) - 15/day,,20,
+Class,Captain,,C,Brother in Arms,5,,"Use Shield-brother, Song-brother, or Blade-brother (60) - 10/day",,20,
+Class,Captain,,C,Class Deeds - Tier 5,-,,"Complete A Captain's Standard, Now for Wrath, and Quick Wrist - 1 Class Trait Point",,30,
+Class,Captain,,C,A Captain's Standard,-,,See Captain Quests,,30,
+Class,Captain,,C,Now for Wrath,5,,Use Rallying Cry (600) - 60/day,,30,
+Class,Captain,,C,Quick Wrist,5,,Parry enemy attacks (500) - no cap,,20,
+Class,Captain,,C,Class Deeds - Tier 6,-,,"Complete A Captain's Victory, In Darkest Days, and Inspire Valour - 1 Class Trait Point",,40,
+Class,Captain,,C,A Captain's Victory,5,,Use Brother's Call (60) - Tier 5 Set Bonus - 15/day,,45,
+Class,Captain,,C,In Darkest Days,5,,Achieve critical hit or devastating hit with Blade of Elendil (300) - 30/day,,30,
+Class,Captain,,C,Inspire Valour,5,,Achieve critical hit or devastating hit with Valiant Strike or Inspire (100) - 10/day,,30,
+Class,Captain,,C,Class Deeds - Tier 7,-,,"Complete Tactical Prowess, Deeds Before Words, and Never in Doubt - 1 Class Trait Point",,40,
+Class,Captain,,C,Tactical Prowess,5,,Use To Arms (300) - 30/day,,40,
+Class,Captain,,C,Deeds Before Words,5,,Hit with Inspire (1000) - 100/day,,50,
+Class,Captain,,C,Never in Doubt,5,,Achieve critical hit with Sure Strike (350) - 35/day,,40,
+Class,Captain,,C,Class Deeds - Tier 8,-,,"Complete Adherent of Elendil, Grave Digger, and Precise Ally - 1 Class Trait Point",,50,
+Class,Captain,,C,Adherent of Elendil,5,,Hit with Blade of Elendil (350) - 35/day,,50,
+Class,Captain,,C,Grave Digger,5,,Hit with Grave Wound (50) - 5/day,,50,
+Class,Captain,,C,Precise Ally,5,,Summon Archer Herald (100) - 10/day,,50,
+Class,Captain,,C,The Candle's Flame,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Captain,,C,The Book of Oaths,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Captain,,C,Treatise of Valour,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Captain,,C,Articles and Implements,-,,See Captain Quests - 1 Class Trait Point,,45,
+Class,Captain,,C,The Path of the Healing Hands,20,,See Captain Quests - 1 Class Trait Point,,58,
+Class,Captain,,C,The Master of the Charge,20,,Purchase class specific book from Iron Garrison Guards reputation merchant [kindred required],,-,
+Class,Captain,,C,The Mines of Moria,20,,Complete Mines of Moria - Books 1-6 - 1 Class Trait Point,,-,
+Class,Captain,,C,Promotion Points 1,-,,Earn 100 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Captain,,C,Promotion Points 2,-,,Earn 200 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Captain,,Q,An Inspiration to Men,,,Dawn Appledore - Bree Jail,Inspiration to Men,15,Solo
+Class,Captain,,Q,A Captain's Standard,,,Dawn Appledore - Bree Jail,Oath-keeper,30,Solo
+Class,Captain,,Q,The Noblest Path is Service,,,Dawn Stockard - Archet,,45,Solo
+Class,Captain,,Q,-> Articles of Command,,,Dawn Stockard - Archet,Defender of Middle-earth,45,Solo
+Class,Captain,,Q,-> Implements of War,,,Dawn Stockard - Archet,,45,Solo
+Class,Captain,,Q,A Lesson from Boromir,,,Dawn Stockard - Archet,,45,Solo
+Class,Captain,,Q,The Path of the Healing Hands,,,Garnyd - Anazarmekhem,,58,Solo
+Class,Captain,,Q,-> A Cry of Vengeance,,,Garnyd - Anazarmekhem,,58,Solo
+Class,Captain,,Q,-> Rallying Cry,,,Garnyd - Anazarmekhem,,58,Solo
+Class,Captain,,Q,-> Routing Cry,,,Garnyd - Anazarmekhem,,58,Solo
+Class,Captain,,Q,-> In Harm's Way,,,Garnyd - Anazarmekhem - involves Fil Gashan,Healer of Men,58,Fellow
+Class,Champion,,C,Class Deeds - Tier 1,-,,"Complete Swift to Anger, All in All, and Deadly Strikes - 1 Class Trait Point",,5,
+Class,Champion,,C,Swift to Anger,5,,Hit with Swift Strike (1000) - 350/day,,5,
+Class,Champion,,C,All in All,5,,Hit with Blade Wall (750) - 75/day,,5,
+Class,Champion,,C,Deadly Strikes,5,,Hit with Savage Strikes (500) - 165/day,,5,
+Class,Champion,,C,Class Deeds - Tier 2,-,,"Complete Winds of the Storm, Rip to Shreds, and Wild Thing - 1 Class Trait Point",,10,
+Class,Champion,,C,Winds of the Storm,5,,"Hit with Blade Storm, Remorseless Strike, or use Sudden Defense (50) - no cap",,10,
+Class,Champion,,C,Rip to Shreds,5,,"Hit with Rend, Brutal Strikes, or Bracing Attack (250) - 50/day",,10,
+Class,Champion,,C,Wild Thing,5,,Achieve critical hit with Wild Attack (50) - 10/day,,10,
+Class,Champion,,C,Class Deeds - Tier 3,-,,"Complete A Blade of Renown, Call of the Wild, and A Challenge Accepted - 1 Class Trait Point",,15,
+Class,Champion,,C,A Blade of Renown,-,,See Champion Quests,,15,
+Class,Champion,,C,Call of the Wild,5,,Hit with Wild Attack (1250) - 250/day,,10,
+Class,Champion,,C,A Challenge Accepted,5,,Hit with Champion's Challenge (400) - 80/day,,10,
+Class,Champion,,C,Class Deeds - Tier 4,-,,"Complete Flashing Blade, Deep Strikes, and At the Ready - 1 Class Trait Point",,20,
+Class,Champion,,C,Flashing Blade,5,,Achieve critical hit with Blade Wall (500) - 80/day,,20,
+Class,Champion,,C,Deep Strikes,5,,"Achieve critical hit with Rend, Brutal Strikes, or Bracing Attack (400) - 150/day",,20,
+Class,Champion,,C,At the Ready,5,,"Use Ebbing Ire, Battle Frenzy, or Second Wind (100) - no cap",,20,
+Class,Champion,,C,Class Deeds - Tier 5,-,,"Complete A Champion's Courage, Raging Storm, and No Surrender - 1 Class Trait Point",,30,
+Class,Champion,,C,A Champion's Courage,-,,See Champion Quests,,30,
+Class,Champion,,C,Raging Storm,5,,"Achieve critical hit with Blade Storm, Remorseless Strike, or Raging Blade (50) - 5/day",,30,
+Class,Champion,,C,No Surrender,5,,Use Fight On (450) - 45/day,,30,
+Class,Champion,,C,Class Deeds - Tier 6,-,,"Complete Time of Need, Clobbered, and Athletic - 1 Class Trait Point",,40,
+Class,Champion,,C,Time of Need,5,,"Use Dire Need, Great Cleave, or Controlled Burn (150) - 15/day",,30,
+Class,Champion,,C,Clobbered,5,,Hit with Clobber (500) - 50/day,,30,
+Class,Champion,,C,Athletic,5,,Use Sprint (150) - 15/day,,40,
+Class,Champion,,C,Class Deeds - Tier 7,-,,"Complete Battle Acumen, Heroic Resolve, and Tight Grip - 1 Class Trait Point",,40,
+Class,Champion,,C,Battle Acumen,5,,"Use Champion's Duel, or hit with Fury of Blades or Unbreakable (300) - 30/day",,45,
+Class,Champion,,C,Heroic Resolve,5,,Use True Heroics (50) - 5/day,,40,
+Class,Champion,,C,Tight Grip,5,,Hit with Ferocious Strikes or Horn of Champions (200) - 20/day,,40,
+Class,Champion,,C,Class Deeds - Tier 8,-,,"Complete Mighty Blast, Always in Control, and Bountiful Mercy - 1 Class Trait Point",,50,
+Class,Champion,,C,Mighty Blast,5,,Hit with Horn of Gondor (500) - 50/day,,50,
+Class,Champion,,C,Always in Control,5,,"Hit with Devastating Strikes, or Use Exchange of Blows or Adamant (75) - 10/day",,50,
+Class,Champion,,C,Bountiful Mercy,5,,Hit with Merciful Strike (350) - 35/day,,50,
+Class,Champion,,C,The Artisan's Blade,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Champion,,C,The Tome of Swords,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Champion,,C,The Joy of Battle,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Champion,,C,Articles and Implements,-,,See Champion Quests - 1 Class Trait Point,,45,
+Class,Champion,,C,The Path of the Martial Champion,20,,See Champion Quests - 1 Class Trait Point,,58,
+Class,Champion,,C,The Boiling Rage,20,,Purchase class specific book from Iron Garrison Guards reputation merchant [kindred required],,-,
+Class,Champion,,C,The Mines of Moria,20,,Complete Mines of Moria - Books 1-6 - 1 Class Trait Point,,-,
+Class,Champion,,C,Promotion Points 1,-,,Earn 100 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Champion,,C,Promotion Points 2,-,,Earn 200 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Champion,,Q,A Blade of Renown,,,Oggur - Bree Jail,Blade of Renown,15,Solo
+Class,Champion,,Q,A Champion's Courage,,,Oggur - Bree Jail,Martial Artist,30,Solo
+Class,Champion,,Q,The Boldest Path is Discipline,,,Gwesgylliel - Lin Giliath,,45,Solo
+Class,Champion,,Q,-> Articles of Valour,,,Gwesgylliel - Lin Giliath,Raging Frenzy,45,Solo
+Class,Champion,,Q,-> Implements of Daring,,,Gwesgylliel - Lin Giliath,,45,Solo
+Class,Champion,,Q,A Lesson from Gimli,,,Gwesgylliel - Lin Giliath,,45,Solo
+Class,Champion,,Q,The Path of the Martial Champion,,,Valthor - The Shadowed Refuge,,58,Solo
+Class,Champion,,Q,-> Controlled Burn,,,Valthor - The Shadowed Refuge,,58,Solo
+Class,Champion,,Q,-> Getting Stong Now / Boast,,,Valthor - The Shadowed Refuge,,58,Solo
+Class,Champion,,Q,-> Glory,,,Valthor - The Shadowed Refuge,,58,Solo
+Class,Champion,,Q,-> Heroics,,,Valthor - The Shadowed Refuge - involves Skumfil,Invincible,58,Fellow
+Class,Guardian,,C,Class Deeds - Tier 1,-,,"Complete Stinging Blow, Shield Expertise, and Reactive Block - 1 Class Trait Point",,5,
+Class,Guardian,,C,Stinging Blow,5,,Hit with Sting (750) - 250/day,,5,
+Class,Guardian,,C,Shield Expertise,5,,Hit with Shield-blow (1500) - 500/day,,26,
+Class,Guardian,,C,Reactive Block,5,,Hit with Shield-swipe (400) - 140/day,,5,
+Class,Guardian,,C,Class Deeds - Tier 2,-,,"Complete Controlled Breathing, Guardian's Ward, and Retaliatory Strike - 1 Class Trait Point",,10,
+Class,Guardian,,C,Controlled Breathing,5,,Use Catch a Breath (250) - 50/day,,30,
+Class,Guardian,,C,Guardian's Ward,5,,Hit with Guardian's Ward (1200) - 400/day,,5,
+Class,Guardian,,C,Retaliatory Strike,5,,Hit with Retaliation (800) - 160/day,,10,
+Class,Guardian,,C,Class Deeds - Tier 3,-,,"Complete A Shield Against Adversity, Swept Away, and To the Rescue - 1 Class Trait Point",,15,
+Class,Guardian,,C,A Shield Against Adversity,-,,See Guardian Quests,,15,
+Class,Guardian,,C,Swept Away,5,,Hit with Sweeping Cut (100) - 20/day,,10,
+Class,Guardian,,C,To the Rescue,5,,Evade enemy attacks (1000) - 200/day,,10,
+Class,Guardian,,C,Class Deeds - Tier 4,-,,"Complete Heat of Battle, Phantom Pain, and Grim Challenge - 1 Class Trait Point",,20,
+Class,Guardian,,C,Heat of Battle,5,,"Hit with Thrill of Danger, Overwhelm, or Litany of Defiance (125) - 13/day",,20,
+Class,Guardian,,C,Phantom Pain,5,,Use Ignore Pain (350) - 35/day,,20,
+Class,Guardian,,C,Grim Challenge,5,,"Hit with Challenge, Fray the Edge, or Engage (300) - 50/day",,20,
+Class,Guardian,,C,Class Deeds - Tier 5,-,,"Complete A Guardian's Duty, Quickness, and First Line of Defense - 1 Class Trait Point",,30,
+Class,Guardian,,C,A Guardian's Duty,-,,See Guardian Quests,,30,
+Class,Guardian,,C,Quickness,5,,Hit with Sting (1500) - 300/day,,20,
+Class,Guardian,,C,First Line of Defense,5,,Use Charge (30) - 3/day,,30,
+Class,Guardian,,C,Class Deeds - Tier 6,-,,"Complete Brave Heart, Quick Wrist, and The Best Defense - 1 Class Trait Point",,40,
+Class,Guardian,,C,Brave Heart,5,,Use Warrior's Heart (150) - no cap,,32,
+Class,Guardian,,C,Quick Wrist,5,,Parry enemy attacks (350) - 200/day,,40,
+Class,Guardian,,C,The Best Defense,5,,"Hit with War Chant, Thrust, or Smashing Stab (200) -50/day",,40,
+Class,Guardian,,C,Class Deeds - Tier 7,-,,"Complete Blocking Force, Never Bashful, and Quick of Foot - 1 Class Trait Point",,40,
+Class,Guardian,,C,Blocking Force,5,,Block enemy attacks (1000) - 200/day,,40,
+Class,Guardian,,C,Never Bashful,5,,Hit with Bash (500) - 50/day,,40,
+Class,Guardian,,C,Quick of Foot,5,,Hit with Stamp (300) - 30/day,,40,
+Class,Guardian,,C,Class Deeds - Tier 8,-,,"Complete Final Straw, Stoic, and Hit Where it Hurts - 1 Class Trait Point",,50,
+Class,Guardian,,C,Final Straw,5,,"Hit with Hammer Down, Juggernaut, or Cataclysmic Shout (1000) – 120/day",,50,
+Class,Guardian,,C,Stoic,5,,"Use Guardian's Pledge, Protection, or Protection by the Sword (200) – 30/day",,50,
+Class,Guardian,,C,Hit Where it Hurts,5,,Hit with Stagger (1000) - 100/day,,50,
+Class,Guardian,,C,A Shield Maiden's Song,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Guardian,,C,The Best Defense,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Guardian,,C,The Final Word,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Guardian,,C,Articles and Implements,-,,See Guardian Quests - 1 Class Trait Point,,45,
+Class,Guardian,,C,The Path of Freedom's Defender,20,,See Guardian Quests - 1 Class Trait Point,,58,
+Class,Guardian,,C,A Keen Blade,20,,Purchase class specific book from Iron Garrison Guards reputation merchant [kindred required],,-,
+Class,Guardian,,C,The Mines of Moria,20,,Complete Mines of Moria - Books 1-6 - 1 Class Trait Point,,-,
+Class,Guardian,,C,Promotion Points 1,-,,Earn 100 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Guardian,,C,Promotion Points 2,-,,Earn 200 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Guardian,,Q,A Shield Against Adversity,,,Trali - Bree Jail,Shield Against Adversity,15,Solo
+Class,Guardian,,Q,A Guardian's Duty,,,Trali - Bree Jail,Stalwart Defender,30,Solo
+Class,Guardian,,Q,The Bravest Deed is Selfless,,,Wali - Noglond,,45,Solo
+Class,Guardian,,Q,-> Articles of Fortitude,,,Wali - Noglond,King's Justice,45,Solo
+Class,Guardian,,Q,-> Implements of Battle,,,Wali - Noglond,,45,Solo
+Class,Guardian,,Q,A Lesson from Samwise Gamgee,,,Wali - Noglond,,45,Solo
+Class,Guardian,,Q,The Path of the Defender of the Free,,,Dithrik - The Shadowed Refuge,,58,Solo
+Class,Guardian,,Q,-> Thrill of Danger,,,Dithrik - The Shadowed Refuge,,58,Solo
+Class,Guardian,,Q,-> Litany of Defiance,,,Dithrik - The Shadowed Refuge,,58,Solo
+Class,Guardian,,Q,-> Salt the Wound,,,Dithrik - The Shadowed Refuge,,58,Solo
+Class,Guardian,,Q,-> Challenge the Darkness,,,Dithrik - The Shadowed Refuge - involves Dark Delvings,Shield Master,58,Fellow
+Class,Hunter,,C,Class Deeds - Tier 1,-,,"Complete Quick as the Wind, Sturdy Traps, and Blindsided - 1 Class Trait Point",,5,
+Class,Hunter,,C,Quick as the Wind,5,,Hit with Quick Shot (750) - 250/day,,5,
+Class,Hunter,,C,Sturdy Traps,5,,Use Set Trap or Triple Trap (350) - 120/day,,5,
+Class,Hunter,,C,Blindsided,5,,Hit with Blindside (500) - 165/day,,5,
+Class,Hunter,,C,Class Deeds - Tier 2,-,,"Complete Strong Draw, Combat Traps, and Heightened Senses - 1 Class Trait Point",,10,
+Class,Hunter,,C,Strong Draw,5,,Hit with Penetrating Shot (600) - 120/day,,10,
+Class,Hunter,,C,Combat Traps,5,,Use Trip Wire (100) - 20/day,,10,
+Class,Hunter,,C,Heightened Senses,5,,"Use ""Tracking"" skills (500) - 100/day",,10,
+Class,Hunter,,C,Class Deeds - Tier 3,-,,"Complete The Hunter's Path, Focused and Ready, and Swift and Sharp - 1 Class Trait Point",,15,
+Class,Hunter,,C,The Hunter's Path,-,,See Hunter Quests,,15,
+Class,Hunter,,C,Focused and Ready,5,,Use Focus (500) - 100/day,,10,
+Class,Hunter,,C,Swift and Sharp,5,,"Hit with Swift Bow, Barbed Arrow, or Lingering Wound (1000) - 350/day",,5,
+Class,Hunter,,C,Class Deeds - Tier 4,-,,"Complete True Shot, Deadly Precision, and Cut Them Down - 1 Class Trait Point",,20,
+Class,Hunter,,C,True Shot,5,,Achieve critical hit with Penetrating Shot (1000) - 150/day,,20,
+Class,Hunter,,C,Deadly Precision,5,,"Achieve critical hit with any ""Bow"" skill (500) - 50/day",,20,
+Class,Hunter,,C,Cut Them Down,5,,Hit with Low Cut (150) - 25/day,,20,
+Class,Hunter,,C,Class Deeds - Tier 5,-,,"Complete A Hunter's Charge, Poison? What Poison?, and Stealthy Shot - 1 Class Trait Point",,30,
+Class,Hunter,,C,A Hunter's Charge,-,,See Hunter Quests,,30,
+Class,Hunter,,C,Poison? What Poison?,5,,Use Purge Poison (600) - 90/day,,20,
+Class,Hunter,,C,Stealthy Shot,5,,Use Beneath Notice (50) - 5/day,,38,
+Class,Hunter,,C,Class Deeds - Tier 6,-,,"Complete The Quality of Mercy, Skill Shot, and Total Attention - 1 Class Trait Point",,40,
+Class,Hunter,,C,The Quality of Mercy,5,,Achieve critical hit with Merciful Shot (150) - 15/day,,40,
+Class,Hunter,,C,Skill Shot,5,,"Hit with Pinning Shot, Explosive Arrows, or Split Shot (300) - 35/day",,30,
+Class,Hunter,,C,Total Attention,5,,Use Intent Concentration (125) - 13/day,,30,
+Class,Hunter,,C,Class Deeds - Tier 7,-,,"Complete Tools of the Trade, Dazed and Confused, and Sneaky Sneaky - 1 Class Trait Point",,40,
+Class,Hunter,,C,Tools of the Trade,5,,"Hit with Bard's Arrow, Rain of Arrows, or Blood Arrow (300) - 30/day",,40,
+Class,Hunter,,C,Dazed and Confused,5,,Hit with Dazing Blow (200) - 20/day,,48,
+Class,Hunter,,C,Sneaky Sneaky,5,,Use Camouflage (750) - 175/day,,40,
+Class,Hunter,,C,Class Deeds - Tier 8,-,,"Complete Rapid Fire, Shot Through the Heart, and Scorching Rain - 1 Class Trait Point",,50,
+Class,Hunter,,C,Rapid Fire,5,,"Hit with Upshot, or use The One Trap, or Rapid Fire (1000) - 100/day",,50,
+Class,Hunter,,C,Shot Through the Heart,5,,Hit with Heart Seeker (100) - 10/day,,50,
+Class,Hunter,,C,Scorching Rain,5,,Use Burn Hot or hit with Rain of Thorns or Barrage (50) - 10/day,,50,
+Class,Hunter,,C,A Shot in the Dark,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Hunter,,C,The Furthest Charge,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Hunter,,C,The Way of the Hunter,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Hunter,,C,Articles and Implements,-,,See Hunter Quests - 1 Class Trait Point,,45,
+Class,Hunter,,C,The Path of the Foe Trapper,20,,See Hunter Quests - 1 Class Trait Point,,58,
+Class,Hunter,,C,The Jolly Hunter,20,,Purchase class specific book from Iron Garrison Guards reputation merchant [kindred required],,-,
+Class,Hunter,,C,The Mines of Moria,20,,Complete Mines of Moria - Books 1-6 - 1 Class Trait Point,,-,
+Class,Hunter,,C,Promotion Points 1,-,,Earn 100 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Hunter,,C,Promotion Points 2,-,,Earn 200 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Hunter,,Q,The Hunter's Path,,,Flambard Took - Bree,Swift Arrow,15,Solo
+Class,Hunter,,Q,A Hunter's Charge,,,Flambard Took - Bree,Earthborn,30,Solo
+Class,Hunter,,Q,The Swiftest Arrow is Learning,,,Fenton Marshley - Hunting Lodge (Archet),,45,Solo
+Class,Hunter,,Q,-> Articles of Discovery,,,Fenton Marshley - Hunting Lodge (Archet),Righteous Bow,45,Solo
+Class,Hunter,,Q,-> Implements of the Hunt,,,Fenton Marshley - Hunting Lodge (Archet),,45,Solo
+Class,Hunter,,Q,A Lesson from Legolas,,,Fenton Marshley - Hunting Lodge (Archet),,45,Solo
+Class,Hunter,,Q,The Path of the Trapper,,,Armbeald - The Orc-watch,,58,Solo
+Class,Hunter,,Q,-> Blindside,,,Armbeald - The Orc-watch,,58,Solo
+Class,Hunter,,Q,-> The Passage of Foes,,,Armbeald - The Orc-watch,,58,Solo
+Class,Hunter,,Q,-> Strength of Earth,,,Armbeald - The Orc-watch,,58,Solo
+Class,Hunter,,Q,-> Set the Trap,,,Armbeald - The Orc-watch - involves The Grand Stair,Trap Artist,58,Fellow
+Class,Hunter,,Q,Wilderness by Ost Guruth,,,Frideric the Elder - Ost Guruth – port skill,,26,Solo
+Class,Hunter,,Q,Tracks Through Evendim,,,Auto-bestow – port skill,,36,Solo
+Class,Hunter,,Q,Desolation by Aughaire,,,Torcall – Aughaire – port skill,,44,Solo
+Class,Hunter,,Q,Waste Near Gath Forthnir,,,Maerchiniath - Gath Forthnir – port skill,,48,Solo
+Class,Hunter,,Q,Lay of the Land,,,Auto-bestow – port skill,,51,Solo
+Class,Lore-master,,C,Class Deeds - Tier 1,-,,"Complete Master of the Staff, Light of Hope, and Power and Wisdom - 1 Class Trait Point",,5,
+Class,Lore-master,,C,Master of the Staff,5,,Hit with Staff-strike (600) - 200/day,,5,
+Class,Lore-master,,C,Light of Hope,5,,Use Light of Hope (600) - 120/day,,5,
+Class,Lore-master,,C,Power and Wisdom,5,,Hit with Power of Knowledge (250) - 85/day,,16,
+Class,Lore-master,,C,Class Deeds - Tier 2,-,,"Complete Master of Beasts, Deep Lore, and Dunedan-learning - 1 Class Trait Point",,10,
+Class,Lore-master,,C,Master of Beasts,5,,Summon animal companions (200) - 70/day,,5,
+Class,Lore-master,,C,Deep Lore,5,,"Hit with ""Lore"" skills (500) - 100/day",,10,
+Class,Lore-master,,C,Dunedan-learning,5,,"Use ""Sign of Power"" or ""Sign of Battle"" skills (1000) - 100/day",,10,
+Class,Lore-master,,C,Class Deeds - Tier 3,-,,"Complete A Well-ordered Mind, Healer, and A Shocking Strike - 1 Class Trait Point",,15,
+Class,Lore-master,,C,A Well-ordered Mind,-,,See Lore-master Quests,,15,
+Class,Lore-master,,C,Healer,5,,Use Knowledge of Cures (250) - 40/day,,16,
+Class,Lore-master,,C,A Shocking Strike,5,,Hit with Lightning Strike (300) - 60/day,,10,
+Class,Lore-master,,C,Class Deeds - Tier 4,-,,"Complete Harmony with Nature, Subtlety of Wisdom, and Improved Inner Flame - 1 Class Trait Point",,20,
+Class,Lore-master,,C,Harmony with Nature,5,,Hit with Cracked Earth (400) - 60/day,,20,
+Class,Lore-master,,C,Subtlety of Wisdom,5,,Hit with Blinding Flash (400) - 60/day,,20,
+Class,Lore-master,,C,Improved Inner Flame,5,,Use Inner Flame (150) - 15/day,,20,
+Class,Lore-master,,C,Class Deeds - Tier 5,-,,"Complete A Lore-master's Will, Knowledge of the Past, and Tactically Adept - 1 Class Trait Point",,30,
+Class,Lore-master,,C,A Lore-master's Will,-,,See Lore-master Quests,,30,
+Class,Lore-master,,C,Knowledge of the Past,5,,Use Share the Power (300) - 30/day,,30,
+Class,Lore-master,,C,Tactically Adept,5,,"Hit with Burning Embers, Sticky Gourd, or their improved versions (500) - 50/day",,30,
+Class,Lore-master,,C,Class Deeds - Tier 6,-,,"Complete Proof Against All Ills, Awareness of Body, and The Study of Wind-lore - 1 Class Trait Point",,40,
+Class,Lore-master,,C,Proof Against All Ills,5,,Use Knowledge of Cures (300) - 30/day,,30,
+Class,Lore-master,,C,Awareness of Body,5,,Use Wisdom of the Council (100) - 15/day,,30,
+Class,Lore-master,,C,The Study of Wind-lore,5,,Hit with Gust of Wind (1000) - 100/day,,30,
+Class,Lore-master,,C,Class Deeds - Tier 7,-,,"Complete The Study of Fire-lore, The Study of Frost-lore, and Improved Storm-lore - 1 Class Trait Point",,40,
+Class,Lore-master,,C,The Study of Fire-lore,5,,Hit with Fire-lore or Sign of Battle: Wizard's Fire (350) - 35/day,,40,
+Class,Lore-master,,C,The Study of Frost-lore,5,,Hit with Frost-lore or Gust of Wind (350) - 35/day,,40,
+Class,Lore-master,,C,Improved Storm-lore,5,,Hit with Storm-lore or Lightning Strike (250) - 25/day,,40,
+Class,Lore-master,,C,Class Deeds - Tier 8,-,,"Complete Improved Sign of Power: Command, Improved Sign of Battle, and The Secret of Tar - 1 Class Trait Point",,50,
+Class,Lore-master,,C,Improved Sign of Power: Command,5,,Hit with Sign of Power: Command (350) - 35/day,,40,
+Class,Lore-master,,C,Improved Sign of Battle,5,,Hit with Sign of Battle: Wizard's Fire (750) - 75/day,,50,
+Class,Lore-master,,C,The Secret of Tar,5,,Use Sticky Tar (250) - 25/day,,50,
+Class,Lore-master,,C,Lore of the Blade,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Lore-master,,C,Of Leaf and Twig,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Lore-master,,C,The Book of Beasts,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Lore-master,,C,Articles and Implements,-,,See Lore-master Quests - 1 Class Trait Point,,45,
+Class,Lore-master,,C,The Path of the Ancient Master,20,,See Lore-master Quests - 1 Class Trait Point,,58,
+Class,Lore-master,,C,The Book of Nature,20,,Purchase class specific book from Iron Garrison Guards reputation merchant [kindred required],,-,
+Class,Lore-master,,C,The Mines of Moria,20,,Complete Mines of Moria - Books 1-6 - 1 Class Trait Point,,-,
+Class,Lore-master,,C,Promotion Points 1,-,,Earn 100 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Lore-master,,C,Promotion Points 2,-,,Earn 200 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Lore-master,,Q,A Well-ordered Mind,,,Dalton Willow - Scholar's Stair Archives,Well-ordered Mind,15,Solo
+Class,Lore-master,,Q,A Lore-master's Will,,,Dalton Willow - Scholar's Stair Archives,Nature's Fury,30,Solo
+Class,Lore-master,,Q,The Wisest Way is Contemplation,,,Isdi - Edhelion Watch,,45,Solo
+Class,Lore-master,,Q,-> Articles of Mystery,,,Isdi - Edhelion Watch,Beast Master,45,Solo
+Class,Lore-master,,Q,-> Implements of Knowledge,,,Isdi - Edhelion Watch,,45,Solo
+Class,Lore-master,,Q,A Lesson from Lord Elrond,,,Isdi - Edhelion Watch,,45,Solo
+Class,Lore-master,,Q,The Path of the Ancient Master,,,Winiel - The Rotting Cellar,,58,Solo
+Class,Lore-master,,Q,-> Beacon of Hope,,,Winiel - The Rotting Cellar,,58,Solo
+Class,Lore-master,,Q,-> Share the Power,,,Winiel - The Rotting Cellar,,58,Solo
+Class,Lore-master,,Q,-> Knowledge of the Lore-master,,,Winiel - The Rotting Cellar,,58,Solo
+Class,Lore-master,,Q,-> Light of the Rising Dawn,,,Winiel - The Rotting Cellar - involves The Forges of Khazad-dum,Ancient Master,58,Fellow
+Class,Lore-master,,Q,Friend of the Wild,,,"Radagast the Brown – after Book 2, Chapter 16",,29,Solo
+Class,Lore-master,,Q,-> Friend of Hares,,,Radagast the Brown,,29,Solo
+Class,Lore-master,,Q,-> Friend of Turtles,,,Radagast the Brown,,29,Solo
+Class,Lore-master,,Q,-> Friend of Sparrows,,,Radagast the Brown,Friend of the Wild,29,Solo
+Class,Minstrel,,C,Class Deeds - Tier 1,-,,"Complete Harmonious Melody, Herald's Hammer, and Smooth Voice - 1 Class Trait Point",,5,
+Class,Minstrel,,C,Harmonious Melody,5,,"Hit with ""Ballad"" or ""Coda"" skills (1500) - 500/day",,5,
+Class,Minstrel,,C,Herald's Hammer,5,,"Hit with Herald's Strike, Hero's Strike, or Dissonant Strike (700) - 240/day",,5,
+Class,Minstrel,,C,Smooth Voice,5,,Hit with Piercing Cry (600) - 200/day,,5,
+Class,Minstrel,,C,Class Deeds - Tier 2,-,,"Complete Powerful Voice, Enduring Morale, and Life-singer - 1 Class Trait Point",,10,
+Class,Minstrel,,C,Powerful Voice,5,,"Hit with ""Cry"" skills (300) - 100/day",,5,
+Class,Minstrel,,C,Enduring Morale,5,,"Use ""Healing"" skills (2000) - 200/day",,10,
+Class,Minstrel,,C,Life-singer,5,,"Use ""Healing"" or ""Motivation"" skills (1000) - 150/day",,10,
+Class,Minstrel,,C,Class Deeds - Tier 3,-,,"Complete A Song for the Company, Unrelenting, and Light in the Dark - 1 Class Trait Point",,15,
+Class,Minstrel,,C,A Song for the Company,-,,See Minstrel Quests,,15,
+Class,Minstrel,,C,Unrelenting,5,,Achieve critical hit with Piercing Cry (100) - 20/day,,10,
+Class,Minstrel,,C,Light in the Dark,5,,Hit with Minor Ballad (1000) - 150/day,,10,
+Class,Minstrel,,C,Class Deeds - Tier 4,-,,"Complete Improved Herald's Strike, Improved Raise the Spirit, and Dynamic Performance - 1 Class Trait Point",,20,
+Class,Minstrel,,C,Improved Herald's Strike,5,,"Hit with Herald's Strike, Hero's Strike, or Dissonant Strike (250) - 50/day",,10,
+Class,Minstrel,,C,Improved Raise the Spirit,5,,Use any version of Raise the Spirit (500) - 50/day,,20,
+Class,Minstrel,,C,Dynamic Performance,5,,"Change ""Stance"" (300) - 60/day",,10,
+Class,Minstrel,,C,Class Deeds - Tier 5,-,,"Complete A Minstrel's Hope, Silver Tongue, and Graceful Demeanor - 1 Class Trait Point",,30,
+Class,Minstrel,,C,A Minstrel's Hope,-,,See Minstrel Quests,,30,
+Class,Minstrel,,C,Silver Tongue,5,,Use Cry of the Chorus (125) - 20/day,,26,
+Class,Minstrel,,C,Graceful Demeanor,5,,Use any version of Enlivening Grace (100) - 15/day,,20,
+Class,Minstrel,,C,Class Deeds - Tier 6,-,,"Complete Subtle Movements, Heralded Saviour, and Power of Song - 1 Class Trait Point",,40,
+Class,Minstrel,,C,Subtle Movements,5,,Use Anthem of Prowess (300) - 45/day,,30,
+Class,Minstrel,,C,Heralded Saviour,5,,Use Song of Aid (400) - Tier 6 Set Bonus - 40/day,,45,
+Class,Minstrel,,C,Power of Song,5,,"Use ""Healing"" skills (1000) - 150/day",,30,
+Class,Minstrel,,C,Class Deeds - Tier 7,-,,"Complete Improved Echoes of Battle, Battle-hymn, and Strength of Voice - 1 Class Trait Point",,40,
+Class,Minstrel,,C,Improved Echoes of Battle,5,,"Use Melody of Battle, or hit with Echoes of Battle or Timeless Echoes of Battle (250) - 30/day",,35,
+Class,Minstrel,,C,Battle-hymn,5,,Hit with Cry of the Valar (250) - 25/day,,45,
+Class,Minstrel,,C,Strength of Voice,5,,Use Anthem of War (500) - 50/day,,30,
+Class,Minstrel,,C,Class Deeds - Tier 8,-,,"Complete Dauntless, Lyrics of Bravery, and Spectacular Finish - 1 Class Trait Point",,50,
+Class,Minstrel,,C,Dauntless,5,,Use Story of Courage (150) - 15/day,,40,
+Class,Minstrel,,C,Lyrics of Bravery,5,,Use Anthem of Composure (1000) - 100/day,,50,
+Class,Minstrel,,C,Spectacular Finish,5,,"Achieve critical hit with ""Coda"" skills (250) - 30/day",,50,
+Class,Minstrel,,C,Melodies of the Valar,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Minstrel,,C,The Rising Chord,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Minstrel,,C,Valour's Marches,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Minstrel,,C,Articles and Implements,-,,See Minstrel Quests - 1 Class Trait Point,,45,
+Class,Minstrel,,C,The Path of the Watcher of Resolve,20,,See Minstrel Quests - 1 Class Trait Point,,58,
+Class,Minstrel,,C,The Verses of the North,20,,Purchase class specific book from Iron Garrison Guards reputation merchant [kindred required],,-,
+Class,Minstrel,,C,The Mines of Moria,20,,Complete Mines of Moria - Books 1-6 - 1 Class Trait Point,,-,
+Class,Minstrel,,C,Promotion Points 1,-,,Earn 100 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Minstrel,,C,Promotion Points 2,-,,Earn 200 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Minstrel,,C,Mentor of Song,5,,"Use ""Mentor"" skills on a fellowship member (3)",,-,
+Class,Minstrel,,C,Exemplar of Song,5,,"Use ""Mentor"" skills on a fellowship member (9)",,-,
+Class,Minstrel,,Q,A Song for the Company,,,Burt Ninetails - The Prancing Pony,Song Warrior,15,Solo
+Class,Minstrel,,Q,A Minstrel's Hope,,,Burt Ninetails - The Prancing Pony,Ballad Master,30,Solo
+Class,Minstrel,,Q,The Finest Melody is Understanding,,,Baillindiel - Celondim,,45,Solo
+Class,Minstrel,,Q,-> Articles of Harmony,,,Baillindiel - Celondim,Hopeful Heart,45,Solo
+Class,Minstrel,,Q,-> Implements of Song,,,Baillindiel - Celondim,,45,Solo
+Class,Minstrel,,Q,A Lesson from Linder,,,Baillindiel - Celondim,,45,Solo
+Class,Minstrel,,Q,The Path of the Watcher of Resolve,,,Pada - The Shadowed Refuge,,58,Solo
+Class,Minstrel,,Q,-> Triumphant Spirit,,,Pada - The Shadowed Refuge,,58,Solo
+Class,Minstrel,,Q,-> Song of the Hopeful Heart,,,Pada - The Shadowed Refuge,,58,Solo
+Class,Minstrel,,Q,-> Echoes of Battle,,,Pada - The Shadowed Refuge,,58,Solo
+Class,Minstrel,,Q,-> A Fellowship's Heart,,,Pada - The Shadowed Refuge - involves Skumfil,Healing Spirit,58,Fellow
+Class,Rune-keeper,,C,Class Deeds - Tier 1,-,,"Complete Winter-storm, Thunderous Words, and Master of Allusion - 1 Class Trait Point",,5,
+Class,Rune-keeper,,C,Winter-storm,5,,"Hit with ""Fury of Storms"" skills (500) - 150/day",,5,
+Class,Rune-keeper,,C,Thunderous Words,5,,Hit with Scribe's Spark (125) - 25/day,,5,
+Class,Rune-keeper,,C,Master of Allusion,5,,"Use ""Words of Grace"" skills (200) - 50/day",,5,
+Class,Rune-keeper,,C,Class Deeds - Tier 2,-,,"Complete Tale of Rage, Rune Master, and Versatility - 1 Class Trait Point",,10,
+Class,Rune-keeper,,C,Tale of Rage,5,,"Hit with ""Wrath of Flames"" skills (500) - 100/day",,5,
+Class,Rune-keeper,,C,Rune Master,5,,"Use ""Rune-stone"" skills (125) - 25/day",,15,
+Class,Rune-keeper,,C,Versatility,5,,"Use Mending Verse or hit with Sustaining Bolt, or Smouldering Wrath (125) - 25/day",,10,
+Class,Rune-keeper,,C,Class Deeds - Tier 3,-,,"Complete An Eye in the Storm, Conflagration of Runes, and Confounding Principles - 1 Class Trait Point",,15,
+Class,Rune-keeper,,C,An Eye in the Storm,-,,See Rune-keeper Quests,,15,
+Class,Rune-keeper,,C,Conflagration of Runes,5,,Hit with Fiery Ridicule (375) - 75/day,,10,
+Class,Rune-keeper,,C,Confounding Principles,5,,Hit with Shocking Touch (125) - 25/day,,10,
+Class,Rune-keeper,,C,Class Deeds - Tier 4,-,,"Complete Written in Stone, The Prophetic Word, and A Critical Writ - 1 Class Trait Point",,20,
+Class,Rune-keeper,,C,Written in Stone,5,,"Use ""Writ"" skills (250) - 50/day",,20,
+Class,Rune-keeper,,C,The Prophetic Word,5,,"Use ""Visions and Foretelling"" skills (250) - 50/day",,40,
+Class,Rune-keeper,,C,A Critical Writ,5,,"Achieve critical hit with ""Writ"" skills (200) - 50/day",,20,
+Class,Rune-keeper,,C,Class Deeds - Tier 5,-,,"Complete The Word of a Healer, Harsh Words, and Epic Essay - 1 Class Trait Point",,30,
+Class,Rune-keeper,,C,The Word of a Healer,-,,See Rune-keeper Quests,,30,
+Class,Rune-keeper,,C,Harsh Words,5,,Use Epic for the Ages or hit with Ceaseless Argument or Essence of Flame (350) - 50/day,,20,
+Class,Rune-keeper,,C,Epic Essay,5,,Use Epic for the Ages or hit with Ceaseless Argument or Essay of Fire (100) - 10/day,,30,
+Class,Rune-keeper,,C,Class Deeds - Tier 6,-,,"Complete Stare at the Flame, Self Starter, and New Beginnings - 1 Class Trait Point",,40,
+Class,Rune-keeper,,C,Stare at the Flame,5,,Hit with Distracting Flame (350) - 35/day,,30,
+Class,Rune-keeper,,C,Self Starter,5,,Use Self-motivation (350) - 35/day,,36,
+Class,Rune-keeper,,C,New Beginnings,5,,Use Nothing Truly Ends (25) - 5/day,,30,
+Class,Rune-keeper,,C,Class Deeds - Tier 7,-,,"Complete Closing Remarks, Alternate Ending, and Sign of the Times - 1 Class Trait Point",,40,
+Class,Rune-keeper,,C,Closing Remarks,5,,Hit with Final Word (65) - 15/day,,40,
+Class,Rune-keeper,,C,Alternate Ending,5,,Use Scribe a New Ending (100) - 10/day,,40,
+Class,Rune-keeper,,C,Sign of the Times,5,,"Use ""Rune-sign of X"" skills (100) - 10/day",,40,
+Class,Rune-keeper,,C,Class Deeds - Tier 8,-,,"Complete Wordsmith, Armour of Exaltation, and Master of Tragedy - 1 Class Trait Point",,50,
+Class,Rune-keeper,,C,Wordsmith,5,,"Hit with Combustion or Concession and Rebuttal, or use Bombastic Inspiration (200) - 20/day",,50,
+Class,Rune-keeper,,C,Armour of Exaltation,5,,"Use ""Armour of X"" skills (50) - 5/day",,50,
+Class,Rune-keeper,,C,Master of Tragedy,5,,"Achieve critical hit with ""Fury of Storms"" skills (500) - 50/day",,50,
+Class,Rune-keeper,,C,Golu o Maeth,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Rune-keeper,,C,Thunder and Flames,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Rune-keeper,,C,Whispers in the Dark,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Rune-keeper,,C,Articles and Implements,-,,See Rune-keeper Quests - 1 Class Trait Point,,45,
+Class,Rune-keeper,,C,The Path of the Restoring Rune,20,,See Rune-keeper Quests - 1 Class Trait Point,,58,
+Class,Rune-keeper,,C,On the Patterns of Wind and Rain,20,,Purchase class specific book from Iron Garrison Guards reputation merchant [kindred required],,-,
+Class,Rune-keeper,,C,The Mines of Moria,20,,Complete Mines of Moria - Books 1-6 - 1 Class Trait Point,,-,
+Class,Rune-keeper,,C,Promotion Points 1,-,,Earn 100 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Rune-keeper,,C,Promotion Points 2,-,,Earn 200 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Rune-keeper,,Q,An Eye in the Storm,,,Biarn - Scholar's Stair Archives,Eye in the Storm,15,Solo
+Class,Rune-keeper,,Q,The Word of a Healer,,,Biarn - Scholar's Stair Archives,Harbinger of Peace,30,Solo
+Class,Rune-keeper,,Q,Meaning Upon Meaning,,,Dardur - Gondamon,,45,Solo
+Class,Rune-keeper,,Q,-> A Worthy Garment,,,Dardur - Gondamon,Rune-crafter,45,Solo
+Class,Rune-keeper,,Q,-> Hewing a New Stone,,,Dardur - Gondamon,,45,Solo
+Class,Rune-keeper,,Q,Deep Secrets of Rune-craft,,,Dardur - Gondamon,,45,Solo
+Class,Rune-keeper,,Q,The Path of the Rune of Restoration,,,Marus - The Shadowed Refuge,,58,Solo
+Class,Rune-keeper,,Q,-> Prelude to Hope,,,Marus - The Shadowed Refuge,,58,Solo
+Class,Rune-keeper,,Q,-> Rousing Words,,,Marus - The Shadowed Refuge,,58,Solo
+Class,Rune-keeper,,Q,-> A Rune of Restoration,,,Marus - The Shadowed Refuge,,58,Solo
+Class,Rune-keeper,,Q,-> Secrets Long Forgotten,,,Marus - The Shadowed Refuge - involves The Sixteenth Hall,Foreshadower,58,Fellow
+Class,Warden,,C,Class Deeds - Tier 1,-,,"Complete Wary Blocks, Know Your Enemy, and Skill and Power - 1 Class Trait Point",,5,
+Class,Warden,,C,Wary Blocks,5,,Hit with Defensive Strike [gambit] (200) - 50/day,,5,
+Class,Warden,,C,Know Your Enemy,5,,Hit with Goad [gambit] (200) - 50/day,,5,
+Class,Warden,,C,Skill and Power,5,,Hit with Deft Strike [gambit] (200) - 50/day,,5,
+Class,Warden,,C,Class Deeds - Tier 2,-,,"Complete Efficient Thrust, Shield Trickery, and Deadly Insult - 1 Class Trait Point",,10,
+Class,Warden,,C,Efficient Thrust,5,,Hit with Quick Thrust or Quick Toss (200) - 50/day,,5,
+Class,Warden,,C,Shield-trickery,5,,Hit with Shield-bash or Behind the Shield (250) - 50/day,,10,
+Class,Warden,,C,Deadly Insult,5,,Hit with Warden's Taunt or Warden's Aim (250) - 50/day,,10,
+Class,Warden,,C,Class Deeds - Tier 3,-,,"Complete A Spear at the Southern March, Skillful Blocking, and Find Weakness - 1 Class Trait Point",,15,
+Class,Warden,,C,A Spear at the Southern March,-,,See Warden Quests,,15,
+Class,Warden,,C,Skillful Blocking,5,,Block enemy attacks (500) - 75/day,,10,
+Class,Warden,,C,Find Weakness,5,,Achieve critical hit with Critical Strike (75) - 20/day,,10,
+Class,Warden,,C,Class Deeds - Tier 4,-,,"Complete Never Say Die, A Keen Response, and Strong Voice - 1 Class Trait Point",,20,
+Class,Warden,,C,Never Say Die,5,,Hit with Safeguard [gambit] (200) - 35/day,,24,
+Class,Warden,,C,A Keen Response,5,,Hit with Precise Blow [gambit] (200) - 50/day,,20,
+Class,Warden,,C,Strong Voice,5,,Hit with War-cry [gambit] (500) - 75/day,,20,
+Class,Warden,,C,Class Deeds - Tier 5,-,,"Complete A Defense in the Darkness, Efficient Shield-work, and Perserverance - 1 Class Trait Point",,30,
+Class,Warden,,C,A Defense in the Darkness,-,,See Warden Quests,,30,
+Class,Warden,,C,Efficient Shield-work,5,,Block enemy attacks (750) - 100/day,,20,
+Class,Warden,,C,Perserverance,5,,Hit with Perservere [gambit] (500) - 50/day,,30,
+Class,Warden,,C,Class Deeds - Tier 6,-,,"Complete Terrible Visage, Expert Hurler, and On the Brink of Victory - 1 Class Trait Point",,40,
+Class,Warden,,C,Terrible Visage,5,,Hit with Fierce Resolve [gambit] (500) - 50/day,,30,
+Class,Warden,,C,Expert Hurler,5,,"Hit with ""Javelin"" skills (500) - 50/day",,30,
+Class,Warden,,C,On the Brink of Victory,5,,Hit with Brink of Victory [gambit] (350) - 35/day,,34,
+Class,Warden,,C,Class Deeds - Tier 7,-,,"Complete Mighty Throw, Master of the Spear, and Force of Personality - 1 Class Trait Point",,40,
+Class,Warden,,C,Mighty Throw,5,,Hit with Ambush (350) - 35/day,,40,
+Class,Warden,,C,Master of the Spear,5,,"Hit with Mighty Blow [gambit], Wall of Steel [gambit], or Boar's Rush [gambit] (500) - 50/day",,40,
+Class,Warden,,C,Force of Personality,5,,"Hit with Surety of Death [gambit], Resolution [gambit], or Spear of Virtue [gambit] (500) - 50/day",,40,
+Class,Warden,,C,Class Deeds - Tier 8,-,,"Complete Master of the Shield, Master of the Fist, and Dark Before Dawn - 1 Class Trait Point",,50,
+Class,Warden,,C,Master of the Shield,5,,"Hit with Shield Mastery [gambit], Celebration of Skill [gambit], or Dance of War [gambit] (500) - 50/day",,50,
+Class,Warden,,C,Master of the Fist,5,,Hit with Exhaltation of Battle [gambit] or Desolation [gambit] (500) - 50/day,,50,
+Class,Warden,,C,Dark Before Dawn,5,,Hit with Dark Before Dawn [gambit] (250) - 25/day,,60,
+Class,Warden,,C,Bullroarer's Boy,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Warden,,C,Chieftains of the Dunedain,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Warden,,C,The Watch Against the Night,10,,Purchase from class trainer: Find pages of the book - 1 Class Trait Point,,39,
+Class,Warden,,C,Articles and Implements,-,,See Warden Quests - 1 Class Trait Point,,45,
+Class,Warden,,C,The Path of the Masterful Fist,20,,See Warden Quests - 1 Class Trait Point,,58,
+Class,Warden,,C,The Path Less Trod,20,,Purchase class specific book from Iron Garrison Guards reputation merchant [kindred required],,-,
+Class,Warden,,C,The Mines of Moria,20,,Complete Mines of Moria - Books 1-6 - 1 Class Trait Point,,-,
+Class,Warden,,C,Promotion Points 1,-,,Earn 100 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Warden,,C,Promotion Points 2,-,,Earn 200 points in Epic Battles - 1 Class Trait Point,,10,
+Class,Warden,,Q,A Spear at the Southern March,,,Daisy Appledore - Bree Jail,Spearman of the March,15,Solo
+Class,Warden,,Q,A Defense in the Darkness,,,Daisy Appledore - Bree Jail,Ward of Justice,30,Solo
+Class,Warden,,Q,Watching the Marches,,,Hrotha - Ost Guruth,,45,Solo
+Class,Warden,,Q,-> A Warden's Second Best Ally,,,Hrotha - Ost Guruth,Gambit Master,45,Solo
+Class,Warden,,Q,-> A Weapon of Might and Glory,,,Hrotha - Ost Guruth,,45,Solo
+Class,Warden,,Q,Wisdom of the Wardens,,,Hrotha - Ost Guruth,,45,Solo
+Class,Warden,,Q,The Path of the Masterful Fist,,,Sadreda - The Shadowed Refuge,,58,Solo
+Class,Warden,,Q,-> Goad,,,Sadreda - The Shadowed Refuge,,58,Solo
+Class,Warden,,Q,-> Forced March / Along the Watchtower,,,Sadreda - The Shadowed Refuge,,58,Solo
+Class,Warden,,Q,-> Offensive Strike,,,Sadreda - The Shadowed Refuge,,58,Solo
+Class,Warden,,Q,-> Safeguard,,,Sadreda - The Shadowed Refuge - involves Dark Delvings,Ward of Strength,58,Fellow
