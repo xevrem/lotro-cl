@@ -14,14 +14,16 @@ function get_store(){
 
 class Store{
 
-  constructor(starting_state={}, dispatch_interval=1000, dispatch_limit=-1){
+  constructor(starting_state={}, dispatch_interval=60, dispatch_limit=-1){
     this.state = starting_state;
     this.subscribers = {};
     this.listeners = {};
     this.dispatch_queue = [];
     this.dispatch_interval = dispatch_interval;
     this.dispatch_limit = dispatch_limit;
-    this.dispatcher_id = setInterval(this._dispatcher.bind(this), this.dispatch_interval);
+    this.is_dispatching = false;
+    this.dispatcher = this._dispatcher.bind(this);
+    this.dispatcher_id = setTimeout(this.dispatcher, this.dispatch_interval);
   }
 
   subscribe(action, listener){
@@ -40,6 +42,13 @@ class Store{
 
   issue_action(action, data){
     this.dispatch_queue.push({'action':action, 'data':data})
+    if(!this.is_dispatching){
+      //issue a new dispatch if not currently dispatching
+      this.dispatcher();
+    }else{
+      console.log('dispatcher busy...')
+    }
+    
   }
 
   get_state(){
@@ -55,6 +64,12 @@ class Store{
   }
 
   _dispatcher(){
+    // console.log('dispatching...', this.dispatch_queue.length, this.dispatch_queue);
+
+    this.is_dispatching = true;
+
+    let start = Date.now();
+
     if(this.dispatch_limit >0){
       //dispatch limited number
       for(let i = 0; i < this.dispatch_limit; i++){
@@ -73,7 +88,8 @@ class Store{
           break;//break loop early since there is nothing to do
         }
       }
-    }else{
+    }
+    else{
       //dispatch all
       while (this.dispatch_queue.length > 0){
         //pull item from front
@@ -88,6 +104,25 @@ class Store{
         }
       }
     }
+
+    let finish = Date.now();
+
+    let elapsed = finish - start;
+
+    //dispatch more as needed
+    if(this.dispatch_queue.length > 0){
+      if(elapsed > this.dispatch_interval){
+        // console.log('exceeded interval time...');
+        //exceeded interval time, immediately dispatch
+        this.dispatch();
+      }else{
+        // console.log('dispatching again in:', this.dispatch_interval-elapsed);
+        //dispatch in standard not to exceed interval time
+        setTimeout(this.dispatcher, this.dispatch_interval-elapsed);
+      }
+    }
+
+    this.is_dispatching = false;
   }
 }
 

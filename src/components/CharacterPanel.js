@@ -55,7 +55,7 @@ class CharacterPanel extends Component{
 
   ///called whenever character information is changed
   handle_change(index, event){
-    console.log('handle_change called', index);
+    // console.log('handle_change called', index);
     let characters = this.props.characters;
     //determine what to update
     switch(event.target.name){
