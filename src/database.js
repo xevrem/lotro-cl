@@ -7,7 +7,7 @@ export function open_database(){
   return idb.open('lotro_store', DATABASE_VERSION, upgrade_db=>{
     switch(upgrade_db.oldVersion){
       case 0:
-        let characters_store = upgrade_db.createObjectStore('characters',{keyPath:'name'});
+        let characters_store = upgrade_db.createObjectStore('characters', {keyPath:'name'});
       case 1:
         let deeds_store = upgrade_db.createObjectStore('deeds');
     }
@@ -28,7 +28,7 @@ function _deed_fetch(db, url, deed_type){
 }
 
 export function initial_deed_population(db_promise){
-  db_promise.then(db=>{
+  return db_promise.then(db=>{
     if(!db) console.log('something broke...');
 
     //fetch Eriador deeds and store them in the local database
@@ -42,5 +42,13 @@ export function initial_deed_population(db_promise){
     }).catch(error=>{
       console.log('something went wrong...');
     })
+  })
+}
+
+export function load_deeds_from_db(db_promise, deed_type){
+  return db_promise.then(db=>{
+    return db.transaction('deeds').objectStore('deeds').get(deed_type).then(data=>{
+      return data
+    });
   })
 }
