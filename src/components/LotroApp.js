@@ -6,7 +6,8 @@ import DeedPanel from './DeedPanel';
 import SummaryPanel from './SummaryPanel';
 
 import {create_store, get_store} from './../Store';
-import {ACTION_TYPES} from './../constants';
+import {ACTION_TYPES, DEED_TYPES} from './../constants';
+import {open_database, initial_deed_population} from './../database';
 
 //import characters from '../data/characters.json';
 //import eriador from '../data/eriador.json';
@@ -14,7 +15,7 @@ import {ACTION_TYPES} from './../constants';
 let initial_state = {
   selected_character:0,
   selected_deed:0,
-  deed_nav: 0,
+  deed_nav_selected: 0,
   characters: null,
   deeds: ['Totam vero officia dolorum iure minus nisi',
       'nostrum provident reiciendis laudantium voluptatibus',
@@ -33,6 +34,7 @@ class LotroApp extends Component {
   constructor(){
     super();
     this.state = get_store().get_state();
+    this.db_promise = open_database();
   }
 
   componentDidMount(){
@@ -46,6 +48,8 @@ class LotroApp extends Component {
     get_store().subscribe(ACTION_TYPES.DEED_UPDATE, this.handle_deed_update.bind(this));
     get_store().subscribe('initialization', this.handle_initialization.bind(this));
 
+    initial_deed_population(this.db_promise);
+
     this.retrieve_app_data();
   }
 
@@ -53,22 +57,56 @@ class LotroApp extends Component {
     console.log('build_deed_data called...');
 
     //create character data fetch
-    let character_json = fetch('/data/characters.json')
-    .then(resp=>{
+    let character_json = fetch('/data/characters.json').then(resp=>{
       return resp.json();
     });
 
-    //create class data fetch
-    let class_json = fetch('/data/class_deeds.json')
-    .then(resp=>{
-      return resp.json();
+    //get stored character data
+    let characters_db = this.db_promise.then(db=>{
+      let tx = db.transaction('characters');
+      return tx.objectStore('characters').getAll();
+    });
+
+    //do initial class deed data fetch
+    let class_data = new Promise((resolve, reject)=>{
+      this.db_promise.then(db=>{
+        if(!db){
+          //no database for some reason, so fetch the data
+          console.log('fetching class deed data...')
+          resolve(fetch('/data/class_deeds.json').then(resp=>{
+            return resp.json();
+          }));
+        }else{
+          db.transaction('deeds').objectStore('deeds').get(DEED_TYPES.CLASS).then(data=>{
+            if(!data){
+              //db not populated, fetch it
+              console.log('fetching due to unpopulated db...')
+              resolve(fetch('/data/class_deeds.json').then(resp=>{
+                return resp.json();
+              }));
+            } else{
+              console.log('retriving stored db data...')
+              resolve(data);
+            }
+          });
+        }
+      });
     });
 
     //run promises async and set the data
-    Promise.all([character_json, class_json]).then(values=>{
+    Promise.all([characters_db, character_json, class_data]).then(values=>{
+      let characters = [];
+      //use database stored characters over json stored defaults...
+      if(values[0].length > 0){
+        characters = values[0];
+      }
+      else{
+        characters = values[1];
+      }
+
       get_store().issue_action('initialization', {
-        characters: values[0],
-        deeds: values[1]
+        characters: characters,
+        deeds: values[2]
       })
     })
   }
@@ -76,22 +114,22 @@ class LotroApp extends Component {
   load_changed_nav_data(data){
     console.log('load_changed_nav_data called...', data);
 
-    switch(data.deed_nav){
-      case 0://change to class deeds
+    switch(data.deed_nav_selected){
+      case DEED_TYPES.CLASS://change to class deeds
         fetch('/data/class_deeds.json')
         .then(resp=>{
           return resp.json();
-        }).then(js=>{
-          get_store().issue_action(ACTION_TYPES.DEED_UPDATE, {deeds:js});
+        }).then(data=>{
+          get_store().issue_action(ACTION_TYPES.DEED_UPDATE, {deeds:data});
         });
         break;
-      case 4://change to Eriador deeds
+      case DEED_TYPES.ERIADOR://change to Eriador deeds
         fetch('/data/eriador_deeds.json')
         .then(resp=>{
           return resp.json();
-        }).then(js=>{
+        }).then(data=>{
           //issue deed upate
-          get_store().issue_action(ACTION_TYPES.DEED_UPDATE, {deeds:js});
+          get_store().issue_action(ACTION_TYPES.DEED_UPDATE, {deeds:data});
         });
         break;
       default:
@@ -149,7 +187,7 @@ class LotroApp extends Component {
         <SummaryPanel />
         <DeedPanel  deeds={this.state.deeds} selected_deed={this.state.selected_deed}
           deed_types={this.state.deed_types} deed_text={this.state.deed_text} completed={this.state.completed}
-          deed_nav={this.state.deed_nav}/>
+          deed_nav_selected={this.state.deed_nav_selected}/>
       </div>
     );
   }

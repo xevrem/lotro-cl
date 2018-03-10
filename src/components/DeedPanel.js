@@ -31,7 +31,7 @@ class DeedPanel extends Component{
 
   handle_nav_click(index, event){
       // console.log('nav clicked...', event.target.text);
-      get_store().issue_action(ACTION_TYPES.DEED_NAV_CHANGED,{deed_nav:index});
+      get_store().issue_action(ACTION_TYPES.DEED_NAV_CHANGED,{deed_nav_selected:index});
   }
 
   handle_deed_complete(event){
@@ -77,7 +77,7 @@ class DeedPanel extends Component{
 
     //build nav bar selecting active tab
     let deed_types = this.props.deed_types.map((deed_type,i)=>{
-      return i === this.props.deed_nav ? (
+      return i === this.props.deed_nav_selected ? (
         <p key={i} className='clickable deed-nav-link active' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>
       ):(
         <p key={i} className='clickable deed-nav-link' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>

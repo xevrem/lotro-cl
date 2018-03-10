@@ -4,7 +4,7 @@ import './CharacterPanel.css';
 import {List, Panel, Button, SelectObject, TextInput} from './Common';
 import {RACES, CLASSES, ACTION_TYPES} from './../constants'
 import {get_store} from './../Store';
-
+import {open_database} from './../database';
 
 const Character = props =>{
   return (
@@ -29,6 +29,7 @@ class CharacterPanel extends Component{
     super(props);
     
     this.add_character_handler = this.handle_add_character.bind(this);
+    this.save_all_handler = this.handle_save_all.bind(this);
   }
 
   componentDidMount(){
@@ -83,6 +84,24 @@ class CharacterPanel extends Component{
     get_store().issue_action(ACTION_TYPES.CHARACTER_SELECTED, {selected_character:index})
   }
 
+  handle_save_all(){
+    let db_promise = open_database();
+    db_promise.then(db=>{
+      let tx = db.transaction('characters', 'readwrite');
+      let character_store = tx.objectStore('characters');
+
+      //create/update all characters in db
+      this.props.characters.map(character=>{
+        character_store.put(character);
+      });
+
+      return tx.complete;
+    }).then(()=>{
+      console.log('characters saved...');
+      alert('characters saved!');
+    })
+  }
+
   render (){
     //if no characters, there is nothing to render
     if(!this.props.characters) return('');
@@ -105,7 +124,7 @@ class CharacterPanel extends Component{
           <div className='character-actions'>
             <h4>Actions:</h4>
             <Button className='btn btn-primary' text='Add Character' onClick={this.add_character_handler}/>
-            <Button className='btn btn-success' text='Save All'/>
+            <Button className='btn btn-success' text='Save All' onClick={this.save_all_handler}/>
             <Button className='btn btn-danger' text='Delete Selected'/>
             <Button className='btn' text='Load From File'/>
             <Button className='btn' text='Download Character'/>
