@@ -29,9 +29,9 @@ class DeedPanel extends Component{
     this.deed_complete_handler = this.handle_deed_complete.bind(this);
   }
 
-  handle_nav_click(index, event){
+  handle_category_click(index, event){
       // console.log('nav clicked...', event.target.text);
-      get_store().issue_action(ACTION_TYPES.DEED_NAV_CHANGED,{deed_nav_selected:index});
+      get_store().issue_action(ACTION_TYPES.DEED_CATEGORY_CHANGED,{deed_category_selected:index});
   }
 
   handle_deed_complete(event){
@@ -45,26 +45,32 @@ class DeedPanel extends Component{
     get_store().issue_action(ACTION_TYPES.DEED_SELECTED, {selected_deed:index});
   }
 
+  handle_subcategory_click(index, event){
+    get_store().issue_action(ACTION_TYPES.DEED_SUBCATEGORY_CHANGED, {deed_subcategory_selected:index});
+  }
+
   render(){
     //if no deeds, there is nothing to render
-    if(!this.props.deeds || !this.props.deed_subcategories) return('');
-
-    //TODO: add filter on subcategories...
+    if(!this.props.deeds || !this.props.deed_subcatetories) return('');
 
     //build list of deeds to display
     let deed_list = this.props.deeds.map((deed,i)=>{
+
+      //filter non-selected subcategories
+      if(deed.Subcategory != this.props.deed_subcategory_selected) return;
+
       return i === this.props.selected_deed ? (
         <Deed key={i} name={deed.Deed} selected={true} onClick={this.handle_selected.bind(this,i)}>
           <div className={this.props.completed[i]?'deed-details completed':'deed-details'}>
             <p>{deed.Details}</p>
-            <p className='deed-stats'>Region: {deed.Subregion}</p>
-            <p className='deed-stats'>Faction: {deed.Faction}</p>
-            <p className='deed-stats'>Type: {deed.Type}</p>
-            <p className='deed-stats'>LP: {deed.LP}</p>
-            <p className='deed-stats'>Trait: {deed.Trait}</p>
-            <p className='deed-stats'>Title: {deed.Title}</p>
-            <p className='deed-stats'>Level: {deed.Level}</p>
-            <p className='deed-stats'>Party: {deed.Party}</p>
+            {/* <p className='deed-stats'>Region: {deed.Subcategory}</p> */}
+            {deed.Faction && <p className='deed-stats'>Faction: {deed.Faction}</p>}
+            {deed.Type && <p className='deed-stats'>Type: {deed.Type}</p>}
+            {deed.LP && <p className='deed-stats'>LP: {deed.LP}</p>}
+            {deed.Trait && <p className='deed-stats'>Trait: {deed.Trait}</p>}
+            {deed.Title && <p className='deed-stats'>Title: {deed.Title}</p>}
+            {deed.Level && <p className='deed-stats'>Level: {deed.Level}</p>}
+            {deed.Party && <p className='deed-stats'>Party: {deed.Party}</p>}
             {this.props.completed[this.props.selected_deed] ? (
               <Button className='deed-completed-btn btn btn-success' text='Completed!' onClick={this.deed_complete_handler}/>
             ):(
@@ -77,18 +83,23 @@ class DeedPanel extends Component{
       )
     })
 
+
     //build nav bar selecting active tab
-    let deed_types = this.props.deed_types.map((deed_type,i)=>{
-      return i === this.props.deed_nav_selected ? (
-        <p key={i} className='clickable deed-nav-link active' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>
+    let deed_categories = this.props.deed_categories.map((category,i)=>{
+
+      return i === this.props.deed_category_selected ? (
+        <p key={i} className='clickable deed-nav-link active' onClick={this.handle_category_click.bind(this, i)}>{category}</p>
       ):(
-        <p key={i} className='clickable deed-nav-link' onClick={this.handle_nav_click.bind(this, i)}>{deed_type}</p>
+        <p key={i} className='clickable deed-nav-link' onClick={this.handle_category_click.bind(this, i)}>{category}</p>
       )
     });
 
-    let subcategories = [...this.props.deed_subcategories].map((deed_sub,i)=>{
-      return (
-        <p key={i} className='clickable deed-nav-link'>{deed_sub}</p>
+    //build subcategories
+    let subcategories = [...this.props.deed_subcatetories].map((subcategory,i)=>{
+      return subcategory === this.props.deed_subcategory_selected ? (
+        <p key={i} className='clickable deed-nav-link active' onClick={this.handle_subcategory_click.bind(this, subcategory)}>{subcategory}</p>
+      ):(
+        <p key={i} className='clickable deed-nav-link' onClick={this.handle_subcategory_click.bind(this, subcategory)}>{subcategory}</p>
       )
     });
 
@@ -98,7 +109,7 @@ class DeedPanel extends Component{
         <h3 className='panel-header'>Deed Panel</h3>
         <h4>Category:</h4>
         <List list_class='deed-nav' list_item_class='deed-nav-item'>
-          {deed_types}
+          {deed_categories}
         </List>
         <h4>Subcategory:</h4>
         <List list_class='deed-nav' list_item_class='deed-nav-item'>

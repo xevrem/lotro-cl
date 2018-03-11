@@ -124,10 +124,10 @@ class CharacterPanel extends Component{
           <div className='character-actions'>
             <h4>Actions:</h4>
             <Button className='btn btn-primary' text='Add Character' onClick={this.add_character_handler}/>
-            <Button className='btn btn-success' text='Save All' onClick={this.save_all_handler}/>
+            <Button className='btn btn-success' text='Save All Characters' onClick={this.save_all_handler}/>
             <Button className='btn btn-danger' text='Delete Selected'/>
-            <Button className='btn btn-primary' text='Load From File'/>
-            <Button className='btn btn-primary' text='Download'/>
+            <Button className='btn btn-primary' text='Upload Characters'/>
+            <Button className='btn btn-primary' text='Download Characters'/>
           </div>
           <div className='character-area'>
             <h4>Characters:</h4>

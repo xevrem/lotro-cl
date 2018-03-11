@@ -48,7 +48,6 @@ class Store{
     }else{
       console.log('dispatcher busy...')
     }
-    
   }
 
   get_state(){

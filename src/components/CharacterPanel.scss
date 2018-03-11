@@ -41,8 +41,10 @@
   width: 120px;
   padding: 5px;
   margin: 0px;
-  border: 1px solid $fg-color;
-  border-radius: 3px;
+  // border: 1px solid $fg-color;
+  border: none;
+  border-bottom: 2px solid $shadow;
+  // border-radius: 3px;
 }
 
 select.character-form{
