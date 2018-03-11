@@ -6,6 +6,7 @@ $shadow: rgba(156, 156, 156, 0.788);
 $border: rgb(143, 118, 65);
 $success: rgb(64, 173, 42);
 $primary: rgb(60, 109, 255);
+$danger: rgb(192, 61, 61);
 
 .panel{
   margin: 10px 10px;
@@ -26,10 +27,11 @@ $primary: rgb(60, 109, 255);
 .btn{
   width: 120px;
   padding: 5px;
-  margin: 0px;
-  border: 1px solid $fg-color;
-  border-radius: 3px;
+  margin: 2px;
+  border: 1px solid $shadow;
+  border-radius: 2px;
   font-family: lotro;
+  background-color: $shadow;
 }
 
 .btn-success{
@@ -42,6 +44,12 @@ $primary: rgb(60, 109, 255);
   background-color: $primary;
   color:white;
   border: 1px solid $primary;
+}
+
+.btn-danger{
+  background-color: $danger;
+  color:white;
+  border: 1px solid $danger;
 }
 
 button:focus {outline:0;}

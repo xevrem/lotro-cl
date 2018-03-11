@@ -18,7 +18,7 @@ const Character = props =>{
       <TextInput div_class='character-form-div' className='character-form' label_class='character-label'
         name='character-level' value={props.level} label='Level: ' onChange={props.onChange}/>
       <div className='character-form-div'>
-        <Button className='character-form' text='Select' onClick={props.onSelected}/>
+        <Button className='btn btn-primary character-form' text='Select' onClick={props.onSelected}/>
       </div>
     </div>
   );
@@ -126,10 +126,11 @@ class CharacterPanel extends Component{
             <Button className='btn btn-primary' text='Add Character' onClick={this.add_character_handler}/>
             <Button className='btn btn-success' text='Save All' onClick={this.save_all_handler}/>
             <Button className='btn btn-danger' text='Delete Selected'/>
-            <Button className='btn' text='Load From File'/>
-            <Button className='btn' text='Download Character'/>
+            <Button className='btn btn-primary' text='Load From File'/>
+            <Button className='btn btn-primary' text='Download'/>
           </div>
           <div className='character-area'>
+            <h4>Characters:</h4>
             <List list_class='character-list' list_item_class='character-list-item'>
               {character_list}
             </List>

@@ -14,10 +14,11 @@
 .btn {
   width: 120px;
   padding: 5px;
-  margin: 0px;
-  border: 1px solid rgba(58, 58, 58, 0.788);
-  border-radius: 3px;
-  font-family: lotro; }
+  margin: 2px;
+  border: 1px solid rgba(156, 156, 156, 0.788);
+  border-radius: 2px;
+  font-family: lotro;
+  background-color: rgba(156, 156, 156, 0.788); }
 
 .btn-success {
   background-color: #40ad2a;
@@ -28,6 +29,11 @@
   background-color: #3c6dff;
   color: white;
   border: 1px solid #3c6dff; }
+
+.btn-danger {
+  background-color: #c03d3d;
+  color: white;
+  border: 1px solid #c03d3d; }
 
 button:focus {
   outline: 0; }

@@ -14,7 +14,7 @@ export function open_database(){
   });
 }
 
-function _deed_fetch(db, url, deed_type){
+function _deed_fetch_and_store(db, url, deed_type){
   return fetch(url).then(resp=>{
     return resp.json();
   }).then(data=>{
@@ -32,10 +32,10 @@ export function initial_deed_population(db_promise){
     if(!db) console.log('something broke...');
 
     //fetch Eriador deeds and store them in the local database
-    let eriador_deeds = _deed_fetch(db, '/data/eriador_deeds.json', DEED_TYPES.ERIADOR);
+    let eriador_deeds = _deed_fetch_and_store(db, '/data/eriador_deeds.json', DEED_TYPES.ERIADOR);
 
     //fetch class deeds and store them in the local database
-    let class_deeds = _deed_fetch(db, '/data/class_deeds.json', DEED_TYPES.CLASS);
+    let class_deeds = _deed_fetch_and_store(db, '/data/class_deeds.json', DEED_TYPES.CLASS);
 
     return Promise.all([eriador_deeds, class_deeds]).then(values=>{
       console.log('everything loaded fine...');

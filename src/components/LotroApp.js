@@ -8,6 +8,7 @@ import SummaryPanel from './SummaryPanel';
 import {create_store, get_store} from './../Store';
 import {ACTION_TYPES, DEED_TYPES} from './../constants';
 import {open_database, initial_deed_population, load_deeds_from_db} from './../database';
+import { Button } from './Common';
 
 //import characters from '../data/characters.json';
 //import eriador from '../data/eriador.json';
@@ -31,8 +32,8 @@ let initial_state = {
 create_store(initial_state, 16, -1);
 
 class LotroApp extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = get_store().get_state();
     this.db_promise = open_database();
   }
@@ -86,9 +87,17 @@ class LotroApp extends Component {
 
     //run promises async and set the data
     Promise.all([character_data, class_data]).then(data=>{
+
+      let categories = new Set();
+          
+      data[1].forEach(deed=>{
+        categories.add(deed.Subcategory);
+      })
+
       get_store().issue_action('initialization', {
         characters: data[0],
-        deeds: data[1]
+        deeds: data[1],
+        subcategories: categories
       })
     }).catch(error=>{
       console.log('retrieve_app_data error:',error);
@@ -133,13 +142,27 @@ class LotroApp extends Component {
     switch(data.deed_nav_selected){
       case DEED_TYPES.CLASS://change to class deeds
         load_deeds_from_db(this.db_promise, DEED_TYPES.CLASS).then(data=>{
-          get_store().issue_action(ACTION_TYPES.DEED_UPDATE, {deeds:data});
+          //create the subcategories
+          let subs = new Set();
+          
+          data.forEach(deed=>{
+            subs.add(deed.Subcategory);
+          })
+
+          get_store().issue_action(ACTION_TYPES.DEED_UPDATE, {deeds:data, subcategories:subs});
         });
         break;
       case DEED_TYPES.ERIADOR://change to Eriador deeds
         load_deeds_from_db(this.db_promise, DEED_TYPES.ERIADOR).then(data=>{
+          //create the subcategories
+          let subs = new Set();
+          
+          data.forEach(deed=>{
+            subs.add(deed.Subcategory);
+          })
+
           //issue deed upate
-          get_store().issue_action(ACTION_TYPES.DEED_UPDATE, {deeds:data});
+          get_store().issue_action(ACTION_TYPES.DEED_UPDATE, {deeds:data, subcategories:subs});
         });
         break;
       default:
@@ -156,11 +179,17 @@ class LotroApp extends Component {
     return (
       <div className="lotro-app">
         <h1 className='page-title'>Lotro Character Log</h1>
+        {this.props.update && <Button className='btn' text='Update Services?' onClick={()=>{
+          //tell service worker to take over now
+          this.props.worker.postMessage({action: 'SKIP_WAITING'})}
+        }/>}
         <CharacterPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
         <SummaryPanel />
         <DeedPanel  deeds={this.state.deeds} selected_deed={this.state.selected_deed}
           deed_types={this.state.deed_types} deed_text={this.state.deed_text} completed={this.state.completed}
-          deed_nav_selected={this.state.deed_nav_selected}/>
+          deed_nav_selected={this.state.deed_nav_selected}
+          deed_subcategories={this.state.subcategories}
+          deed_subcategory_selected={0}/>
       </div>
     );
   }

@@ -47,7 +47,9 @@ class DeedPanel extends Component{
 
   render(){
     //if no deeds, there is nothing to render
-    if(!this.props.deeds) return('');
+    if(!this.props.deeds || !this.props.deed_subcategories) return('');
+
+    //TODO: add filter on subcategories...
 
     //build list of deeds to display
     let deed_list = this.props.deeds.map((deed,i)=>{
@@ -84,13 +86,25 @@ class DeedPanel extends Component{
       )
     });
 
+    let subcategories = [...this.props.deed_subcategories].map((deed_sub,i)=>{
+      return (
+        <p key={i} className='clickable deed-nav-link'>{deed_sub}</p>
+      )
+    });
+
     //render the completed deed panel
     return(
       <div className='container panel deed-panel'>
         <h3 className='panel-header'>Deed Panel</h3>
+        <h4>Category:</h4>
         <List list_class='deed-nav' list_item_class='deed-nav-item'>
           {deed_types}
         </List>
+        <h4>Subcategory:</h4>
+        <List list_class='deed-nav' list_item_class='deed-nav-item'>
+          {subcategories}
+        </List>
+        <h4>Deeds:</h4>
         <Panel panel_class='col deed-panel-left'>
           <List list_class='deed-list' list_item_class='deed-list-item'>
             {deed_list}

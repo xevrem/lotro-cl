@@ -5,7 +5,7 @@ import LotroApp from './components/LotroApp';
 
 let refreshing = false;
 
-ReactDOM.render(<LotroApp />, document.getElementById('root'));
+ReactDOM.render(<LotroApp update={false}/>, document.getElementById('root'));
 register_service_worker();
 
 
@@ -14,7 +14,7 @@ function register_service_worker(){
 
   navigator.serviceWorker.register('/service_worker.js').then(registration=>{
     if(registration.waiting){
-      update_ready(registration.waiting)
+      update_ready(registration.waiting);
       return;
     }
 
@@ -28,11 +28,10 @@ function register_service_worker(){
     });
   });
 
-  refreshing = false;
   navigator.serviceWorker.addEventListener('controllerchange', function() {
-    if (refreshing) return;
+    //if (refreshing) return;
     window.location.reload();
-    refreshing = true;
+    //refreshing = true;
   });
 }
 
@@ -41,9 +40,7 @@ function update_ready(worker){
   console.log('update_ready called...');
 
   //TODO: add some sort of update mechanism for users...
-
-  //tell service worker to take over now
-  worker.postMessage({action: 'SKIP_WAITING'});
+  ReactDOM.render(<LotroApp update={true} worker={worker}/>, document.getElementById('root'));
 }
 
 function track_installing(worker){
