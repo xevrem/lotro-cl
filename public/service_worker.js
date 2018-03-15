@@ -104,7 +104,7 @@ self.addEventListener('fetch', event => {
 //if the app says you should take over, take over now.
 self.addEventListener('message', event => {
   if (event.data.action === 'SKIP_WAITING') {
-    console.log('service_worker SKIP_WAITING....')
+    console.log('service_worker SKIP_WAITING....');
     self.skipWaiting();
   }
 });

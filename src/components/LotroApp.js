@@ -8,7 +8,7 @@ import SummaryPanel from './SummaryPanel';
 import {create_store, get_store} from './../Store';
 import {ACTION_TYPES, DEED_CATEGORIES} from './../constants';
 import {open_database, initial_deed_population, load_deeds_from_db} from './../database';
-import { Button } from './Common';
+import { Button, Modal } from './Common';
 
 //import characters from '../data/characters.json';
 //import eriador from '../data/eriador.json';
@@ -33,6 +33,7 @@ class LotroApp extends Component {
     super(props);
     this.state = get_store().get_state();
     this.db_promise = open_database();
+    this.modal_visible = true;
   }
 
   componentDidMount(){
@@ -168,11 +169,20 @@ class LotroApp extends Component {
     this.setState(data);
   }
 
+  toggle_modal(event){
+    console.log('toggle_modal called...')    
+    this.modal_visible=false
+  }
+
   render() {
     return (
       <div className="lotro-app">
         <h1 className='page-title'>Lotro Character Log</h1>
-        {this.props.update && <Button className='btn' text='Update SW?' onClick={this.props.onUpdateReady}/>}
+        {this.props.update && (
+          <Modal is_visible={this.modal_visible} onFocusLoss={this.toggle_modal.bind(this)}>
+            <Button className='btn' text='Update SW?' onClick={this.props.onUpdateReady}/>
+          </Modal>
+        )}
         <CharacterPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
         <SummaryPanel />
         <DeedPanel  deeds={this.state.deeds} selected_deed={this.state.selected_deed}

@@ -4,6 +4,7 @@
 */
 
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 function List(props) {
   let list_items = props.children.map((item, i) =>{
@@ -81,4 +82,53 @@ function TextInput(props){
   );
 }
 
-export {DoublePanel, List, Panel, Button, SelectObject, TextInput};
+class Modal extends Component{
+  constructor(props){
+    super(props);
+    this.state = {is_visible:true}
+    
+    this.focus_loss_handler = this.focus_loss_handler.bind(this);
+    this.component_cleanup = this.component_cleanup.bind(this);
+  }
+
+  componentDidMount () {
+    console.log('componentWillUnmount called...');
+    document.addEventListener('click', this.focus_loss_handler);
+    window.addEventListener('beforeunload', this.component_cleanup);
+  }
+
+  componentWillUnmount () {
+    console.log('componentWillUnmount called...');
+    this.cleanup();
+    window.removeEventListener('beforeunload', this.component_cleanup);
+  }
+
+  component_cleanup(){
+    console.log('component_cleanup called...');
+    document.removeEventListener('click', this.focus_loss_handler);
+  }
+
+  focus_loss_handler(event){
+    console.log('on_focus_loss_handler called...', event);
+
+    const area = ReactDOM.findDOMNode(this.refs.modal_content);
+    
+    if (!area.contains(event.target)) {
+      this.props.onFocusLoss(event);
+    }
+
+    this.setState({is_visible:false});
+  }
+
+  render(){
+    return this.state.is_visible && (
+      <div className='modal'>
+        <div className='modal-content' ref='modal_content'>
+          {this.props.children}
+        </div>
+      </div>
+    )
+  }
+}
+
+export {DoublePanel, List, Panel, Button, SelectObject, TextInput, Modal};
