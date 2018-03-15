@@ -85,7 +85,6 @@ function TextInput(props){
 class Modal extends Component{
   constructor(props){
     super(props);
-    this.state = {is_visible:true}
     
     this.focus_loss_handler = this.focus_loss_handler.bind(this);
     this.component_cleanup = this.component_cleanup.bind(this);
@@ -114,16 +113,19 @@ class Modal extends Component{
     const area = ReactDOM.findDOMNode(this.refs.modal_content);
     
     if (!area.contains(event.target)) {
-      this.props.onFocusLoss(event);
+      if(this.props.is_visible){
+        this.props.onFocusLoss(event);
+      }
     }
-
-    this.setState({is_visible:false});
   }
 
   render(){
-    return this.state.is_visible && (
-      <div className='modal'>
-        <div className='modal-content' ref='modal_content'>
+    let class_name = this.props.className || 'modal';
+    let content_class_name = this.props.conentClassName || 'modal-content';
+
+    return (
+      <div className={class_name} style={this.props.is_visible ? {display:'block'}:{display:'none'}}>
+        <div className={content_class_name} ref='modal_content'>
           {this.props.children}
         </div>
       </div>

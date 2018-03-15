@@ -178,11 +178,9 @@ class LotroApp extends Component {
     return (
       <div className="lotro-app">
         <h1 className='page-title'>Lotro Character Log</h1>
-        {this.props.update && (
-          <Modal is_visible={this.modal_visible} onFocusLoss={this.toggle_modal.bind(this)}>
-            <Button className='btn' text='Update SW?' onClick={this.props.onUpdateReady}/>
-          </Modal>
-        )}
+        <Modal className='modal' contentClassName='modal-content' is_visible={this.props.update} onFocusLoss={this.toggle_modal.bind(this)}>
+          <Button className='btn' text='Update SW?' onClick={this.props.onUpdateReady}/>
+        </Modal>
         <CharacterPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
         <SummaryPanel />
         <DeedPanel  deeds={this.state.deeds} selected_deed={this.state.selected_deed}
