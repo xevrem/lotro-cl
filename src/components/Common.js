@@ -82,10 +82,14 @@ function TextInput(props){
   );
 }
 
+/**
+ * [Modal description]
+ * @extends Component
+ */
 class Modal extends Component{
   constructor(props){
     super(props);
-    
+
     this.focus_loss_handler = this.focus_loss_handler.bind(this);
     this.component_cleanup = this.component_cleanup.bind(this);
   }
@@ -111,7 +115,7 @@ class Modal extends Component{
     console.log('on_focus_loss_handler called...', event);
 
     const area = ReactDOM.findDOMNode(this.refs.modal_content);
-    
+
     if (!area.contains(event.target)) {
       if(this.props.is_visible){
         this.props.onFocusLoss(event);

@@ -1,9 +1,5 @@
 @import './../common.scss';
 
-$deed-fg: rgb(143, 118, 65);
-$deed-bg: rgb(247, 226, 181);
-$highlight: #28a745;
-
 .deed-panel{
 }
 
@@ -77,7 +73,7 @@ $highlight: #28a745;
   display: inline-flex;
   margin: 5px;
   padding: 5px 10px;
-  box-shadow: 0 0 1px $deed-fg;
+  box-shadow: 0px 0px 2px $deed-fg;
 }
 
 .deed-list{

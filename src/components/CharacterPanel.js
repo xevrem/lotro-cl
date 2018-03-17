@@ -27,7 +27,7 @@ const Character = props =>{
 class CharacterPanel extends Component{
   constructor(props){
     super(props);
-    
+
     this.add_character_handler = this.handle_add_character.bind(this);
     this.save_all_handler = this.handle_save_all.bind(this);
   }
@@ -91,8 +91,8 @@ class CharacterPanel extends Component{
       let character_store = tx.objectStore('characters');
 
       //create/update all characters in db
-      this.props.characters.map(character=>{
-        character_store.put(character);
+      this.props.characters.forEach((character,i)=>{
+        character_store.put(character,i);
       });
 
       return tx.complete;
@@ -105,7 +105,7 @@ class CharacterPanel extends Component{
   render (){
     //if no characters, there is nothing to render
     if(!this.props.characters) return('');
-    
+
     //build character list
     let character_list = this.props.characters.map((character, i) =>{
       return (
@@ -119,7 +119,7 @@ class CharacterPanel extends Component{
 
     return(
       <Panel panel_class='panel character-panel'>
-        <h3 className='panel-header'>Character Panel</h3>
+        <h3 className='panel-header'>Characters</h3>
         <div className='character-grid'>
           <div className='character-actions'>
             <h4>Actions:</h4>

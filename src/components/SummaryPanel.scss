@@ -1,0 +1,19 @@
+@import './../common.scss';
+
+.summary-details{
+  // float:left;
+  margin: 5px;
+  padding: 5px;
+  // border-radius: 5px;
+  // border: 2px solid rgb(143, 118, 65);
+  background-color: rgb(247, 226, 181);
+  text-align: left;
+  box-shadow:  0 0 2px rgba(127, 127, 127, 1), 0 2px 4px rgba(0, 0, 0, .12), 0 4px 6px rgba(0, 0, 0, .24);
+}
+
+.summary-stat{
+display: inline-flex;
+margin: 5px;
+padding: 5px 10px;
+box-shadow: 0px 0px 2px $deed-fg;
+}

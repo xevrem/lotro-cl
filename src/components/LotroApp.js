@@ -7,24 +7,22 @@ import SummaryPanel from './SummaryPanel';
 
 import {create_store, get_store} from './../Store';
 import {ACTION_TYPES, DEED_CATEGORIES} from './../constants';
-import {open_database, initial_deed_population, load_deeds_from_db} from './../database';
+import {open_database, initial_deed_population, get_deeds_of_type, save_characters} from './../database';
 import { Button, Modal } from './Common';
 
-//import characters from '../data/characters.json';
-//import eriador from '../data/eriador.json';
-
 let initial_state = {
-  selected_character:0,
-  selected_deed:0,
+  selected_character:-1,
+  selected_deed:-1,
   deed_category_selected: 0,
   deed_subcategory_selected: '',
   deed_subcategories: null,
   characters: null,
   deeds: null,
-  deed_categories:[...Object.keys(DEED_CATEGORIES)],
-  //deed_categories:['Class','Race','Epic','Reputation','Eriador', 'Rhovanion', 'Gondor', 'Mordor', 'Skirmish', 'Instances', 'Hobbies'],
+  deed_categories: Object.keys(DEED_CATEGORIES),
+  //FIXME: have this stored/retrieved from character records
   completed:[false,false,false]
 };
+
 //create a store, update interval 16ms, dispatch all queued
 create_store(initial_state, 16, -1);
 
@@ -33,7 +31,6 @@ class LotroApp extends Component {
     super(props);
     this.state = get_store().get_state();
     this.db_promise = open_database();
-    this.modal_visible = true;
   }
 
   componentDidMount(){
@@ -90,7 +87,7 @@ class LotroApp extends Component {
     Promise.all([character_data, class_data]).then(data=>{
 
       let categories = new Set();
-          
+
       data[1].forEach(deed=>{
         categories.add(deed.Subcategory);
       })
@@ -103,7 +100,7 @@ class LotroApp extends Component {
     }).catch(error=>{
       console.log('retrieve_app_data error:',error);
     })
-  }  
+  }
 
   handle_initialization(state, data){
     console.log('handle_initialization called...');
@@ -113,6 +110,9 @@ class LotroApp extends Component {
   handle_character_action(state, data){
     console.log('handle_character_action called...');
     this.setState(data);
+
+    //save character data into db
+    save_characters(this.db_promise, state.characters);
   }
 
   handle_deed_action(stat, data){
@@ -123,14 +123,14 @@ class LotroApp extends Component {
   handle_deed_category_changed(state, data){
     console.log('handle_deed_category_changed called...', data);
     this.setState(data);
-    
-    //FIXME: this can be fixed later on, but for now switch is needed for development
+
+    //FIXME: this may be fixed later on, but for now switch is needed for development
     switch(data.deed_category_selected){
       case DEED_CATEGORIES.CLASS://change to class deeds
-        load_deeds_from_db(this.db_promise, DEED_CATEGORIES.CLASS).then(data=>{
+        get_deeds_of_type(this.db_promise, DEED_CATEGORIES.CLASS).then(data=>{
           //create the subcategories
           let subs = new Set();
-          
+
           data.forEach(deed=>{
             subs.add(deed.Subcategory);
           })
@@ -143,10 +143,10 @@ class LotroApp extends Component {
         });
         break;
       case DEED_CATEGORIES.ERIADOR://change to Eriador deeds
-        load_deeds_from_db(this.db_promise, DEED_CATEGORIES.ERIADOR).then(data=>{
+        get_deeds_of_type(this.db_promise, DEED_CATEGORIES.ERIADOR).then(data=>{
           //create the subcategories
           let subs = new Set();
-          
+
           data.forEach(deed=>{
             subs.add(deed.Subcategory);
           })
@@ -170,8 +170,7 @@ class LotroApp extends Component {
   }
 
   toggle_modal(event){
-    console.log('toggle_modal called...')    
-    this.modal_visible=false
+    console.log('toggle_modal called...')
   }
 
   render() {
@@ -182,8 +181,8 @@ class LotroApp extends Component {
           <Button className='btn' text='Update SW?' onClick={this.props.onUpdateReady}/>
         </Modal>
         <CharacterPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
-        <SummaryPanel />
-        <DeedPanel  deeds={this.state.deeds} selected_deed={this.state.selected_deed}
+        <SummaryPanel character={this.state.characters ? this.state.characters[this.state.selected_character]:null}/>
+        <DeedPanel deeds={this.state.deeds} selected_deed={this.state.selected_deed}
           deed_categories={this.state.deed_categories} deed_text={this.state.deed_text} completed={this.state.completed}
           deed_category_selected={this.state.deed_category_selected}
           deed_subcatetories={this.state.deed_subcategories}

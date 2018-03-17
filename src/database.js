@@ -7,9 +7,9 @@ export function open_database(){
   return idb.open('lotro_store', DATABASE_VERSION, upgrade_db=>{
     switch(upgrade_db.oldVersion){
       case 0:
-        let characters_store = upgrade_db.createObjectStore('characters', {keyPath:'name'});
+        upgrade_db.createObjectStore('characters');
       case 1:
-        let deeds_store = upgrade_db.createObjectStore('deeds');
+        upgrade_db.createObjectStore('deeds');
     }
   });
 }
@@ -47,10 +47,55 @@ export function initial_deed_population(db_promise){
   })
 }
 
-export function load_deeds_from_db(db_promise, deed_type){
+/**
+ * [return all deeds of passed DEED_TYPE]
+ * @param  {[Promise]} db_promise [idb database Promise]
+ * @param  {[DEED_TYPE]} deed_type  [DEED_TYPE desired]
+ * @return {[Array]}            [Array of deeds]
+ */
+export function get_deeds_of_type(db_promise, deed_type){
   return db_promise.then(db=>{
     return db.transaction('deeds').objectStore('deeds').get(deed_type).then(data=>{
       return data
     });
   })
+}
+
+//get all deeds
+export function get_all_deeds(db_promise){
+  return db_promise.then(db=>{
+    return db.transaction('deeds').objectStore('deeds').getAll().then(data=>{
+      return data;
+    });
+  });
+}
+
+//get character from database at index
+export function get_character(db_promise, index){
+  return db_promise.then(db=>{
+    return db.transaction('characters').objectStore('characters').get(index).then(data=>{
+      return data;
+    });
+  });
+}
+
+/**
+ * [save_characters description]
+ * @param  {[Promise]} db_promise [idb database promise]
+ * @param  {[Array]} characters [characters to save]
+ * @return {[Promise]}            [transaction promise]
+ */
+export function save_characters(db_promise, characters){
+  console.log('save_characters called...', characters);
+  return db_promise.then(db=>{
+    let tx = db.transaction('characters', 'readwrite');
+    let character_store = tx.objectStore('characters');
+
+    //update characters
+    characters.forEach((character, i)=>{
+      character_store.put(character, i);
+    });
+
+    return tx.complete;
+  });
 }
