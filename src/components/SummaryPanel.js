@@ -28,9 +28,24 @@ class SummaryPanel extends Component{
     //dont render if no character selected
     if (!this.props.character || !this.state.deeds) return('');
 
-    let total_deeds = 1926;
+    let total_deeds = 0;//1926;
+    let total_quests = 0;//1553;
+
+    this.state.deeds.forEach(deed_type => {
+      deed_type.forEach(deed=>{
+        switch(deed.Type){
+          case 'Q':
+            total_quests++;
+            break;
+          default:
+            total_deeds++;
+            break;
+        }
+      });
+      
+    });
+
     let total_deeds_complete = 500;
-    let total_quests = 1553;
     let total_quests_complete = 40;
 
     return(
