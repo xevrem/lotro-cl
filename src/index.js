@@ -6,7 +6,7 @@ import LotroApp from './components/LotroApp';
 let refreshing = false;
 
 ReactDOM.render(<LotroApp update={false}/>, document.getElementById('root'));
-register_service_worker();
+//register_service_worker();
 
 
 function register_service_worker(){
@@ -61,4 +61,3 @@ function track_installing(worker){
     }
   });
 }
-

@@ -4,7 +4,7 @@ import './CharacterPanel.css';
 import {List, Panel, Button, SelectObject, TextInput} from './Common';
 import {RACES, CLASSES, ACTION_TYPES} from './../constants'
 import {get_store} from './../Store';
-import {open_database} from './../database';
+import {open_database, clear_characters} from './../database';
 
 const Character = props =>{
   return (
@@ -30,6 +30,9 @@ class CharacterPanel extends Component{
 
     this.add_character_handler = this.handle_add_character.bind(this);
     this.save_all_handler = this.handle_save_all.bind(this);
+    this.download_characters_handler = this.handle_download_characters.bind(this);
+    this.delete_character_handler = this.handle_delete_character.bind(this);
+    this.db_promise = open_database();
   }
 
   componentDidMount(){
@@ -105,20 +108,55 @@ class CharacterPanel extends Component{
     })
   }
 
-  render (){
-    //if no characters, there is nothing to render
-    if(!this.props.characters) return('');
+  handle_download_characters(){
+    console.log('download_characters called...');
 
-    //build character list
-    let character_list = this.props.characters.map((character, i) =>{
-      return (
-        <Character key={i} name={character.name} race={character.race}
-          class={character.class} level={character.level}
-          selected={i === this.props.selected_character}
-          onChange={this.handle_change.bind(this, i)}
-          onSelected={this.selected_handler.bind(this, i)}/>
-      );
+    //build the blob out of the passed character data
+    let blob = new Blob([JSON.stringify(this.props.characters)]);
+
+    //create a temporary anchor
+    let a = window.document.createElement("a");
+
+    //create a 'link' to our data blob
+    a.href = window.URL.createObjectURL(blob, {type: "text/json"});
+    a.download = "lotro_cl_characters.json";
+
+    //append the link, activate it, then immediately remove it
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  handle_delete_character(){
+    console.log('handle_delete_character called...')
+    if(this.props.selected_character < 0) return;
+
+    let characters = this.props.characters;
+    characters.splice(this.props.selected_character, 1);
+
+    clear_characters(this.db_promise).then(()=>{
+      get_store().issue_action(ACTION_TYPES.CHARACTER_DELETED,{characters:characters});
+    }).catch(error=>{
+      console.log('handle_delete_character failed...', error);
     })
+  }
+
+  render (){
+
+    let character_list = [];
+    //if no characters, there is nothing to render
+    if(this.props.characters){
+      //build character list
+      character_list = this.props.characters.map((character, i) =>{
+        return (
+          <Character key={i} name={character.name} race={character.race}
+            class={character.class} level={character.level}
+            selected={i === this.props.selected_character}
+            onChange={this.handle_change.bind(this, i)}
+            onSelected={this.selected_handler.bind(this, i)}/>
+        );
+      })
+    }
 
     return(
       <Panel panel_class='panel character-panel'>
@@ -127,10 +165,10 @@ class CharacterPanel extends Component{
           <div className='character-actions'>
             <h4>Actions:</h4>
             <Button className='btn btn-primary' text='Add Character' onClick={this.add_character_handler}/>
-            <Button className='btn btn-success' text='Save All Characters' onClick={this.save_all_handler}/>
-            <Button className='btn btn-danger' text='Delete Selected'/>
+            {/* <Button className='btn btn-success' text='Save All Characters' onClick={this.save_all_handler}/> */}
+            <Button className='btn btn-danger' text='Delete Selected' onClick={this.delete_character_handler}/>
             <Button className='btn btn-primary' text='Upload Characters'/>
-            <Button className='btn btn-primary' text='Download Characters'/>
+            <Button className='btn btn-primary' text='Download Characters' onClick={this.download_characters_handler}/>
           </div>
           <div className='character-area'>
             <h4>Characters:</h4>

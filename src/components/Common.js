@@ -7,6 +7,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
 function List(props) {
+  if(!props.children) return ('');
+
   let list_items = props.children.map((item, i) =>{
     return(
       <li key={i} className={props.list_item_class}>
@@ -14,6 +16,7 @@ function List(props) {
       </li>
     );
   });
+
   return (
     <ul className={props.list_class}>
       {list_items}
@@ -95,24 +98,24 @@ class Modal extends Component{
   }
 
   componentDidMount () {
-    console.log('componentWillUnmount called...');
+    // console.log('componentDidMount called...');
     document.addEventListener('click', this.focus_loss_handler);
     window.addEventListener('beforeunload', this.component_cleanup);
   }
 
   componentWillUnmount () {
-    console.log('componentWillUnmount called...');
+    // console.log('componentWillUnmount called...');
     this.cleanup();
     window.removeEventListener('beforeunload', this.component_cleanup);
   }
 
   component_cleanup(){
-    console.log('component_cleanup called...');
+    // console.log('component_cleanup called...');
     document.removeEventListener('click', this.focus_loss_handler);
   }
 
   focus_loss_handler(event){
-    console.log('on_focus_loss_handler called...', event);
+    // console.log('on_focus_loss_handler called...', event);
 
     const area = ReactDOM.findDOMNode(this.refs.modal_content);
 

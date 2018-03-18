@@ -37,10 +37,11 @@ class LotroApp extends Component {
     console.log('mounted...')
     get_store().subscribe(ACTION_TYPES.CHARACTER_ADDED, this.handle_character_action.bind(this));
     get_store().subscribe(ACTION_TYPES.CHARACTER_SELECTED, this.handle_character_action.bind(this));
-    get_store().subscribe(ACTION_TYPES.CHARACTER_UPDATED, this.handle_character_action.bind(this))
+    get_store().subscribe(ACTION_TYPES.CHARACTER_UPDATED, this.handle_character_action.bind(this));
+    get_store().subscribe(ACTION_TYPES.CHARACTER_DELETED, this.handle_character_action.bind(this));
     get_store().subscribe(ACTION_TYPES.DEED_SELECTED, this.handle_deed_action.bind(this));
     get_store().subscribe(ACTION_TYPES.DEED_COMPLETED, this.handle_deed_action.bind(this));
-    get_store().subscribe(ACTION_TYPES.DEED_UPDATE, this.handle_deed_action.bind(this));
+    get_store().subscribe(ACTION_TYPES.DEED_UPDATED, this.handle_deed_action.bind(this));
     get_store().subscribe(ACTION_TYPES.DEED_CATEGORY_CHANGED, this.handle_deed_category_changed.bind(this));
     get_store().subscribe(ACTION_TYPES.DEED_SUBCATEGORY_CHANGED, this.handle_subcategory_changed.bind(this));
     get_store().subscribe('initialization', this.handle_initialization.bind(this));
@@ -62,9 +63,10 @@ class LotroApp extends Component {
           if(data.length>0){
             resolve(data);
           }else{
-            resolve(fetch('/data/characters.json').then(resp=>{
-              return resp.json();
-            }));
+            // resolve(fetch('/data/characters.json').then(resp=>{
+            //   return resp.json();
+            // }));
+            resolve([]);
           }
         })
       }).catch(error => {
@@ -142,6 +144,41 @@ class LotroApp extends Component {
           });
         });
         break;
+
+      case DEED_CATEGORIES.RACE:
+        get_deeds_of_type(this.db_promise, DEED_CATEGORIES.RACE).then(data=>{
+          //create the subcategories
+          let subs = new Set();
+
+          data.forEach(deed=>{
+            subs.add(deed.Subcategory);
+          })
+
+          get_store().issue_action(ACTION_TYPES.DEED_UPDATE, {
+            deeds:data,
+            deed_subcategories:subs,
+            deed_subcategory_selected: ''
+          });
+        });
+        break;
+
+      case DEED_CATEGORIES['SHADOWS OF ANGMAR']:
+        get_deeds_of_type(this.db_promise, DEED_CATEGORIES['SHADOWS OF ANGMAR']).then(data=>{
+          //create the subcategories
+          let subs = new Set();
+
+          data.forEach(deed=>{
+            subs.add(deed.Subcategory);
+          })
+
+          get_store().issue_action(ACTION_TYPES.DEED_UPDATE, {
+            deeds:data,
+            deed_subcategories:subs,
+            deed_subcategory_selected: ''
+          });
+        });
+        break;
+
       case DEED_CATEGORIES.ERIADOR://change to Eriador deeds
         get_deeds_of_type(this.db_promise, DEED_CATEGORIES.ERIADOR).then(data=>{
           //create the subcategories

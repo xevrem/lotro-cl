@@ -33,13 +33,21 @@ export function initial_deed_population(db_promise){
   return db_promise.then(db=>{
     if(!db) console.log('something broke...');
 
-    //fetch Eriador deeds and store them in the local database
-    let eriador_deeds = _deed_fetch_and_store(db, '/data/eriador_deeds.json', DEED_CATEGORIES.ERIADOR);
 
-    //fetch class deeds and store them in the local database
+    //fetch class deeds and store them
     let class_deeds = _deed_fetch_and_store(db, '/data/class_deeds.json', DEED_CATEGORIES.CLASS);
 
-    return Promise.all([eriador_deeds, class_deeds]).then(values=>{
+    //fetch race deeds and store them
+    let race_deeds = _deed_fetch_and_store(db, '/data/race_deeds.json', DEED_CATEGORIES.RACE);
+
+    //fetch epic deeds and store them
+    let epic_deeds = _deed_fetch_and_store(db, '/data/soa_deeds.json', DEED_CATEGORIES['SHADOWS OF ANGMAR']);
+
+    //fetch Eriador deeds and store them
+    let eriador_deeds = _deed_fetch_and_store(db, '/data/eriador_deeds.json', DEED_CATEGORIES.ERIADOR);
+
+
+    return Promise.all([class_deeds, race_deeds, epic_deeds, eriador_deeds]).then(values=>{
       console.log('everything loaded fine...');
     }).catch(error=>{
       console.log('something went wrong...');
@@ -65,6 +73,7 @@ export function get_deeds_of_type(db_promise, deed_type){
 export function get_all_deeds(db_promise){
   return db_promise.then(db=>{
     return db.transaction('deeds').objectStore('deeds').getAll().then(data=>{
+      console.log('get_all_deeds called...', data);
       return data;
     });
   });
@@ -86,7 +95,7 @@ export function get_character(db_promise, index){
  * @return {[Promise]}            [transaction promise]
  */
 export function save_characters(db_promise, characters){
-  console.log('save_characters called...', characters);
+  // console.log('save_characters called...', characters);
   return db_promise.then(db=>{
     let tx = db.transaction('characters', 'readwrite');
     let character_store = tx.objectStore('characters');
@@ -96,6 +105,24 @@ export function save_characters(db_promise, characters){
       character_store.put(character, i);
     });
 
+    return tx.complete;
+  });
+}
+
+export function delete_character(db_promise, character_index){
+  return db_promise.then(db => {
+    let tx = db.transaction('characters', 'readwrite');
+    let character_store = tx.objectStore('characters');
+    character_store.delete(character_index);
+    return tx.complete;
+  });
+}
+
+export function clear_characters(db_promise){
+  return db_promise.then(db => {
+    let tx = db.transaction('characters', 'readwrite');
+    let character_store = tx.objectStore('characters');
+    character_store.clear();
     return tx.complete;
   });
 }
