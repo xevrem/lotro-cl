@@ -31,6 +31,8 @@ class LotroApp extends Component {
     super(props);
     this.state = get_store().get_state();
     this.db_promise = open_database();
+
+    this.reset_database_handler = this.handle_reset_database.bind(this);
   }
 
   componentDidMount(){
@@ -206,6 +208,37 @@ class LotroApp extends Component {
     this.setState(data);
   }
 
+  handle_reset_database(){
+    console.log('handle_reset_database called...');
+    let reset_characters = new Promise((resolve, reject) => {
+      return this.db_promise.then(db => {
+        let tx = db.transaction('characters', 'readwrite');
+        tx.objectStore('characters').clear();
+
+        resolve(tx.complete);
+      }).catch(error => {
+        reject(error);
+      })
+    });
+
+    let reset_deeds = new Promise((resolve, reject) => {
+      return this.db_promise.then(db => {
+        let tx = db.transaction('deeds', 'readwrite');
+        tx.objectStore('deeds').clear();
+
+        resolve(tx.complete);
+      }).catch(error => {
+        reject(error);
+      })
+    })
+
+    Promise.all([reset_characters, reset_deeds]).then(()=>{
+      window.location.reload();
+    }).catch(error => {
+      console.log('handle_reset_database failure...', error);
+    });
+  }
+
   toggle_modal(event){
     console.log('toggle_modal called...')
   }
@@ -217,6 +250,7 @@ class LotroApp extends Component {
         <Modal className='modal' contentClassName='modal-content' is_visible={this.props.update} onFocusLoss={this.toggle_modal.bind(this)}>
           <Button className='btn' text='Update SW?' onClick={this.props.onUpdateReady}/>
         </Modal>
+        <Button className='btn' text='Reset DB' onClick={this.reset_database_handler} />
         <CharacterPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
         <SummaryPanel character={this.state.characters ? this.state.characters[this.state.selected_character]:null}/>
         <DeedPanel deeds={this.state.deeds} selected_deed={this.state.selected_deed}
