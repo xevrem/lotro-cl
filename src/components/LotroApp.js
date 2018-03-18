@@ -90,13 +90,13 @@ class LotroApp extends Component {
 
       data[1].forEach(deed=>{
         categories.add(deed.Subcategory);
-      })
+      });
 
       get_store().issue_action('initialization', {
         characters: data[0],
         deeds: data[1],
         deed_subcategories: categories
-      })
+      });
     }).catch(error=>{
       console.log('retrieve_app_data error:',error);
     })
@@ -183,7 +183,8 @@ class LotroApp extends Component {
         <CharacterPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
         <SummaryPanel character={this.state.characters ? this.state.characters[this.state.selected_character]:null}/>
         <DeedPanel deeds={this.state.deeds} selected_deed={this.state.selected_deed}
-          deed_categories={this.state.deed_categories} deed_text={this.state.deed_text} completed={this.state.completed}
+          deed_categories={this.state.deed_categories} deed_text={this.state.deed_text}
+          characters={this.state.characters} selected_character={this.state.selected_character}
           deed_category_selected={this.state.deed_category_selected}
           deed_subcatetories={this.state.deed_subcategories}
           deed_subcategory_selected={this.state.deed_subcategory_selected}/>

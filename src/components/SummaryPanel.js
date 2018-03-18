@@ -17,6 +17,7 @@ class SummaryPanel extends Component{
   }
 
   componentDidMount(){
+    //FIXME: the indexing of data isn't accurate and needs to be resolved.
     get_all_deeds(this.db_promise).then(data=>{
       this.setState({
         deeds:data
@@ -31,22 +32,37 @@ class SummaryPanel extends Component{
     let total_deeds = 0;//1926;
     let total_quests = 0;//1553;
 
-    this.state.deeds.forEach(deed_type => {
-      deed_type.forEach(deed=>{
+    let total_deeds_complete = 0;//500;
+    let total_quests_complete = 0;//40;
+
+    let completed = this.props.character.completed;
+
+    //tally deed total counts
+    this.state.deeds.forEach((deed_type,i) => {
+      deed_type.forEach((deed,j)=>{
         switch(deed.Type){
           case 'Q':
             total_quests++;
+            if(completed[i]){
+              if(completed[i][j]){
+                total_quests_complete++;
+              }
+            }
             break;
           default:
             total_deeds++;
+            if(completed[i]){
+              if(completed[i][j]){
+                total_deeds_complete++;
+              }
+            }
             break;
         }
       });
-      
     });
 
-    let total_deeds_complete = 500;
-    let total_quests_complete = 40;
+
+
 
     return(
       <Panel panel_class='container panel summary-panel'>

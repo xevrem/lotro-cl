@@ -7,7 +7,7 @@ import {ACTION_TYPES} from './../constants';
 import {get_store} from './../Store';
 
 /**
- * 
+ *
  * @param {boolean} props.selected is this deed currently selected
  * @param {callback} props.onClick called when clicked
  * @param {string} props.name deed name
@@ -34,11 +34,17 @@ class DeedPanel extends Component{
       get_store().issue_action(ACTION_TYPES.DEED_CATEGORY_CHANGED,{deed_category_selected:index});
   }
 
-  handle_deed_complete(event){
+  handle_deed_complete(deed_type, event){
     // console.log('deed complete...', this.props.selected_deed);
-    let update = this.props.completed
-    update[this.props.selected_deed] = update[this.props.selected_deed] ? false : true;
-    get_store().issue_action(ACTION_TYPES.DEED_COMPLETED,{completed:update});
+
+    //toggle the specific deed
+    let update = this.props.characters[this.props.selected_character].completed;
+    update[deed_type][this.props.selected_deed] = update[deed_type][this.props.selected_deed] ? false : true;
+
+    //update the character deed completion data
+    let updated_characters = this.props.characters;
+    updated_characters[this.props.selected_character].completed = update;
+    get_store().issue_action(ACTION_TYPES.CHARACTER_UPDATED,{characters:updated_characters});
   }
 
   handle_selected(index, event){
@@ -51,7 +57,9 @@ class DeedPanel extends Component{
 
   render(){
     //if no deeds, there is nothing to render
-    if(!this.props.deeds || !this.props.deed_subcatetories) return('');
+    if(!this.props.deeds || !this.props.deed_subcatetories || this.props.selected_character < 0 || !this.props.characters) return('');
+
+    let character = this.props.characters[this.props.selected_character];
 
     //build list of deeds to display
     let deed_list = this.props.deeds.map((deed,i)=>{
@@ -59,11 +67,11 @@ class DeedPanel extends Component{
       //filter non-selected subcategories
       if(deed.Subcategory != this.props.deed_subcategory_selected) return;
 
+      //build the deed according to whether it is selected, its information, and if it is completed.
       return i === this.props.selected_deed ? (
         <Deed key={i} name={deed.Deed} selected={true} onClick={this.handle_selected.bind(this,i)}>
-          <div className={this.props.completed[i]?'deed-details completed':'deed-details'}>
+          <div className={character.completed[this.props.deed_category_selected][i]?'deed-details completed':'deed-details'}>
             <p>{deed.Details}</p>
-            {/* <p className='deed-stats'>Region: {deed.Subcategory}</p> */}
             {deed.Faction && <p className='deed-stats'>Faction: {deed.Faction}</p>}
             {deed.Type && <p className='deed-stats'>Type: {deed.Type}</p>}
             {deed.LP && <p className='deed-stats'>LP: {deed.LP}</p>}
@@ -71,18 +79,19 @@ class DeedPanel extends Component{
             {deed.Title && <p className='deed-stats'>Title: {deed.Title}</p>}
             {deed.Level && <p className='deed-stats'>Level: {deed.Level}</p>}
             {deed.Party && <p className='deed-stats'>Party: {deed.Party}</p>}
-            {this.props.completed[this.props.selected_deed] ? (
-              <Button className='deed-completed-btn btn btn-success' text='Completed!' onClick={this.deed_complete_handler}/>
+            {character.completed[this.props.deed_category_selected][i] ? (
+              <Button className='deed-completed-btn btn btn-success' text='Completed!'
+                onClick={this.handle_deed_complete.bind(this, this.props.deed_category_selected)}/>
             ):(
-              <Button className='deed-completed-btn btn btn-primary' text='Complete?' onClick={this.deed_complete_handler}/>
+              <Button className='deed-completed-btn btn btn-primary' text='Complete?'
+                onClick={this.handle_deed_complete.bind(this, this.props.deed_category_selected)}/>
             )}
           </div>
         </Deed>
-      ):(
-        <Deed key={i} name={deed.Deed} selected={false} onClick={this.handle_selected.bind(this,i)}/>
-      )
-    })
-
+        ):(
+          <Deed key={i} name={deed.Deed} selected={false} onClick={this.handle_selected.bind(this,i)}/>
+        )
+    });
 
     //build nav bar selecting active tab
     let deed_categories = this.props.deed_categories.map((category,i)=>{

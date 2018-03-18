@@ -44,7 +44,10 @@ class CharacterPanel extends Component{
       name:'',
       race:'',
       class:'',
-      level: 1
+      level: 1,
+      completed:[
+        [],[],[],[],[],[],[],[],[],[],[]
+      ]
     };
 
     let characters = this.props.characters;
