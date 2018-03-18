@@ -109,6 +109,7 @@ export function save_characters(db_promise, characters){
   });
 }
 
+//delete a specific character by index
 export function delete_character(db_promise, character_index){
   return db_promise.then(db => {
     let tx = db.transaction('characters', 'readwrite');
@@ -118,6 +119,7 @@ export function delete_character(db_promise, character_index){
   });
 }
 
+//delete all characters
 export function clear_characters(db_promise){
   return db_promise.then(db => {
     let tx = db.transaction('characters', 'readwrite');
@@ -125,4 +127,30 @@ export function clear_characters(db_promise){
     character_store.clear();
     return tx.complete;
   });
+}
+
+export function reset_database(db_promise){
+  let reset_characters = new Promise((resolve, reject) => {
+    return db_promise.then(db => {
+      let tx = db.transaction('characters', 'readwrite');
+      tx.objectStore('characters').clear();
+
+      resolve(tx.complete);
+    }).catch(error => {
+      reject(error);
+    })
+  });
+
+  let reset_deeds = new Promise((resolve, reject) => {
+    return db_promise.then(db => {
+      let tx = db.transaction('deeds', 'readwrite');
+      tx.objectStore('deeds').clear();
+
+      resolve(tx.complete);
+    }).catch(error => {
+      reject(error);
+    })
+  })
+
+  return Promise.all([reset_characters, reset_deeds])
 }

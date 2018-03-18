@@ -7,7 +7,7 @@ import SummaryPanel from './SummaryPanel';
 
 import {create_store, get_store} from './../Store';
 import {ACTION_TYPES, DEED_CATEGORIES} from './../constants';
-import {open_database, initial_deed_population, get_deeds_of_type, save_characters} from './../database';
+import {open_database, initial_deed_population, get_deeds_of_type, save_characters, reset_database} from './../database';
 import { Button, Modal } from './Common';
 
 let initial_state = {
@@ -139,7 +139,7 @@ class LotroApp extends Component {
             subs.add(deed.Subcategory);
           })
 
-          get_store().issue_action(ACTION_TYPES.DEED_UPDATE, {
+          get_store().issue_action(ACTION_TYPES.DEED_UPDATED, {
             deeds:data,
             deed_subcategories:subs,
             deed_subcategory_selected: ''
@@ -156,7 +156,7 @@ class LotroApp extends Component {
             subs.add(deed.Subcategory);
           })
 
-          get_store().issue_action(ACTION_TYPES.DEED_UPDATE, {
+          get_store().issue_action(ACTION_TYPES.DEED_UPDATED, {
             deeds:data,
             deed_subcategories:subs,
             deed_subcategory_selected: ''
@@ -173,7 +173,7 @@ class LotroApp extends Component {
             subs.add(deed.Subcategory);
           })
 
-          get_store().issue_action(ACTION_TYPES.DEED_UPDATE, {
+          get_store().issue_action(ACTION_TYPES.DEED_UPDATED, {
             deeds:data,
             deed_subcategories:subs,
             deed_subcategory_selected: ''
@@ -191,7 +191,7 @@ class LotroApp extends Component {
           })
 
           //issue deed upate
-          get_store().issue_action(ACTION_TYPES.DEED_UPDATE, {
+          get_store().issue_action(ACTION_TYPES.DEED_UPDATED, {
             deeds:data,
             deed_subcategories:subs,
             deed_subcategory_selected: ''
@@ -210,29 +210,8 @@ class LotroApp extends Component {
 
   handle_reset_database(){
     console.log('handle_reset_database called...');
-    let reset_characters = new Promise((resolve, reject) => {
-      return this.db_promise.then(db => {
-        let tx = db.transaction('characters', 'readwrite');
-        tx.objectStore('characters').clear();
 
-        resolve(tx.complete);
-      }).catch(error => {
-        reject(error);
-      })
-    });
-
-    let reset_deeds = new Promise((resolve, reject) => {
-      return this.db_promise.then(db => {
-        let tx = db.transaction('deeds', 'readwrite');
-        tx.objectStore('deeds').clear();
-
-        resolve(tx.complete);
-      }).catch(error => {
-        reject(error);
-      })
-    })
-
-    Promise.all([reset_characters, reset_deeds]).then(()=>{
+    reset_database(this.db_promise).then(()=>{
       window.location.reload();
     }).catch(error => {
       console.log('handle_reset_database failure...', error);
@@ -250,7 +229,10 @@ class LotroApp extends Component {
         <Modal className='modal' contentClassName='modal-content' is_visible={this.props.update} onFocusLoss={this.toggle_modal.bind(this)}>
           <Button className='btn' text='Update SW?' onClick={this.props.onUpdateReady}/>
         </Modal>
-        <Button className='btn' text='Reset DB' onClick={this.reset_database_handler} />
+        <div style={{display: 'inline-flex', height:'38px'}}>
+          <h4>Debug Stuff: </h4>
+          <Button className='btn' text='Reset DB' onClick={this.reset_database_handler} />
+        </div>
         <CharacterPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
         <SummaryPanel character={this.state.characters ? this.state.characters[this.state.selected_character]:null}/>
         <DeedPanel deeds={this.state.deeds} selected_deed={this.state.selected_deed}
