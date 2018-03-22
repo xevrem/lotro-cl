@@ -12,6 +12,8 @@ const RESOURCES_TO_PRECACHE = [
 
 //preload the cache with all relevant stuffs
 self.addEventListener('install', event => {
+  self.skipWaiting();
+
   event.waitUntil(
     caches.open(CACHE_NAME).then(function(cache) {
       return cache.addAll(RESOURCES_TO_PRECACHE);
@@ -29,7 +31,7 @@ self.addEventListener('activate', event => {
 
 self.addEventListener('fetch', event => {
   let request_url = new URL(event.request.url);
-  
+
   //if requesting the 'root' page, serve the index
   if(request_url.origin == location.origin){
     if (request_url.pathname === '/') {
@@ -76,10 +78,10 @@ self.addEventListener('fetch', event => {
   // event.respondWith(
   //   caches.match(event.request).then(response => {
   //     if (response) return response;
-      
-  //     //clone the request stream 
+
+  //     //clone the request stream
   //     let fetch_request = event.request.clone();
-      
+
   //     return fetch(fetch_request).then(response => {
   //       //if it isnt something we want to cache, just return it right away
   //       if(!response || response.status !== 200 || response.type !== 'basic') {
@@ -100,11 +102,11 @@ self.addEventListener('fetch', event => {
   // );
 });
 
-
-//if the app says you should take over, take over now.
-self.addEventListener('message', event => {
-  if (event.data.action === 'SKIP_WAITING') {
-    console.log('service_worker SKIP_WAITING...');
-    self.skipWaiting();
-  }
-});
+//
+// //if the app says you should take over, take over now.
+// self.addEventListener('message', event => {
+//   if (event.data.action === 'SKIP_WAITING') {
+//     console.log('service_worker SKIP_WAITING...');
+//     self.skipWaiting();
+//   }
+// });

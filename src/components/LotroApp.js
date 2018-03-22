@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactModal from 'react-modal';
 import './LotroApp.css';
 
 import CharacterPanel from './CharacterPanel';
@@ -8,7 +9,7 @@ import SummaryPanel from './SummaryPanel';
 import {create_store, get_store} from './../Store';
 import {ACTION_TYPES, DEED_CATEGORIES} from './../constants';
 import {open_database, initial_deed_population, get_deeds_of_type, save_characters, reset_database} from './../database';
-import { Button, Modal } from './Common';
+import { Button } from './Common';
 
 let initial_state = {
   selected_character:-1,
@@ -33,10 +34,8 @@ class LotroApp extends Component {
     this.db_promise = open_database();
 
     this.reset_database_handler = this.handle_reset_database.bind(this);
-  }
 
-  componentDidMount(){
-    console.log('mounted...')
+    //create all subscriptions
     get_store().subscribe(ACTION_TYPES.CHARACTER_ADDED, this.handle_character_action.bind(this));
     get_store().subscribe(ACTION_TYPES.CHARACTER_SELECTED, this.handle_character_action.bind(this));
     get_store().subscribe(ACTION_TYPES.CHARACTER_UPDATED, this.handle_character_action.bind(this));
@@ -46,7 +45,11 @@ class LotroApp extends Component {
     get_store().subscribe(ACTION_TYPES.DEED_UPDATED, this.handle_deed_action.bind(this));
     get_store().subscribe(ACTION_TYPES.DEED_CATEGORY_CHANGED, this.handle_deed_category_changed.bind(this));
     get_store().subscribe(ACTION_TYPES.DEED_SUBCATEGORY_CHANGED, this.handle_subcategory_changed.bind(this));
-    get_store().subscribe('initialization', this.handle_initialization.bind(this));
+    get_store().subscribe(ACTION_TYPES.INITIALIZATION_DONE, this.handle_initialization.bind(this));
+  }
+
+  componentDidMount(){
+    console.log('mounted...')
 
     initial_deed_population(this.db_promise).then(()=>{
       this.retrieve_app_data();
@@ -96,7 +99,7 @@ class LotroApp extends Component {
         categories.add(deed.Subcategory);
       });
 
-      get_store().issue_action('initialization', {
+      get_store().issue_action(ACTION_TYPES.INITIALIZATION_DONE, {
         characters: data[0],
         deeds: data[1],
         deed_subcategories: categories
@@ -217,24 +220,28 @@ class LotroApp extends Component {
       console.log('handle_reset_database failure...', error);
     });
   }
-
-  toggle_modal(event){
-    console.log('toggle_modal called...')
-  }
+  // 
+  // toggle_modal(event){
+  //   console.log('toggle_modal called...')
+  // }
 
   render() {
     return (
       <div className="lotro-app">
         <h1 className='page-title'>Lotro Character Log</h1>
-        <Modal className='modal' contentClassName='modal-content' is_visible={this.props.update} onFocusLoss={this.toggle_modal.bind(this)}>
+        {/* <ReactModal
+          className='modal-content'
+          overlayClassName='modal'
+          isOpen={this.props.update}
+          onRequestClose={this.toggle_modal.bind(this)}>
           <Button className='btn' text='Update SW?' onClick={this.props.onUpdateReady}/>
-        </Modal>
-        <div style={{display: 'inline-flex', height:'38px'}}>
+        </ReactModal> */}
+        <span style={{display: 'inline-flex', height:'42px'}}>
           <h4>Debug Stuff: </h4>
           <Button className='btn' text='Reset DB' onClick={this.reset_database_handler} />
-        </div>
+        </span>
         <CharacterPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
-        <SummaryPanel character={this.state.characters ? this.state.characters[this.state.selected_character]:null}/>
+        <SummaryPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
         <DeedPanel deeds={this.state.deeds} selected_deed={this.state.selected_deed}
           deed_categories={this.state.deed_categories} deed_text={this.state.deed_text}
           characters={this.state.characters} selected_character={this.state.selected_character}

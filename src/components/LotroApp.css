@@ -12,13 +12,16 @@
   cursor: pointer; }
 
 .btn {
-  width: 120px;
+  width: 130px;
   padding: 5px;
-  margin: 2px;
-  border: 1px solid rgba(156, 156, 156, 0.788);
+  margin: 5px;
+  border: 1px solid #c8c8c8;
   border-radius: 2px;
   font-family: lotro;
-  background-color: rgba(156, 156, 156, 0.788); }
+  font-size: .9em;
+  font-weight: bold;
+  background-color: #c8c8c8;
+  cursor: pointer; }
 
 .btn-success {
   background-color: #40ad2a;
@@ -37,6 +40,17 @@
 
 button:focus {
   outline: 0; }
+
+input[type="file"] {
+  display: none; }
+
+.modal-load-label {
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  width: 118px;
+  text-align: center;
+  border: 1px solid #c8c8c8; }
 
 .modal {
   position: fixed;
@@ -57,13 +71,22 @@ button:focus {
   /* Black w/ opacity */ }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: white;
   margin: 15% auto;
-  /* 15% from the top and centered */
   padding: 20px;
-  border: 1px solid #888;
   width: 80%;
-  /* Could be more or less, depending on screen size */ }
+  outline: none; }
+
+@media screen and (min-width: 500px) {
+  .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 400px;
+    outline: none; } }
+
+.pull-right {
+  float: right; }
 
 .lotro-app {
   text-align: center;

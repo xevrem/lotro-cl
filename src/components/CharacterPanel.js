@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactModal from 'react-modal';
 import './CharacterPanel.css';
 
 import {List, Panel, Button, SelectObject, TextInput} from './Common';
@@ -28,11 +29,14 @@ class CharacterPanel extends Component{
   constructor(props){
     super(props);
 
+    this.state = {
+      show_upload_modal: false
+    }
+
     this.add_character_handler = this.handle_add_character.bind(this);
     this.save_all_handler = this.handle_save_all.bind(this);
     this.download_characters_handler = this.handle_download_characters.bind(this);
     this.delete_character_handler = this.handle_delete_character.bind(this);
-    this.db_promise = open_database();
   }
 
   componentDidMount(){
@@ -87,7 +91,11 @@ class CharacterPanel extends Component{
 
   //update global state with current selected character index
   selected_handler(index, event){
-    get_store().issue_action(ACTION_TYPES.CHARACTER_SELECTED, {selected_character:index})
+    get_store().issue_action(ACTION_TYPES.CHARACTER_SELECTED, {
+      selected_character:index,
+      deed_category_selected: -1,
+      deed_subcategory_selected: -1
+    })
   }
 
   handle_save_all(){
@@ -134,11 +142,79 @@ class CharacterPanel extends Component{
     let characters = this.props.characters;
     characters.splice(this.props.selected_character, 1);
 
-    clear_characters(this.db_promise).then(()=>{
-      get_store().issue_action(ACTION_TYPES.CHARACTER_DELETED,{characters:characters});
+    let db_promise = open_database();
+    clear_characters(db_promise).then(()=>{
+      get_store().issue_action(ACTION_TYPES.CHARACTER_DELETED,{
+        characters:characters,
+        selected_character:-1
+      });
     }).catch(error=>{
       console.log('handle_delete_character failed...', error);
     })
+  }
+
+  handle_upload_character_clicked(){
+    console.log('handle_upload_character_clicked called...')
+    this.setState({show_upload_modal: true});
+  }
+
+  handle_modal_request_close(){
+    console.log('handle_upload_focus_loss called...')
+    this.setState({show_upload_modal: false});
+  }
+
+  handle_submit(event){
+    //prevent default submission behavior (i.e., dont reload the page)
+    event.preventDefault();
+
+    if(this.file_input.files.length === 0){
+      alert('You must choose a file to upload!');
+      return;
+    }
+
+    console.log('handle_submit called...', this.file_input.files[0].name);
+
+    if(this.file_input.files.length > 1){
+      alert('No more than 1 file can be loaded at a time!');
+      return;
+    }
+
+    //attempt to read the file
+    let reader = new FileReader();
+    reader.onload = event =>{
+      try{
+        //attempt to parse the file into JSON
+        let data = JSON.parse(event.target.result)
+
+        //add new characters to existing characters
+        let characters = this.props.characters;
+        data.forEach(character=>{
+          characters.push(character);
+        });
+
+        //issue the update to the store
+        get_store().issue_action(ACTION_TYPES.CHARACTER_ADDED, {
+          characters:characters,
+          selected_character: -1
+        });
+      }catch(error){
+        console.log('file parsing failed:', error);
+        alert('an error occurred, no character data loaded...');
+      }finally{
+        //close the modal
+        this.setState({show_upload_modal:false});
+      }
+    }
+
+    //the reader encountered an error
+    reader.onerror = error =>{
+      console.log('file read failed:', error);
+      alert('an error occurred, no character data loaded...');
+      this.setState({show_upload_modal:false});
+    }
+
+    //read the file
+    reader.readAsText(this.file_input.files[0]);
   }
 
   render (){
@@ -167,7 +243,7 @@ class CharacterPanel extends Component{
             <Button className='btn btn-primary' text='Add Character' onClick={this.add_character_handler}/>
             {/* <Button className='btn btn-success' text='Save All Characters' onClick={this.save_all_handler}/> */}
             <Button className='btn btn-danger' text='Delete Selected' onClick={this.delete_character_handler}/>
-            <Button className='btn btn-primary' text='Upload Characters'/>
+            <Button className='btn btn-primary' text='Load Characters' onClick={this.handle_upload_character_clicked.bind(this)}/>
             <Button className='btn btn-primary' text='Download Characters' onClick={this.download_characters_handler}/>
           </div>
           <div className='character-area'>
@@ -176,6 +252,20 @@ class CharacterPanel extends Component{
               {character_list}
             </List>
           </div>
+          <ReactModal
+            className='modal-content panel'
+            overlayClassName='modal'
+            isOpen={this.state.show_upload_modal}
+            onRequestClose={this.handle_modal_request_close.bind(this)}>
+              <form className='' onSubmit={this.handle_submit.bind(this)}>
+                <h3>Select File to Load</h3>
+                <label htmlFor="file-load" className='modal-load-label btn'>
+                  Browse...
+                </label>
+                <input id='file-load' type="file" ref={input=>{this.file_input = input}} onChange={event=>{console.log(this.Files)}}/>
+                <button type="submit" className='btn btn-primary'>Load File</button>
+              </form>
+          </ReactModal>
         </div>
       </Panel>
     );
