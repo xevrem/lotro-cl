@@ -88,6 +88,23 @@ input[type="file"] {
 .pull-right {
   float: right; }
 
+@supports (display: grid) {
+  @media screen and (min-width: 850px) {
+    .site {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "character summary" "deed deed"; } }
+  @media screen and (min-width: 1080px) {
+    .site {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "character summary" "deed deed"; } } }
+
+.deed-panel {
+  grid-area: deed; }
+
 .deed-nav {
   width: auto;
   margin: 5px;
@@ -110,6 +127,10 @@ input[type="file"] {
   box-shadow: 0px 0px 6px #28a745, 0 2px 8px rgba(19, 82, 34, 0.24), 0 4px 10px rgba(19, 82, 34, 0.48); }
 
 .deed-panel-left {
+  grid-area: nav; }
+
+.deed-panel-right {
+  grid-area: details;
   margin: 5px; }
 
 .deed {
@@ -147,3 +168,11 @@ input[type="file"] {
 .deed-completed-btn {
   display: block;
   bottom: 7px; }
+
+@supports (display: grid) {
+  @media screen and (min-width: 800px) {
+    .deed-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "nav details"; } } }

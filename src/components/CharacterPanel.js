@@ -247,7 +247,7 @@ class CharacterPanel extends Component{
         <h3 className='panel-header'>Characters</h3>
         <div className='character-grid'>
           <div className='character-actions'>
-            <h4>Actions:</h4>
+            {/* <h4>Actions:</h4> */}
             <Button className='btn btn-primary' text='Add Character' onClick={this.add_character_handler}/>
             {/* <Button className='btn btn-success' text='Save All Characters' onClick={this.save_all_handler}/> */}
             <Button className='btn btn-danger' text='Delete Selected' onClick={this.delete_character_handler}/>
@@ -255,7 +255,7 @@ class CharacterPanel extends Component{
             <Button className='btn btn-primary' text='Download Characters' onClick={this.download_characters_handler}/>
           </div>
           <div className='character-area'>
-            <h4>Characters:</h4>
+            {/* <h4>Characters:</h4> */}
             <List list_class='character-list' list_item_class='character-list-item'>
               {character_list}
             </List>

@@ -1,5 +1,9 @@
 @import './../common.scss';
 
+.summary-panel{
+  grid-area: summary;
+}
+
 .summary-details{
   // float:left;
   margin: 5px;

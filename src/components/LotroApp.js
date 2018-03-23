@@ -244,14 +244,16 @@ class LotroApp extends Component {
           <h4>Debug Stuff: </h4>
           <Button className='btn' text='Reset DB' onClick={this.reset_database_handler} />
         </span>
-        <CharacterPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
-        <SummaryPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
-        <DeedPanel deeds={this.state.deeds} selected_deed={this.state.selected_deed}
-          deed_categories={this.state.deed_categories} deed_text={this.state.deed_text}
-          characters={this.state.characters} selected_character={this.state.selected_character}
-          deed_category_selected={this.state.deed_category_selected}
-          deed_subcatetories={this.state.deed_subcategories}
-          deed_subcategory_selected={this.state.deed_subcategory_selected}/>
+        <div className='site'>
+          <CharacterPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
+          <SummaryPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
+          <DeedPanel deeds={this.state.deeds} selected_deed={this.state.selected_deed}
+            deed_categories={this.state.deed_categories} deed_text={this.state.deed_text}
+            characters={this.state.characters} selected_character={this.state.selected_character}
+            deed_category_selected={this.state.deed_category_selected}
+            deed_subcatetories={this.state.deed_subcategories}
+            deed_subcategory_selected={this.state.deed_subcategory_selected}/>
+        </div>
       </div>
     );
   }

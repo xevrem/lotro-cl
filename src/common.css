@@ -87,3 +87,17 @@ input[type="file"] {
 
 .pull-right {
   float: right; }
+
+@supports (display: grid) {
+  @media screen and (min-width: 850px) {
+    .site {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "character summary" "deed deed"; } }
+  @media screen and (min-width: 1080px) {
+    .site {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "character summary" "deed deed"; } } }

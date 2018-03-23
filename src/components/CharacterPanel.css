@@ -88,6 +88,23 @@ input[type="file"] {
 .pull-right {
   float: right; }
 
+@supports (display: grid) {
+  @media screen and (min-width: 850px) {
+    .site {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "character summary" "deed deed"; } }
+  @media screen and (min-width: 1080px) {
+    .site {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "character summary" "deed deed"; } } }
+
+.character-panel {
+  grid-area: character; }
+
 .character-actions {
   display: block; }
 
@@ -132,25 +149,3 @@ button.character-form {
   vertical-align: middle;
   width: 75px;
   padding: 5px; }
-
-@supports (display: grid) {
-  @media screen and (min-width: 800px) {
-    .site {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto 1fr 3fr;
-      grid-template-areas: "content-head content-head" "main header" "main sidebar" "footer footer"; }
-    .masthead {
-      grid-area: header; }
-    .page-title {
-      grid-area: content-head; }
-    .main-content {
-      grid-area: main; }
-    .sidebar {
-      grid-area: sidebar; }
-    .colophon {
-      grid-area: footer; } }
-  @media screen and (min-width: 1200px) {
-    .site {
-      grid-template-columns: 2fr 1fr 1fr;
-      grid-template-areas: "content-head content-head content-head" "main header header" "main sidebar footer"; } } }

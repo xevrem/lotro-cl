@@ -115,21 +115,25 @@ class DeedPanel extends Component{
     //render the completed deed panel
     return(
       <div className='container panel deed-panel'>
-        <h3 className='panel-header'>Deeds</h3>
-        <h4>Category:</h4>
-        <List list_class='deed-nav' list_item_class='deed-nav-item'>
-          {deed_categories}
-        </List>
-        <h4>Subcategory:</h4>
-        <List list_class='deed-nav' list_item_class='deed-nav-item'>
-          {subcategories}
-        </List>
-        <h4>Deeds:</h4>
-        <Panel panel_class='col deed-panel-left'>
-          <List list_class='deed-list' list_item_class='deed-list-item'>
-            {deed_list}
-          </List>
-        </Panel>
+        <h3 className='panel-header'>Deed Completion</h3>
+        <div className='deed-grid'>
+          <div className='deed-panel-left'>
+            <h4>Category:</h4>
+            <List list_class='deed-nav' list_item_class='deed-nav-item'>
+              {deed_categories}
+            </List>
+            <h4>Subcategory:</h4>
+            <List list_class='deed-nav' list_item_class='deed-nav-item'>
+              {subcategories}
+            </List>
+          </div>
+          <div className='deed-panel-right'>
+            <h4>Deeds:</h4>
+            <List list_class='deed-list' list_item_class='deed-list-item'>
+              {deed_list}
+            </List>
+          </div>
+        </div>
       </div>
     );
   }
