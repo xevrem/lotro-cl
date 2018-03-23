@@ -240,7 +240,7 @@ class LotroApp extends Component {
           onRequestClose={this.toggle_modal.bind(this)}>
           <Button className='btn' text='Update SW?' onClick={this.props.onUpdateReady}/>
         </ReactModal> */}
-        <span style={{display: 'inline-flex', height:'42px'}}>
+        <span style={{display: 'inline-flex', alignItems:'center', height:'42px'}}>
           <h4>Debug Stuff: </h4>
           <Button className='btn' text='Reset DB' onClick={this.reset_database_handler} />
         </span>

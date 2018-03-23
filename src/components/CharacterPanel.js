@@ -30,7 +30,8 @@ class CharacterPanel extends Component{
     super(props);
 
     this.state = {
-      show_upload_modal: false
+      show_upload_modal: false,
+      filename:'none selected...'
     }
 
     this.add_character_handler = this.handle_add_character.bind(this);
@@ -53,6 +54,7 @@ class CharacterPanel extends Component{
       class:'',
       level: 1,
       completed:[
+        //create all the dummy deed completed arrays required for a new character
         ...Object.keys(DEED_CATEGORIES).map(category=>{
           return [false];
         })
@@ -62,7 +64,7 @@ class CharacterPanel extends Component{
     let characters = this.props.characters;
     characters.push(character);
 
-    //update global state
+    //add character to global state
     get_store().issue_action(ACTION_TYPES.CHARACTER_ADDED, {characters:characters});
   }
 
@@ -88,6 +90,7 @@ class CharacterPanel extends Component{
         break;
     }
 
+    //update characters in global state
     get_store().issue_action(ACTION_TYPES.CHARACTER_UPDATED, {characters: characters});
   }
 
@@ -204,7 +207,10 @@ class CharacterPanel extends Component{
         alert('an error occurred, no character data loaded...');
       }finally{
         //close the modal
-        this.setState({show_upload_modal:false});
+        this.setState({
+          show_upload_modal:false,
+          filename: 'none selected...'
+        });
       }
     }
 
@@ -259,12 +265,21 @@ class CharacterPanel extends Component{
             overlayClassName='modal'
             isOpen={this.state.show_upload_modal}
             onRequestClose={this.handle_modal_request_close.bind(this)}>
-              <form className='' onSubmit={this.handle_submit.bind(this)}>
-                <h3>Select File to Load</h3>
-                <label htmlFor="file-load" className='modal-load-label btn'>
-                  Browse...
-                </label>
-                <input id='file-load' type="file" ref={input=>{this.file_input = input}} onChange={event=>{console.log(this.Files)}}/>
+            {/*FIXME: move this form's style into character panel's scss file  */}
+              <form onSubmit={this.handle_submit.bind(this)}>
+                <h3 style={{textAlign:'center', marginTop:'0px'}} >Select File to Load</h3>
+                <span style={{display:'inline-flex', alignItems:'center'}}>
+                  <label htmlFor="file-load" className='modal-load-label btn'>
+                    Browse...
+                  </label>
+                  <p style={{fontFamily:'sans-serif', margin:'5px'}}>File: {this.state.filename}</p>
+                </span>
+                <input id='file-load' type="file" ref={input=>{this.file_input = input}}
+                  onChange={()=>{
+                    //get the name of the selected file and
+                    let input = document.querySelector('#file-load');
+                    this.setState({filename:input.files[0].name});
+                  }}/>
                 <button type="submit" className='btn btn-primary'>Load File</button>
               </form>
           </ReactModal>
