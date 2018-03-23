@@ -1,0 +1,238 @@
+Category,Subcategory,Faction,Type,Deed,LP,Trait,Details,Title,Level,Party
+Allies to the King,Meta,,M,Allies to the King: Foreward,5,,Auto-bestowed,Summoned by Lord Elrond,65,
+Allies to the King,Meta,,M,Lhaid Ogo Exploration,-,,During Vol III Book 3 Chapter 4 instance,Explorer of Lhaid Ogo,65,
+Allies to the King,Meta,,M,The Vanished Rider,-,,During Vol III Book 6 Chapter 11,Anduin Wanderer,75,
+Allies to the King,Meta,,M,Tidings from Galadriel,-,,Start Vol III Book 7,,75,
+Allies to the King,Meta,,M,"Volume III Interludes, Part One",-,,Complete Interlude 1-3 from Gleowine's Map,,85,
+Allies to the King,Meta,,M,"Volume III Interludes, Part Two",-,,Complete Interlude 4-7 from Gleowine's Map,,85,
+Allies to the King,Meta,,M,Volume III Book 11 Foreword,5,,Start Vol III Book 11,,85,
+Allies to the King,Meta,,M,Volume III Book 14 Foreword,-,,Complete Vol III Book 13,,95,
+Allies to the King,Meta,,M,Allies to the King,5,,Complete Vol III Prologue – Book 14,Friend to the Heir of Isildur,65-95,
+Allies to the King,Meta,,M,Epic Battles Await,5,,Auto-bestowed,,10,
+Allies to the King,Prologue,,Q,Message from Lorien,,,The Last Homely House – Penthelen,,65,Solo
+Allies to the King,Book 1 – Oath of the Rangers,,Q,Chapter 1: Gallant As Elf-lords,,,The Last Homely House – Penthelen,,65,Solo
+Allies to the King,Book 1 – Oath of the Rangers,,Q,Chapter 2: Candaith's Hidden Cache,,,Thorenhad – Elrohir,,65,Solo
+Allies to the King,Book 1 – Oath of the Rangers,,Q,Chapter 3: Saeradan's Watchfulness,,,Candaith's Encampment – Candaith,,65,Solo
+Allies to the King,Book 1 – Oath of the Rangers,,Q,"Chapter 4: Halros, Ranger of the Shire",,,Saeradan's Cabin – Saeradan,,65,Solo
+Allies to the King,Book 1 – Oath of the Rangers,,Q,-> Halros Should Stay,,,Greenfields – Halros,,65,Solo
+Allies to the King,Book 1 – Oath of the Rangers,,Q,-> Halros Should Go,,,,,,
+Allies to the King,Book 1 – Oath of the Rangers,,Q,Chapter 5: Loose Ends in the North Downs,,,Greenfields – Halros,,65,Solo
+Allies to the King,Book 1 – Oath of the Rangers,,Q,Chapter 6: Farewell to Evendim,,,Esteldin Central Courtyard – Daervunn,,65,Solo
+Allies to the King,Book 1 – Oath of the Rangers,,Q,Chapter 7: Lothrandir of the Frozen Wastes,,,Tinnudir – Calenglad,,65,Solo
+Allies to the King,Book 1 – Oath of the Rangers,,Q,Chapter 8: The Depths of Duty,,,Suri-kyla – Lothrandir,,65,Solo
+Allies to the King,Book 1 – Oath of the Rangers,,Q,Chapter 9: The Gathering of the Grey Company,,,Aughaire – Corunir,,65,Solo
+Allies to the King,Book 2 – Ride of the Grey Company,,Q,Chapter 1: Wrought in Secret,,,Elrond's Library – Elrond,,65,Solo
+Allies to the King,Book 2 – Ride of the Grey Company,,Q,Chapter 2: The Grey Company in Rivendell,,,Elrond's Stables – Halbarad,,65,Solo
+Allies to the King,Book 2 – Ride of the Grey Company,,Q,Chapter 3: The House of Isildur,,,Elrond's Stables – Candaith,,65,Solo
+Allies to the King,Book 2 – Ride of the Grey Company,,Q,Chapter 4: Riding South,,,Elrond's Stables – Candaith,,65,Solo
+Allies to the King,Book 2 – Ride of the Grey Company,,Q,Chapter 5: Forces At Work in Eregion,,,Gwingris – Saeradan,,65,Solo
+Allies to the King,Book 2 – Ride of the Grey Company,,Q,Chapter 6: Funi Gem-cutter,,,Tar Stazg – Frightened Adventurer,,65,Solo
+Allies to the King,Book 2 – Ride of the Grey Company,,Q,Chapter 7: Bewildering Ruins,,,Minas Elendur – Funi Gem-cutter – involves deed [see Eriador – Eregion],,65,Solo
+Allies to the King,Book 2 – Ride of the Grey Company,,Q,Chapter 8: As Near As Need Be,,,Echad Eregion – Radanir,,65,Solo
+Allies to the King,Book 2 – Ride of the Grey Company,,Q,Chapter 9: The Plains of Enedwaith,,,Echad Eregion – Halbarad,,65,Solo
+Allies to the King,Book 2 – Ride of the Grey Company,,Q,Chapter 10: Blood-marks,,,Echad Dagoras – Wadu,,65,Solo
+Allies to the King,Book 2 – Ride of the Grey Company,,Q,Chapter 11: The Blockade,,,Echad Dagoras – Lothrandir,,65,Solo
+Allies to the King,Book 2 – Ride of the Grey Company,,Q,Chapter 12: The Bearer of the Sword,,,Echad Saeradan – Saeradan,,65,Solo
+Allies to the King,Book 2 – Ride of the Grey Company,,Q,Chapter 13: The Sword Returned,,,Echad Saeradan – Saeradan,,65,Solo
+Allies to the King,Book 2 – Ride of the Grey Company,,Q,Chapter 14: The Distant Dwarf,,,Lhanuch – Nona,,65,Solo
+Allies to the King,Book 2 – Ride of the Grey Company,,Q,Chapter 15: An Echo of Days Past,,,Zudrugund – Frithgeir,,65,Solo
+Allies to the King,Book 3 – Echoes of the Dead,,Q,Chapter 1: Secrets of Zudrugund,,,Zudrugund – Corunir,,65,Solo
+Allies to the King,Book 3 – Echoes of the Dead,,Q,Chapter 2: At the Stones of Erech,,,Nan Laeglin – Candaith,,65,Solo
+Allies to the King,Book 3 – Echoes of the Dead,,Q,Chapter 3: Nona's Request,,,Nan Laeglin – Candaith,,65,Solo
+Allies to the King,Book 3 – Echoes of the Dead,,Q,Chapter 4: Ergothorn Elf-friend,,,Lhanuch – Halbarad – involves deed [see Vol 3],,65,S or SF
+Allies to the King,Book 3 – Echoes of the Dead,,Q,Chapter 5: News from Dunland,,,Lhanuch – Glynn Brenin,,65,Solo
+Allies to the King,Book 3 – Echoes of the Dead,,Q,Chapter 6: For Wadu,,,Lhanuch – Nona,,65,Solo
+Allies to the King,Book 3 – Echoes of the Dead,,Q,Chapter 7: Attack on Zudrugund,,,Nan Laeglin – Radanir,,65,S or F
+Allies to the King,Book 3 – Echoes of the Dead,,Q,Chapter 8: Further Secrets,,,Zudrugund – Corunir,,65,Solo
+Allies to the King,Book 3 – Echoes of the Dead,,Q,Chapter 9: Ergothorn's Last,,,Lhanuch – Halbarad,,65,Solo
+Allies to the King,Book 3 – Echoes of the Dead,,Q,Chapter 10: Echoes of the Dead,,,Nan Laeglin – Radanir,,65,S or F
+Allies to the King,Book 3 – Echoes of the Dead,,Q,Chapter 11: Grief and Insight,,,Lhanuch – Halbarad,,65,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 1: The Departure of Lhanuch,,,Zudrugund – Corunir,,65,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 2a: The Land of the Stag,,,Lhanuch – Braigiar,,66,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Passage Into Dunland,,,Dunlending Lookout,,66,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 2b: The Valley of Bones,,,Lhanuch – Prestadir,,66,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 3a: South-east to Galtrev (if 2a),,,Lhan Tarren – Braigiar,,67,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 3b: South-west to Galtrev (if 2b),,,Echad Naeglanc – Prestadir,,67,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 4: The Lower Village,,,Pren Gwydh – Halbarad,,67,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 5: Catrin's Rebellion,,,Galtrev – Catrin,,67,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 6: The Will To Stand,,,Galtrev – Catrin,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 7: Aiding Tur Morva,,,Tur Morva – Penrod,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Charm of the Huntsman,,,Tal Methedras – Cungren,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Curing the Leather,,,Tal Methedras – Rhus,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Mark of the Falcon,,,Tal Methedras – Taf,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> No Mercy for Traitors,,,Tal Methedras – Iwan,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Preserved for the Journey,,,Tal Methedras – Idele,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Rangers Put To Work,,,Tal Methedras – Penrod,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Setting Traps,,,Tal Methedras – Wynfor,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Stronger Competition,,,Tal Methedras – Mair,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> The Practiced Arm,,,Tal Methedras – Mair,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> The Unwelcome Guest,,,Tal Methedras – Wynfor,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Dwarf: A Rare Dwarf,,,Tal Methedras – Arwel,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Elf: A Full of History,,,Tal Methedras – Evan,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Hobbit: Concerned by Hobbits,,,Tal Methedras – Maelona,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Man: Tidings of Anirin,,,Tal Methedras – Seren,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 8: The Messenger of Isengard,,,Tal Methedras – Lheu Brenin,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 9: Return to Galtrev,,,Tal Methedras – Lheu Brenin,,68,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 10: Herdsmen of the Starkmoor,,,Pren Gwydh – Nona,,69,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 11: Into the Dunbog,,,Starkmoor – Nona,,70,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 12: Outliers,,,Starkmoor – Nona,,70,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 13: Land of Iron,,,Dunbog – Nona,,71,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 14: Bribing Gold,,,Lower Barnavon – Nona,,71,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 15: Friends in the Gravenwood,,,Lower Barnavon – Nona,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 16: The Watchful Presence,,,Rhohirrim Scout Camp – Theodred,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 17: Return to Tur Morva,,,Rhohirrim Scout Camp – Theodred,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 18: The Captive,,,Tal Methedras – Lheu Brenin,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 19: The Caverns of Isengard,,,Fash's Command – Fash,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> The Slop,,,Isengard Depths – Uruk Overseer,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Heavy Lifting,,,Isengard Depths – Uruk Overseer,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Kill Ten Rats,,,Isengard Depths – Uruk Overseer,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 20: In the Presence of Saruman,,,Fash's Command – Fash,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 21: Servants of Saruman,,,Morflak's Command – Morflak,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Their Best Interest,,,Ring of Isengard – Morflak's Lackey,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Raiding the Larder,,,Ring of Isengard – Morflak's Lackey,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Trivial Business,,,Ring of Isengard – Morflak's Lackey,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 22: Feed the Prisoners,,,Morflak's Command – Morflak,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 23: The Wizard's Vale,,,Isengard's Dungeons – Baldgar,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 24: A Pinch of Black Powder,,,Isengard's Dungeons – Baldgar,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 25: Final Preparations,,,Isengard's Dungeons – Baldgar,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 26: Escape From Isengard,,,Isengard's Dungeons – Baldgar,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 27: Repaying Treachery,,,Gravenwood – Baldgar,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 28: Survivors,,,Rhohirrim Scout Camp – Theodred,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 29: City of Traitors,,,Rhohirrim Scout Camp – Theodred,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Fallen Ranger,,,Tal Methedras – Radanir,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Never Reported Back,,,Tal Methedras – Hogawise,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Provisions of War,,,Tal Methedras – Seren,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> The Seeping Poison,,,Tal Methedras – Herestan,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,-> Trap-breaking,,,Tal Methedras – Deormond,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,---> Talons of the Falcon,,,Tal Methedras – Theodred,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,---> Champions of the Falcon,,,Tal Methedras – Theodred,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,Chapter 30: The Rescue,,,Tal Methedras – Theodred,,72,Solo
+Allies to the King,Book 4 – Rise of Isengard,,Q,[Optional] Concern for a friend,,,Zudrugund - Frithgeir,Thoughtful Friend,72,Solo
+Allies to the King,Book 5 – The Prince of Rohan,,Q,Chapter 1: Separate Ways (Halbarad),,,Rhohirrim Scout Camp – Halbarad,,75,Solo
+Allies to the King,Book 5 – The Prince of Rohan,,Q,Chapter 1: Separate Ways (Saeradan),,,Rhohirrim Scout Camp – Saeradan,,75,Solo
+Allies to the King,Book 5 – The Prince of Rohan,,Q,Chapter 1: Separate Ways (Corunir),,,Gravenwood – Corunir,,75,Solo
+Allies to the King,Book 5 – The Prince of Rohan,,Q,Chapter 1: Separate Ways (Golodir),,,Gravenwood – Golodir,,75,Solo
+Allies to the King,Book 5 – The Prince of Rohan,,Q,Chapter 1: Separate Ways (Calenglad),,,The Tree of Tribute – Calenglad,,75,Solo
+Allies to the King,Book 5 – The Prince of Rohan,,Q,Chapter 1: Separate Ways (Radanir),,,Gravenwood – Radanir,,75,Solo
+Allies to the King,Book 5 – The Prince of Rohan,,Q,Chapter 1: Separate Ways (Prestadir),,,Gravenwood – Prestadir,,75,Solo
+Allies to the King,Book 5 – The Prince of Rohan,,Q,Chapter 2: Grimbold,,,Rhohirrim Scout Camp – Halbarad,,75,Solo
+Allies to the King,Book 5 – The Prince of Rohan,,Q,Chapter 3: Training On the Banks,,,Grimbold's Camp – Theodred,,75,Solo
+Allies to the King,Book 5 – The Prince of Rohan,,Q,Chapter 4: The Prince of Rohan,,,Grimbold's Camp – Grimbold of Grimslade,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,Chapter 1: Troubled Dreams,,,Grimbold's Camp – Grimbold of Grimslade,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,Chapter 2: The Ghost in the Gap,,,Grimbold's Camp – Grimbold of Grimslade,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,Chapter 3: Daughter of Suvulch,,,Isendale – Nona,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,Chapter 4: Swift Hooves,,,Pool of the King – Sulvuch,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,Chapter 5: Old Friends and New Tidings,,,Talan Haldir – Haldir,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,Chapter 6: Downriver Dangers,,,Thinglad – Alfrohir,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,Chapter 7: Enemies of Old,,,Haldirith – Nona,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,Chapter 8: Stone of Friendship,,,Stangard – Nona,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,Chapter 9: Ancient Battlefield,,,Stangard – Horn,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,Chapter 10: The Falling Shadow,,,Aculf's Camp – Edbrit,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,Chapter 11: The Vanished Rider,,,Brown Lands – Nona – involves deed [See Vol 3],,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,-> An Inspiring Presence,,,Brown Lands – Gamal,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,-> A Bubbling in the Blood,,,Rushgore – Edbrit,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,-> An Uneasy Feeling,,,Parth Celebrant – Cerdic,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,-> The Black Breath,,,Eorlsmead – Ifling,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,-> A Shape On the Shore,,,Thinglad – Limthir,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,-> The Sniffling Snuffler,,,Wailing Hills – Magla,,75,Solo
+Allies to the King,Book 6 – Mists of Anduin,,Q,Chapter 12: The Mists of Anduin,,,Brown Lands – Nona,,75,Solo
+Allies to the King,Book 7 – A Fellowship Endangered,,Q,Chapter 1: The Land of the Elf-queen,,,The House of Celeborn – Galadriel,,75,Solo
+Allies to the King,Book 7 – A Fellowship Endangered,,Q,Chapter 2: The Point of Decision,,,Galadriel's Garden – Galadriel,,75,Solo
+Allies to the King,Book 7 – A Fellowship Endangered,,Q,Chapter 3: The River-walker,,,Galadriel's Garden – Galadriel,,75,Solo
+Allies to the King,Book 7 – A Fellowship Endangered,,Q,Chapter 4: Along the Shore,,,Caras Galadhon – Nona,,75,Solo
+Allies to the King,Book 7 – A Fellowship Endangered,,Q,Chapter 5: A Stop in Stangard,,,Haldirith – Nona,,75,Solo
+Allies to the King,Book 7 – A Fellowship Endangered,,Q,Chapter 6: A Journey By Boat,,,Haldirith – Corudan,,75,Solo
+Allies to the King,Book 7 – A Fellowship Endangered,,Q,Chapter 7: Shadow of the Argonath,,,The Argonath – Horn,,76,Solo
+Allies to the King,Book 7 – A Fellowship Endangered,,Q,Chapter 8: Reading the Signs,,,The East Wall – Boat from Lorien,,76,Solo
+Allies to the King,Book 7 – A Fellowship Endangered,,Q,Chapter 9: Three Hunters,,,The East Wall – Corudan,,76,Solo
+Allies to the King,Book 7 – A Fellowship Endangered,,Q,Chapter 10: To the Wold!,,,Mansing's Encampment – Mansing,,76,Solo
+Allies to the King,Book 8 – Into the Riddermark,,Q,Chapter 1: War-steeds from the Wold,,,Langhold – Adnoth [after complete War-steed quest chain],,76,Solo
+Allies to the King,Book 8 – Into the Riddermark,,Q,Chapter 2: Troubles at Floodwend,,,Harwick – Enstan,,77,Solo
+Allies to the King,Book 8 – Into the Riddermark,,Q,Chapter 3: Strange Companions,,,Floodwend – Corudan,,77,Solo
+Allies to the King,Book 8 – Into the Riddermark,,Q,Chapter 4: A Wager in the Wold,,,The Wold – Alwold,,77,Solo
+Allies to the King,Book 8 – Into the Riddermark,,Q,Chapter 5: Thane Mildrith,,,Elthengels – Elfsige,,78,Solo
+Allies to the King,Book 8 – Into the Riddermark,,Q,Chapter 6: The Victor's Ward,,,Mead Hall of Elthengels – Mildreth,,78,Solo
+Allies to the King,Book 8 – Into the Riddermark,,Q,Chapter 7: Riding the Bounds,,,Cliving – Cuthred,,78,Solo
+Allies to the King,Book 8 – Into the Riddermark,,Q,Chapter 8: A Second Proposal,,,Cliving – Cuthred,,78,Solo
+Allies to the King,Book 8 – Into the Riddermark,,Q,Chapter 9: South Across the Plains,,,Mead Hall of Elthengels – Mildrith,,79,Solo
+Allies to the King,Book 8 – Into the Riddermark,,Q,Chapter 10: Shield-brothers,,,Mead Hall of Faldham – Elmar,,79,Solo
+Allies to the King,Book 8 – Into the Riddermark,,Q,Chapter 11: Across the Vale,,,Mead Hall of Faldham – Elfmar,,80,Solo
+Allies to the King,Book 8 – Into the Riddermark,,Q,Chapter 12: Homecoming,,,Eaworth – Horn,,80,Solo
+Allies to the King,Book 8 – Into the Riddermark,,Q,Chapter 13: The Ghost Vanishes,,,Eaworth – Corudan,,80,Solo
+Allies to the King,Book 9 – The Third Marshal,,Q,Chapter 1 Eomer,,,Eaworth – Corudan,,81,Solo
+Allies to the King,Book 9 – The Third Marshal,,Q,Chapter 2: Ugluk's End,,,Eaworth – Eomer,,81,Solo
+Allies to the King,Book 9 – The Third Marshal,,Q,Chapter 3: Orcs Beneath the Eaves,,,Eomer's Vengeance – Horn,,82,Solo
+Allies to the King,Book 9 – The Third Marshal,,Q,Chapter 4: The Stone of Wyrgende,,,Eomer's Vengeance – Corudan,,82,Solo
+Allies to the King,Book 9 – The Third Marshal,,Q,Chapter 5: South to Snowbourn,,,Sutcrofts – Eomer,,83,Solo
+Allies to the King,Book 9 – The Third Marshal,,Q,Chapter 6: No Retreat,,,Snowbourn – Eomer,,83,Solo
+Allies to the King,Book 9 – The Third Marshal,,Q,Chapter 7: The Coming Tide,,,Snowbourn – Eomer,,83,Solo
+Allies to the King,Book 9 – The Third Marshal,,Q,Chapter 8: Night Falls on Meduseld,,,Snowbourn – Eomer,,83,Solo
+Allies to the King,Book 9 – The Third Marshal,,Q,Chapter 9: The Dividing Line,,,Entwade – Horn,,83,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Foreword,,,Entwade – Horn,,85,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Chapter 1: Exiles,,,Entwade – Horn,,85,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Chapter 2: Gleowine,,,Entwade – Horn,,85,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Chapter 3: No Word from Wildermore,,,Snowbourn – Horn,,85,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Chapter 4: A Man of the Wold,,,Mead Hall of Harwick – Gleowine,,85,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Chapter 5: The Lord of Widows and Orphans,,,Skyfig – Horn,,85,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Chapter 6: Fallow Guard,,,Mead Hall of Forlaw – Horn,,85,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Chapter 7: Unnatural Winter,,,Mead Hall of Forlaw – Gleowine,,85,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Chapter 8: Drifting Snows,,,Whitshaws – Horn,,85,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Chapter 9: A Song for Byre Tor,,,Whitshaws – Horn,,85,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Chapter 10: Recipe for Remedy,,,Nona's Cave – Nona,,85,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Chapter 11: Return to Byre Tor,,,Nona's Cave – Nona,,85,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Chapter 12: Nurzum,,,Nona's Cave – Nona,,85,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Chapter 13: Searching the Balewood,,,Nona's Cave – Corudan,,85,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Chapter 14: Waking Leaflock,,,Leaflock's Mead – Corudan,,85,Solo
+Allies to the King,Book 10 – Snows of Wildermore,,Q,Chapter 15: The Bloom,,,Nona's Cave – Corudan,,85,Solo
+Allies to the King,Volume III – Interludes,,Q,Interlude 1: Many Worries,,,Gleowine's Map – Gleowine,,85,Solo
+Allies to the King,Volume III – Interludes,,Q,Interlude 2: One More Journey,,,Gleowine's Map – Gleowine,,85,Solo
+Allies to the King,Volume III – Interludes,,Q,Interlude 3: The Ox and the Dragon,,,Gleowine's Map – Gleowine,,85,Solo
+Allies to the King,Volume III – Interludes,,Q,Interlude 4: Halros's Watch,,,Gleowine's Map – Gleowine,,85,Solo
+Allies to the King,Volume III – Interludes,,Q,Interlude 5: Calenglad's Appeal,,,Gleowine's Map – Gleowine,,85,Solo
+Allies to the King,Volume III – Interludes,,Q,Interlude 6: Pit of the Falcon,,,Gleowine's Map – Gleowine,,85,Solo
+Allies to the King,Volume III – Interludes,,Q,Interlude 7: Strength of Will,,,Gleowine's Map – Gleowine,,85,Solo
+Allies to the King,Book 11 – The Golden Hall,,Q,Chapter 1: Too Great a Need,,,Nona' Cave – Nona,,86,Solo
+Allies to the King,Book 11 – The Golden Hall,,Q,Chapter 2: Edoras,,,Entwade Crossing – Hunbald,,86,Solo
+Allies to the King,Book 11 – The Golden Hall,,Q,"Chapter 3: Theoden, Son of Thengel",,,Meduseld – Hama,,86,Solo
+Allies to the King,Book 11 – The Golden Hall,,Q,Chapter 4: Tidings Glad and Sorrowful,,,Meduseld – Gandalf,,86,Solo
+Allies to the King,Book 11 – The Golden Hall,,Q,Chapter 5: Chamber of the Worm,,,Meduseld – Hama,,86,Solo
+Allies to the King,Book 11 – The Golden Hall,,Q,Chapter 6: The Cage,,,Meduseld – Theoden,,86,Solo
+Allies to the King,Book 11 – The Golden Hall,,Q,Chapter 7: Commands of the King,,,Meduseld – Gandalf,,86,Solo
+Allies to the King,Book 11 – The Golden Hall,,Q,Chapter 8: People of Edoras,,,Meduseld – Eowyn,,86,Solo
+Allies to the King,Book 11 – The Golden Hall,,Q,Chapter 9: Seeds of Treachery,,,Meduseld – Eowyn,,86,Solo
+Allies to the King,Book 11 – The Golden Hall,,Q,Chapter 10: The King Rides West,,,Meduseld – Eowyn,,86,Solo
+Allies to the King,Book 12 – War in the Westemnet,,Q,Chapter 1: Message for Harrowdale,,,Meduseld – Eowyn,,88,Solo
+Allies to the King,Book 12 – War in the Westemnet,,Q,Chapter 2: Too Near to Dunharrow,,,Underharrow – Ellen Fremedon,,88,Solo
+Allies to the King,Book 12 – War in the Westemnet,,Q,Chapter 3: In Eomer's Absence,,,Underharrow – Horn,,89,Solo
+Allies to the King,Book 12 – War in the Westemnet,,Q,Chapter 4: The Missing,,,Aldburg Mead Hall – Arcil,,89,Solo
+Allies to the King,Book 12 – War in the Westemnet,,Q,Chapter 5: Eyes on Edoras,,,Aldburg Mead Hall – Arcil,,91,Solo
+Allies to the King,Book 12 – War in the Westemnet,,Q,Chapter 6: Through the Net,,,Edoras – Eowyn,,91,Solo
+Allies to the King,Book 12 – War in the Westemnet,,Q,Chapter 7: Burning Secrets,,,Meadhall of Stoke – Frithild,,91,Solo
+Allies to the King,Book 12 – War in the Westemnet,,Q,Chapter 8: Hill Tribes and Horse-lords,,,Meadhall of Stoke – Frithild,,92,Solo
+Allies to the King,Book 12 – War in the Westemnet,,Q,Chapter 9: The Soothsayer,,,Herubrand's Hideout – Herubrand,,92,Solo
+Allies to the King,Book 12 – War in the Westemnet,,Q,Chapter 10: Rumours of Battle,,,Herubrand's Hideout – Herubrand,,93,Solo
+Allies to the King,Book 13 – The Battle of the Hornburg,,Q,Chapter 1: The Lay of the Land,,,The Deeping Coomb – Gamling the Old,,94,Solo
+Allies to the King,Book 13 – The Battle of the Hornburg,,Q,Chapter 2: Final Preparations,,,The Hornburg – Aragorn,,94,Solo
+Allies to the King,Book 13 – The Battle of the Hornburg,,Q,Chapter 3: Night Deepens,,,The Hornburg – Aragorn,,94,Solo
+Allies to the King,Book 13 – The Battle of the Hornburg,,Q,Chapter 4: Helm's Dike – Epic Battles,,,Map Table at West Wall,,94,Solo
+Allies to the King,Book 13 – The Battle of the Hornburg,,Q,Chapter 5: A Need for Words,,,Deeping Wall – Aragorn,,95,Solo
+Allies to the King,Book 13 – The Battle of the Hornburg,,Q,Chapter 6: Atop the Wall – Epic Battles,,,Deeping Wall – Aragorn,,95,Solo
+Allies to the King,Book 13 – The Battle of the Hornburg,,Q,Chapter 7: Defending the Deep – Epic Battles,,,Helm's Deep – Eomer,,95,Solo
+Allies to the King,Book 13 – The Battle of the Hornburg,,Q,Chapter 8: Secret Ways,,,Helm's Deep – Aragorn,,95,Solo
+Allies to the King,Book 13 – The Battle of the Hornburg,,Q,Chapter 9: Glittering Caves – Epic Battles,,,The Glittering Caves – Gimli,,95,Solo
+Allies to the King,Book 13 – The Battle of the Hornburg,,Q,Chapter 10: The Hornburg – Epic Battles,,,Helm's Deep – Aragorn,,95,Solo
+Allies to the King,Book 13 – The Battle of the Hornburg,,Q,Chapter 11: Dawn Comes,,,Helm's Deep – Thurketel,,95,Solo
+Allies to the King,Book 13 – The Battle of the Hornburg,,Q,Interlude: The Doorward,,,Helm's Deep – Gleowine,,95,Solo
+Allies to the King,Book 14 – The Waters of Isengard,,Q,Foreword: Deal with Saruman,,,Auto-bestowed – Mail item,,95,Solo
+Allies to the King,Book 14 – The Waters of Isengard,,Q,Chapter 1: The Battle is Won,,,Helms Deep – Gandalf,,95,Solo
+Allies to the King,Book 14 – The Waters of Isengard,,Q,Chapter 2: Allies Unexpected,,,The Great Hall of the Hornburg,,95,Solo
+Allies to the King,Book 14 – The Waters of Isengard,,Q,Chapter 3: The Flooded Ring,,,Fords of Isen – Aragorn,,95,Solo
+Allies to the King,Book 14 – The Waters of Isengard,,Q,-> Back into the Wild,,,Nan Curunir – Fleeing Dunlending Captain,,95,Solo
+Allies to the King,Book 14 – The Waters of Isengard,,Q,"-> A Dreary, Untidy Mess",,,Auto-bestowed – Landscape,,95,Solo
+Allies to the King,Book 14 – The Waters of Isengard,,Q,Chapter 4: Took and Brandybuck,,,Gates of Isengard – Pippin,,95,Solo
+Allies to the King,Book 14 – The Waters of Isengard,,Q,Interlude: The Moot,,,Gates of Isengard – Merry,,95,Solo
+Allies to the King,Book 14 – The Waters of Isengard,,Q,Chapter 5: Wizard to Manage,,,Gates of Isengard – Aragorn,,95,Solo
+Allies to the King,Book 14 – The Waters of Isengard,,Q,Chapter 6: The Drowning Pits,,,Orthanc – Gandalf,,95,Solo
+Allies to the King,Book 14 – The Waters of Isengard,,Q,Interlude: Last March of the Ents,,,Orthanc – Treebeard,,95,Solo
+Allies to the King,Book 14 – The Waters of Isengard,,Q,Chapter 7: Lothrandir,,,Isengard Depths – Golodir,,95,Solo
+Allies to the King,Book 14 – The Waters of Isengard,,Q,Chapter 8: Allies to the King,,,Ring of Isengard – Halbarad,,95,Solo

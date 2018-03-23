@@ -127,80 +127,84 @@ class LotroApp extends Component {
     this.setState(data);
   }
 
+  switch_deed_category(db_promise, deed_data){
+    get_deeds_of_type(db_promise, deed_data.deed_category_selected).then(data=>{
+      //create the subcategories
+      let subs = new Set();
+
+      data.forEach(deed=>{
+        subs.add(deed.Subcategory);
+      })
+
+      get_store().issue_action(ACTION_TYPES.DEED_UPDATED, {
+        deeds:data,
+        deed_subcategories:subs,
+        deed_subcategory_selected: ''
+      });
+    });
+  }
+
   handle_deed_category_changed(state, data){
     console.log('handle_deed_category_changed called...', data);
     this.setState(data);
 
-    //FIXME: this may be fixed later on, but for now switch is needed for development
+    //FIXME: this may be fixed later on, but for now switch is needed for development so
+    //FIXME: that only existing data can be used
     switch(data.deed_category_selected){
       case DEED_CATEGORIES.CLASS://change to class deeds
-        get_deeds_of_type(this.db_promise, DEED_CATEGORIES.CLASS).then(data=>{
-          //create the subcategories
-          let subs = new Set();
-
-          data.forEach(deed=>{
-            subs.add(deed.Subcategory);
-          })
-
-          get_store().issue_action(ACTION_TYPES.DEED_UPDATED, {
-            deeds:data,
-            deed_subcategories:subs,
-            deed_subcategory_selected: ''
-          });
-        });
+        this.switch_deed_category(this.db_promise, data);
         break;
 
       case DEED_CATEGORIES.RACE:
-        get_deeds_of_type(this.db_promise, DEED_CATEGORIES.RACE).then(data=>{
-          //create the subcategories
-          let subs = new Set();
-
-          data.forEach(deed=>{
-            subs.add(deed.Subcategory);
-          })
-
-          get_store().issue_action(ACTION_TYPES.DEED_UPDATED, {
-            deeds:data,
-            deed_subcategories:subs,
-            deed_subcategory_selected: ''
-          });
-        });
+        this.switch_deed_category(this.db_promise, data);
         break;
 
       case DEED_CATEGORIES['SHADOWS OF ANGMAR']:
-        get_deeds_of_type(this.db_promise, DEED_CATEGORIES['SHADOWS OF ANGMAR']).then(data=>{
-          //create the subcategories
-          let subs = new Set();
-
-          data.forEach(deed=>{
-            subs.add(deed.Subcategory);
-          })
-
-          get_store().issue_action(ACTION_TYPES.DEED_UPDATED, {
-            deeds:data,
-            deed_subcategories:subs,
-            deed_subcategory_selected: ''
-          });
-        });
+        this.switch_deed_category(this.db_promise, data);
         break;
+
+      case DEED_CATEGORIES['THE MINES OF MORIA']:
+        this.switch_deed_category(this.db_promise, data);
+        break;
+
+      case DEED_CATEGORIES['ALLIES TO THE KING']:
+        this.switch_deed_category(this.db_promise, data);
+      break;
+
+      case DEED_CATEGORIES['THE STRENGTH OF SAURON']:
+        this.switch_deed_category(this.db_promise, data);
+      break;
+
+      case DEED_CATEGORIES['THE BLACK BOOK OF MORDOR']:
+        this.switch_deed_category(this.db_promise, data);
+      break;
+
+      case DEED_CATEGORIES.REPUTATION:
+        this.switch_deed_category(this.db_promise, data);
+      break;
 
       case DEED_CATEGORIES.ERIADOR://change to Eriador deeds
-        get_deeds_of_type(this.db_promise, DEED_CATEGORIES.ERIADOR).then(data=>{
-          //create the subcategories
-          let subs = new Set();
-
-          data.forEach(deed=>{
-            subs.add(deed.Subcategory);
-          })
-
-          //issue deed upate
-          get_store().issue_action(ACTION_TYPES.DEED_UPDATED, {
-            deeds:data,
-            deed_subcategories:subs,
-            deed_subcategory_selected: ''
-          });
-        });
+        this.switch_deed_category(this.db_promise, data);
         break;
+
+      case DEED_CATEGORIES.RHOVANION:
+        this.switch_deed_category(this.db_promise, data);
+        break;
+
+      case DEED_CATEGORIES.GONDOR:
+        this.switch_deed_category(this.db_promise, data);
+        break;
+
+      case DEED_CATEGORIES.MORDOR:
+        this.switch_deed_category(this.db_promise, data);
+        break;
+
+      case DEED_CATEGORIES.SKIRMISH:
+        this.switch_deed_category(this.db_promise, data);
+        break;
+
+      case DEED_CATEGORIES.INSTANCES:
+      case DEED_CATEGORIES.HOBBIES:
       default:
         break;
     }
@@ -220,7 +224,7 @@ class LotroApp extends Component {
       console.log('handle_reset_database failure...', error);
     });
   }
-  // 
+  //
   // toggle_modal(event){
   //   console.log('toggle_modal called...')
   // }
@@ -228,7 +232,7 @@ class LotroApp extends Component {
   render() {
     return (
       <div className="lotro-app">
-        <h1 className='page-title'>Lotro Character Log</h1>
+        <h1 className='page-title'>Lord of the Rings Online Character Log</h1>
         {/* <ReactModal
           className='modal-content'
           overlayClassName='modal'

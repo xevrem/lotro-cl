@@ -1,0 +1,382 @@
+Category,Subcategory,Faction,Type,Deed,LP,Trait,Details,Title,Level,Party
+Gondor,Western Gondor,Dol Amroth,M,Deeds of West Gondor,-,-,Complete 3 meta deeds in West Gondor,,,
+Gondor,Western Gondor,Dol Amroth,M,Quests of West Gondor,-,-,Complete 5 quest deeds in West Gondor,,,
+Gondor,Western Gondor,Dol Amroth,M,Explorer of West Gondor,-,-,Complete 5 explorer deeds in West Gondor,,,
+Gondor,Western Gondor,Dol Amroth,M,Slayer of West Gondor,-,-,Complete 5 slayer deeds in West Gondor,,,
+Gondor,Western Gondor,Dol Amroth,M,Dol Amroth – Buildings,-,-,Gain reputation with the various factions of Dol Amroth,,,
+Gondor,Western Gondor,Dol Amroth,F,Dol Amroth – City Watch – Armoury,-,-,Gain Acquaintance standing and complete 10 quests,,,
+Gondor,Western Gondor,Dol Amroth,F,Dol Amroth – City Watch – Bank,-,-,Gain Acquaintance standing and complete 10 quests,,,
+Gondor,Western Gondor,Dol Amroth,F,Dol Amroth – City Watch – Docks,-,-,Gain Acquaintance standing and complete 10 quests,,,
+Gondor,Western Gondor,Dol Amroth,F,Dol Amroth – City Watch – Great Hall,-,-,Gain Acquaintance standing and complete 10 quests,,,
+Gondor,Western Gondor,Dol Amroth,F,Dol Amroth – City Watch – Library,-,-,Gain Acquaintance standing and complete 10 quests,,,
+Gondor,Western Gondor,Dol Amroth,F,Dol Amroth – City Watch – Mason,-,-,Gain Acquaintance standing and complete 14 quests,,,
+Gondor,Western Gondor,Dol Amroth,F,Dol Amroth – City Watch – Swan Knights Barracks,-,-,Gain Acquaintance standing and complete 14 quests,,,
+Gondor,Western Gondor,Dol Amroth,F,Dol Amroth – City Watch – Warehouse,-,-,Gain Acquaintance standing and complete 10 quests,,,
+Gondor,Western Gondor,Dol Amroth,E,Beacons of West Gondor,5,Idealism,Find 5 beacons in West Gondor,Explorer of West Gondor,,
+Gondor,Western Gondor,Dol Amroth,E,Paths of the Dead,5,Innocence,Find 4 points of interest in Paths of the Dead,Paths of the Dead Walker,,
+Gondor,Western Gondor,Dol Amroth,E,Prosperity of West Gondor,5,Confidence,Find 7 points of interest in West Gondor,Wanderer of West Gondor,,
+Gondor,Western Gondor,Dol Amroth,E,Gondorian Treasure Cache,10,Determination,Find 18 lost treasures throughout West Gondor,Treasure Hunter of West Gondor,,
+Gondor,Western Gondor,Dol Amroth,E,West Gondor: Camps of the Enemies,5,Loyalty,Find 6 enemy camps in West Gondor,Scout of West Gondor,,
+Gondor,Western Gondor,Dol Amroth,L,Quests of Belfalas,5,Zeal,Complete quests within Belfalas (35),Hero of Belfalas,,
+Gondor,Western Gondor,Dol Amroth,L,Quests of Blackroot Vale,5,Honesty,Complete quests within Blackroot Vale (35),Hero of Blackroot Vale,,
+Gondor,Western Gondor,Dol Amroth,L,Quests of Lamedon,5,Empathy,Complete quests within Lamedon (30),Hero of Lamedon,,
+Gondor,Western Gondor,Dol Amroth,L,Quests of Tarlang's Crown,5,Fidelity,Complete quests within Tarlang's Crown (25),Hero of Tarlang's Crown,,
+Gondor,Western Gondor,Dol Amroth,L,Vanguard of Western Gondor,10,-,Complete quest – First of the Heirs,Enemy of the Heirs,,
+Gondor,Western Gondor,Dol Amroth,L,West Gondor's Roaming Enemies,5,Patience,Complete 7 Warband quests,Roaming Protector of West Gondor,,
+Gondor,Western Gondor,Dol Amroth,L,Western Gondor's Roving Enemies,5,Justice,Complete 5 Roving Threat quests,Roving Defender of Western Gondor,,
+Gondor,Western Gondor,Dol Amroth,S,Bandit-slayer of West Gondor,5,-,Defeat Bandits in West Gondor (100),,,
+Gondor,Western Gondor,Dol Amroth,S,Bandit-slayer of West Gondor (advanced),5,Justice,Defeat Bandits in West Gondor (200),Bandit-slayer of West Gondor,,
+Gondor,Western Gondor,Dol Amroth,S,Beast-slayer of West Gondor,5,-,Defeat Beasts in West Gondor (100),,,
+Gondor,Western Gondor,Dol Amroth,S,Beast-slayer of West Gondor (advanced),5,Discipline,Defeat Beasts in West Gondor (200),Beast-slayer of West Gondor,,
+Gondor,Western Gondor,Dol Amroth,S,Corsair-slayer of West Gondor,5,-,Defeat Corsair in West Gondor (120),,,
+Gondor,Western Gondor,Dol Amroth,S,Corsair-slayer of West Gondor (advanced),5,Valour,Defeat Corsair in West Gondor (240),Corsair-slayer of West Gondor,,
+Gondor,Western Gondor,Dol Amroth,S,Oath-breaker Slayer of West Gondor,5,-,Defeat Oath-breakers in West Gondor (100),,,
+Gondor,Western Gondor,Dol Amroth,S,Oath-breaker Slayer of West Gondor (advanced),5,Compassion,Defeat Oath-breakers in West Gondor (200),Oath-breaker Slayer of West Gondor,,
+Gondor,Western Gondor,Dol Amroth,S,Orc-slayer of West Gondor,5,-,Defeat Orcs in West Gondor (80),,,
+Gondor,Western Gondor,Dol Amroth,S,Orc-slayer of West Gondor (advanced),5,Honour,Defeat Orcs in West Gondor (160),Orc-slayer of West Gondor,,
+Gondor,Western Gondor,Dol Amroth,Q,Warband: Old Brog,,,Auto-betowed – Blackroot Vale,,97,Small Fellow
+Gondor,Western Gondor,Dol Amroth,Q,Warband: Hemokh,,,Auto-betowed – Blackroot Vale,,96,Fellow
+Gondor,Western Gondor,Dol Amroth,Q,Warband: Old Snapper,,,Auto-betowed – Lamedon,,98,Small Fellow
+Gondor,Western Gondor,Dol Amroth,Q,Warband: The Great Bull,,,Auto-betowed – Lamedon,,98,Small Fellow
+Gondor,Western Gondor,Dol Amroth,Q,Warband: Coruwen the Cunning,,,Auto-betowed – Lamedon,,98,Fellow
+Gondor,Western Gondor,Dol Amroth,Q,Warband: Skulkmire,,,Auto-betowed – Haven of Belfalas,,98,Small Fellow
+Gondor,Western Gondor,Dol Amroth,Q,Warband: Adirjan the Brute,,,Auto-betowed – Haven of Belfalas,,99,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Armory - Corsair Craftsmen,,,Dol Amroth - Glireth,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Armory - Floating Kindling,,,Dol Amroth - Glireth,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Armory - Hunting the Hunters,,,Dol Amroth - Glireth,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Armory - The Corsair Group,,,Dol Amroth - Glireth,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Armory - Weapons of the Guard,,,Training Instance: Retaking Dol Amroth - Bainnas,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Armory - Guarding the Ocean,,,Training Instance: Retaking Dol Amroth - Bainnas,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Armory - Tending the Wounded,,,Training Instance: Retaking Dol Amroth - Bainnas,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Armory - Checking for Intruders,,,Training Instance: Retaking Dol Amroth - Bainnas,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Armory - Arms and Armors,,,Training Instance: Retaking Dol Amroth - Bainnas,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Armory - Punishing the Purloiners,,,Training Instance: Retaking Dol Amroth - Bainnas,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Bank - A Dangerous Thirst,,,Dol Amroth - Elaglar,,100,Fellow
+Gondor,Western Gondor,Dol Amroth,Q,Bank - Carried Downriver,,,Dol Amroth - Elaglar,,100,Fellow
+Gondor,Western Gondor,Dol Amroth,Q,Bank - Servants of the Heirs,,,Dol Amroth - Elaglar,,100,Fellow
+Gondor,Western Gondor,Dol Amroth,Q,Bank - Waters of the Blackroot,,,Dol Amroth - Elaglar,,100,Fellow
+Gondor,Western Gondor,Dol Amroth,Q,Bank - Looking for Interlopers,,,Training Instance: Retaking Dol Amroth - Thandon,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Bank - Securing the Savings,,,Training Instance: Retaking Dol Amroth - Thandon,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Bank - Closing the Port,,,Training Instance: Retaking Dol Amroth - Thandon,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Bank - Clearing the Path,,,Training Instance: Retaking Dol Amroth - Thandon,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Bank - Pilfer and Plunder,,,Training Instance: Retaking Dol Amroth - Thandon,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Bank - Up in Smoke,,,Training Instance: Retaking Dol Amroth - Thandon,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Docks - Baiting the Hook,,,Dol Amroth - Torchuil,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Docks - The Bait Ball,,,Dol Amroth - Torchuil,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Docks - The Salmon Run,,,Dol Amroth - Torchuil,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Docks - Turtles in the Depths,,,Dol Amroth - Torchuil,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Docks - Shelter in Place,,,Training Instance: Retaking Dol Amroth - Nurin,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Docks - Supplies from the Sea,,,Training Instance: Retaking Dol Amroth - Nurin,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Docks - Sinking the Fleet,,,Training Instance: Retaking Dol Amroth - Nurin,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Docks - Sealing the City,,,Training Instance: Retaking Dol Amroth - Nurin,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Docks - Down with his Ship,,,Training Instance: Retaking Dol Amroth - Nurin,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Docks - The Fleet of Gondor,,,Training Instance: Retaking Dol Amroth - Nurin,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Great Hall - Caught and Caged,,,Dol Amroth - Dimlas,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Great Hall - Planting Anew,,,Dol Amroth - Dimlas,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Great Hall - Snares,,,Dol Amroth - Dimlas,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Great Hall - Raven's Rookery,,,Dol Amroth - Dimlas,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Great Hall - There's Always One,,,Training Instance: Retaking Dol Amroth - Lathron,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Great Hall - Climbing a Cliff,,,Training Instance: Retaking Dol Amroth - Lathron,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Great Hall - Garden of Lumber,,,Training Instance: Retaking Dol Amroth - Lathron,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Great Hall - The Heart of Dol Amroth,,,Training Instance: Retaking Dol Amroth - Lathron,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Great Hall - Foul Waters,,,Training Instance: Retaking Dol Amroth - Lathron,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Great Hall - Stripping it Bare,,,Training Instance: Retaking Dol Amroth - Lathron,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Library - Captains of the Crew,,,Dol Amroth - Tolrian,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Library - A Place to Lie at Night,,,Dol Amroth - Tolrian,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Library - Slavers of Men,,,Dol Amroth - Tolrian,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Library - Trapping the Beach,,,Dol Amroth - Tolrian,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Library - Ashes of Knowledge,,,Training Instance: Retaking Dol Amroth - Meren,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Library - Guardians of Dol Amroth,,,Training Instance: Retaking Dol Amroth - Meren,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Library - Shattered Glass,,,Training Instance: Retaking Dol Amroth - Meren,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Library - Securing the Past,,,Training Instance: Retaking Dol Amroth - Meren,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Library - Freedom's Thief,,,Training Instance: Retaking Dol Amroth - Meren,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Library - Saving the Scholars,,,Training Instance: Retaking Dol Amroth - Meren,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Mason - Forgotten Ore,,,Dol Amroth - Gelloth,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Mason - Corsair Surveyors,,,Dol Amroth - Gelloth,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Mason - Claws of the Deep,,,Dol Amroth - Gelloth,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Mason - Twists and Turns,,,Dol Amroth - Gelloth,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Mason - Shattered Crystals,,,Dol Amroth - Lhossil,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Mason - Mining with Oars,,,Dol Amroth - Lhossil,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Mason - Shaky Scaffolds,,,Dol Amroth - Lhossil,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Mason - Captain Without a Ship,,,Dol Amroth - Lhossil,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Mason - Tools of the Trade,,,Training Instance: Retaking Dol Amroth - Dorlan,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Mason - Stealing a Soul,,,Training Instance: Retaking Dol Amroth - Dorlan,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Mason - Flooded with Arrows,,,Training Instance: Retaking Dol Amroth - Dorlan,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Mason - The Materials of War,,,Training Instance: Retaking Dol Amroth - Dorlan,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Mason - Locked Up,,,Training Instance: Retaking Dol Amroth - Dorlan,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Mason - Crafting Commandeered,,,Training Instance: Retaking Dol Amroth - Dorlan,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Swan Knights - Lenn Duskad,,,Dol Amroth - Golusel,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Swan Knights - The Shadow-watch,,,Dol Amroth - Golusel,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Swan Knights - Fallen but not Forgotten,,,Dol Amroth - Golusel,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Swan Knights - The Ruthless Dead,,,Dol Amroth - Golusel,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Swan Knights - A Message of Courage,,,Dol Amorth - Avordur,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Swan Knights - The Ruthless Dead,,,Dol Amorth - Avordur,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Swan Knights - The Fallen,,,Dol Amorth - Avordur,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Swan Knights - Bloom of Decay,,,Dol Amorth - Avordur,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Swan Knights - Dividing the Bridge,,,Training Instance: Retaking Dol Amroth - Cloron,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Swan Knights - Death From Above,,,Training Instance: Retaking Dol Amroth - Cloron,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Swan Knights - Sweeping the Stragglers,,,Training Instance: Retaking Dol Amroth - Cloron,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Swan Knights - Wounded in Action,,,Training Instance: Retaking Dol Amroth - Cloron,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Swan Knights - Looting the Swan,,,Training Instance: Retaking Dol Amroth - Cloron,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Swan Knights - Rescuing the Knight,,,Training Instance: Retaking Dol Amroth - Cloron,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Warehouse - Feasts of Drakes,,,Dol Amroth - Rodwen,,100,Small Fellow
+Gondor,Western Gondor,Dol Amroth,Q,Warehouse - Corsairs,,,Dol Amroth - Rodwen,,100,Small Fellow
+Gondor,Western Gondor,Dol Amroth,Q,Warehouse - Smoke Signals,,,Dol Amroth - Rodwen,,100,Small Fellow
+Gondor,Western Gondor,Dol Amroth,Q,Warehouse - A Hunter's Prowess,,,Dol Amroth - Rodwen,,100,Small Fellow
+Gondor,Western Gondor,Dol Amroth,Q,Warehouse - Stores for Winter,,,Training Instance: Retaking Dol Amroth - Gladiur,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Warehouse - Slave to the Sea,,,Training Instance: Retaking Dol Amroth - Gladiur,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Warehouse - Fire and Water,,,Training Instance: Retaking Dol Amroth - Gladiur,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Warehouse - Securing the Way,,,Training Instance: Retaking Dol Amroth - Gladiur,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Warehouse - Fanning the Flames,,,Training Instance: Retaking Dol Amroth - Gladiur,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,Warehouse - Very Hungry Rats,,,Training Instance: Retaking Dol Amroth - Gladiur,,100,Solo
+Gondor,Western Gondor,Dol Amroth,Q,First of the Heirs,,,Tarlang's Crown – Harnion,,100,Fellow
+Gondor,Western Gondor,Dol Amroth,Q,"Roving Threat: Haldalona, the Vile Darkwater",,,Dol Amroth - Aelnir,,100,Small Fellow
+Gondor,Western Gondor,Dol Amroth,Q,"Roving Threat: Amorchant, the Winged Death",,,Dol Amroth - Aelnir,,100,Fellow
+Gondor,Western Gondor,Dol Amroth,Q,"Roving Threat: Skorkaz, the Callous Dead",,,Dol Amroth - Aelnir,,100,Small Fellow
+Gondor,Western Gondor,Dol Amroth,Q,"Roving Threat: Mota, the Umbarrim Scourge",,,Dol Amroth - Aelnir,,100,Fellow
+Gondor,Western Gondor,Dol Amroth,Q,"Roving Threat: Gundlag, the Death Troll",,,Dol Amroth - Aelnir,,100,Fellow
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,M,Deeds of Central Gondor,-,-,Complete 3 meta deeds in Central Gondor,,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,M,Quests of Central Gondor,-,-,Complete 5 quest deeds in Central Gondor,,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,M,Explorer of Central Gondor,-,-,Complete 5 explorer deeds in Central Gondor,,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,M,Slayer of Central Gondor,-,-,Complete 5 slayer deeds in Central Gondor,,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,E,Central Gondor: Camps of the Enemies,5,Loyalty,Find 6 enemy camps in Central Gondor,Scout of Central Gondor,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,E,Central Gondor: Under Seige,5,Confidence,Find 4 points of interest in Central Gondor,Protector of Central Gondor,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,E,Path of the Grey Host,5,Innocence,Find 6 areas on the path of the Grey Host,Follower of the Grey Host,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,E,Legacy of Pelargir,5,Charity,Find 8 points of interest of Pelargir,Explorer of Pelargir,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,E,Treasure of Central Gondor,10,Determination,Find 20 lost treasures throughout Central Gondor,Treasure Seeker of Central Gondor,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,L,Quest of Dor-en-Ernil,5,Honesty,Complete quests within Dor-en-Ernil (23),Hero of Dor-en-Ernil,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,L,Quests of Lebennin,5,Zeal,Complete quests within Lebennin (23),Hero of Lebennin,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,L,Quests of Ringlo Vale,5,Empathy,Complete quests within Ringlo Vale (18),Hero of Ringlo Vale,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,L,Vanguard of Central Gondor,10,Fidelity,Complete 3 epilogue quests,Vanguard of Central Gondor,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,L,Central Gondor's Roaming Enemies,5,Patience,Complete 7 Warband quests,Roaming Protector of Central Gondor,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,L,Central Gondor's Roving Enemies,5,Honour,Complete 9 Roving Threat quests,Roving Defender of Central Gondor,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,S,Beast-slayer of Central Gondor,5,-,Defeat Beasts in Central Gondor (100),,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,S,Beast-slayer of Central Gondor (advanced),5,Compassion,Defeat Beasts in Central Gondor (200),Beast-slayer of Central Gondor,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,S,Corsair-slayer of Central Gondor,5,-,Defeat Corsairs in Central Gondor (100),,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,S,Corsair-slayer of Central Gondor (advanced),5,Justice,Defeat Corsairs in Central Gondor (200),Corsair-slayer of Central Gondor,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,S,Half-troll Slayer of Central Gondor,5,-,Defeat Half-trolls in Central Gondor (50),,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,S,Half-troll Slayer of Central Gondor (advanced),5,Discipline,Defeat Half-trolls in Central Gondor (100),Half-troll Slayer of Central Gondor,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,S,Haradrim-slayer of Central Gondor,5,-,Defeat Haradrim in Central Gondor (100),,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,S,Haradrim-slayer of Central Gondor (advanced),5,Valour,Defeat Haradrim in Central Gondor (200),Haradrim-slayer of Central Gondor,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,S,Orc-slayer of Central Gondor,5,-,Defeat Orcs in Central Gondor (100),,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,S,Orc-slayer of Central Gondor (advanced),5,Honour,Defeat Orcs in Central Gondor (200),Orc-slayer of Central Gondor,,
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,A Ruthless End,,,Nimrond - Arvaethor - Class Trait Point,,100,Solo
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,Blood for Blood,,,Linhir - Erchar - Class Trait Point,,100,Solo
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,Sons of the Ursurper,,,Linhir - Erchar - Class Trait Point,,100,Solo
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,Faltharan's Confrontation,,,Pelargir - Thandor - Class Trait Point,,100,Solo
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,Warband: Skorneval,,,Auto-bestowed – Ringlo Vale,,100,Small Fellow
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,Warband: Hamarsun,,,Auto-bestowed – Dor-en-Ernil,,100,Small Fellow
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,Warband: Shatupash,,,Auto-bestowed – Dor-en-Ernil,,100,Fellow
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,Warband: Hokhir,,,Auto-bestowed – Dor-en-Ernil,,100,Fellow
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,Warband: Vilosh,,,Auto-bestowed – Lebennin,,100,Fellow
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,Warband: Shataz,,,Auto-bestowed – Lebennin,,100,Small Fellow
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,Warband: Darik,,,Auto-bestowed – Lebennin,,100,Solo
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,Epilogue: Restless Souls,,,Ethring - Arvaethor - requires kindred Ringlo Vale,,100,Solo
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,Epilogue: The Waters of the Gilrain,,,Linhir - Erchar - requires kindred Dor-en-Ernil,,100,Solo
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,Epilogue: Sailing Into the Dawn,,,Ost Anglebed - Nimithil - requires kindred Lebennin,,100,Solo
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,"Roving Threat: Scythe-jaw, the Dread Spider",,,Ethring – Candur – after A Ruthless End,,100,Small Fellow
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,"Roving Threat: Gundash, the White Mountain Menace",,,Ethring – Laerind – after A Ruthless End,,100,Small Fellow
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,"Roving Threat: Du-kalon, the Pitiless Dead",,,Ethring – Arvaethor – after A Ruthless End,,100,Fellow
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,"Roving Threat: Ripper, Bane of the Prince's Lands",,,Linhir – Herion – after Blood for Blood,,100,Fellow
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,"Roving Threat: Anburz, Wielder of Men",,,Linhir - Erchar – after Blood for Blood,,100,Small Fellow
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,"Roving Threat: Keterang, Master of Spirits",,,Linhir - Erchar – after Blood for Blood,,100,Small Fellow
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,"Roving Threat: Render, Shadow of the White Mountains",,,Ost Anglebed – Milonnen – after Sons of the Ursurper,,100,Fellow
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,"Roving Threat: Luruyak, Terror of Harad",,,Ost Anglebed - Nimithil – after Sons of the Ursurper,,100,Small Fellow
+Gondor,Central Gondor,Men of Riglo Vale / Dor-en-Ernil / Lebennin / Pelargir,Q,"Roving Threat: Abrakhor, Chosen of the Scourge",,,Ost Anglebed - Milonnen – after Sons of the Ursurper,,100,Fellow
+Gondor,Eastern Gondor,Rangers of Ithilien,M,Deeds of Eastern Gondor,-,-,Complete 3 meta deeds in Eastern Gondor,,,
+Gondor,Eastern Gondor,Rangers of Ithilien,M,Quests of Eastern Gondor,-,-,Complete 5 quest deeds in Eastern Gondor,,,
+Gondor,Eastern Gondor,Rangers of Ithilien,M,Explorer of Eastern Gondor,-,-,Complete 6 explorer deeds in Eastern Gondor,,,
+Gondor,Eastern Gondor,Rangers of Ithilien,M,Slayer of Eastern Gondor,-,-,Complete 6 slayer deeds in Eastern Gondor,,,
+Gondor,Eastern Gondor,Rangers of Ithilien,E,Ruins of South Ithilien,5,Fidelity,Find 5 ruins in South Ithilien,Moon-land Explorer,,
+Gondor,Eastern Gondor,Rangers of Ithilien,E,Strongholds of Hope,5,Innocence,Find 6 strongholds in Eastern Gondor,the Strong-willed,,
+Gondor,Eastern Gondor,Rangers of Ithilien,E,The Five Sisters,10,Wisdom,Find 5 tribute baskets in Eastern Gondor,Friend of the Five Sisters,,
+Gondor,Eastern Gondor,Rangers of Ithilien,E,The Legacy of Osgiliath,5,Confidence,Find 10 points of interest in Osgiliath,Explorer of Osgiliath,,
+Gondor,Eastern Gondor,Rangers of Ithilien,E,The Morgul-host,5,Loyalty,Find 7 areas of the Morgul-host,Foe of the Morgul-host,,
+Gondor,Eastern Gondor,Rangers of Ithilien,E,The Southern Beacons,5,Honesty,Find 5 southern beacons,Scout of the Southern Kingdom,,
+Gondor,Eastern Gondor,Rangers of Ithilien,E,Treasure of Eastern Gondor,10,Patience,Find 18 lost treasures throughout Eastern Gondor,Treasure Seeker of Eastern Gondor,,
+Gondor,Eastern Gondor,Rangers of Ithilien,L,Quests of Lossarnach,5,Idealism,Complete quests within Lossarnach (25),Hero/Heroine of Lossarnach,,
+Gondor,Eastern Gondor,Rangers of Ithilien,L,Quests of Osgiliath,5,Zeal,Complete quests within Osgiliath (15),the Fearless Defender,,
+Gondor,Eastern Gondor,Rangers of Ithilien,L,Quests of South Ithilien,5,Tolerance,Complete quests within Southern Ithilien (35),Hero/Heroine of South Ithilien,,
+Gondor,Eastern Gondor,Rangers of Ithilien,L,Quests of Upper Lebennin,5,Charity,Complete quests within Upper Lebennin (25),Hero/Heroine of Upper Lebennin,,
+Gondor,Eastern Gondor,Rangers of Ithilien,L,Eastern Gondor's Roaming Enemies,5,Honour,Complete 3 Warband quests,Roaming Protector of Eastern Gondor,,
+Gondor,Eastern Gondor,Rangers of Ithilien,L,Eastern Gondor's Roving Enemies,5,Loyalty,Complete 3 Roving Threats quests,Roving Defender of Eastern Gondor,,
+Gondor,Eastern Gondor,Rangers of Ithilien,S,Beast-slayer of Eastern Gondor,5,-,Defeat Beasts in Eastern Gondor (120),Hero/Heroine of Upper Lebennin,,
+Gondor,Eastern Gondor,Rangers of Ithilien,S,Beast-slayer of Eastern Gondor (advanced),5,Mercy,Defeat Beasts in Eastern Gondor (240),Beast-slayer of Eastern Gondor,,
+Gondor,Eastern Gondor,Rangers of Ithilien,S,Easterling-slayer of Eastern Gondor,5,-,Defeat Easterlings in Eastern Gondor (100),,,
+Gondor,Eastern Gondor,Rangers of Ithilien,S,Easterling-slayer of Eastern Gondor (advanced),5,Discipline,Defeat Easterlings in Eastern Gondor (200),Easterling-slayer of Eastern Gondor,,
+Gondor,Eastern Gondor,Rangers of Ithilien,S,Goblin-slayer of Eastern Gondor,5,-,Defeat Goblins in Eastern Gondor (100),,,
+Gondor,Eastern Gondor,Rangers of Ithilien,S,Goblin-slayer of Eastern Gondor (advanced),5,Determination,Defeat Goblins in Eastern Gondor (200),Goblin-slayer of Eastern Gondor,,
+Gondor,Eastern Gondor,Rangers of Ithilien,S,Half-troll Slayer of Eastern Gondor,5,-,Defeat Half-trolls in Eastern Gondor (50),,,
+Gondor,Eastern Gondor,Rangers of Ithilien,S,Half-troll Slayer of Eastern Gondor (advanced),5,Fortitude,Defeat Half-trolls in Eastern Gondor (100),Half-troll Slayer of Eastern Gondor,,
+Gondor,Eastern Gondor,Rangers of Ithilien,S,Haradrim-slayer of Eastern Gondor,5,-,Defeat Haradrim in Eastern Gondor (120),,,
+Gondor,Eastern Gondor,Rangers of Ithilien,S,Haradrim-slayer of Eastern Gondor (advanced),5,Justice,Defeat Haradrim in Eastern Gondor (240),Haradrim-slayer of Eastern Gondor,,
+Gondor,Eastern Gondor,Rangers of Ithilien,S,Orc-slayer of Eastern Gondor,5,-,Defeat Orcs in Eastern Gondor (120),,,
+Gondor,Eastern Gondor,Rangers of Ithilien,S,Orc-slayer of Eastern Gondor (advanced),5,Valour,Defeat Orcs in Eastern Gondor (240),Orc-slayer of Eastern Gondor,,
+Gondor,Eastern Gondor,Rangers of Ithilien,Q,Warband: Kasota,,,Upper Lebennin - Auto-bestow,,100,Small Fellow
+Gondor,Eastern Gondor,Rangers of Ithilien,Q,Warband: Thangol-ya,,,South Ithilien - Auto-bestow,,100,Raid
+Gondor,Eastern Gondor,Rangers of Ithilien,Q,Warband: Gundragh,,,South Ithilien - Auto-bestow,,100,Fellow
+Gondor,Eastern Gondor,Rangers of Ithilien,Q,"Ashes and Stars, Chapter 1",,,Osgiliath Culverts - Mablung,,100,Solo
+Gondor,Eastern Gondor,Rangers of Ithilien,Q,"Ashes and Stars, Chapter 2",,,Osgiliath Culverts - Mablung,,100,Small Fellow
+Gondor,Eastern Gondor,Rangers of Ithilien,Q,"Ashes and Stars, Chapter 3",,,Osgiliath Culverts - Mablung,,100,Solo
+Gondor,Eastern Gondor,Rangers of Ithilien,Q,"Ashes and Stars, Chapter 4",,,Osgiliath Culverts - Mablung - Class Trait Point,,100,Small Fellow
+Gondor,Eastern Gondor,Rangers of Ithilien,Q,"Ashes and Stars, Chapter 5",,,Osgiliath Culverts - Mablung,,100,Solo
+Gondor,Eastern Gondor,Rangers of Ithilien,Q,"Ashes and Stars, Chapter 6",,,Osgiliath Culverts - Mablung,,100,Fellow
+Gondor,Eastern Gondor,Rangers of Ithilien,Q,"Ashes and Stars, Chapter 7",,,Osgiliath Culverts - Mablung,Persuer of Hope,100,Solo
+Gondor,Eastern Gondor,Rangers of Ithilien,Q,Roving Threats: Morgrish,,,South Ithilien - Roving Threats Quartermaster,,100,Small Fellow
+Gondor,Eastern Gondor,Rangers of Ithilien,Q,Roving Threats: Shardragh,,,South Ithilien - Roving Threats Quartermaster,,100,Fellow
+Gondor,Eastern Gondor,Rangers of Ithilien,Q,Roving Threats: Kethat-sai,,,South Ithilien - Roving Threats Quartermaster,,100,Raid
+Gondor,Old Anorien,Defenders of Minas Tirith,M,Deeds of Old Anorien,-,-,Complete 3 meta deeds in Old Anorien - Class Trait Point,,,
+Gondor,Old Anorien,Defenders of Minas Tirith,M,Quests of Old Anorien,-,-,Complete 4 quest deeds in Old Anorien - Class Trait Point,,,
+Gondor,Old Anorien,Defenders of Minas Tirith,M,Explorer of Old Anorien,-,-,Complete 5 explorer deeds in Old Anorien,,,
+Gondor,Old Anorien,Defenders of Minas Tirith,M,Slayer of Old Anorien,-,-,Complete 5 slayer deeds in Old Anorien,,,
+Gondor,Old Anorien,Defenders of Minas Tirith,M,Explorer of the White City,-,-,Complete 5 explorer deed in Minas Tirith,Sightseer,,
+Gondor,Old Anorien,Defenders of Minas Tirith,M,Plaques of the White City,-,-,Complete 2 meta-deeds in Minas Tirith,City Dweller,,
+Gondor,Old Anorien,Defenders of Minas Tirith,M,The Statues of Minas Tirith,-,-,Complete The Line of Kings and The Stewards of Gondor,the Gondorian Historian,,
+Gondor,Old Anorien,Defenders of Minas Tirith,E,A Long Way Down,-,-,Leap from the prow of Minas Tirith,the Flighty,,
+Gondor,Old Anorien,Defenders of Minas Tirith,E,Captains of Minas Tirith,5,Honour,Meet 5 Captians within Minas Tirith,Strategist,,
+Gondor,Old Anorien,Defenders of Minas Tirith,E,Guests of the White City,5,-,Read plaques of the stables and inns,,,
+Gondor,Old Anorien,Defenders of Minas Tirith,E,Masters of Minas Tirith,5,Wisdom,Meet 8 Masters within Minas Tirith,the Outgoing,,
+Gondor,Old Anorien,Defenders of Minas Tirith,E,Minas Tirith Fellow-halls,5,Idealism,Find 10 Fellow-halls within Minas Tirith,the Many Talented,,
+Gondor,Old Anorien,Defenders of Minas Tirith,E,Old Anorien Farms,5,Charity,Find 9 farms across Old Anorien,Farmhand,,
+Gondor,Old Anorien,Defenders of Minas Tirith,E,Taverns of the White City,5,-,Read plaques of the taverns,,,
+Gondor,Old Anorien,Defenders of Minas Tirith,E,Teachings of the White City,5,-,Read plaques of houses of knowledge,,,
+Gondor,Old Anorien,Defenders of Minas Tirith,E,Vaults of the White City,5,-,Read plaques of the vaults in Minas Tirith,,,
+Gondor,Old Anorien,Defenders of Minas Tirith,E,Wardens of Minas Tirith,5,Tolerance,Meet 9 Wardens within Minas Tirith,Friend of the Watch,,
+Gondor,Old Anorien,Defenders of Minas Tirith,E,Workings of the City,5,-,Read plaques of buildings of the cities interworkings,,,
+Gondor,Old Anorien,Defenders of Minas Tirith,L,Quests of Minas Tirith,5,Empathy,Complete quests within Minas Tirith (21),Hero of Minas Tirith,,
+Gondor,Old Anorien,Defenders of Minas Tirith,L,Quests of Pelennor,5,Loyalty,Complete quests within Pelennor (22),Hero of Pelennor,,
+Gondor,Old Anorien,Defenders of Minas Tirith,L,Quests of Talath Anor,5,Confidence,Complete quests within Talath Anor (25),Hero of Talath Anor,,
+Gondor,Old Anorien,Defenders of Minas Tirith,L,Tales of Minas Tirith,-,-,Complete 3 quest-chain arcs in Minas Tirith,,,
+Gondor,Old Anorien,Defenders of Minas Tirith,L,The Line of Kings,5,-,Read plaques of the Kings within Minas Tirith,,,
+Gondor,Old Anorien,Defenders of Minas Tirith,L,The Stewards of Gondor,5,-,Read plaques of the Stewards within Minas Tirith,,,
+Gondor,Old Anorien,Defenders of Minas Tirith,L,Old Anorien's Roaming Enemies,5,Fidelity,Complete 6 Warband quests,Roaming Protector of Old Anorien,,
+Gondor,Old Anorien,Defenders of Minas Tirith,S,Beast-slayer of Old Anorien,5,-,Defeat Beasts in Old Anorien (100),,,
+Gondor,Old Anorien,Defenders of Minas Tirith,S,Beast-slayer of Old Anorien (advanced),5,Valour,Defeat Beasts in Old Anorien (200),Beast-slayer of Old Anorien,,
+Gondor,Old Anorien,Defenders of Minas Tirith,S,Easterling-slayer of Old Anorien,5,-,Defeat Easterlings in Old Anorien (120),,,
+Gondor,Old Anorien,Defenders of Minas Tirith,S,Easterling-slayer of Old Anorien (advanced),5,Determination,Defeat Easterlings in Old Anorien (240),Easterling-slayer of Old Anorien,,
+Gondor,Old Anorien,Defenders of Minas Tirith,S,Haradrim-slayer of Old Anorien,5,-,Defeat Haradrim in Old Anorien (120),,,
+Gondor,Old Anorien,Defenders of Minas Tirith,S,Haradrim-slayer of Old Anorien (advanced),5,Justice,Defeat Haradrim in Old Anorien (240),Haradrim-slayer of Old Anorien,,
+Gondor,Old Anorien,Defenders of Minas Tirith,S,Orc-slayer of Old Anorien,5,-,Defeat Orcs in Old Anorien (120),,,
+Gondor,Old Anorien,Defenders of Minas Tirith,S,Orc-slayer of Old Anorien (advanced),5,Fortitude,Defeat Orcs in Old Anorien (240),Orc-slayer of Old Anorien,,
+Gondor,Old Anorien,Defenders of Minas Tirith,S,Troll-slayer of Old Anorien,5,-,Defeat Trolls in Old Anorien (50),,,
+Gondor,Old Anorien,Defenders of Minas Tirith,S,Troll-slayer of Old Anorien (advanced),5,Discipline,Defeat Trolls in Old Anorien (100),Troll-slayer of Old Anorien,,
+Gondor,Old Anorien,Defenders of Minas Tirith,Q,Bustle in the Blue Theatre,,,The Hall of Air - Paula Stoutly [chain 3 start],Choice of title (see comment),100,Solo
+Gondor,Old Anorien,Defenders of Minas Tirith,Q,Several Mendings,,,The Old Guesthouse - Bergil [chain 7 start],,100,Solo
+Gondor,Old Anorien,Defenders of Minas Tirith,Q,Near and Dear,,,The Merry Swan - Forlong [chain 3 start],,100,Solo
+Gondor,Old Anorien,Defenders of Minas Tirith,Q,Warband: Fen-skulk,,,Talath Anor - Auto-bestow,,100,Small Fellow
+Gondor,Old Anorien,Defenders of Minas Tirith,Q,Warband: Mauzur,,,Talath Anor - Auto-bestow,,100,Small Fellow
+Gondor,Old Anorien,Defenders of Minas Tirith,Q,Warband: Tupurta,,,Talath Anor - Auto-bestow,,100,Fellow
+Gondor,Old Anorien,Defenders of Minas Tirith,Q,Warband: Sharshug,,,Pelennor - Auto-bestow,,100,Small Fellow
+Gondor,Old Anorien,Defenders of Minas Tirith,Q,Warband: Okursa,,,Pelennor - Auto-bestow,,100,Fellow
+Gondor,Old Anorien,Defenders of Minas Tirith,Q,Warband: Kur-anchi,,,Pelennor - Auto-bestow,,100,Fellow
+Gondor,Far Anorien,Riders of Rohan,M,Deeds of Far Anorien,-,-,Complete 3 meta deeds in Far Anorien,,,
+Gondor,Far Anorien,Riders of Rohan,M,Quests of Far Anorien,-,-,Complete 3 quest deeds in Far Anorien,,,
+Gondor,Far Anorien,Riders of Rohan,M,Explorer of Far Anorien,-,-,Complete 3 explorer deeds in Far Anorien,,,
+Gondor,Far Anorien,Riders of Rohan,M,Slayer of Far Anorien,-,-,Complete 5 slayer deeds in Far Anorien,,,
+Gondor,Far Anorien,Riders of Rohan,E,The Lost Trail of the Entwash,5,Zeal,Find 8 Cairns of the Entwash,Traverser of the Entwash,,
+Gondor,Far Anorien,Riders of Rohan,E,The Warning Beacons,5,Honesty,Discover 7 warning beacons in Far Anorien,Scout of the Warning Beacons,,
+Gondor,Far Anorien,Riders of Rohan,E,Treasure of Far Anorien,5,Patience,Find 16 treasure caches in Far Anorien,Treasure Seeker of Far Anorien,,
+Gondor,Far Anorien,Riders of Rohan,L,After the Battle,5,-,Complete 3 quests in Minas Tirith (after battle),,,
+Gondor,Far Anorien,Riders of Rohan,L,Quests of Taur Drúadan,5,Wisdom,Complete quests within Taur Drúadan (30),Hero of Taur Drúadan,,
+Gondor,Far Anorien,Riders of Rohan,L,Quests of the Beacon Hills,5,Compassion,Complete quests within the Beacon Hills (25),Hero of the Beacon Hills,,
+Gondor,Far Anorien,Riders of Rohan,L,Treating with Scoundrels - Distraction,-,-,Complete quest instance Treating with Scoundrels,the Reckless,,
+Gondor,Far Anorien,Riders of Rohan,L,Treating with Scoundrels - Ransom,-,-,Complete quest instance Treating with Scoundrels,the Cautious,,
+Gondor,Far Anorien,Riders of Rohan,L,Far Anorien's Roaming Enemies,5,Fortitude,Complete 5 Warband quests,Roaming Protector of Far Anorien,,
+Gondor,Far Anorien,Riders of Rohan,S,Beast-slayer of Far Anorien,5,-,Defeat Beasts in Far Anorien (90),,,
+Gondor,Far Anorien,Riders of Rohan,S,Beast-slayer of Far Anorien (advanced),5,-,Defeat Beasts in Far Anorien (180),Beast-slayer of Far Anorien,,
+Gondor,Far Anorien,Riders of Rohan,S,Dheghûn-slayer of Far Anorien,5,-,Defeat Dheghûn in Far Anorien (90),,,
+Gondor,Far Anorien,Riders of Rohan,S,Dheghûn-slayer of Far Anorien (advanced),5,-,Defeat Dheghûn in Far Anorien (180),Dheghûn-slayer of Far Anorien,,
+Gondor,Far Anorien,Riders of Rohan,S,Ghûrdhos-slayer of Far Anorien,5,-,Defeat Ghûrdhos in Far Anorien (90),,,
+Gondor,Far Anorien,Riders of Rohan,S,Ghûrdhos-slayer of Far Anorien (advanced),5,-,Defeat Ghûrdhos in Far Anorien (180),Ghûrdhos-slayer of Far Anorien,,
+Gondor,Far Anorien,Riders of Rohan,S,Variag-slayer of Far Anorien,5,-,Defeat Variag in Far Anorien (90),,,
+Gondor,Far Anorien,Riders of Rohan,S,Variag-slayer of Far Anorien (advanced),5,-,Defeat Variag in Far Anorien (180),Variag-slayer of Far Anorien,,
+Gondor,Far Anorien,Riders of Rohan,S,Warg-rider Slayer of Far Anorien,5,-,Defeat Warg-rider in Far Anorien (60),,,
+Gondor,Far Anorien,Riders of Rohan,S,Warg-rider Slayer of Far Anorien (advanced),5,-,Defeat Warg-rider in Far Anorien (120),Warg-rider Slayer of Far Anorien,,
+Gondor,Far Anorien,Riders of Rohan,Q,Mender of the Grey Wood,,,Drû Bhûta - Ghân-buri-Ghân,Friend of the Druedain,101,Solo
+Gondor,Far Anorien,Riders of Rohan,Q,Interlude: A Dream of Cold and Silence,,,The Great Gate - Imrahil [after completing set 1 dailies],,105,Solo
+Gondor,Far Anorien,Riders of Rohan,Q,Interlude: A Secret Return,,,The Great Gate - Imrahil [after completing set 2 dailies],,105,Solo
+Gondor,Far Anorien,Riders of Rohan,Q,The Hands of a Healer,,,The Great Gate - Imrahil [after completing set 3 dailies],the Healer,105,Solo
+Gondor,Far Anorien,Riders of Rohan,Q,Wrath and Ruin Chapter 1,,,Field of Onslaught - Bregdal,,105,Small Fellow
+Gondor,Far Anorien,Riders of Rohan,Q,Wrath and Ruin Chapter 2,,,Field of Onslaught - Bregdal,,105,Solo
+Gondor,Far Anorien,Riders of Rohan,Q,Wrath and Ruin Chapter 3,,,King's End - Bregdal,,105,Fellow
+Gondor,Far Anorien,Riders of Rohan,Q,Wrath and Ruin Chapter 4,,,King's End - Bregdal,,105,Solo
+Gondor,Far Anorien,Riders of Rohan,Q,Wrath and Ruin Chapter 5,,,Rider's Stand - Bregdal,,105,Small Fellow
+Gondor,Far Anorien,Riders of Rohan,Q,Wrath and Ruin Chapter 6,,,Ruin of Pel Duven - Bregdal,,105,Solo
+Gondor,Far Anorien,Riders of Rohan,Q,Warband: Jarl Vrakya,,,Beacon Hills - Auto-bestow,,105,Small Fellow
+Gondor,Far Anorien,Riders of Rohan,Q,Warband: Naurúk,,,Beacon Hills - Auto-bestow,,105,Solo
+Gondor,Far Anorien,Riders of Rohan,Q,Warband: Krûghu,,,Taur Drúadan - Auto-bestow,,105,Small Fellow
+Gondor,Far Anorien,Riders of Rohan,Q,Warband: Ganglemód,,,Taur Drúadan - Auto-bestow,,105,Solo
+Gondor,Far Anorien,Riders of Rohan,Q,Warband: Aslâ Khimash,,,Taur Drúadan - Auto-bestow,,105,Small Fellow
+Gondor,Ithilien,Host of the West,M,Deeds of North Ithilien,-,Charity,Complete 3 meta deeds in North Ithilien,Warden of the Wild,,
+Gondor,Ithilien,Host of the West,M,Quests of greater North Ithilien,-,Wisdom,Complete 5 quest deeds in March of the King,the Unyielding Ally,,
+Gondor,Ithilien,Host of the West,M,Explorer of North Ithilien,-,Idealism,Complete 4 explorer deeds in North Ithilien,Ithilien Pathfinder,,
+Gondor,Ithilien,Host of the West,M,Slayer of North Ithilien,-,Patience,Complete 4 slayer deeds in North Ithilien,Ithilien Defender,,
+Gondor,Ithilien,Host of the West,E,A Look into Osgiliath,5,Confidence,Find 4 interior locations within Osgiliath,Ithilien Inquisitor,,
+Gondor,Ithilien,Host of the West,E,Haradrim Remnants,5,Honour,Find 6 Haradrim supplies,the Retriever,,
+Gondor,Ithilien,Host of the West,E,Ruins of North Ithilien,5,Valour,Find 5 ruins in North Ithilien,the Unforgetting,,
+Gondor,Ithilien,Host of the West,E,Treasure of North Ithilien,5,Patience,Find 12 treasure caches in North Ithilien,Treasure Seeker of North Ithilien,,
+Gondor,Ithilien,Host of the West,L,A Lesson in Herbalism,-,-,Complete 25 quests for Herbalism,Budding Herbalist,,
+Gondor,Ithilien,Host of the West,L,A Lesson in Herbalism (intermediate),-,-,Complete 50 quests for Herbalism,Flower-bearer,,
+Gondor,Ithilien,Host of the West,L,A Lesson in Herbalism (advanced),-,-,Complete 100 quests for Herbalism,the Green-thumbed,,
+Gondor,Ithilien,Host of the West,L,A Lesson in Herbalism (final),-,-,Complete 250 quests for Herbalism,Master Herbalist,,
+Gondor,Ithilien,Host of the West,L,Quests of North Ithilien,5,Loyalty,Complete quests within North Ithilien (48),Ally of North Ithilien,,
+Gondor,Ithilien,Host of the West,L,Quests of Osgiliath and Cross-roads,5,Fidelity,Complete quests within Osgiliath and Cross-roads (11),Bridger of War,,
+Gondor,Ithilien,Host of the West,L,Quests of Pelennor (After Battle),5,Discipline,Complete quests within Pelennor (17),the Aid of Pelennor,,
+Gondor,Ithilien,Host of the West,L,North Ithilien's Roaming Enemies,5,Empathy,Complete 3 Warband quests,Ithilien Hunter,,
+Gondor,Ithilien,Host of the West,S,Beast and Spider-slayer of North Ithilien,5,-,Defeat Beasts or Spiders in North Ithilien (100),,,
+Gondor,Ithilien,Host of the West,S,Beast and Spider-slayer of North Ithilien (advanced),5,Fortitude,Defeat Beasts or Spiders in North Ithilien (200),,,
+Gondor,Ithilien,Host of the West,S,Easterling-slayer of North Ithilien,5,-,Defeat Easterlings in North Ithilien (100),,,
+Gondor,Ithilien,Host of the West,S,Easterling-slayer of North Ithilien (advanced),5,Justice,Defeat Easterlings in North Ithilien (200),,,
+Gondor,Ithilien,Host of the West,S,Foe-slayer of Cair Andros,5,-,Defeat Foes in Cair Andros (100),,,
+Gondor,Ithilien,Host of the West,S,Foe-slayer of Cair Andros (advanced),5,Valour,Defeat Foes in Cair Andros (200),,,
+Gondor,Ithilien,Host of the West,S,Foe-slayer of Osgiliath,5,-,Defeat Foes in Osgiliath (100),,,
+Gondor,Ithilien,Host of the West,S,Foe-slayer of Osgiliath (advanced),5,Determination,Defeat Foes in Osgiliath (200),,,
+Gondor,Ithilien,Host of the West,Q,A Just Reward - Honour Alone / Spoils of War,,,North Ithilien - Jarl Gurthilm,the Tireless Benefactor / the Opportunist,105,Solo
+Gondor,Ithilien,Host of the West,Q,Warband: Ognir. Warrior of Minas Morgul ,,,North Ithilien - Auto-bestow,,105,Small Fellow
+Gondor,Ithilien,Host of the West,Q,Warband: Keeper Shomushúk. Cat-master of the Khundolar,,,North Ithilien - Auto-bestow,,105,Small Fellow
+Gondor,Ithilien,Host of the West,Q,Warband: Bittergall the Weaver,,,North Ithilien - Auto-bestow,,105,Fellow
+Gondor,The Wastes,Host of the West,M,Deeds of the Wastes,-,-,Complete 4 meta deeds in the Wastes,,,
+Gondor,The Wastes,Host of the West,M,Quests of the Wastes,-,-,Complete 3 quest deeds in the Wastes,,,
+Gondor,The Wastes,Host of the West,M,Explorer of the Wastes,-,-,Complete 4 explorer deeds in the Wastes,,,
+Gondor,The Wastes,Host of the West,M,Slayer of the Wastes,-,-,Complete 5 slayer deeds in the Wastes,Vanquisher of the Wastes,,
+Gondor,The Wastes,Host of the West,M,Beneath the Hills,5,Tolerance,Complete 6 quests in Fellowship resource instances,Battle-tested,,
+Gondor,The Wastes,Host of the West,M,Enemies Beneath the Hills,-,-,Complete 3 slayer deeds within resource instances,Vanquisher of the Depths,,
+Gondor,The Wastes,Host of the West,M,Threats of the Wastes,-,-,Complete 3 deeds in the Wastes,Hero/Heroine of the Host of the West,,
+Gondor,The Wastes,Host of the West,E,Gathering of Evil,5,Honour,Find 8 camps of the enemy within the Wastes,Rabble-rouser,,
+Gondor,The Wastes,Host of the West,E,Forgotten Caches,5,Fidelity,Find 8 caches within the Wastes,Seeker of the Lost,,
+Gondor,The Wastes,Host of the West,E,Relics of the Last Alliance,5,Charity,Find 8 relics within the Wastes,Relic-seeker of the Wastes,,
+Gondor,The Wastes,Host of the West,E,Ruins of Gondor,5,Wisdom,Find 9 ruins within the Wastes,Rubble-houser,,
+Gondor,The Wastes,Host of the West,L,Quests of Dagorlad,5,Empathy,Complete quests within Dagorlad (22),Hero/Heroine of Dagorlad,,
+Gondor,The Wastes,Host of the West,L,Quests of the Noman-lands,5,Idealism,Complete quests within Noman-lands (14),Hero/Heroine of the Noman-lands,,
+Gondor,The Wastes,Host of the West,L,Quests of the Slag-hills,5,Confidence,Complete quests within Slag-hills (30),Hero/Heroine of the Slag-hills,,
+Gondor,The Wastes,Host of the West,L,The Road to Mordor,-,-,Gain top standing with 4 Hosts of the West factions,Battle-ready,,
+Gondor,The Wastes,Host of the West,L,The Wastes Roving Enemies,5,Determination,Complete 5 Roving Threats quests,Roving Defender of the Wastes,,
+Gondor,The Wastes,Host of the West,S,Foe-slayer of Dum Boha,5,-,Defeat Foes in Dum Boha (80),,,
+Gondor,The Wastes,Host of the West,S,Foe-slayer of Dum Boha (advanced),5,Valour,Defeat Foes in Dum Boha (160),,,
+Gondor,The Wastes,Host of the West,S,Foe-slayer of Fushaum Gund,5,-,Defeat Foes in Fushaum Gund (50),,,
+Gondor,The Wastes,Host of the West,S,Foe-slayer of Fushaum Gund (advanced),5,Fortitude,Defeat Foes in Fushaum Gund (100),,,
+Gondor,The Wastes,Host of the West,S,Foe-slayer of Lang Rhuven,5,-,Defeat Foes in Lang Rhuven (200),,,
+Gondor,The Wastes,Host of the West,S,Foe-slayer of Lang Rhuven (advanced),5,Justice,Defeat Foes in Lang Rhuven (400),,,
+Gondor,The Wastes,Host of the West,S,Foe-slayer of Ondonher's Folly,5,-,Defeat Foes in Ondoher's Folly (50),,,
+Gondor,The Wastes,Host of the West,S,Foe-slayer of Ondonher's Folly (advanced),5,Discipline,Defeat Foes in Ondoher's Folly (100),,,
+Gondor,The Wastes,Host of the West,S,Foe-slayer of Skoironk,5,-,Defeat Foes in Skoironk (80),,,
+Gondor,The Wastes,Host of the West,S,Foe-slayer of Skoironk (advanced),5,Zeal,Defeat Foes in Skoironk (160),,,
+Gondor,The Wastes,Host of the West,S,Foe-slayer of the Towers of the Teeth,5,-,Defeat Foes in the Towers of the Teeth (100),,,
+Gondor,The Wastes,Host of the West,S,Foe-slayer of the Towers of the Teeth (advanced),5,Innocence,Defeat Foes in the Towers of the Teeth (200),,,
+Gondor,The Wastes,Host of the West,S,Leaders Beneath the Hills,5,-,Defeat leaders in Skoironk and Tower of the Teeth (12),,,
+Gondor,The Wastes,Host of the West,S,Leaders Beneath the Hills (advanced),5,Patience,Defeat leaders in Skoironk and Tower of the Teeth (24),,,
+Gondor,The Wastes,Host of the West,S,Skoironk: Enemies Beneath,5,-,Defeat enemies in Skoironk resource instance (120),,,
+Gondor,The Wastes,Host of the West,S,Skoironk: Enemies Beneath (advanced),5,Loyalty,Defeat enemies in Skoironk resource instance (240),,,
+Gondor,The Wastes,Host of the West,S,Towers of the Teeth: Enemies Beneath,5,-,Defeat enemie in Towers of the Teeth resource instance (120),,,
+Gondor,The Wastes,Host of the West,S,Towers of the Teeth: Enemies Beneath (advanced),5,Honesty,Defeat enemie in Towers of the Teeth resource instance (240),,,
+Gondor,The Wastes,Host of the West,Q,Skoironk: Driver of Fear,,,Slag-hills Camp - Candur,,105,Fellow
+Gondor,The Wastes,Host of the West,Q,Skoironk: Vile Tunnels,,,Slag-hills Camp - Candur,,105,Fellow
+Gondor,The Wastes,Host of the West,Q,Skoironk: Complex Past,,,Slag-hills Camp - Candur,,105,Fellow
+Gondor,The Wastes,Host of the West,Q,Tower of the Teeth: Gaurdian of the Teeth,,,Slag-hills Camp - Candur,,105,Fellow
+Gondor,The Wastes,Host of the West,Q,Tower of the Teeth: Foundation of Shadow,,,Slag-hills Camp - Candur,,105,Fellow
+Gondor,The Wastes,Host of the West,Q,Tower of the Teeth: A Brush with Darkness,,,Slag-hills Camp - Candur,,105,Fellow
+Gondor,The Wastes,Host of the West,Q,Roving Threats: Tumoz the Fume,,,The Wastes - Landscape,,105,Fellow
+Gondor,The Wastes,Host of the West,Q,Roving Threats: Marzgurud,,,The Wastes - Landscape,,105,Fellow
+Gondor,The Wastes,Host of the West,Q,Roving Threats: Ephalzor,,,The Wastes - Landscape,,105,Fellow
+Gondor,The Wastes,Host of the West,Q,Roving Threats: Dorthanir,,,The Wastes - Landscape,,105,Fellow
+Gondor,The Wastes,Host of the West,Q,Roving Threats: Gaergarch the Thirsty,,,The Wastes - Landscape,,105,Fellow

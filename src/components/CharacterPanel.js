@@ -3,7 +3,7 @@ import ReactModal from 'react-modal';
 import './CharacterPanel.css';
 
 import {List, Panel, Button, SelectObject, TextInput} from './Common';
-import {RACES, CLASSES, ACTION_TYPES} from './../constants'
+import {RACES, CLASSES, ACTION_TYPES, DEED_CATEGORIES} from './../constants'
 import {get_store} from './../Store';
 import {open_database, clear_characters} from './../database';
 
@@ -53,7 +53,9 @@ class CharacterPanel extends Component{
       class:'',
       level: 1,
       completed:[
-        [],[],[],[],[],[],[],[],[],[],[]
+        ...Object.keys(DEED_CATEGORIES).map(category=>{
+          return [false];
+        })
       ]
     };
 

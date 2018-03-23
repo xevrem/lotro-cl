@@ -1,0 +1,625 @@
+Category,Subcategory,Faction,Type,Deed,LP,Trait,Details,Title,Level,Party
+Rhovanion,Lothlorien,Galadhrim,M,Great Deeds of Lothlorien [Hidden],5,-,Complete 5 deeds in Lothlorien,Doer of Great Deeds,,
+Rhovanion,Lothlorien,Galadhrim,E,City of the Lord and Lady,5,Valour,Find 9 points of interest in Caras Galadhon,,,
+Rhovanion,Lothlorien,Galadhrim,E,Lorien Lookout,-,-,Find 11 flets in Lothlorien,Lorien Lookout,,
+Rhovanion,Lothlorien,Galadhrim,E,Wanderer of the Golden Wood,5,Honour,Find 10 points of interest in Lothlorien,,,
+Rhovanion,Lothlorien,Galadhrim,R,Ally of Lothlorien,10,-,Complete quests within Lothlorien (10),Guest of Lothlorien,,
+Rhovanion,Lothlorien,Galadhrim,R,Defender of Lothlorien,10,-,Complete quests within Lothlorien (25),Guardian of Lothlorien,,
+Rhovanion,Lothlorien,Galadhrim,R,Flet-runner challenges,5,-,Complete the Flet-runner Challenge quests,Flet-runner,,
+Rhovanion,Lothlorien,Galadhrim,R,Friend of Lothlorien,10,-,Complete The Paths of Caras Galadhon quest,Friend of the Golden Wood,,
+Rhovanion,Lothlorien,Galadhrim,R,Warrior of Lothlorien,20,-,Complete quests within Lothlorien (40),Warrior of Lothlorien,,
+Rhovanion,Lothlorien,Galadhrim,L,The Defence of Lorien I,5,-,Defend Lothlorien from orcs 1 time,Fleeting Ally of Lorien,,
+Rhovanion,Lothlorien,Galadhrim,L,The Defence of Lorien II,5,-,Defend Lothlorien from orcs 3 times,Steadfast Ally of Lorien,,
+Rhovanion,Lothlorien,Galadhrim,L,The Defence of Lorien III,5,-,Defend Lothlorien from orcs 5 times,Defender of Lorien,,
+Rhovanion,Lothlorien,Galadhrim,L,The Defence of Lorien IV,10,-,Defend Lothlorien from orcs 7 times,Persistent Defender of Lorien,,
+Rhovanion,Lothlorien,Galadhrim,L,The Defence of Lorien V,10,-,Defend Lothlorien from orcs 10 times,Trueheart Defender of Lorien,,
+Rhovanion,Lothlorien,Galadhrim,S,Beast-slayer,5,-,Defeat Beasts in Lothlorien (100),Wild Hunter,,
+Rhovanion,Lothlorien,Galadhrim,S,Beast-slayer (advanced),10,Mercy,Defeat Beasts in Lothlorien (200),,,
+Rhovanion,Lothlorien,Galadhrim,S,Orc-slayer,5,-,Defeat Orcs in Lothlorien (100),Champion of Lothlorien,,
+Rhovanion,Lothlorien,Galadhrim,S,Orc-slayer (advanced),10,Innocence,Defeat Orcs in Lothlorien (200),,,
+Rhovanion,Lothlorien,Galadhrim,Q,At Home Among the Trees,,,Caras Galadhon – Celechest,,60,Solo
+Rhovanion,Lothlorien,Galadhrim,Q,-> Flet-runner Challenge: Bregradel,,,Caras Galadhon – Bregradel,,60,Solo
+Rhovanion,Lothlorien,Galadhrim,Q,-> Flet-runner Challenge: Lagordal,,,Caras Galadhon – Lagordal,,60,Solo
+Rhovanion,Lothlorien,Galadhrim,Q,-> Flet-runner Challenge: Leginiel,,,Caras Galadhon – Lediniel,,60,Solo
+Rhovanion,Lothlorien,Galadhrim,Q,-> Flet-runner Challenge: Lintwen,,,Caras Galadhon – Lintwen,,60,Solo
+Rhovanion,Lothlorien,Galadhrim,Q,Poaching: Horned Wood-lord,,,Echad Andestal – Asmund – quest 3 of chain,Poacher of the Protected Woods,60,Solo
+Rhovanion,Lothlorien,Galadhrim,Q,An End to Poaching,,,Echad Andestal – Limhendeth,Protector of Elven Values,60,Solo
+Rhovanion,Moria,Iron Garrison Guards/Miners,M,Deeds of Khazad-dum,-,-,Complete 3 meta deeds and 1 quest deed in Moria,,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,M,Quests of Khazad-dum,10,-,Complete 11 quest deeds in Moria,,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,M,Explorer of Khazad-dum [Hidden],15,-,Complete 13 explorer deeds in Moria,Explorer of Khazad-dum,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,M,Triumph within the Deeps [Hidden],15,-,Complete 11 slayer deeds in Moria,Triumph within the Deeps,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,Bulwarks of the Enemy,10,Zeal,Find 8 points of interest across Moria,Deep Delver,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,In the Footsteps of the Fellowship,5,Honour,Find 7 locations the Nine visited in Moria,Friend of the Nine,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,Reflections,5,-,see Reflections quests,Reflector,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,The Pits of Moria [Hidden],5,-,Leap to your death at 6 locations in Moria,Blind Leaper,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,L,Twist-tongued [Hidden],-,-,see Riddles in the Dark quests,Twist-tongued,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Deep-claw Slayer,5,-,Defeat Deep-claws in Moria (100),Beak-breaker,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Deep-claw Slayer (advanced),10,Tolerance,Defeat Deep-claws in Moria (200),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Dragonet-slayer,5,-,Defeat Dragonets in Moria (100),Drake-smasher,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Dragonet-slayer (advanced),10,Zeal,Defeat Dragonets in Moria (200),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Globsnaga-slayer,5,-,Defeat Globsnaga in Moria (100),Bane of the Infected,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Globsnaga-slayer (advanced),10,Compassion,Defeat Globsnaga in Moria (200),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Goblin-slayer,5,-,Defeat Goblins in Moria (100),Goblin-bane,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Goblin-slayer (advanced),10,Justice,Defeat Goblins in Moria (200),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Grodbog-slayer,5,-,Defeat Gredbyg in Moria (100),Bug Crusher,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Grodbog-slayer (advanced),10,Discipline,Defeat Gredbyg in Moria (200),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Morroval-slayer,5,-,Defeat Merrevail in Moria (100),Wing-breaker,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Morroval-slayer (advanced),10,Innocence,Defeat Merrevail in Moria (200),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Nameless-slayer,5,-,Defeat Nameless in Moria (100),Vanquisher of the Nameless,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Nameless-slayer (advanced),10,Mercy,Defeat Nameless in Moria (200),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Orc-slayer,5,-,Defeat Orcs in Moria (100),Orc-foe,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Orc-slayer (advanced),10,Determination,Defeat Orcs in Moria (200),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Spider-slayer,5,-,Defeat Spiders in Moria (100),the Unyielding,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Spider-slayer (advanced),10,Valour,Defeat Spiders in Moria (200),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Troll-slayer,5,-,Defeat Trolls in Moria (50),Troll-breaker,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Troll-slayer (advanced),10,Confidence,Defeat Trolls in Moria (100),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Warg-slayer,5,-,Defeat Wargs in Moria (100),the Fierce,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Warg-slayer (advanced),10,Fortitude,Defeat Wargs in Moria (200),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Worm-slayer,5,-,Defeat Worms in Moria (100),Worm-scourge,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,S,Worm-slayer (advanced),10,Valour,Defeat Worms in Moria (200),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,The Flaming Deeps,10,Tolerance,Find 7 points of interest in The Flaming Deeps,,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,The Foundations of Stone,10,Valour,Find 5 points of interest in The Foundations of Stone,,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,The Water-works,10,Tolerance,Find 10 points of interest in The Water-works,,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,L,Quests of the Flaming Deeps,5,Empathy,Complete quests within Flaming Deeps (15),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,L,Quests of the Foundations of Stone,5,Compassion,Complete quests within Foundations of Stone (10),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,L,Quests of the Water-works,5,Innocence,Complete quests within Water-works (15),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,Mirror in the Mire,,,"The Water-works – Moria Mirror [15.1 S, 114.8 W]",,54,Solo
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,Reflection of Flame,,,"The Flaming Deeps – Moria Mirror [15.0 S, 107.8 W]",,57,Solo
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,A Glimmer of Hope,,,"Foundations of Stone – Moria Mirror [12.0 S, 101.5 W]",,59,Solo
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,Riddles in the Flames,,,"Anazarmekhem – Plaque [13.3 S, 108.1 W] – quest 5",,57,Solo
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,Riddles in the Walls,,,Below answer from previous riddle – Locker – quest 6,,56,Solo
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,Discovering Adventures in Zelem-melek,-,Zeal,Find the orc camps and complete quests,Explorer and Adventurer,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,Nud-melek,5,Loyalty,Find 7 points of interest in Nud-melek,,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,The Great Delving,5,Honesty,Find 8 points of interest in The Great Delving,,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,The Redhorn Lodes,10,Wisdom,Find 8 points of interest in The Redhorn Lodes,,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,The Silvertine Lodes,10,Fidelity,Find 4 points of interest in The Silvertine Lodes,,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,Zelem-melek,5,Honesty,Find 8 points of interest in Zelem-melek,,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,L,Quests of Nud-melek,5,Fidelity,Complete quests within Nud-melek (18),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,L,Quests of the Great Delving,5,Charity,Complete quests within The Great Delving (15),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,-,- Also for Quests of the Great Delving,-,Innocence,,,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,L,Quests of the Redhorn Lodes,5,Innocence,Complete quests within Redhorn Lodes (15),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,L,Quests of the Silvertine Lodes,5,Empathy,Complete quests within Silvertine Lodes (15),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,L,Quests of Zelem-melek,5,Innocence,Complete quests within Zelem-melek (20),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,Lightning the Way,,,"The Great Delving – Moria Mirror [7.0 S, 112.9 W]",,51,Solo
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,Reflections of Rails,,,"The Silvertine Lodes – Moria Mirror [11.3 S, 112.5 W]",,53,Solo
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,Reflecting on the Past,,,"Zelem-melek – Moria Mirror [7.7 S, 105.3 W]",,55,Solo
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,Reflector of the Redhorn,,,"Redhorn Lodes – Moria Mirror [12.5 S, 103.2 W]",,56,Solo
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,Reflections of Stone Trees,,,"Nud-melek – Moria Mirror [5.5 S, 98.8 W]",,58,Solo
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,Riddles in the Library,,,"Katub-zahar – Flageirr's Papers [7.0 S, 111.2 W] – quest 1",,51,Solo
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,Riddles in the Old City,,,"Old Silvertine City – Plaque [11.6 S, 111.0 W] – quest 2",,54,Solo
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,Riddles in the Stone,,,"Old Silvertine City – Plaque [12.1 S, 111.1 W] – quest 3",,55,Solo
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,Riddles in the Tomb,,,"The Twenty-first Hall – Plaque [5.9 S, 105.5 W] – quest 4",,55,Solo
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,A Deep Well [Hidden],5,-,"Jump down the well at the Crossroads [5.1 S, 112.1 W]",Well Traveled,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,Eastern Durin's Way,5,Fidelity,Find 8 points of interest in Eastern Durin's Way,,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,The Cliffs of Zirakzigil,5,Confidence,Find 3 points of interest in The Cliffs of Zirakzigil,,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,E,Western Durin's Way,5,Idealism,Find 7 points of interest in Western Durin's Way,,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,L,Quests of Durin's Way,5,Idealism,Complete quests within Durin's Way (15),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,L,Quests of Dimril Dale,5,Charity,Complete quests within Dimril Dale (10),,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,A Light in the Garden,53,Solo,"Durin's Way – Moria Mirror [3.6 S, 109.1 W]",,,
+Rhovanion,Moria,Iron Garrison Guards/Miners,Q,Riddles in the Sunshine,58,Solo,"Dimril Dale – Plaque [11.6 S, 79.8 W] – quest 7",,,
+Rhovanion,Southern Mirkwood,Malledrim,M,Deeds of Mirkwood,-,-,Complete 2 meta deeds and 1 quest deed in Southern Mirkwood,,,
+Rhovanion,Southern Mirkwood,Malledrim,M,Explorer of Mirkwood,-,-,Complete 3 explorer deeds in Southern Mirkwood,,,
+Rhovanion,Southern Mirkwood,Malledrim,M,Slayer of Mirkwood,-,-,Complete 6 slayer deeds in Southern Mirkwood,,,
+Rhovanion,Southern Mirkwood,Malledrim,E,Evil Stongholds of Mirkwood,15,Valour,Find 6 stongholds in Southern Mirkwood,,,
+Rhovanion,Southern Mirkwood,Malledrim,E,Mirkwood Tower Climber [Hidden],5,-,Find and climb towers of Southern Mirkwood,Master Ascender,,
+Rhovanion,Southern Mirkwood,Malledrim,E,The Wilds of Mirkwood,5,Wisdom,Find 7 points of interest in the wilds of Southern Mirkwood,,,
+Rhovanion,Southern Mirkwood,Malledrim,E,Treasure of Southern Mirkwood,10,Mercy,Find 12 Treasure Caches in Mirkwood (lvl 90),Treasure Seeker of Southern Mirkwood,,
+Rhovanion,Southern Mirkwood,Malledrim,E,Uncovering the Ruins of Mirkwood,5,Idealism,Find 5 ruins in Southern Mirkwood,,,
+Rhovanion,Southern Mirkwood,Malledrim,L,Mirkwood's Roving Enemies,5,Tolerance,Complete 4 Roving Threats quests (lvl 100),Roving Defender of Southern Mirkwood,,
+Rhovanion,Southern Mirkwood,Malledrim,L,The Siege of Mirkwood,-,-,Auto-bestowed if own Southern Mirkwood and reached level 60,Called by the Golden Host,,
+Rhovanion,Southern Mirkwood,Malledrim,R,Into the Black and Twisted Forest,10,Loyalty,Complete quests within Southern Mirkwood (10),,,
+Rhovanion,Southern Mirkwood,Malledrim,R,Into the Black and Twisted Forest (advanced),15,Honesty,Complete quests within Southern Mirkwood (30),,,
+Rhovanion,Southern Mirkwood,Malledrim,R,Into the Black and Twisted Forest (intermediate),10,Fortitude,Complete quests within Southern Mirkwood (20),,,
+Rhovanion,Southern Mirkwood,Malledrim,Q,Mirkwood Landing,10,-,Complete quests within Mirkwood Landing instance,,,
+Rhovanion,Southern Mirkwood,Malledrim,S,Beast-slayer,5,-,Defeat Beasts in Southern Mirkwood (100),Hunter of Dark Beasts,,
+Rhovanion,Southern Mirkwood,Malledrim,S,Beast-slayer (advanced),10,Determination,Defeat Beasts in Southern Mirkwood (200),Predator from Prey,,
+Rhovanion,Southern Mirkwood,Malledrim,S,Dead-slayer,5,-,Defeat Shades or Wights in Southern Mirkwood (100),Arbitrator of the Dead,,
+Rhovanion,Southern Mirkwood,Malledrim,S,Dead-slayer (advanced),10,Fidelity,Defeat Shades or Wights in Southern Mirkwood (200),Ferngoth,,
+Rhovanion,Southern Mirkwood,Malledrim,S,Headcount,5,-,Defeat 100 enemies during the Mirkwood Landing,,,
+Rhovanion,Southern Mirkwood,Malledrim,S,Orc and Uruk-slayer,5,-,Defeat Orcs or Uruks in Southern Mirkwood (100),Illuminator of Mirkwood,,
+Rhovanion,Southern Mirkwood,Malledrim,S,Orc and Uruk-slayer (advanced),10,Compassion,Defeat Orcs or Uruks in Southern Mirkwood (200),Urugdagnir,,
+Rhovanion,Southern Mirkwood,Malledrim,S,Sorcerer-slayer,5,-,Defeat Sorcerers in Southern Mirkwood (100),Honorary Malledrim,,
+Rhovanion,Southern Mirkwood,Malledrim,S,Sorcerer-slayer (advanced),10,Justice,Defeat Sorcerers in Southern Mirkwood (200),Champion of the Malledrim,,
+Rhovanion,Southern Mirkwood,Malledrim,S,Spider-slayer,5,-,Defeat Spiders in Southern Mirkwood (100),Web-stinger,,
+Rhovanion,Southern Mirkwood,Malledrim,S,Spider-slayer (advanced),10,Tolerance,Defeat Spiders in Southern Mirkwood (200),Gwirist,,
+Rhovanion,Southern Mirkwood,Malledrim,S,Warg-slayer,5,-,Defeat Wargs in Southern Mirkwood (100),Deflector of Gnashing Teeth,,
+Rhovanion,Southern Mirkwood,Malledrim,S,Warg-slayer (advanced),10,Empathy,Defeat Wargs in Southern Mirkwood (200),Gordeleron,,
+Rhovanion,Southern Mirkwood,Malledrim,Q,Expedition: Seeing the Fallen,,,"Echad Sirion – Agorin, during Vol 2 Book 9 Foreword",,61,Solo
+Rhovanion,Southern Mirkwood,Malledrim,Q,-> Lost in the Fray,,,"Echad Sirion – Agorin, during Vol 2 Book 9 Foreword",,61,Solo
+Rhovanion,Southern Mirkwood,Malledrim,Q,-> A Daring Rescue,,,"Echad Sirion – Agorin, during Vol 2 Book 9 Foreword",,61,Solo
+Rhovanion,Southern Mirkwood,Malledrim,Q,Expedition: Disrupting Communication,,,"Echad Sirion – Ivorel, during Vol 2 Book 9 Foreword",,61,Solo
+Rhovanion,Southern Mirkwood,Malledrim,Q,-> Bridging the Gap,,,"Echad Sirion – Agorin, during Vol 2 Book 9 Foreword",,61,Solo
+Rhovanion,Southern Mirkwood,Malledrim,Q,Foreword: Assault the Gates,,,Echad Sirion – Fuirgam,,61,Solo
+Rhovanion,Southern Mirkwood,Malledrim,Q,-> Leaderless They Fall,,,Echad Sirion – Fuirgam,,61,Solo
+Rhovanion,Southern Mirkwood,Malledrim,Q,-> Out of Supply,,,Echad Sirion – Fuirgam,,61,Solo
+Rhovanion,Southern Mirkwood,Malledrim,Q,-> Barring the Gate,,,Echad Sirion – Fuirgam,,61,Solo
+Rhovanion,Southern Mirkwood,Malledrim,Q,-> Engines of War,,,Echad Sirion – Fuirgam,,61,Solo
+Rhovanion,Southern Mirkwood,Malledrim,Q,-> Feral Flankers,,,Echad Sirion – Fuirgam,,61,Solo
+Rhovanion,Southern Mirkwood,Malledrim,Q,-> Hilltop Assault,,,Echad Sirion – Fuirgam,,61,Solo
+Rhovanion,Southern Mirkwood,Malledrim,Q,"Helchurth, the Eternal Shadow",,,Ost Galadh - Gellamiel,,100,Small Fellow
+Rhovanion,Southern Mirkwood,Malledrim,Q,"Thorang, the Spirit Armour",,,Ost Galadh - Gellamiel,,100,Small Fellow
+Rhovanion,Southern Mirkwood,Malledrim,Q,"Ghamgur, the Giant Dread",,,Ost Galadh - Gellamiel,,100,Fellow
+Rhovanion,Southern Mirkwood,Malledrim,Q,"Woe-weaver, the Silent Fear",,,Ost Galadh - Gellamiel,,100,Fellow
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,M,Deeds of the Great River,-,-,Complete 3 meta deeds in Great River,,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,M,Quests of the Great River,10,Justice,Complete 7 quest deeds in Great River,Hero of the Anduin,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,M,Explorer of the Great River,10,Zeal,Complete 7 explorer deeds in Great River,Traveller of the Anduin,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,M,Slayer of the Great River,-,-,Complete 7 slayers deeds in Great River,,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,E,Ancient Ruins of the Limlight,10,-,Find 6 ruins in Limlight Gorge,,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,E,Brown Lands Explorer,5,Compassion,Find 5 points of interest in Brown Lands,Explorer of the Brown Lands,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,E,Discovery: Roots of Fangorn (req for instance),10,-,"Find the entrance to Roots of Fangorn [28.7 S, 72.2 W]",,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,E,Eorlsmead Explorer,5,Honour,Find 5 points of interest in Eorlsmead,Explorer of Eorlsmead,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,E,Limlight Gorge Explorer,5,Honesty,Find 7 points of interest in Limlight Gorge,Explorer of the Limlight Gorge,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,E,Parth Celebrant Explorer,5,Idealism,Find 5 points of interest in Parth Celebrant,Explorer of Parth Celebrant,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,E,Rushgore Explorer,5,Tolerance,Find 6 points of interest in Rushgore,Explorer of the Rushgore,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,E,Stangard Explorer,5,-,Find 20 points of interest in Stangard,the Trespasser,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,E,Thinglad Explorer,5,Innocence,Find 5 points of interest in Thinglad,Explorer of Thinglad,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,E,Wailing Hills Explorer,5,Mercy,Find 7 points of interest in Wailing Hills,Explorer of the Wailing Hills,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,L,The Spirits of the Limlight,10,-,Speak with the Spirits of Limlight Gorge at night,Chronicler of Twilgiht,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,R,Quests of Brown Lands,10,Fortitude,Complete quests within Brown Lands (19),Defender of the Brown Lands,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,R,Quests of Eorlsmead,10,Discipline,Complete quests within Eorlsmead (20),Hero of Eorlsmead,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,R,Quests of Parth Celebrant,10,Confidence,Complete quests within Parth Celebrant (20),Avenger of Oaths Broken,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,R,Quests of the Limlight Gorge,10,Determination,Complete quests within Limlight Gorge (20),Warrior of the Limlight Gorge,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,R,Quests of the Rushgore,10,Patience,Complete quests within Rushgore (20),Defender of the Rushgore,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,R,Quests of the Wailing Hills,10,Honesty,Complete quests within Wailing Hills (20),Friend of the Eagles,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,R,Quests of Thinglad,10,Fidelity,Complete quests within Thinglad (20),Sentinal of Thinglad,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Beast Slayer,5,-,Defeat Beasts in Great River (100),,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Beast Slayer (advanced),10,Tolerance,Defeat Beasts in Great River (200),,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Brigand-slayer,5,-,Defeat Brigands in Great River (100),,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Brigand-slayer (advanced),10,Wisdom,Defeat Brigands in Great River (200),,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Easterling-slayer,5,-,Defeat Easterlings in Great River (100),,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Easterling-slayer (advanced),10,Valour,Defeat Easterlings in Great River (200),,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Orc Slayer,5,-,Defeat Orcs in Great River (100),,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Orc Slayer (advanced),10,Loyalty,Defeat Orcs in Great River (200),,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Shade-slayer,5,-,Defeat Shades in Great River (100),,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Shade-slayer (advanced),10,Honesty,Defeat Shades in Great River (200),,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Spider-slayer,5,-,Defeat Spiders in Great River (60),,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Spider-slayer (advanced),10,Fidelity,Defeat Spiders in Great River (120),,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Titan-slayer,5,-,Defeat (Elite Master or Nemesis) monsters in Limlight Gorge (30),,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Titan-slayer (advanced),10,Patience,Defeat (Elite Master or Nemesis) monsters in Limlight Gorge (60),,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,M,Saviour of the Roots of Fangorn (Discovery req),15,-,Complete 3 deeds in Roots of Fangorn instance,Waldengard,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Roots of Fangorn: Slaves of the Spider Queen,15,-,Defeat Frushkul in Roots of Fangorn,,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,S,Roots of Fangorn: Defeat Gurthul,15,-,Defeat Gurthul in Roots of Fangorn,Slayer of Gurthul,,
+Rhovanion,Great River,Riders of Stangard / Heroes of Limlight Gorge,C,Roots of Fangorn: Challenge - Green Thumb,-,-,Defeat Gurthul in Tier 2 without allowing roots to be poisoned,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,Deeds of the Eastemnet,-,-,Complete 3 meta deeds in Eastemnet,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,Quests of the Eastemnet,-,-,Complete 7 quest deeds in Eastemnet,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,Explorer of the Eastemnet,-,-,Complete 11 explorer deeds in Eastemnet,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,Slayer of the Eastemnet,-,-,Complete 10 slayers deeds in Eastemnet,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,Aiding the Eastemnet,-,-,Complete 4 Hytbold deeds,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,Hytbold,-,-,Complete 14 Rebuild deeds in Hytbold,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,Farmhouses,-,-,Complete 2 Farmhouse deeds,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,Houses,-,-,Complete 6 Housing deeds,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,Lighting and Fences,-,-,Complete 8 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,Tents,-,-,Complete 4 Tents deeds,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,The Armoury,-,-,Complete 7 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,The Gates,-,-,Complete 2 Gates deeds,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,The Library,-,-,Complete 5 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,The Lumber Mill,-,-,Complete 9 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,The Mead Hall,-,-,Complete 'Rebuild' quests and 3 deeds for Mead Hall,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,The Palisade,-,-,Complete 8 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,The Smithy,-,-,Complete 5 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,The Stable,-,-,Complete 7 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,Towers,-,-,Complete 4 Tower deeds,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,M,Townsfolk,-,-,Complete 6 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,A Summons to Hytbold,-,-,Reach level 84,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,-> Aiding the Entwash Vale,-,-,Complete 11 quests in Entwash Vales,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,-> Aiding the Norcrofts,-,-,Complete 13 quests in Norcrofts,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,-> Aiding the Sutcrofts,-,-,Complete 13 quests in Sutcrofts,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,-> Aiding the Wold,-,-,Complete 12 quests in the Wold,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,Farmhouse of the Entwash Vale,-,-,Complete 4 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,Farmhouse of the Sutcrofts,-,-,Complete 6 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,Cottage of the Wold,-,-,Complete 5 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,House of the Wold,-,-,Complete 5 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,House of the Sutcrofts,-,-,Complete 5 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,House of the Norcrofts,-,-,Complete 5 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,Cottage of the Norcrofts,-,-,Complete 5 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,House of the Entwash Vale,-,-,Complete 5 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,Entwash Vale Tents,-,-,Complete 4 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,Norcroft Tents,-,-,Complete 4 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,Sutcroft Tents,-,-,Complete 4 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,Wold Tents,-,-,Complete 4 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,The East Gate,-,-,Complete 4 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,The West Gate,-,-,Complete 4 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,The Mead Hall: outdoor enhancements,-,-,Complete 6 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,The Mead Hall: indoor enhancements,-,-,Complete 10 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,The Mead Hall: inhabitants,-,-,Complete 6 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,Tower of the Entwash Vale,-,-,Complete 5 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,Tower of the Norcrofts,-,-,Complete 5 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,Tower of the Sutcrofts,-,-,Complete 5 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,F,Tower of the Wold,-,-,Complete 5 quests,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,E,Chambers of Byrgenstow,-,-,Find the 12 chambers of Byrgenstow,Entwash Vale Tomb-raider,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,E,Cities of Eastern Rohan,5,Charity,Find 10 cities of Eastern Rohan,Settler,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,E,East Wall Explorer,5,Compassion,Find 10 points of interest in East Wall,Watcher,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,E,Eaves of Fangorn Exploration,5,Fortitude,Find 5 points of interest in Eaves of Fangorn,Explorer of Fangorn,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,E,Enemies of the Rohirrim,5,Zeal,Find 12 enemy camps of the Rohirrim,Finder of Foes,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,E,Farms and Crofts of Eastemnet,5,Fidelity,Find 5 farms and crofts in Eastemnet,Finder of Farms,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,E,Nurseries of the Wyrmdelf,-,-,Find 5 nurseries of the Wyrmdelf,Nursery-bogie,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,E,"Ruins, Tombs, and Monuments of Eastemnet",5,Innocence,"Find 10 ruins, tombs, and monuments in Eastemnet",Seeker of Rohan's Ruins,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,E,The Defenses of Eastern Rohan,5,Honesty,Find 9 defenses of Eastern Rohan,Fort-finder,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,E,The Wilds of Eastemnet,5,Valour,Find 5 points of interest in the wilds of Eastemnet,Watcher of the Wilds,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,E,Where Evil Creatures Dwell,5,Loyalty,Find 5 dens in Eastern Rohan,Den Discoverer,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,L,Quests of Langhold,5,Honour,Complete all quests In Langhold,Survivor of Langhold,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,L,Quests of the East Wall,5,Wisdom,Complete all quests In East Wall,Seeker,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,L,Quests of the Eaves of Fangorn,5,Determination,Complete quests within Eaves of Fangorn (40),Fangorn Adventurer,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,L,Quests of the Entwash Vale,5,Tolerance,Complete quests within Entwash Vale (60),Entwash Vale Adventurer,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,L,Quests of the Norcrofts,5,Justice,Complete quests within Norcrofts (60),Norcrofts Adventurer,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,L,Quests of the Sutcrofts,5,Valour,Complete quests within Sutcrofts (40),Sutcrofts Adventurer,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,L,Quests of the Wold,5,Compassion,Complete quests within the Wold (55),Wold Adventurer,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,L,To the Aid of Rohan,-,-,Auto-bestowed if own Riders of Rohan and reached level 75,,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Ancient Evil-slayer,5,-,"Defeat Lathbears, Draugar, or Swert Hounds in Eastemnet (100)",,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Ancient Evil-slayer (advanced),5,Charity,"Defeat Lathbears, Draugar, or Swert Hounds in Eastemnet (200)",Slayer of Ancient Evil in Eastern Rohan,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Beast-slayer,5,-,Defeat Beasts in Eastemnet (100),,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Beast-slayer (advanced),5,Confidence,Defeat Beasts in Eastemnet (200),Beast-slayer of Eastern Rohan,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Boar-hunter [Hidden],-,Mercy,Defeat Boars in Eastemnet (30),Boar-hunter of the Eastemnet,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Brigand-slayer,5,-,Defeat Brigands in Eastemnet (100),,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Brigand-slayer (advanced),5,Wisdom,Defeat Brigands in Eastemnet (200),Brigand-slayer of Eastern Rohan,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Dragon-kind Slayer,5,-,Defeat Dragon-kind in Eastemnet (100),,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Dragon-kind Slayer (advanced),5,Fortitude,Defeat Dragon-kind in Eastemnet (200),Reptile-slayer of Eastern Rohan,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Half-orc Slayer,5,-,Defeat Half-orc in Eastemnet (100),,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Half-orc Slayer (advanced),5,Empathy,Defeat Half-orc in Eastemnet (200),Half-orc Slayer of Eastern Rohan,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Orc-slayer,5,-,Defeat Orcs in Eastemnet (100),,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Orc-slayer (advanced),5,Honesty,Defeat Orcs in Eastemnet (200),Orc-slayer of Eastern Rohan,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Slayer of Mounted Enemies,5,-,Defeat Mounted enemies in Eastemnet (80),,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Slayer of Mounted Enemies (advanced),5,Idealism,Defeat Mounted enemies in Eastemnet (160),Mounted Foe Slayer of Eastern Rohan,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Spider-slayer,5,-,Defeat Spiders in Eastemnet (100),,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Spider-slayer (advanced),5,Patience,Defeat Spiders in Eastemnet (200),Spider-slayer of Eastern Rohan,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Uruk-slayer,5,-,Defeat Uruks in Eastemnet (100),,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Uruk-slayer (advanced),5,Discipline,Defeat Uruks in Eastemnet (200),Uruk-slayer of Eastern Rohan,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Warg-slayer,5,-,Defeat Wargs in Eastemnet (100),,,
+Rhovanion,East Rohan,Men of the Wold/Norcrofts/Sutcrofts/Entwash Vale,S,Warg-slayer (advanced),5,Mercy,Defeat Wargs in Eastemnet (200),Warg-slayer of Eastern Rohan,,
+Rhovanion,East Rohan,Men of the Entwash Vale,Q,Resupplying the Line,,,Eaworth – Cendal,,85,Solo
+Rhovanion,East Rohan,Men of the Entwash Vale,Q,The Road to Thornhope,,,Eaworth – Holenmal,,85,Solo
+Rhovanion,East Rohan,Men of the Entwash Vale,Q,The Living Deep: Goblin-sappers,,,Eaworth – Dernstan,,85,Solo
+Rhovanion,East Rohan,Men of the Entwash Vale,Q,The Living Deep: Black Powder,,,Eaworth – Dernstan,,85,Solo
+Rhovanion,East Rohan,Men of the Entwash Vale,Q,Haycliff: Terrors in the Forest,,,Eaworth – Dernstan,,85,Solo
+Rhovanion,East Rohan,Men of the Entwash Vale,Q,Haycliff: Frog Slime,,,Eaworth – Dernstan,,85,Solo
+Rhovanion,East Rohan,Men of the Entwash Vale,Q,The Entwalk: Orcs in the Trees,,,Eaworth – Dernstan,,85,Solo
+Rhovanion,East Rohan,Men of the Entwash Vale,Q,The Entwalk: Creatures of the Forest,,,Eaworth – Dernstan,,85,Solo
+Rhovanion,East Rohan,Men of the Entwash Vale,Q,Siege of Eaworth: Uruks of the Vale,,,Eaworth – Dernstan,,85,Solo
+Rhovanion,East Rohan,Men of the Entwash Vale,Q,Siege of Eaworth: Catapults,,,Eaworth – Dernstan,,85,Solo
+Rhovanion,East Rohan,Men of the Entwash Vale,Q,The Beacon of Eaworth,,,Eaworth – Cendal,,85,Solo
+Rhovanion,East Rohan,Men of the Norcofts,Q,The Farms of the Norcrofts,,,Cliving – Hwitnyd,,85,Solo
+Rhovanion,East Rohan,Men of the Norcofts,Q,The Race,,,Cliving – Gladsnel,,85,Solo
+Rhovanion,East Rohan,Men of the Norcofts,Q,Wild Horses,,,Cliving – Gladsnel,,85,Solo
+Rhovanion,East Rohan,Men of the Norcofts,Q,Banner of the Enemy,,,Cliving – Gladsnel,,85,Solo
+Rhovanion,East Rohan,Men of the Norcofts,Q,Dressage,,,Cliving – Gladsnel,,85,Solo
+Rhovanion,East Rohan,Men of the Norcofts,Q,Sad Torech: Sinking Feeling,,,Cliving – Aldbeort,,85,Solo
+Rhovanion,East Rohan,Men of the Norcofts,Q,Sad Torech: Pitched Battle,,,Cliving – Aldbeort,,85,Solo
+Rhovanion,East Rohan,Men of the Norcofts,Q,Dwergfant: Foul Waters,,,Cliving – Aldbeort,,85,Solo
+Rhovanion,East Rohan,Men of the Norcofts,Q,Dwergfant: A Rock and a Hard Place,,,Cliving – Aldbeort,,85,Solo
+Rhovanion,East Rohan,Men of the Norcofts,Q,Ost Magol: Ruins of Darkness,,,Cliving – Aldbeort,,85,Solo
+Rhovanion,East Rohan,Men of the Norcofts,Q,Ost Magol: Totems of War,,,Cliving – Aldbeort,,85,Solo
+Rhovanion,East Rohan,Men of the Norcofts,Q,Siege of Faldham: Holding the Line,,,Cliving – Aldbeort,,85,Solo
+Rhovanion,East Rohan,Men of the Norcofts,Q,Siege of Faldham: Inferno,,,Cliving – Aldbeort,,85,Solo
+Rhovanion,East Rohan,Men of the Sutcrofts,Q,The Farms of the Sutcrofts,,,Snowbourn – Daggaric,,85,Solo
+Rhovanion,East Rohan,Men of the Sutcrofts,Q,Terror of the Deep,,,Snowbourn – Healac,,85,Solo
+Rhovanion,East Rohan,Men of the Sutcrofts,Q,The Blood-fish,,,Snowbourn – Healac,,85,Solo
+Rhovanion,East Rohan,Men of the Sutcrofts,Q,The Garsfeld Guppy,,,Snowbourn – Healac,,85,Solo
+Rhovanion,East Rohan,Men of the Sutcrofts,Q,Cuts of Fish,,,Snowbourn – Healac,,85,Solo
+Rhovanion,East Rohan,Men of the Sutcrofts,Q,Langraf: Defilers of the Dead,,,Snowbourn – Waldeg,,85,Solo
+Rhovanion,East Rohan,Men of the Sutcrofts,Q,Langraf: Honouring the Ancients,,,Snowbourn – Waldeg,,85,Solo
+Rhovanion,East Rohan,Men of the Sutcrofts,Q,The Creeping Wood: A Fear of Spiders,,,Snowbourn – Waldeg,,85,Solo
+Rhovanion,East Rohan,Men of the Sutcrofts,Q,The Creeping Wood: Cocooned,,,Snowbourn – Waldeg,,85,Solo
+Rhovanion,East Rohan,Men of the Sutcrofts,Q,Ghampronk: Goblin-miners,,,Snowbourn – Waldeg,,85,Solo
+Rhovanion,East Rohan,Men of the Sutcrofts,Q,Ghampronk: Digging for Iron,,,Snowbourn – Waldeg,,85,Solo
+Rhovanion,East Rohan,Men of the Sutcrofts,Q,Defence of Walstow: Eye of the Storm,,,Snowbourn – Waldeg,,85,Solo
+Rhovanion,East Rohan,Men of the Sutcrofts,Q,Defence of Walstow: Triage,,,Snowbourn – Waldeg,,85,Solo
+Rhovanion,East Rohan,Men of the Wold,Q,Eastern Plains of the Wold,,,Harwick – Wigbald,,85,Solo
+Rhovanion,East Rohan,Men of the Wold,Q,Rohirrim and Bandits,,,Harwick – Garbrand,,85,Solo
+Rhovanion,East Rohan,Men of the Wold,Q,Dress-up,,,Harwick – Garbrand,,85,Solo
+Rhovanion,East Rohan,Men of the Wold,Q,Hobby-horse,,,Harwick – Garbrand,,85,Solo
+Rhovanion,East Rohan,Men of the Wold,Q,Gerngarth: Pillagers of Knowledge,,,Harwick – Wulfin,,85,Solo
+Rhovanion,East Rohan,Men of the Wold,Q,Gerngarth: Ancient Literature,,,Harwick – Wulfin,,85,Solo
+Rhovanion,East Rohan,Men of the Wold,Q,Digelon: Feasting on Fungus,,,Harwick – Wulfin,,85,Solo
+Rhovanion,East Rohan,Men of the Wold,Q,Digelon: A Light in the Darkness,,,Harwick – Wulfin,,85,Solo
+Rhovanion,East Rohan,Men of the Wold,Q,Defence of Harwick: The Assault,,,Harwick – Wulfin,,85,Solo
+Rhovanion,East Rohan,Men of the Wold,Q,Defence of Harwick: Rain of Arrows,,,Harwick – Wulfin,,85,Solo
+Rhovanion,East Rohan,Men of the Wold,Q,The Ford: An Enemy from the East,,,Harwick – Wulfin,,85,Solo
+Rhovanion,East Rohan,Men of the Wold,Q,The Ford: Defiled Ruins,,,Harwick – Wulfin,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Rebuild,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Outdoor Enhancements 1,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Outdoor Enhancements 2,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Outdoor Enhancements 3,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Outdoor Enhancements 4,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Outdoor Enhancements 5,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Outdoor Enhancements 6,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Indoor Enhancments 1,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Indoor Enhancments 2,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Indoor Enhancments 3,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Indoor Enhancments 4,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Indoor Enhancments 5,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Indoor Enhancments 6,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Indoor Enhancments 7,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Indoor Enhancments 8,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Indoor Enhancments 9,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Indoor Enhancments 10,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Inhabitants 1,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Inhabitants 2,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Inhabitants 3,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Inhabitants 4,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Inhabitants 5,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,The Mead Hall: Inhabitants 6,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,The Palisade: Rebuild 1,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,The Palisade: Rebuild 2,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,The Palisade: Rebuild 3,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,The Palisade: Rebuild 4,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,The Palisade: Rebuild 5,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,The Palisade: Rebuild 6,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,The Palisade: Rebuild 7,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,The Palisade: Rebuild 8,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,Lighting and Fences: Rebuild 1,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,Lighting and Fences: Rebuild 2,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,Lighting and Fences: Rebuild 3,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,Lighting and Fences: Rebuild 4,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,Lighting and Fences: Rebuild 5,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,Lighting and Fences: Rebuild 6,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,Lighting and Fences: Rebuild 7,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,Lighting and Fences: Rebuild 8,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,The Smithy: Rebuild,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,The Smithy: Enhancements 1,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,The Smithy: Enhancements 2,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,The Smithy: Superior Forge,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,The Smithy: Inhabitants,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,Entwash Vale Tents: Rebuild,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,Entwash Vale Tents: Enhancements 1,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,Entwash Vale Tents: Enhancements 2,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,Entwash Vale Tents: Inhabitants,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,Norcroft Tents: Rebuild,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,Norcroft Tents: Enhancements 1,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,Norcroft Tents: Enhancements 2,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,Norcroft Tents: Inhabitants,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,Sutcroft Tents: Rebuild,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,Sutcroft Tents: Enhancements 1,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,Sutcroft Tents: Enhancements 2,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,Sutcrofts Tents: Inhabitants,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,Wold Tents: Rebuild,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,Wold Tents: Enhancements 1,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,Wold Tents: Enhancements 2,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,Wold Tents: Inhabitants,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Entwash Vale: Rebuild,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Entwash Vale: Enhancements 1,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Entwash Vale: Enhancements 2,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Entwash Vale: Enhancements 3,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Entwash Vale: Defenders,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Norcrofts: Rebuild,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Norcrofts: Enhancements 1,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Norcrofts: Enhancements 2,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Norcrofts: Enhancements 3,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Norcrofts: Defenders,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Sutcrofts: Rebuild,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Sutcrofts: Enhancements 1,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Sutcrofts: Enhancements 2,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Sutcrofts: Enhancements 3,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Sutcrofts: Defenders,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Wold: Rebuild,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Wold: Enhancements 1,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Wold: Enhancements 2,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Wold: Enhancements 3,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,Tower of the Wold: Defenders,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,The Lumber-mill: Rebuild,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,The Lumber-mill: Enhancements 1,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,The Lumber-mill: Enhancements 2,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,The Lumber-mill: Enhancements 3,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,The Lumber-mill: Enhancements 4,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,The Lumber-mill: Enhancements 5,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,The Lumber-mill: Superior Workbench,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,The Lumber-mill: Inhabitants 1,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,The Lumber-mill: Inhabitants 2,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,The Armoury: Rebuild,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,The Armoury: Enhancements 1,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,The Armoury: Enhancements 2,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,The Armoury: Enhancements 3,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,The Armoury: Enhancements 4,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,The Armoury: Inhabitants 1,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,The Armoury: Inhabitants 2,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,Townsfolk 1,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,Townsfolk 2,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,Townsfolk 3,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,Townsfolk 4,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,Townsfolk 5,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,Townsfolk 6,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,The Library: Rebuild,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,The Library: Enhancements 1,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,The Library: Enhancements 2,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,The Library: Inhabitants,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,The Library: Superior Study,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,The Stable: Rebuild,,,Hytbold – Edgal,,85,Solo
+Rhovanion,Hytbold,,Q,The Stable: Enhanceements 1,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,The Stable: Enhanceements 2,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,The Stable: Wold Horses,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,The Stable: Sutcrofts Horses,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,The Stable: Norcrofts Horses,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,The Stable: Entwash Vale Horses,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,The East Gate: Rebuild,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,The East Gate: Enhancements 1,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,The East Gate: Enhancements 2,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,The East Gate: Defenders,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,The West Gate: Rebuild,,,Hytbold – Oseg,,85,Solo
+Rhovanion,Hytbold,,Q,The West Gate: Enhancements 1,,,Hytbold – Warin,,85,Solo
+Rhovanion,Hytbold,,Q,The West Gate: Enhancements 2,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,The West Gate: Defenders,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,Cottage of the Wold: Rebuild,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,Cottage of the Wold: Enhancements 1,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,Cottage of the Wold: Enhancements 2,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,Cottage of the Wold: Enhancements 3,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,Cottage of the Wold: Inhabitants,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Wold: Rebuild,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Wold: Enhancements 1,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Wold: Enhancements 2,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Wold: Enhancements 3,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Wold: Inhabitants,,,Hytbold – Hargar,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Sutcrofts: Rebuild,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Sutcrofts: Enhancements 1,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Sutcrofts: Enhancements 2,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Sutcrofts: Enhancements 3,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Sutcrofts: Inhabitants,,,Hytbold – Harsterre,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Norcrofts: Rebuild,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Norcrofts: Enhancements 1,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Norcrofts: Enhancements 2,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Norcrofts: Enhancements 3,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Norcrofts: Inhabitants,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,Cottage of the Norcrofts: Rebuild,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,Cottage of the Norcrofts: Enhancements 1,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,Cottage of the Norcrofts: Enhancements 2,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,Cottage of the Norcrofts: Enhancements 3,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,Cottage of the Norcrofts: Inhabitants,,,Hytbold – Segwine,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Entwash Vale: Rebuild,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Entwash Vale: Enhancements 1,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Entwash Vale: Enhancements 2,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Entwash Vale: Enhancements 3,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,House of the Entwash Vale: Inhabitants,,,Hytbold – Egmund,,85,Solo
+Rhovanion,Hytbold,,Q,Farmhouse of the Entwash Vale: Rebuild,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,Farmhouse of the Entwash Vale: Enhancements,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,Farmhouse of the Entwash Vale: Crops,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,Farmhouse of the Sutcrofts: Superior Oven,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,Farmhouse of the Entwash Vale: Inhabitants,,,Hytbold – Freamar,,85,Solo
+Rhovanion,Hytbold,,Q,Farmhouse of the Sutcrofts: Rebuild,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,Farmhouse of the Sutcrofts: Enhancements,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,Farmhouse of the Sutcrofts: Crops,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,Farmhouse of the Sutcorfts: Superior Farmland,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,Hytbold,,Q,Farmhouse of the Sutcrofts: Inhabitants,,,Hytbold – Hereswith,,85,Solo
+Rhovanion,East Rohan,,Q,Welcome to Harwick,,,Harwick Refugee Camp – Cillan,Knight of the Wold,76,Solo
+Rhovanion,East Rohan,,Q,Exploring the Ancient Tomb,,,The Ancient Tomb – Landscape,Norcrofts Tomb-raider,78,Solo
+Rhovanion,East Rohan,,Q,An End to Ambal,,,Caddabrand's Camp – Caddabrand,Caddabrand's Apprentice,79,Solo
+Rhovanion,East Rohan,,Q,In Service to Reeve Athelward,,,Cliving Jail – Walnoth,Detective,79,Solo
+Rhovanion,East Rohan,,Q,Wrath of the Reeve,,,Mead Hall of Cliving – Athelward,The Gallant,79,Solo
+Rhovanion,East Rohan,,Q,The Elfward,,,Mead Hall of Faldham – Elfmar,of the Elfward,79,Solo
+Rhovanion,East Rohan,,Q,The Defence of Faldham,,,Mead Hall of Faldham – Elfmar,Wayfarer of the Plains,80,Solo
+Rhovanion,East Rohan,,Q,Awake at Long Last,,,Eaves of Fangorn – Oldheart,Tree-herder,83,Solo
+Rhovanion,East Rohan,,Q,The Witan,,,Hytbold – Edgal,Thane of Hytbold,85,Solo
+Rhovanion,East Rohan,,Q,-> also for The Witan,,,,Thane of the Eastemnet,-,-
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,M,Deeds of Wildermore,-,-,Complete 3 meta deeds in Wildermore,,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,M,Quests of Wildermore,-,-,Complete 5 quest deeds in Wildermore,,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,M,Explorer of Wildermore,-,-,Complete 7 explorer and 3 lore deeds in Wildermore,,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,M,Slayer of Wildermore,-,-,Complete 6 slayers deeds in Wildermore,,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,M,The Survivor's of Wildermore: Final,-,-,Complete 5 deeds in Wildermore,,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,F,Battles and Events,-,-,Complete 5 quests,,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,F,Protecting the Lands of Wildermore,-,-,Complete 10 quests,,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,F,Riding in Wildermore,-,-,Complete 7 quests,,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,F,Warbands II: Wildermore's Roaming Enemies,-,-,Complete 13 Warband II quests,,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,F,Wildermore's Bounties,-,-,Complete 8 Bounty quests,,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,E,Farms of the Fallows,5,Idealism,Find 6 farms in the Fallows,Finder of Forlaw's Farms,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,E,Isolation in the Whitshaws,5,-,Find 3 huts in Whitshaws,,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,E,Peaks of the High Knolls,5,Tolerance,Find 5 peaks in High Knolls,Far-gazer,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,E,Settlements of Wildermore,5,Charity,Find 7 settlements in Wildermore,Warmth Amidst the Cold,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,E,The Path of Nurzum,5,Determination,Retrace the path of Nurzum,Follower of Frozen Footsteps,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,E,The Wilds of Wildermore,5,Fortitude,Find points of interest in the wilds of Wildermore,Wayfarer of the Wild Lands,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,E,These Hostile Lands,5,Loyalty,Find 5 enemy camps in Wildermore,The Rugged,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,L,Blooming in the Snow,5,Mercy,Collect 6 plants in Wildermore,Blossom in the Snow,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,L,Forlaw Explorer,5,Confidence,Find 17 points of interest in Forlaw,Explorer of Forlaw,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,L,Loved and Lost,5,Empathy,Explore the graveyard,Seeker of Sorrow,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,L,Quests of the Balewood,5,Zeal,Complete quests within Balewood (25),Friend of the Deep Woods,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,L,Quests of the Fallows,5,Honesty,Complete quests within the Fallows (24),Salvager of Lost Dreams,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,L,Quests of the High Knolls,5,Innocence,Complete quests within High Knolls (22),Saviour of the Lost,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,L,Quests of the Whitshaws,5,Fidelity,Complete quests within Whitshaws (24),Roamer of the Ice-bound Lands,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,L,Quests of the Writhendowns,5,Patience,Complete quests within Writhendowns (22),Hope for the Hopeless,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,S,Orc Slayer,5,-,Defeat Orcs in Wildermore (100),,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,S,Orc Slayer (advanced),5,Honour,Defeat Orcs in Wildermore (200),Orc-slayer of Wildermore,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,S,Slayer of Mounted Foes,5,-,Defeat Mounted foes in Wildermore (80),,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,S,Slayer of Mounted Foes (advanced),5,Valour,Defeat Mounted foes in Wildermore (160),Slayer of Mounted Foes in Wildermore,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,S,Slayer of Wolves and Wargs,5,-,Defeat Wolves or Wargs in Wildermore (100),,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,S,Slayer of Wolves and Wargs (advanced),5,Compassion,Defeat Wolves or Wargs in Wildermore (200),Slayer of Wolves and Wargs in Wildermore,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,S,Snow-cat Slayer,5,-,Defeat Snow-cats in Wildermore (100),,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,S,Snow-cat Slayer (advanced),5,Wisdom,Defeat Snow-cats in Wildermore (200),Snow-cat Slayer of Wildermore,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,S,Uruk-slayer,5,-,Defeat Uruks in Wildermore (100),,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,S,Uruk-slayer (advanced),5,Justice,Defeat Uruks in Wildermore (200),Uruk-slayer of Wildermore,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,S,Wood-troll Slayer,5,-,Defeat Wood-trolls in Wildermore (80),,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,S,Wood-troll Slayer (advanced),5,Discipline,Defeat Wood-trolls in Wildermore (160),Wood-troll Slayer of Wildermore,,
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Bounty: Keen Eye,,,Forlaw - Britric,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,"Bounty: Krah, the Spymaster",,,Forlaw - Britric,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Bounty: Marr,,,Forlaw - Britric,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Bounty: Viz,,,Forlaw - Britric,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Bounty: Kurr,,,Forlaw - Britric,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Bounty: Shakolam,,,Forlaw - Britric,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Bounty: Sulmus,,,Forlaw - Britric,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Bounty: Iorwerth,,,Forlaw - Britric,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Scylfig: Target Shooting,,,Forlaw - Gyric,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Whitshaws: Mounted Fishing,,,- set,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Whitshaws: Yst-arning,,,- set,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Whitshaws: Jousting with Rohirrim,,,Forlaw - Gyric,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Scylfig: Celebration Feast,,,- set,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Balewood: A Strong Resemblance,,,Forlaw - Ealswith,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Balewood: Driving Back the Enemy,,,- set,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Fallows: The Farmer's Loss,,,Forlaw - Ealswith,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Fallows: Driving Back the Enemy,,,- set,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,High Knolls: Tremors of the Tors,,,Forlaw - Ealswith,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,High Knolls: Driving Back the Enemy,,,- set,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Whitshaws: Cruelty Towards Beasts,,,Forlaw - Ealswith,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Whitshaws: Driving Back the Enemy,,,- set,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Writhendowns: Hope Alight,,,Forlaw - Ealswith,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Writhendowns: Driving Back the Enemy,,,- set,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Thrymm's Farm: Cleansing,,,Forlaw - Dudoc,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Thrymm's Farm: Reclaiming,,,- set,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,High Knolls: An Occupied Road,,,Forlaw - Dudoc,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Whitshaws: Goblin-rider's Onslaught,,,Forlaw - Dudoc,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Whitshaws: Tails as Trophies,,,Forlaw - Dudoc,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Whitshaws: Harassing Wargs,,,- set,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Writhendowns: Easterling's Interest,,,Forlaw - Dudoc,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Warband II: Rottenheart,,,Forlaw - Manni,,85,Raid
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Warband II: Varg,,,- set,,85,Fellow
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Warband II: Shaguk,,,Forlaw - Manni,,85,Raid
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Warband II: Arataus,,,- set,,85,Small Fellow
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Warband II: Zovarr,,,- set,,85,Fellow
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Warband II: Shum,,,- set,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Warband II: The High Knolls Blizzard,,,Forlaw - Manni,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Warband II: Karkas,,,- set,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Warband II: Conog,,,Forlaw - Manni,,85,Raid
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Warband II: Glimtog,,,- set,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Warband II: Foulwing,,,Forlaw - Manni,,85,Solo
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Warband II: Balcharan,,,- set,,85,Small Fellow
+Rhovanion,Wildermore,People of Wildermore / Survivors of Wildermore,Q,Warband II: Voz,,,- set,,85,Fellow
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,M,Deeds of the Westemnet,-,-,Complete 3 meta deeds and 1 quest deed in Westemnet,,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,M,Quests of the Westemnet,-,-,Complete 5 quest deeds in Westemnet,,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,M,Explorer of the Westemnet,-,-,Complete 5 explorer deeds in Westemnet,,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,M,Slayer of the Westemnet,-,-,Complete 11 slayers deeds in Westemnet,,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,E,Broadacres Exploration,5,Charity,Find 7 points of interest in Broadacres,Explorer of Broadacres,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,E,Eastfold Exploration,5,Patience,Find 6 points of interest in Eastfold,Explorer of the Eastfold,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,E,Kingstead Exploration,5,Wisdom,Find 11 points of interest in Kingstead,Explorer of Kingstead,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,E,Stonedeans Exploration,5,Confidence,Find 9 points of interest in Stonedeans,Explorer of the Stonedeans,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,E,The Stewards of Fangorn,-,-,Complete quests with Quickbeam's Huorn (12),,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,E,Westfold Exploration,5,Idealism,Find 9 points of interest in Westfold,Explorer of the Westfold,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,L,Quests of Kingstead,5,Fidelity,Complete quests within Kingstead (50),Hero of Kingstead,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,L,Quests of the Broadacres,5,Empathy,Complete quests within Broadacres (50),Hero of Broadacres,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,L,Quests of the Eastfold,5,Honesty,Complete quests within Eastfold (50),Hero of the Eastfold,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,L,Quests of the Stonedeans,5,Honour,Complete quests within Stonedeans (50),Hero of the Stonedeans,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,L,Quests of the Westfold,5,Innocence,Complete quests within Westfold (50),Hero of the Westfold,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,L,Survivor of the Long Night,-,Zeal,Complete through Vol III Book 13 Chapter 10,,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Boar and Bear Slayer,5,-,Defeat Boar or Bear in Westemnet (100),,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Boar and Bear Slayer (advanced),5,Zeal,Defeat Boar or Bear in Westemnet (200),Boar and Bear Slayer of the Westemnet,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Craban Slayer,5,-,Defeat Craban in Westemnet (80),,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Craban Slayer (advanced),5,Discipline,Defeat Craban in Westemnet (160),Craban Slayer of the Westemnet,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Dunlending Slayer,5,-,Defeat Dunlending in Westemnet (100),,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Dunlending Slayer (advanced),5,Fortitude,Defeat Dunlending in Westemnet (200),Dunlending Slayer of the Westemnet,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Goblin Slayer,5,-,Defeat Goblin in Westemnet (100),,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Goblin Slayer (advanced),5,Valour,Defeat Goblin in Westemnet (200),Goblin Slayer of the Westemnet,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Half-orc Slayer,5,-,Defeat Half-orc in Westemnet (100),,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Half-orc Slayer (advanced),5,Justice,Defeat Half-orc in Westemnet (200),Half-orc Slayer of the Westemnet,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Herd-creature Slayer,5,-,Defeat Herd-creature in Westemnet (80),,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Herd-creature Slayer (advanced),5,Determination,Defeat Herd-creature in Westemnet (160),Herd-creature Slayer of the Westemnet,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Orc Slayer,5,-,Defeat Orc in Westemnet (100),,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Orc Slayer (advanced),5,Tolerance,Defeat Orc in Westemnet (200),Orc Slayer of the Westemnet,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Troll Slayer,5,-,Defeat Troll in Westemnet (50),,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Troll Slayer (advanced),5,Mercy,Defeat Troll in Westemnet (100),Troll Slayer of the Westemnet,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Uruk Slayer,5,-,Defeat Uruk in Westemnet (100),,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Uruk Slayer (advanced),5,Compassion,Defeat Uruk in Westemnet (200),Uruk Slayer of the Westemnet,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Warg Slayer,5,-,Defeat Warg in Westemnet (100),,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Warg Slayer (advanced),5,Charity,Defeat Warg in Westemnet (200),Warg Slayer of the Westemnet,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Wolf Slayer,5,-,Defeat Wolf in Westemnet (100),,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,S,Wolf Slayer (advanced),5,Patience,Defeat Wolf in Westemnet (200),Wolf Slayer of the Westemnet,,
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,The Road to Dunharrow,,,Edoras – Eowyn – Class trait point,,88,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,All Roads Lead to Aldburg,,,Beaconwatch Mead Hall – Cutha – Class trait point,,89,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,The Broadacres Betrayed,,,Tordag's Camp – Torfeth – Class trait point,,91,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,Woodhurst Has Fallen,,,Woodhurst – Gifemund – Class trait point,,93,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,To Helm's Deep,,,Erkenbrand's Refuge – Gandalf – Class trait point,,94,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,Let's Take the Hornburg,,,Helm's Deep – Summons to the Final Stand,Hammerhand,95,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,Drawn to the Water,,,Entwood – Quickbeam's Huorn,,95,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,In Need of Tending,,,Entwood – Quickbeam's Huorn,,95,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,A Thunder of Boughs,,,Entwood – Quickbeam's Huorn,,95,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,Twisted Branches,,,Entwood – Quickbeam's Huorn,,95,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,The Voice of Fangorn,,,Entwood – Quickbeam's Huorn,,95,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,Where Has Treebeard Gone?,,,Entwood – Quickbeam's Huorn,,95,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,Growth in Darkness,,,Entwood – Quickbeam's Huorn,,95,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,The Enemy That Was,,,Entwood – Quickbeam's Huorn,,95,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,Awakening the Forest,,,Entwood – Quickbeam's Huorn,,95,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,A Natural Remedy,,,Entwood – Quickbeam's Huorn,,95,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,Unearthing Trouble,,,Entwood – Quickbeam's Huorn,,95,Solo
+Rhovanion,Western Rohan,Eorlingas / Helmingas / Ents of Fangorn,Q,Feasting on the Forest,,,Entwood – Quickbeam's Huorn,,95,Solo

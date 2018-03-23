@@ -1,1 +1,134 @@
 Category,Subcategory,Faction,Type,Deed,LP,Trait,Details,Title,Level,Party
+Mines of Moria,Meta,,M,The Mines of Moria Part 1,10,,"Complete Volume 2, Books 1 - 6",Avenger of Khazad-dum,50-60,
+Mines of Moria,Meta,,M,The Mines of Moria Part 2,10,,"Complete Volume 2, Books 7-9",Stalwart Against the Shadow,60-65,
+Mines of Moria,Meta,,M,Epilogue: Of Dwarves and Elves,5,,Complete all 12 parts of the epilogue,Hastener of Fate,65,
+Mines of Moria,Prologue,,Q,Dwarf / Elf – Unlikely Fellowship,,,The Last Homely House – Barbethnir,,50,Solo
+Mines of Moria,Prologue,,Q,Dwarf / Elf – Sons and Fathers,,,The Guest Rooms – Gimli,,50,Solo
+Mines of Moria,Prologue,,Q,Dwarf / Elf – What Road for the Elves?,,,The Guest Rooms – Legolas,,50,Solo
+Mines of Moria,Prologue,,Q,Hobbit – Hobbits Far Afield,,,The Last Homely House – Barbethnir,,50,Solo
+Mines of Moria,Prologue,,Q,Hobbit – Last-minute Packing,,,Bilbo's Room – Samwise Gamgee,,50,Solo
+Mines of Moria,Prologue,,Q,Hobbit – The Walking-stick,,,Bilbo's Room – Peregrin Took,,50,Solo
+Mines of Moria,Prologue,,Q,Hobbit – Hobbiton to Rivendell,,,Bilbo's Room – Frodo Baggins,,50,Solo
+Mines of Moria,Prologue,,Q,Man – Bulwark of the West,,,The Last Homely House – Barbethnir,,50,Solo
+Mines of Moria,Prologue,,Q,Man – The Strength of Men,,,The Guest Rooms – Boromir,,50,Solo
+Mines of Moria,Prologue,,Q,Man – Three Ways,,,The Guest Rooms – Aragorn,,50,Solo
+Mines of Moria,Prologue,,Q,The Fellowship Departs,,,Elrond's Library – Elrond,,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,Chapter 1: Strangers in Hollin,,,Echad Dunann – Rathwald,,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,Chapter 2: Along the Sirannon,,,The Walls of Moria – Tulk,,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,Chapter 3: Bosi the Dwarf,,,The Walls of Moria – Tulk,,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,Chapter 4: Outside the Gate,,,The Walls of Moria – Bosi,,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,Chapter 5: Handling the Situation,,,The Walls of Moria – Bosi,,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,-> Keeping Sharp,,,The Walls of Moria – Bori,,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,Chapter 6: Cousin Brogur,,,The Walls of Moria – Bosi,,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,Chapter 7: Wolf-voices On the Wind,,,The Walls of Moria – Brogur,,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,-> The Glorious Tale of Broin the Mighty,,,The Walls of Moria – Broin,,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,Chapter 8: Before the Doors of Durin,,,The Walls of Moria – Bosi [Ends Expedition],,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,Chapter 9: A Weapon of the Elder Days,,,Echad Dunann – Rathwald,,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,Chapter 10: Forgotten Lineage,,,Echad Dunann – Hundi,,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,Chapter 11: Worth Beyond Measure,,,Forges of Rivendell – Dithalion or Forges of Thorin's Hall – Wafi,,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,Chapter 12: Forged Anew,,,Forges of Rivendell – Dithalion or Forges of Thorin's Hall – Wafi,,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,Chapter 13: The Watcher in the Water,,,The Walls of Moria – Rathwald,Seeker of Deep Places,50,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,Chapter 14: Khazad-dum At Last!,,,The Walls of Moria – Rathwald,,51,Solo
+Mines of Moria,Book 1 – The Walls of Moria,,Q,The Fall of Moria (optional),,,Echad Dunann – Rathwald,,50,Solo
+Mines of Moria,Book 2 – Echoes in the Dark,,Q,Foreword: Echoes in the Dark,,,Durin's Threshold – Tulk,,53,Solo
+Mines of Moria,Book 2 – Echoes in the Dark,,Q,Chapter 1: New Residents,,,Chamber of the Crossroads – Bosi,,52,Solo
+Mines of Moria,Book 2 – Echoes in the Dark,,Q,Chapter 2: Store-houses of the Western Halls,,,Chamber of the Crossroads – Bosi,,53,Solo
+Mines of Moria,Book 2 – Echoes in the Dark,,Q,Chapter 3: Zgilburk the Unrivaled,,,Chamber of the Crossroads – Bosi,,52,Solo
+Mines of Moria,Book 2 – Echoes in the Dark,,Q,Chapter 4: Enemies in the Ever Dark,,,Chamber of the Crossroads – Bosi,,53,Solo
+Mines of Moria,Book 2 – Echoes in the Dark,,Q,Chapter 5: Half a Riddle,,,The Chamber of Command – Bori,,53,Solo
+Mines of Moria,Book 2 – Echoes in the Dark,,Q,Chapter 6: Goblins in the Western Halls,,,The Chamber of Command – Brogur,,53,Solo
+Mines of Moria,Book 2 – Echoes in the Dark,,Q,Chapter 7: The Empty Passage,,,Chamber of the Crossroads – Bosi,,53,Solo
+Mines of Moria,Book 2 – Echoes in the Dark,,Q,Chapter 8: The Twenty-first Hall,,,Chamber of the Crossroads – Bosi,,53,Solo
+Mines of Moria,Book 3 – The Lord of Moria,,Q,Chapter 1: An Overzealous Explorer,,,The Chamber of Leadership – Brogur,,56,Solo
+Mines of Moria,Book 3 – The Lord of Moria,,Q,Chapter 2: A Long Way From Home,,,The Chamber of Leadership – Brogur,,56,Solo
+Mines of Moria,Book 3 – The Lord of Moria,,Q,Chapter 3: Inside the Chamber of Mazarbul,,,The Chamber of Leadership – Brogur,,56,Solo
+Mines of Moria,Book 3 – The Lord of Moria,,Q,Chapter 4: A Grudge Against Goblins,,,Chamber of the Crossroads – Bosi,,56,Solo
+Mines of Moria,Book 3 – The Lord of Moria,,Q,Chapter 5: Words of Caution,,,Chamber of the Crossroads – Bosi,,56,Solo
+Mines of Moria,Book 3 – The Lord of Moria,,Q,Chapter 6: Honour Enough for Both,,,The Chamber of Leadership – Brogur,,57,S or F
+Mines of Moria,Book 3 – The Lord of Moria,,Q,-> Dwarves of the Greatest Courage,,,The Chamber of Leadership – Bori,,57,Solo
+Mines of Moria,Book 3 – The Lord of Moria,,Q,-> Arms of the Sharpest Bite,,,The Chamber of Leadership – Bori,,57,Solo
+Mines of Moria,Book 3 – The Lord of Moria,,Q,-> Planning the Wisest Attack,,,The Chamber of Leadership – Bori,,57,S or F
+Mines of Moria,Book 3 – The Lord of Moria,,Q,Chapter 7: The White Hand in the Darkness,,,The Chamber of Leadership – Bori,,57,Solo
+Mines of Moria,Book 3 – The Lord of Moria,,Q,Chapter 8: Mazog's Reach,,,The Chamber of Leadership – Brogur,,57,Solo
+Mines of Moria,Book 3 – The Lord of Moria,,Q,Chapter 9: We Cannot Get Out,,,Chamber of the Crossroads – Bosi,,57,S or F
+Mines of Moria,Book 4 – Fire and Water,,Q,Chapter 1: Preparations for the Western Halls,,,Chamber of the Crossroads – Bosi,,58,Solo
+Mines of Moria,Book 4 – Fire and Water,,Q,-> Maintaining the Supply Chain,,,Chamber of the Crossroads – Slothi,,58,Solo
+Mines of Moria,Book 4 – Fire and Water,,Q,-> Scouting the Approaches,,,Chamber of the Crossroads – Sigdan,,58,Solo
+Mines of Moria,Book 4 – Fire and Water,,Q,-> The Bottom of the Well,,,Chamber of the Crossroads – Thalfi,,58,Solo
+Mines of Moria,Book 4 – Fire and Water,,Q,Chapter 2: Bosi's Recommendation,,,Chamber of the Crossroads – Bosi,,58,Solo
+Mines of Moria,Book 4 – Fire and Water,,Q,Chapter 3: Preparations for the Heart of Fire,,,The Heart of Fire – Slothkell,,58,Solo
+Mines of Moria,Book 4 – Fire and Water,,Q,-> Runners in the Deeps,,,The Heart of Fire – Rink Stronghammer,,58,Solo
+Mines of Moria,Book 4 – Fire and Water,,Q,Chapter 4: Hasten to the Twenty-first Hall,,,The Heart of Fire – Slothkell,,58,Solo
+Mines of Moria,Book 4 – Fire and Water,,Q,Chapter 5: Into the Fire,,,The Chamber of Leadership – Brogur,,58,Solo
+Mines of Moria,Book 4 – Fire and Water,,Q,Chapter 6: Bori's Suspicion,,,The Chamber of Leadership – Brogur,,59,Solo
+Mines of Moria,Book 4 – Fire and Water,,Q,Chapter 7: The Drowned Treasury,,,The Chamber of Leadership – Bori,,59,S or F
+Mines of Moria,Book 4 – Fire and Water,,Q,Chapter 8: Broin's Tale,,,The Chamber of Leadership – Bori,,59,Solo
+Mines of Moria,Book 5 – Drums in the Deep,,Q,Chapter 1: Azog's Legacy,,,The Peaceful Path – Broin,,59,Solo
+Mines of Moria,Book 5 – Drums in the Deep,,Q,Chapter 2: A Greater Power,,,Nud-melek – Glumir,,59,Solo
+Mines of Moria,Book 5 – Drums in the Deep,,Q,Chapter 3: Mazog,,,The Chamber of Leadership – Bori,,59,Solo
+Mines of Moria,Book 5 – Drums in the Deep,,Q,Chapter 4: The Sorrows of Khazad-dum,,,The Deep Way – Brogur,,59,Solo
+Mines of Moria,Book 5 – Drums in the Deep,,Q,Chapter 5: Drums in the Deep,,,Chamber of the Crossroads – Bosi,,59,Solo
+Mines of Moria,Book 5 – Drums in the Deep,,Q,-> The Battle of the Deep Way,,,The Deep Way – Brogur,,59,S or F
+Mines of Moria,Book 5 – Drums in the Deep,,Q,-> The Battle of the Way of Smiths,,,The Heart of Fire – Slothkell,,59,S or F
+Mines of Moria,Book 5 – Drums in the Deep,,Q,-> The Battle of the Twenty-first Hall,,,The Twenty-first Hall – Wili,,59,S or F
+Mines of Moria,Book 6 – The Shadowy Abyss,,Q,Chapter 1: Desperate Times,,,Chamber of the Crossroads – Bosi,,60,Solo
+Mines of Moria,Book 6 – The Shadowy Abyss,,Q,Chapter 2: An Enemy of the Orcs,,,Talan Haldir – Haldir,,60,Solo
+Mines of Moria,Book 6 – The Shadowy Abyss,,Q,Chapter 3: Rumil and Orophin,,,Talan Haldir – Haldir,,60,Solo
+Mines of Moria,Book 6 – The Shadowy Abyss,,Q,Chapter 4: Deep in the Abyss,,,Talan Haldir – Haldir,,60,Solo
+Mines of Moria,Book 6 – The Shadowy Abyss,,Q,Chapter 5: The Black Pit,,,Gwathrendath – Lenglammel,,60,Solo
+Mines of Moria,Book 6 – The Shadowy Abyss,,Q,-> Taken By Madness,,,Gwathrendath – Forglinn,,60,Solo
+Mines of Moria,Book 6 – The Shadowy Abyss,,Q,-> Mazog's Searchers,,,Gwathrendath – Dithaliwenn,,60,Solo
+Mines of Moria,Book 6 – The Shadowy Abyss,,Q,Chapter 6: Evils Beneath the World,,,Gwathrendath – Lenglammel,,60,Solo
+Mines of Moria,Book 6 – The Shadowy Abyss,,Q,Chapter 7: Beyond Light and Knowledge,,,Gwathrendath – Lenglammel,,60,Solo
+Mines of Moria,Book 6 – The Shadowy Abyss,,Q,Chapter 8: New Devilry,,,Gwathrendath – Lenglammel,,60,Solo
+Mines of Moria,Book 6 – The Shadowy Abyss,,Q,Chapter 9: The Mirror of Galadriel,,,Gwathrendath – Lenglammel,,60,Solo
+Mines of Moria,Book 7 – The Leaves of Lorien,,Q,Chapter 1: The Hill of Cerin Amroth,,,Talan Haldir – Haldir,,60,Solo
+Mines of Moria,Book 7 – The Leaves of Lorien,,Q,Chapter 2: Ringbearer's Respite,,,Cirin-en-Galadh – Milwen,,60,Solo
+Mines of Moria,Book 7 – The Leaves of Lorien,,Q,Chapter 3: Sons of Leaf and Stone,,,Cerin Amroth – Gimli,,60,Solo
+Mines of Moria,Book 7 – The Leaves of Lorien,,Q,Chapter 4: A Tense Alliance,,,Cerin Amroth – Gimli,,60,Solo
+Mines of Moria,Book 7 – The Leaves of Lorien,,Q,Chapter 5: The Wilting Rot,,,Buzun-ghar – Corunothiel,,60,Solo
+Mines of Moria,Book 7 – The Leaves of Lorien,,Q,-> Source of the Rot,,,Buzun-ghar – Nimpheleg,,60,Solo
+Mines of Moria,Book 7 – The Leaves of Lorien,,Q,Chapter 6: Hewers of Stone,,,Buzun-ghar – Orvar,,60,Solo
+Mines of Moria,Book 7 – The Leaves of Lorien,,Q,Chapter 7: The Lost Workshop,,,The Peaceful Path – Broin,,60,Solo
+Mines of Moria,Book 7 – The Leaves of Lorien,,Q,Chapter 8: The Secret Road,,,The Peaceful Path – Broin,,60,Solo
+Mines of Moria,Book 7 – The Leaves of Lorien,,Q,Chapter 9: The Worries of Lord Celeborn,,,Buzun-ghar – Corunothiel,,60,Solo
+Mines of Moria,Book 8 – Scourge of Khazad-dum,,Q,Chapter 1: Escape from Rushdurinul,,,Talan Haldir – Haldir,,60,Solo
+Mines of Moria,Book 8 – Scourge of Khazad-dum,,Q,Chapter 2: What Goruthul Left Behind,,,Cerin Amroth – Issuriel,,60,Solo
+Mines of Moria,Book 8 – Scourge of Khazad-dum,,Q,Chapter 3: A Relic in Lumul-nar,,,The Peaceful Path – Broin,,60,S or SF
+Mines of Moria,Book 8 – Scourge of Khazad-dum,,Q,Chapter 4: A Relic in Nala-dum,,,The Peaceful Path – Broin,,60,S or SF
+Mines of Moria,Book 8 – Scourge of Khazad-dum,,Q,Chapter 5: Shackles for Mazog,,,Chamber of the Crossroads – Bosi,,60,Solo
+Mines of Moria,Book 8 – Scourge of Khazad-dum,,Q,Chapter 6: Return to Azanarukar,,,Gwathrendath – Lenglammel,,60,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Foreword: The Dark Shore,,,Talan Haldir – Haldir,,61,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 1: Plans of the Golden Host,,,Echad Sirion – Alfirimbes,,61,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 2: Rumour of Mazog,,,Echad Sirion – Alfirimbes,,61,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 3: Midnight in the Drownholt,,,Echad Sirion – Alfirimbes,,61,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 4: First Offensives,,,The Haunted Inn – Cucheron,,62,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 5: Treacherous Lights,,,The Haunted Inn – Cucheron,,62,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 6: The Choice of Ways,,,The Bleak Cellar – Broin,,62,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,-> Scouting Emyn Lum,,,Ost Galadh – Enedhel,,62,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,-> Scouting the Scuttledells,,,The Scuttledells – Gladiel,,62,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,-> Scouting Taur Morvith,,,The Verdant Slime – Erymbes,,62,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 7: On Edge,,,The Bleak Cellar – Issuriel,,62,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 8: Mazog in the Web,,,The Bleak Cellar – Issuriel,,62,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 9: Coursing Venom,,,Godorgar – Issuriel,,63,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 10: The Exchange,,,Ost Galadh – Gruingalas,,63,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 11: The Approach of Dol Guldur,,,Ost Galadh – Gruingalas,,64,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 12: The Armies of Gathburz,,,Thangulhad – Ningloril,,64,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 13: Students of Goruthul,,,Thangulhad – Ningloril,,64,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 14: Thangulhad Endangered,,,Thangulhad – Ningloril,,64,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 15: Assault on Dol Guldur,,,Thangulhad – Ellunen,,65,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 16: The Dungeons of Dol Guldur,,,Thangulhad – Ningloril,,65,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 17: Memories of Mithrandir,,,Nothgar – Bori,,65,Solo
+Mines of Moria,Book 9 – Fortress of the Nazgul,,Q,Chapter 18: The Battle in the Tower,,,Thangulhad – Ningloril,,65,Solo
+Mines of Moria,Epilogue: Of Dwarves and Elves,,Q,Epilogue: Achardor's Fate,,,Ost Galadh – Gruingalas,,65,Solo
+Mines of Moria,Epilogue: Of Dwarves and Elves,,Q,Epilogue: Alfirimbes,,,Echad Sirion – Alfirimbes,,65,Solo
+Mines of Moria,Epilogue: Of Dwarves and Elves,,Q,Epilogue: Barvessain,,,Minas Celebolf – Barvessain,,65,SF
+Mines of Moria,Epilogue: Of Dwarves and Elves,,Q,Epilogue: Braiglinn,,,Imlad Lalaith – Braiglinn,,65,Sf
+Mines of Moria,Epilogue: Of Dwarves and Elves,,Q,Epilogue: Cucheron's Bow,,,The Haunted Inn – Cucheron,,65,Solo
+Mines of Moria,Epilogue: Of Dwarves and Elves,,Q,Epilogue: Goruthul of Dol Guldur,,,The Chamber of Leadership – Bori,,65,Fellow
+Mines of Moria,Epilogue: Of Dwarves and Elves,,Q,Epilogue: Greyhammers,,,Echad Sirion – Luth,,65,Solo
+Mines of Moria,Epilogue: Of Dwarves and Elves,,Q,Epilogue: Issuriel's Flower,,,Cerin Amroth – Issuriel,,65,Solo
+Mines of Moria,Epilogue: Of Dwarves and Elves,,Q,Epilogue: Laelang,,,Gathburz – Laeglang,,65,Solo
+Mines of Moria,Epilogue: Of Dwarves and Elves,,Q,Epilogue: Ningloril,,,Thangulhad – Ningloril,,65,SF
+Mines of Moria,Epilogue: Of Dwarves and Elves,,Q,Epilogue: Sigileth's Knives,,,Thangulhad – Ellunen,,65,Solo
+Mines of Moria,Epilogue: Of Dwarves and Elves,,Q,Epilogue: Zigilburk Returned,,,Thangulhad – Goldagnir,,65,Solo

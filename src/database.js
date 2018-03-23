@@ -41,13 +41,29 @@ export function initial_deed_population(db_promise){
     let race_deeds = _deed_fetch_and_store(db, '/data/race_deeds.json', DEED_CATEGORIES.RACE);
 
     //fetch epic deeds and store them
-    let epic_deeds = _deed_fetch_and_store(db, '/data/soa_deeds.json', DEED_CATEGORIES['SHADOWS OF ANGMAR']);
+    let soa_deeds = _deed_fetch_and_store(db, '/data/soa_deeds.json', DEED_CATEGORIES['SHADOWS OF ANGMAR']);
+    let mom_deeds = _deed_fetch_and_store(db, '/data/mom_deeds.json', DEED_CATEGORIES['THE MINES OF MORIA']);
+    let aotk_deeds = _deed_fetch_and_store(db, '/data/aotk_deeds.json', DEED_CATEGORIES['ALLIES TO THE KING']);
+    let tsos_deeds = _deed_fetch_and_store(db, '/data/tsos_deeds.json', DEED_CATEGORIES['THE STRENGTH OF SAURON']);
+    let bbom_deeds = _deed_fetch_and_store(db, '/data/bbom_deeds.json', DEED_CATEGORIES['THE BLACK BOOK OF MORDOR']);
 
-    //fetch Eriador deeds and store them
+    //fetch reputation deeds and store them
+    let rep_deeds = _deed_fetch_and_store(db, '/data/rep_deeds.json', DEED_CATEGORIES.REPUTATION);
+
+    //fetch overworld deeds and store them
     let eriador_deeds = _deed_fetch_and_store(db, '/data/eriador_deeds.json', DEED_CATEGORIES.ERIADOR);
+    let rhov_deeds = _deed_fetch_and_store(db, '/data/rhov_deeds.json', DEED_CATEGORIES.RHOVANION);
+    let gondor_deeds = _deed_fetch_and_store(db, '/data/gondor_deeds.json', DEED_CATEGORIES.GONDOR);
+    let mordor_deeds = _deed_fetch_and_store(db, '/data/mordor_deeds.json', DEED_CATEGORIES.MORDOR);
 
+    let skirm_deeds = _deed_fetch_and_store(db, '/data/skirm_deeds.json', DEED_CATEGORIES.SKIRMISH);
 
-    return Promise.all([class_deeds, race_deeds, epic_deeds, eriador_deeds]).then(values=>{
+    return Promise.all([
+      class_deeds, race_deeds, soa_deeds,
+      mom_deeds, aotk_deeds, tsos_deeds,
+      bbom_deeds, rep_deeds, eriador_deeds,
+      rhov_deeds, gondor_deeds, mordor_deeds,
+      skirm_deeds]).then(values=>{
       console.log('everything loaded fine...');
     }).catch(error=>{
       console.log('something went wrong...');
