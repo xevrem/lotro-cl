@@ -1,5 +1,6 @@
 // all common css tags
 
+//colors
 $fg-color: rgba(58, 58, 58, 0.788);
 $bg-color: rgb(255, 249, 238);
 $shadow: rgba(156, 156, 156, 0.788);
@@ -12,8 +13,18 @@ $deed-bg: rgb(247, 226, 181);
 $highlight: #28a745;
 $light: rgba(200, 200, 200, 1);
 
+//sizes
+//// Small devices (landscape phones, 576px and up)
+$small: 576px;
+// Medium devices (tablets, 768px and up)
+$medium: 768px;
+// Large devices (desktops, 1024px and up)
+$large: 1024px;
+// Extra large devices (large desktops, 1200px and up)
+$xlarge: 1200px;
+
 .panel{
-  margin: 10px 10px;
+  margin: 10px;
   background-color: white;
   box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
   padding: 5px;
@@ -40,6 +51,10 @@ $light: rgba(200, 200, 200, 1);
   font-weight: bold;
   background-color: $light;
   cursor: pointer;
+}
+
+.btn:hover{
+  box-shadow: 0 0px 6px rgba(127, 127, 127,1), 0 2px 8px rgba(0, 0, 0,.24), 0 4px 10px rgba(0, 0, 0,.48);
 }
 
 .btn-success{
@@ -96,7 +111,7 @@ input[type="file"] {
   outline: none;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: $small) {
   .modal-content {
     background-color: white;
     margin: 15% auto;
@@ -113,19 +128,32 @@ input[type="file"] {
 
 @supports (display: grid) {
 
-  @media screen and (min-width: 850px) {
+  @media screen and (min-width: $small) {
 
     .site {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
       grid-template-areas:
-        "character summary"
+        "character character"
+        "summary summary"
         "deed deed"
     }
   }
 
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: $medium) {
+
+  	.site {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "character summary"
+        "deed deed"
+		}
+	}
+
+  @media screen and (min-width: $large) {
 
   	.site {
 			display: grid;

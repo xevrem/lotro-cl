@@ -21,11 +21,22 @@ let initial_state = {
   deeds: null,
   deed_categories: Object.keys(DEED_CATEGORIES),
   //FIXME: have this stored/retrieved from character records
-  completed:[false,false,false]
+  // completed:[false,false,false]
+  width: window.innerWidth,
+  height: window.innerHeight
 };
 
 //create a store, update interval 16ms, dispatch all queued
 create_store(initial_state, 16, -1);
+
+//update window resizing information in store
+const update_window_dimensions = event => {
+  get_store().issue_action(ACTION_TYPES.WINDOW_RESIZE, { width: window.innerWidth, height: window.innerHeight });
+}
+//ensure window resizing is captured
+window.addEventListener('resize', update_window_dimensions);
+
+
 
 class LotroApp extends Component {
   constructor(props){
@@ -46,6 +57,8 @@ class LotroApp extends Component {
     get_store().subscribe(ACTION_TYPES.DEED_CATEGORY_CHANGED, this.handle_deed_category_changed.bind(this));
     get_store().subscribe(ACTION_TYPES.DEED_SUBCATEGORY_CHANGED, this.handle_subcategory_changed.bind(this));
     get_store().subscribe(ACTION_TYPES.INITIALIZATION_DONE, this.handle_initialization.bind(this));
+
+    // get_store().subscribe(ACTION_TYPES.WINDOW_RESIZE, (store, action) => {console.log('resize:',action)})
   }
 
   componentDidMount(){
@@ -215,6 +228,7 @@ class LotroApp extends Component {
     this.setState(data);
   }
 
+  //purposefully clears entire database
   handle_reset_database(){
     console.log('handle_reset_database called...');
 
@@ -224,10 +238,21 @@ class LotroApp extends Component {
       console.log('handle_reset_database failure...', error);
     });
   }
-  //
-  // toggle_modal(event){
-  //   console.log('toggle_modal called...')
-  // }
+
+  //purposefully unregisteres this app's service-worker script
+  handle_reset_serviceworker(){
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.getRegistration('/').then(registration=>{
+        // console.log('sw:',registration);
+        registration.unregister().then(is_unregistered=>{
+          //success, so refresh window
+          if(is_unregistered) window.location.reload();
+        }).catch(error=>{
+          console.log('unregistration error', error);
+        });
+      });
+    }
+  }
 
   render() {
     return (
@@ -242,7 +267,8 @@ class LotroApp extends Component {
         </ReactModal> */}
         <span style={{display: 'inline-flex', alignItems:'center', height:'42px'}}>
           <h4>Debug Stuff: </h4>
-          <Button className='btn' text='Reset DB' onClick={this.reset_database_handler} />
+          <Button className='btn btn-danger' text='Reset DB' onClick={this.reset_database_handler} />
+          <Button className='btn btn-danger' text='Reset SW' onClick={this.handle_reset_serviceworker} />
         </span>
         <div className='site'>
           <CharacterPanel characters={this.state.characters} selected_character={this.state.selected_character}/>

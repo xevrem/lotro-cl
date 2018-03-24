@@ -1,5 +1,5 @@
 .panel {
-  margin: 10px 10px;
+  margin: 10px;
   background-color: white;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
   padding: 5px; }
@@ -22,6 +22,9 @@
   font-weight: bold;
   background-color: #c8c8c8;
   cursor: pointer; }
+
+.btn:hover {
+  box-shadow: 0 0px 6px #7f7f7f, 0 2px 8px rgba(0, 0, 0, 0.24), 0 4px 10px rgba(0, 0, 0, 0.48); }
 
 .btn-success {
   background-color: #40ad2a;
@@ -77,7 +80,7 @@ input[type="file"] {
   width: 80%;
   outline: none; }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 576px) {
   .modal-content {
     background-color: white;
     margin: 15% auto;
@@ -89,13 +92,19 @@ input[type="file"] {
   float: right; }
 
 @supports (display: grid) {
-  @media screen and (min-width: 850px) {
+  @media screen and (min-width: 576px) {
+    .site {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "character character" "summary summary" "deed deed"; } }
+  @media screen and (min-width: 768px) {
     .site {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
       grid-template-areas: "character summary" "deed deed"; } }
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: 1024px) {
     .site {
       display: grid;
       grid-template-columns: 1.4fr 1fr;

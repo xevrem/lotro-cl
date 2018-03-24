@@ -72,7 +72,7 @@ class SummaryPanel extends Component{
 
     return(
       <Panel panel_class='container panel summary-panel'>
-        <h3 className='panel-header'>Summary for {character.name}</h3>
+        <h2 className='panel-header'>Summary for {character.name}</h2>
         <div className='summary-details'>
           <p style={{display:'inline-flex'}}>Deeds: </p>
           <p className='summary-stat'>Total: {total_deeds}</p>

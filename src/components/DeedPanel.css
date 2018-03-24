@@ -1,5 +1,5 @@
 .panel {
-  margin: 10px 10px;
+  margin: 10px;
   background-color: white;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
   padding: 5px; }
@@ -22,6 +22,9 @@
   font-weight: bold;
   background-color: #c8c8c8;
   cursor: pointer; }
+
+.btn:hover {
+  box-shadow: 0 0px 6px #7f7f7f, 0 2px 8px rgba(0, 0, 0, 0.24), 0 4px 10px rgba(0, 0, 0, 0.48); }
 
 .btn-success {
   background-color: #40ad2a;
@@ -77,7 +80,7 @@ input[type="file"] {
   width: 80%;
   outline: none; }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 576px) {
   .modal-content {
     background-color: white;
     margin: 15% auto;
@@ -89,13 +92,19 @@ input[type="file"] {
   float: right; }
 
 @supports (display: grid) {
-  @media screen and (min-width: 850px) {
+  @media screen and (min-width: 576px) {
+    .site {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "character character" "summary summary" "deed deed"; } }
+  @media screen and (min-width: 768px) {
     .site {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
       grid-template-areas: "character summary" "deed deed"; } }
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: 1024px) {
     .site {
       display: grid;
       grid-template-columns: 1.4fr 1fr;
@@ -106,38 +115,53 @@ input[type="file"] {
   grid-area: deed; }
 
 .deed-nav {
-  width: auto;
   margin: 5px;
   padding: 0px;
-  font-size: 1.2em; }
-
-.deed-nav-item {
-  display: inline-flex;
-  list-style: none;
-  vertical-align: middle; }
+  font-size: 1em;
+  display: grid;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-auto-rows: minmax(40px, auto);
+  grid-gap: 10px; }
 
 .deed-nav-link {
-  margin: 5px 5px;
-  padding: 10px 10px;
+  margin: 0px;
+  padding: 7px;
   color: rgba(58, 58, 58, 0.788);
   background-color: #f7e2b5;
   box-shadow: 0 0px 2px #7f7f7f, 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.24); }
 
+.deed-nav-link p {
+  margin: 0px;
+  padding: 0px; }
+
 .deed-nav-link.active {
   box-shadow: 0px 0px 6px #28a745, 0 2px 8px rgba(19, 82, 34, 0.24), 0 4px 10px rgba(19, 82, 34, 0.48); }
+
+.deed-nav-link:hover {
+  box-shadow: 0 0px 6px #3c6dff, 0 2px 8px rgba(30, 54, 127, 0.24), 0 4px 10px rgba(30, 54, 127, 0.48); }
 
 .deed-panel-left {
   grid-area: nav; }
 
 .deed-panel-right {
   grid-area: details;
-  margin: 5px; }
+  margin: 15px; }
+
+.nav-left {
+  grid-area: nav-cat; }
+
+.nav-right {
+  grid-area: nav-sub; }
 
 .deed {
   margin-bottom: 8px;
   padding: 2px;
   background-color: #f7e2b5;
   box-shadow: 0 0px 2px #7f7f7f, 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.24); }
+
+.deed:hover {
+  box-shadow: 0 0px 6px #3c6dff, 0 2px 8px rgba(30, 54, 127, 0.24), 0 4px 10px rgba(30, 54, 127, 0.48); }
 
 .deed.selected {
   box-shadow: 0px 0px 6px #28a745, 0 2px 8px rgba(19, 82, 34, 0.24), 0 4px 10px rgba(19, 82, 34, 0.48); }
@@ -170,9 +194,14 @@ input[type="file"] {
   bottom: 7px; }
 
 @supports (display: grid) {
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 768px) {
     .deed-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
-      grid-template-areas: "nav details"; } } }
+      grid-template-areas: "nav nav" "details details"; }
+    .nav-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "nav-cat nav-sub"; } } }

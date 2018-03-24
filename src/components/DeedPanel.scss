@@ -5,26 +5,45 @@
 }
 
 .deed-nav{
-  width: auto;
+  // width: auto;
   margin: 5px;
   padding: 0px;
-  font-size:  1.2em;
+  font-size:  1em;
+
+  display: grid;
+  // margin: 0 10px;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-auto-rows: minmax(40px, auto);
+  grid-gap: 10px;
+  // align-items: center;
+  // vertical-align: middle;
 }
 
-.deed-nav-item{
-  display: inline-flex;
-  list-style: none;
-  vertical-align: middle;
-}
+// .deed-nav-item{
+//   // display: inline-flex;
+//   // list-style: none;
+//   // vertical-align: middle;
+//   // margin: 0px;
+//   // align-items: center;
+// }
+//
+// .deed-nav-item p{
+//   // margin: 0px;
+//   // padding: 7px;
+// }
 
-.deed-nav-link{
-  margin: 5px 5px;
-  padding: 10px 10px;
-  // border: 2px solid $deed-fg;
-  // border-radius: 2px;
+.deed-nav-link {
+  margin: 0px;
+  padding: 7px;
   color: $fg-color;
   background-color: $deed-bg;
   box-shadow: 0 0px 2px rgba(127, 127, 127, 1), 0 2px 4px rgba(0,0,0,.12), 0 4px 6px rgba(0,0,0,.24);
+}
+
+.deed-nav-link p{
+  margin: 0px;
+  padding: 0px;
 }
 
 .deed-nav-link.active{
@@ -33,27 +52,42 @@
   box-shadow: 0px 0px 6px rgba(40, 167, 69, 1), 0 2px 8px rgba(19,82,34,.24), 0 4px 10px rgba(19,82,34,.48);
 }
 
+.deed-nav-link:hover{
+  box-shadow: 0 0px 6px rgba(60, 109, 255,1), 0 2px 8px rgba(30, 54, 127,.24), 0 4px 10px rgba(30, 54, 127,.48);
+}
+
 .deed-panel-left{
   grid-area: nav;
 }
 .deed-panel-right{
   // float:left;
   grid-area: details;
-  margin: 5px;
+  margin: 15px;
+}
+
+.nav-left{
+  grid-area: nav-cat;
+  // border: 1px solid $fg-color;
+}
+
+.nav-right{
+  grid-area: nav-sub;
+  // border: 1px solid $fg-color;
 }
 
 .deed{
   margin-bottom: 8px;
   padding: 2px;
-  // border: 2px solid rgb(143, 118, 65);
-  // border-radius: 5px;
+
   background-color: rgb(247, 226, 181);
   box-shadow: 0 0px 2px rgba(127, 127, 127, 1), 0 2px 4px rgba(0,0,0,.12), 0 4px 6px rgba(0,0,0,.24);
 }
 
+.deed:hover{
+  box-shadow: 0 0px 6px rgba(60, 109, 255,1), 0 2px 8px rgba(30, 54, 127,.24), 0 4px 10px rgba(30, 54, 127,.48);
+}
+
 .deed.selected{
-  // border: 1px solid #28a745;
-  // box-shadow: 0 0 0
   box-shadow: 0px 0px 6px rgba(40, 167, 69, 1), 0 2px 8px rgba(19,82,34,.24), 0 4px 10px rgba(19,82,34,.48);
 }
 
@@ -95,14 +129,34 @@
 }
 
 @supports (display: grid) {
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: $medium) {
 
   	.deed-grid {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
       grid-template-areas:
-        "nav details"
+        "nav nav"
+        "details details"
 		}
+
+    .nav-grid{
+      display: grid;
+			grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "nav-cat nav-sub"
+    }
 	}
+
+  // @media screen and (min-width: 1024px) {
+  //   .nav-grid {
+	// 		display: grid;
+	// 		grid-template-columns: 1fr 1fr;
+  //     // grid-template-rows: 1fr 1fr;
+  //     grid-template-areas:
+  //       "nav-cat nav-sub"
+  //       "details details"
+	// 	}
+  // }
 }

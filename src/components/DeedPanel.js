@@ -26,7 +26,20 @@ const Deed = ({selected, onClick, name, children}) =>{
 class DeedPanel extends Component{
   constructor(props){
     super(props);
+
+    this.state = {
+      width: get_store().get_state().width
+    }
+
     this.deed_complete_handler = this.handle_deed_complete.bind(this);
+    this.window_resize_handler = this.handle_window_resize.bind(this);
+
+    get_store().subscribe(ACTION_TYPES.WINDOW_RESIZE, this.window_resize_handler);
+  }
+
+  //update stored state with latest window sizing
+  handle_window_resize(state, data){
+    this.setState({width: data.width});
   }
 
   handle_category_click(index, event){
@@ -97,38 +110,52 @@ class DeedPanel extends Component{
     let deed_categories = this.props.deed_categories.map((category,i)=>{
 
       return i === this.props.deed_category_selected ? (
-        <p key={i} className='clickable deed-nav-link active' onClick={this.handle_category_click.bind(this, i)}>{category}</p>
+        <div key={i} className='clickable deed-nav-link active'
+          onClick={this.handle_category_click.bind(this, i)}>
+          <p>{category}</p>
+        </div>
       ):(
-        <p key={i} className='clickable deed-nav-link' onClick={this.handle_category_click.bind(this, i)}>{category}</p>
+        <div key={i} className='clickable deed-nav-link'
+          onClick={this.handle_category_click.bind(this, i)}>
+          <p>{category}</p>
+        </div>
+
       )
     });
 
     //build subcategories
     let subcategories = [...this.props.deed_subcatetories].map((subcategory,i)=>{
       return subcategory === this.props.deed_subcategory_selected ? (
-        <p key={i} className='clickable deed-nav-link active' onClick={this.handle_subcategory_click.bind(this, subcategory)}>{subcategory}</p>
+        <div key={i} className='clickable deed-nav-link active'
+          onClick={this.handle_subcategory_click.bind(this, subcategory)}>
+          <p>{subcategory}</p>
+        </div>
       ):(
-        <p key={i} className='clickable deed-nav-link' onClick={this.handle_subcategory_click.bind(this, subcategory)}>{subcategory}</p>
+        <div key={i} className='clickable deed-nav-link'
+          onClick={this.handle_subcategory_click.bind(this, subcategory)}>
+          <p>{subcategory}</p>
+        </div>
+
       )
     });
 
     //render the completed deed panel
     return(
       <div className='container panel deed-panel'>
-        <h3 className='panel-header'>Deed Completion</h3>
+        <h2 className='panel-header'>Deed Completion</h2>
         <div className='deed-grid'>
-          <div className='deed-panel-left'>
-            <h4>Category:</h4>
-            <List list_class='deed-nav' list_item_class='deed-nav-item'>
-              {deed_categories}
-            </List>
-            <h4>Subcategory:</h4>
-            <List list_class='deed-nav' list_item_class='deed-nav-item'>
-              {subcategories}
-            </List>
+          <div className='deed-panel-left nav-grid'>
+            <div className='nav-left'>
+              <h3>Category:</h3>
+              <div className='deed-nav'>{deed_categories}</div>
+            </div>
+            <div className='nav-right'>
+              <h3>Subcategory:</h3>
+              <div className='deed-nav'>{subcategories}</div>
+            </div>
           </div>
           <div className='deed-panel-right'>
-            <h4>Deeds:</h4>
+            <h3>Deeds:</h3>
             <List list_class='deed-list' list_item_class='deed-list-item'>
               {deed_list}
             </List>
