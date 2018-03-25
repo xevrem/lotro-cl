@@ -11,44 +11,25 @@
   font-size:  1em;
 
   display: grid;
-  // margin: 0 10px;
   padding: 10px;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   grid-auto-rows: minmax(40px, auto);
   grid-gap: 10px;
-  // align-items: center;
-  // vertical-align: middle;
 }
-
-// .deed-nav-item{
-//   // display: inline-flex;
-//   // list-style: none;
-//   // vertical-align: middle;
-//   // margin: 0px;
-//   // align-items: center;
-// }
-//
-// .deed-nav-item p{
-//   // margin: 0px;
-//   // padding: 7px;
-// }
 
 .deed-nav-link {
   margin: 0px;
-  padding: 7px;
+  padding: 5px;
+  border: none;
+  border-radius: 0;
+  font-family: lotro;
+  font-size: .9em;
   color: $fg-color;
   background-color: $deed-bg;
   box-shadow: 0 0px 2px rgba(127, 127, 127, 1), 0 2px 4px rgba(0,0,0,.12), 0 4px 6px rgba(0,0,0,.24);
 }
 
-.deed-nav-link p{
-  margin: 0px;
-  padding: 0px;
-}
-
 .deed-nav-link.active{
-  // border: 2px solid $highlight;
-  // box-shadow: 0px 0px 15px $highlight;
   box-shadow: 0px 0px 6px rgba(40, 167, 69, 1), 0 2px 8px rgba(19,82,34,.24), 0 4px 10px rgba(19,82,34,.48);
 }
 
@@ -59,8 +40,8 @@
 .deed-panel-left{
   grid-area: nav;
 }
+
 .deed-panel-right{
-  // float:left;
   grid-area: details;
   margin: 15px;
 }
@@ -76,8 +57,8 @@
 }
 
 .deed{
-  margin-bottom: 8px;
-  padding: 2px;
+  margin-bottom: 10px;
+  padding: 10px;
 
   background-color: rgb(247, 226, 181);
   box-shadow: 0 0px 2px rgba(127, 127, 127, 1), 0 2px 4px rgba(0,0,0,.12), 0 4px 6px rgba(0,0,0,.24);
@@ -92,14 +73,12 @@
 }
 
 .deed-details{
-  // float:left;
-  margin: 5px;
+  margin: 0px;
   padding: 5px;
-  // border-radius: 5px;
-  // border: 2px solid rgb(143, 118, 65);
   background-color: rgb(247, 226, 181);
   text-align: left;
   box-shadow:  0 0 2px rgba(127, 127, 127, 1), 0 2px 4px rgba(0, 0, 0, .12), 0 4px 6px rgba(0, 0, 0, .24);
+  grid-area: deed-details;
 }
 
 .deed-details.completed{
@@ -117,6 +96,7 @@
 .deed-list{
   padding:0px;
   margin: 0px;
+  grid-area: deed-list;
 }
 
 .deed-list-item{
@@ -147,16 +127,29 @@
       grid-template-areas:
         "nav-cat nav-sub"
     }
+
+    .deed{
+      margin-bottom: 0px;
+    }
+
+    .deed-details-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-gap:10px;
+    }
 	}
 
-  // @media screen and (min-width: 1024px) {
-  //   .nav-grid {
-	// 		display: grid;
-	// 		grid-template-columns: 1fr 1fr;
-  //     // grid-template-rows: 1fr 1fr;
-  //     grid-template-areas:
-  //       "nav-cat nav-sub"
-  //       "details details"
-	// 	}
-  // }
+  @media screen and (min-width: $large){
+    .deed{
+      margin-bottom: 0px;
+    }
+
+    .deed-details-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-gap:10px;
+    }
+  }
 }

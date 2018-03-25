@@ -126,14 +126,14 @@ input[type="file"] {
 
 .deed-nav-link {
   margin: 0px;
-  padding: 7px;
+  padding: 5px;
+  border: none;
+  border-radius: 0;
+  font-family: lotro;
+  font-size: .9em;
   color: rgba(58, 58, 58, 0.788);
   background-color: #f7e2b5;
   box-shadow: 0 0px 2px #7f7f7f, 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.24); }
-
-.deed-nav-link p {
-  margin: 0px;
-  padding: 0px; }
 
 .deed-nav-link.active {
   box-shadow: 0px 0px 6px #28a745, 0 2px 8px rgba(19, 82, 34, 0.24), 0 4px 10px rgba(19, 82, 34, 0.48); }
@@ -155,8 +155,8 @@ input[type="file"] {
   grid-area: nav-sub; }
 
 .deed {
-  margin-bottom: 8px;
-  padding: 2px;
+  margin-bottom: 10px;
+  padding: 10px;
   background-color: #f7e2b5;
   box-shadow: 0 0px 2px #7f7f7f, 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.24); }
 
@@ -167,11 +167,12 @@ input[type="file"] {
   box-shadow: 0px 0px 6px #28a745, 0 2px 8px rgba(19, 82, 34, 0.24), 0 4px 10px rgba(19, 82, 34, 0.48); }
 
 .deed-details {
-  margin: 5px;
+  margin: 0px;
   padding: 5px;
   background-color: #f7e2b5;
   text-align: left;
-  box-shadow: 0 0 2px #7f7f7f, 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.24); }
+  box-shadow: 0 0 2px #7f7f7f, 0 2px 4px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.24);
+  grid-area: deed-details; }
 
 .deed-details.completed {
   box-shadow: 0 0 6px #28a745, 0 2px 8px rgba(19, 82, 34, 0.24), 0 4px 10px rgba(19, 82, 34, 0.48); }
@@ -184,7 +185,8 @@ input[type="file"] {
 
 .deed-list {
   padding: 0px;
-  margin: 0px; }
+  margin: 0px;
+  grid-area: deed-list; }
 
 .deed-list-item {
   list-style: none; }
@@ -204,4 +206,19 @@ input[type="file"] {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
-      grid-template-areas: "nav-cat nav-sub"; } } }
+      grid-template-areas: "nav-cat nav-sub"; }
+    .deed {
+      margin-bottom: 0px; }
+    .deed-details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-gap: 10px; } }
+  @media screen and (min-width: 1024px) {
+    .deed {
+      margin-bottom: 0px; }
+    .deed-details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-gap: 10px; } } }

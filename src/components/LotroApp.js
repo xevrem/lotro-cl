@@ -30,11 +30,11 @@ let initial_state = {
 create_store(initial_state, 16, -1);
 
 //update window resizing information in store
-const update_window_dimensions = event => {
-  get_store().issue_action(ACTION_TYPES.WINDOW_RESIZE, { width: window.innerWidth, height: window.innerHeight });
-}
-//ensure window resizing is captured
-window.addEventListener('resize', update_window_dimensions);
+// const update_window_dimensions = event => {
+//   get_store().issue_action(ACTION_TYPES.WINDOW_RESIZE, { width: window.innerWidth, height: window.innerHeight });
+// }
+// //ensure window resizing is captured
+// window.addEventListener('resize', update_window_dimensions);
 
 
 
