@@ -257,7 +257,7 @@ class LotroApp extends Component {
   render() {
     return (
       <div className="lotro-app">
-        <h1 className='page-title'>Lord of the Rings Online Character Log</h1>
+        <h1 className='page-title'>[ALPHA] Lord of the Rings Online Character Log [ALPHA]</h1>
         {/* <ReactModal
           className='modal-content'
           overlayClassName='modal'

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './DeedPanel.css';
 
 import {DoublePanel, List, Panel, Button} from './Common';
-import {ACTION_TYPES} from './../constants';
+import {ACTION_TYPES, DEED_CATEGORIES} from './../constants';
 
 import {get_store} from './../Store';
 
@@ -16,7 +16,7 @@ import {get_store} from './../Store';
 const Deed = ({selected, onClick, name, children}) =>{
   return(
     <div className={selected?'deed clickable selected':'deed clickable'} onClick={onClick}>
-      <p className='col text-left' >{name}</p>
+      <p>{name}</p>
       {children}
     </div>
   );
@@ -61,6 +61,29 @@ class DeedPanel extends Component{
     get_store().issue_action(ACTION_TYPES.DEED_SUBCATEGORY_CHANGED, {deed_subcategory_selected:index});
   }
 
+  deed_type_to_text(deed_type, category){
+    switch(deed_type){
+      case 'C':
+        return "Class";
+      case 'E':
+        return "Exploration";
+      case 'F':
+        return "Festival";
+      case 'L':
+        return "Lore";
+      case 'M':
+        return "Meta";
+      case 'Q':
+        return "Quest";
+      case 'R':
+        return category === DEED_CATEGORIES.RACE ? "Race":"Reputation";
+      case 'S':
+        return "Slayer";
+      default:
+        return deed_type;
+    }
+  }
+
   /**
    * [renders the deed details for the given character, deed and completion index]
    * @param  {[type]} deed      [deed for which details will be displayed]
@@ -73,8 +96,8 @@ class DeedPanel extends Component{
       <div className={character.completed[this.props.deed_category_selected][index]?'deed-details completed':'deed-details'}>
         <p>{deed.Details}</p>
         {deed.Faction && <p className='deed-stats'>Faction: {deed.Faction}</p>}
-        {deed.Type && <p className='deed-stats'>Type: {deed.Type}</p>}
-        {deed.LP && <p className='deed-stats'>LP: {deed.LP}</p>}
+        {deed.Type && <p className='deed-stats'>Type: {this.deed_type_to_text(deed.Type, this.props.deed_category_selected)}</p>}
+        {(deed.LP && deed.LP != '-') && <p className='deed-stats'>LP: {deed.LP}</p>}
         {deed.Trait && <p className='deed-stats'>Trait: {deed.Trait}</p>}
         {deed.Title && <p className='deed-stats'>Title: {deed.Title}</p>}
         {deed.Level && <p className='deed-stats'>Level: {deed.Level}</p>}
@@ -126,11 +149,15 @@ class DeedPanel extends Component{
 
       //build the deed according to whether it is selected, its information, and if it is completed.
       return i === this.props.selected_deed ? (
-        <Deed key={i} name={deed.Deed} selected={true} onClick={this.handle_selected.bind(this,i)}>
-          {this.render_deed_details(deed, character, i)}
-        </Deed>
+        <div key={i} className ='deed-list-item'>
+          <Deed name={deed.Deed} selected={true} onClick={this.handle_selected.bind(this,i)}>
+            {this.render_deed_details(deed, character, i)}
+          </Deed>
+        </div>
         ):(
-          <Deed key={i} name={deed.Deed} selected={false} onClick={this.handle_selected.bind(this,i)}/>
+          <div key={i}  className ='deed-list-item'>
+            <Deed name={deed.Deed} selected={false} onClick={this.handle_selected.bind(this,i)}/>
+          </div>
         )
     });
 
@@ -151,9 +178,9 @@ class DeedPanel extends Component{
           </div>
           <div className='deed-panel-right'>
             <h3>Deeds:</h3>
-            <List list_class='deed-list deed-details-grid' list_item_class='deed-list-item'>
+            <div className='deed-list deed-details-grid'>
               {deed_list}
-            </List>
+            </div>
           </div>
         </div>
       </div>

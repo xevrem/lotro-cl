@@ -2,6 +2,7 @@
   "name": "lotro-cl",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://xevrem.github.io/lotro-cl",
   "dependencies": {
     "idb": "^2.1.0",
     "react": "^16.2.0",
