@@ -31,7 +31,7 @@ class DeedPanel extends Component{
       width: get_store().get_state().width
     }
 
-    this.deed_complete_handler = this.handle_deed_complete.bind(this);
+    //this.handle_deed_complete = this.handle_deed_complete.bind(this);
     this.render_deed_details = this.render_deed_details.bind(this);
   }
 

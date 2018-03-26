@@ -34,18 +34,15 @@ class CharacterPanel extends Component{
       filename:'none selected...'
     }
 
-    this.add_character_handler = this.handle_add_character.bind(this);
-    this.save_all_handler = this.handle_save_all.bind(this);
-    this.download_characters_handler = this.handle_download_characters.bind(this);
-    this.delete_character_handler = this.handle_delete_character.bind(this);
-  }
-
-  componentDidMount(){
-    console.log(this.props.characters)
+    this.handle_add_character = this.handle_add_character.bind(this);
+    this.handle_save_all = this.handle_save_all.bind(this);
+    this.handle_download_characters = this.handle_download_characters.bind(this);
+    this.handle_delete_character = this.handle_delete_character.bind(this);
+    this.handle_upload_character_clicked = this.handle_upload_character_clicked.bind(this);
   }
 
   handle_add_character(){
-    console.log('button clicked...');
+    console.log('handle_add_character clicked...');
 
     //create new character object
     let character = {
@@ -61,7 +58,11 @@ class CharacterPanel extends Component{
       ]
     };
 
-    let characters = this.props.characters;
+    let characters = [];
+    if(this.props.characters){
+       characters = this.props.characters;
+    }
+
     characters.push(character);
 
     //add character to global state
@@ -248,11 +249,11 @@ class CharacterPanel extends Component{
         <div className='character-grid'>
           <div className='character-actions'>
             {/* <h4>Actions:</h4> */}
-            <Button className='btn btn-primary' text='Add Character' onClick={this.add_character_handler}/>
+            <Button className='btn btn-primary' text='Add Character' onClick={this.handle_add_character}/>
             {/* <Button className='btn btn-success' text='Save All Characters' onClick={this.save_all_handler}/> */}
-            <Button className='btn btn-danger' text='Delete Selected' onClick={this.delete_character_handler}/>
-            <Button className='btn btn-primary' text='Load Characters' onClick={this.handle_upload_character_clicked.bind(this)}/>
-            <Button className='btn btn-primary' text='Download Characters' onClick={this.download_characters_handler}/>
+            <Button className='btn btn-danger' text='Delete Selected' onClick={this.handle_delete_character}/>
+            <Button className='btn btn-primary' text='Load Characters' onClick={this.handle_upload_character_clicked}/>
+            <Button className='btn btn-primary' text='Download Characters' onClick={this.handle_download_characters}/>
           </div>
           <div className='character-area'>
             {/* <h4>Characters:</h4> */}

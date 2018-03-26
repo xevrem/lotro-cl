@@ -1,5 +1,5 @@
 import idb from 'idb';
-import {DEED_CATEGORIES} from './constants';
+import {DEED_CATEGORIES, BASE_URL} from './constants';
 
 const DATABASE_VERSION = 2;
 
@@ -16,7 +16,7 @@ export function open_database(){
 
 //fetch deed data at the url and store it according to passed deed types
 function _deed_fetch_and_store(db, url, deed_type){
-  return fetch(url).then(resp=>{
+  return fetch(BASE_URL+url).then(resp=>{
     return resp.json();
   }).then(data=>{
     let tx = db.transaction('deeds', 'readwrite');
@@ -25,6 +25,8 @@ function _deed_fetch_and_store(db, url, deed_type){
     deed_store.put(data, deed_type);
 
     return tx.complete;
+  }).catch(error=>{
+    console.log('_deed_fetch_and_store error', error);
   });
 }
 
@@ -89,7 +91,7 @@ export function get_deeds_of_type(db_promise, deed_type){
 export function get_all_deeds(db_promise){
   return db_promise.then(db=>{
     return db.transaction('deeds').objectStore('deeds').getAll().then(data=>{
-      console.log('get_all_deeds called...', data);
+      // console.log('get_all_deeds called...', data);
       return data;
     });
   });

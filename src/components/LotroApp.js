@@ -7,7 +7,7 @@ import DeedPanel from './DeedPanel';
 import SummaryPanel from './SummaryPanel';
 
 import {create_store, get_store} from './../Store';
-import {ACTION_TYPES, DEED_CATEGORIES} from './../constants';
+import {ACTION_TYPES, DEED_CATEGORIES, BASE_URL} from './../constants';
 import {open_database, initial_deed_population, get_deeds_of_type, save_characters, reset_database} from './../database';
 import { Button } from './Common';
 
@@ -17,11 +17,9 @@ let initial_state = {
   deed_category_selected: 0,
   deed_subcategory_selected: '',
   deed_subcategories: null,
-  characters: null,
-  deeds: null,
+  characters: [],
+  deeds: [],
   deed_categories: Object.keys(DEED_CATEGORIES),
-  //FIXME: have this stored/retrieved from character records
-  // completed:[false,false,false]
   width: window.innerWidth,
   height: window.innerHeight
 };
@@ -44,7 +42,7 @@ class LotroApp extends Component {
     this.state = get_store().get_state();
     this.db_promise = open_database();
 
-    this.reset_database_handler = this.handle_reset_database.bind(this);
+    this.handle_reset_database = this.handle_reset_database.bind(this);
 
     //create all subscriptions
     get_store().subscribe(ACTION_TYPES.CHARACTER_ADDED, this.handle_character_action.bind(this));
@@ -81,9 +79,6 @@ class LotroApp extends Component {
           if(data.length>0){
             resolve(data);
           }else{
-            // resolve(fetch('/data/characters.json').then(resp=>{
-            //   return resp.json();
-            // }));
             resolve([]);
           }
         })
@@ -242,7 +237,7 @@ class LotroApp extends Component {
   //purposefully unregisteres this app's service-worker script
   handle_reset_serviceworker(){
     if('serviceWorker' in navigator){
-      navigator.serviceWorker.getRegistration('/').then(registration=>{
+      navigator.serviceWorker.getRegistration(BASE_URL+'/').then(registration=>{
         // console.log('sw:',registration);
         registration.unregister().then(is_unregistered=>{
           //success, so refresh window
@@ -267,7 +262,7 @@ class LotroApp extends Component {
         </ReactModal> */}
         <span style={{display: 'inline-flex', alignItems:'center', height:'42px'}}>
           <h4>Debug Stuff: </h4>
-          <Button className='btn btn-danger' text='Reset DB' onClick={this.reset_database_handler} />
+          <Button className='btn btn-danger' text='Reset DB' onClick={this.handle_reset_database} />
           <Button className='btn btn-danger' text='Reset SW' onClick={this.handle_reset_serviceworker} />
         </span>
         <div className='site'>

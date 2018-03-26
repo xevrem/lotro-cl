@@ -63,4 +63,6 @@ const SCREEN_SIZES = {
   XLARGE: 1200
 }
 
-export {RACES, CLASSES, ACTION_TYPES, DEED_CATEGORIES, SCREEN_SIZES};
+const BASE_URL = process.env.NODE_ENV === 'production' ? '/lotro-cl' : '';
+
+export {RACES, CLASSES, ACTION_TYPES, DEED_CATEGORIES, SCREEN_SIZES, BASE_URL};
