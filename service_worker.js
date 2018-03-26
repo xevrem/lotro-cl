@@ -1,12 +1,23 @@
 const CACHE_NAME = 'lotro-cl-v1'
 
+
+
 const RESOURCES_TO_PRECACHE = [
   'index.html',
-  'static/js/bundle.js',
   'favicon.ico',
-  'data/characters.json',
   'data/class_deeds.json',
+  'data/race_deeds.json',
+  'data/soa_deeds.json',
+  'data/mom_deeds.json',
+  'data/aotk_deeds.json',
+  'data/tsos_deeds.json',
+  'data/bbom_deeds.json',
+  'data/rep_deeds.json',
   'data/eriador_deeds.json',
+  'data/rhov_deeds.json',
+  'data/gondor_deeds.json',
+  'data/mordor_deeds.json',
+  'data/skirm_deeds.json',
   'static/media/lotro.0e412425.woff'
 ];
 
