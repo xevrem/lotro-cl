@@ -97,20 +97,28 @@ input[type="file"] {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
-      grid-template-areas: "character character" "summary summary" "deed deed"; } }
+      grid-template-areas: "character character" "summary summary" "deed deed"; } }
   @media screen and (min-width: 768px) {
     .site {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
-      grid-template-areas: "character summary" "deed deed"; } }
+      grid-template-areas: "character summary" "deed deed"; } }
   @media screen and (min-width: 1024px) {
     .site {
       display: grid;
       grid-template-columns: 1.4fr 1fr;
       grid-template-rows: auto;
-      grid-template-areas: "character summary" "deed deed"; } } }
+      grid-template-areas: "character summary" "deed deed"; } } }
 
 .lotro-app {
   text-align: center;
   color: rgba(58, 58, 58, 0.788); }
+
+.github a {
+  position: sticky;
+  bottom: 5px;
+  justify-content: center; }
+
+.github-svg {
+  width: 64px; }

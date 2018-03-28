@@ -18,7 +18,8 @@ const RESOURCES_TO_PRECACHE = [
   'data/gondor_deeds.json',
   'data/mordor_deeds.json',
   'data/skirm_deeds.json',
-  'static/media/lotro.0e412425.woff'
+  'static/media/lotro.0e412425.woff',
+  'github.svg',
 ];
 
 //preload the cache with all relevant stuffs
@@ -85,33 +86,8 @@ self.addEventListener('fetch', event => {
     // Prefer the cached response, falling back to the fetch response.
     return (await caches.match(normalized_url)) || fetch_response_promise;
   }());
-
-  // event.respondWith(
-  //   caches.match(event.request).then(response => {
-  //     if (response) return response;
-
-  //     //clone the request stream
-  //     let fetch_request = event.request.clone();
-
-  //     return fetch(fetch_request).then(response => {
-  //       //if it isnt something we want to cache, just return it right away
-  //       if(!response || response.status !== 200 || response.type !== 'basic') {
-  //         return response;
-  //       }
-
-  //       //clone the response stream
-  //       let fetch_reponse = response.clone();
-
-  //       //cache the response for use later
-  //       caches.open(CACHE_NAME).then(cache => {
-  //         cache.put(event.request, fetch_reponse);
-  //       });
-
-  //       return response;
-  //     });
-  //   })
-  // );
 });
+
 
 //
 //if the app says you should take over, take over now.
@@ -119,5 +95,16 @@ self.addEventListener('message', event => {
   if (event.data.action === 'SKIP_WAITING') {
     console.log('service_worker SKIP_WAITING...');
     self.skipWaiting();
+  } else if (event.data.action === 'CLEANUP') {
+    console.log('service_worker CLEANUP...');
+
+    //clear cache
+    caches.open(CACHE_NAME).then(cache => {
+      cache.keys().then(keys => {
+        keys.forEach(key=>{
+          cache.delete(key);
+        });
+      })
+    })
   }
 });

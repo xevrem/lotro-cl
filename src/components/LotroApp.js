@@ -238,6 +238,10 @@ class LotroApp extends Component {
   handle_reset_serviceworker(){
     if('serviceWorker' in navigator){
       navigator.serviceWorker.getRegistration(BASE_URL+'/').then(registration=>{
+
+        //tell service_worker to cleanup its cache
+        if(registration) registration.active.postMessage({action: 'CLEANUP'});
+
         // console.log('sw:',registration);
         registration.unregister().then(is_unregistered=>{
           //success, so refresh window
@@ -253,13 +257,6 @@ class LotroApp extends Component {
     return (
       <div className="lotro-app">
         <h1 className='page-title'>[ALPHA] Lord of the Rings Online Character Log [ALPHA]</h1>
-        {/* <ReactModal
-          className='modal-content'
-          overlayClassName='modal'
-          isOpen={this.props.update}
-          onRequestClose={this.toggle_modal.bind(this)}>
-          <Button className='btn' text='Update SW?' onClick={this.props.onUpdateReady}/>
-        </ReactModal> */}
         <span style={{display: 'inline-flex', alignItems:'center', height:'42px'}}>
           <h4>Debug Stuff: </h4>
           <Button className='btn btn-danger' text='Reset DB' onClick={this.handle_reset_database} />
@@ -274,6 +271,12 @@ class LotroApp extends Component {
             deed_category_selected={this.state.deed_category_selected}
             deed_subcatetories={this.state.deed_subcategories}
             deed_subcategory_selected={this.state.deed_subcategory_selected}/>
+        </div>
+        <div className="github">
+          <a href="https://github.com/xevrem/lotro-cl">
+            {/* svg courtesy of fontawesome: https://fontawesome.com/license */}
+            <img className='github-svg' src='github.svg'></img>
+          </a>
         </div>
       </div>
     );
