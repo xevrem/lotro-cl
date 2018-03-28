@@ -9,13 +9,14 @@
   // font-family: lotro;
 }
 
-.github a {
+.github-link {
+  margin: 0px;
+  padding: 0px;
   position:sticky;
-  bottom: 5px;
   justify-content: center;
 }
 
 .github-svg{
+  margin: 15px 10px 5px 10px;
   width: 64px;
-  // height: 64px;
 }

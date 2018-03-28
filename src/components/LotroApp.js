@@ -256,7 +256,9 @@ class LotroApp extends Component {
   render() {
     return (
       <div className="lotro-app">
-        <h1 className='page-title'>[ALPHA] Lord of the Rings Online Character Log [ALPHA]</h1>
+        <div className='panel'>
+          <h1 className='page-title'>-ALPHA- Lord of the Rings Online Character Log -ALPHA-</h1>
+        </div>
         <span style={{display: 'inline-flex', alignItems:'center', height:'42px'}}>
           <h4>Debug Stuff: </h4>
           <Button className='btn btn-danger' text='Reset DB' onClick={this.handle_reset_database} />
@@ -272,8 +274,8 @@ class LotroApp extends Component {
             deed_subcatetories={this.state.deed_subcategories}
             deed_subcategory_selected={this.state.deed_subcategory_selected}/>
         </div>
-        <div className="github">
-          <a href="https://github.com/xevrem/lotro-cl">
+        <div className="panel">
+          <a className='github-link' href="https://github.com/xevrem/lotro-cl">
             {/* svg courtesy of fontawesome: https://fontawesome.com/license */}
             <img className='github-svg' src='github.svg'></img>
           </a>
