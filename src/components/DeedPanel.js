@@ -154,7 +154,7 @@ class DeedPanel extends Component{
 
       //is this deed completed?
       let completed = false;
-      if(this.props.deed_category_selected){
+      if(this.props.deed_category_selected >= 0){
         if(character.completed[this.props.deed_category_selected]){
           completed = character.completed[this.props.deed_category_selected][i];
         }
