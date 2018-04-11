@@ -24,7 +24,7 @@ $large: 1024px;
 $xlarge: 1200px;
 
 .panel{
-  margin: 10px;
+  margin: 10px 0px;
   background-color: white;
   box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
   padding: 5px;
@@ -103,11 +103,14 @@ input[type="file"] {
 }
 
 .modal-content {
+  position: fixed;
   background-color: white;
-  margin: 15% auto;
+  // margin: 15% auto;
   padding: 20px;
   // border: 1px solid #888;
-  width: 80%;
+  width: 100%;
+  left: 0;
+  top: 15%;
   outline: none;
 }
 
@@ -118,6 +121,7 @@ input[type="file"] {
     padding: 20px;
     // border: 1px solid #888;
     width: 400px;
+    left: calc((98% - 400px)/2);
     outline: none;
   }
 }
@@ -129,9 +133,14 @@ input[type="file"] {
 @supports (display: grid) {
 
   @media screen and (min-width: $small) {
+    //remove margin if grid functions on screen sizes small or larger
+    .panel{
+      margin: 0px;
+    }
 
     .site {
       display: grid;
+      grid-gap: 10px;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
       grid-template-areas:
@@ -145,6 +154,7 @@ input[type="file"] {
 
   	.site {
 			display: grid;
+      grid-gap: 15px;
 			grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
       grid-template-areas:
@@ -157,6 +167,7 @@ input[type="file"] {
 
   	.site {
 			display: grid;
+      grid-gap: 20px;
 			grid-template-columns: 1.4fr 1fr;
       grid-template-rows: auto;
       grid-template-areas:

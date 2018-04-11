@@ -7,9 +7,11 @@ import DeedPanel from './DeedPanel';
 import SummaryPanel from './SummaryPanel';
 
 import {create_store, get_store} from './../Store';
-import {ACTION_TYPES, DEED_CATEGORIES, BASE_URL} from './../constants';
+import {ACTION_TYPES, DEED_CATEGORIES, BASE_URL, SCREEN_SIZES} from './../constants';
 import {open_database, initial_deed_population, get_deeds_of_type, save_characters, reset_database} from './../database';
 import { Button } from './Common';
+
+ReactModal.setAppElement('#root');
 
 let initial_state = {
   selected_character:-1,
@@ -21,19 +23,19 @@ let initial_state = {
   deeds: [],
   deed_categories: Object.keys(DEED_CATEGORIES),
   width: window.innerWidth,
-  height: window.innerHeight
+  height: window.innerHeight,
+  show_menu_modal: false
 };
 
 //create a store, update interval 16ms, dispatch all queued
 create_store(initial_state, 16, -1);
 
 //update window resizing information in store
-// const update_window_dimensions = event => {
-//   get_store().issue_action(ACTION_TYPES.WINDOW_RESIZE, { width: window.innerWidth, height: window.innerHeight });
-// }
-// //ensure window resizing is captured
-// window.addEventListener('resize', update_window_dimensions);
-
+const update_window_dimensions = event => {
+  get_store().issue_action(ACTION_TYPES.WINDOW_RESIZE, { width: window.innerWidth, height: window.innerHeight });
+}
+//ensure window resizing is captured
+window.addEventListener('resize', update_window_dimensions);
 
 
 class LotroApp extends Component {
@@ -43,6 +45,8 @@ class LotroApp extends Component {
     this.db_promise = open_database();
 
     this.handle_reset_database = this.handle_reset_database.bind(this);
+    this.handle_menu_modal_close = this.handle_menu_modal_close.bind(this);
+    this.handle_show_menu_modal = this.handle_show_menu_modal.bind(this);
 
     //create all subscriptions
     get_store().subscribe(ACTION_TYPES.CHARACTER_ADDED, this.handle_character_action.bind(this));
@@ -55,8 +59,9 @@ class LotroApp extends Component {
     get_store().subscribe(ACTION_TYPES.DEED_CATEGORY_CHANGED, this.handle_deed_category_changed.bind(this));
     get_store().subscribe(ACTION_TYPES.DEED_SUBCATEGORY_CHANGED, this.handle_subcategory_changed.bind(this));
     get_store().subscribe(ACTION_TYPES.INITIALIZATION_DONE, this.handle_initialization.bind(this));
+    get_store().subscribe(ACTION_TYPES.MENU_UPDATE, this.handle_menu_update.bind(this));
 
-    // get_store().subscribe(ACTION_TYPES.WINDOW_RESIZE, (store, action) => {console.log('resize:',action)})
+    get_store().subscribe(ACTION_TYPES.WINDOW_RESIZE, this.handle_window_resize.bind(this));
   }
 
   componentDidMount(){
@@ -211,8 +216,39 @@ class LotroApp extends Component {
         this.switch_deed_category(this.db_promise, data);
         break;
 
-      case DEED_CATEGORIES.INSTANCES:
-      case DEED_CATEGORIES.HOBBIES:
+      case DEED_CATEGORIES["INSTANCES SHADOWS OF ANGMAR"]:
+        this.switch_deed_category(this.db_promise, data);
+        break;
+      case DEED_CATEGORIES["INSTANCES MINES OF MORIA"]:
+        this.switch_deed_category(this.db_promise, data);
+        break;
+      case DEED_CATEGORIES["INSTANCES LOTHLORIEN"]:
+        this.switch_deed_category(this.db_promise, data);
+        break;
+      case DEED_CATEGORIES["INSTANCES MIRKWOOD"]:
+        this.switch_deed_category(this.db_promise, data);
+        break;
+      case DEED_CATEGORIES["INSTANCES IN THEIR ABSENCE"]:
+        this.switch_deed_category(this.db_promise, data);
+        break;
+      case DEED_CATEGORIES["INSTANCES RISE OF ISENGUARD"]:
+        this.switch_deed_category(this.db_promise, data);
+        break;
+      case DEED_CATEGORIES["INSTANCES ROAD TO EREBOR"]:
+        this.switch_deed_category(this.db_promise, data);
+        break;
+      case DEED_CATEGORIES["INSTANCES ASHES OF OSGILIATH"]:
+        this.switch_deed_category(this.db_promise, data);
+        break;
+      case DEED_CATEGORIES["INSTANCES BATTLE OF PELENNOR"]:
+        this.switch_deed_category(this.db_promise, data);
+        break;
+      case DEED_CATEGORIES["SOCIAL, EVENTS, AND HOBBIES"]:
+        this.switch_deed_category(this.db_promise, data);
+        break;
+      case DEED_CATEGORIES.SPECIAL:
+        this.switch_deed_category(this.db_promise, data);
+        break;
       default:
         break;
     }
@@ -253,17 +289,86 @@ class LotroApp extends Component {
     }
   }
 
+  handle_menu_update(state, data){
+    console.log('handle_menu_update called...');
+    this.setState(data);
+  }
+
+  handle_menu_modal_close(){
+    console.log('handle_menu_modal_close called...')
+    get_store().issue_action(ACTION_TYPES.MENU_UPDATE, {show_menu_modal:false});
+  }
+
+  handle_show_menu_modal(){
+    console.log('handle_show_menu_modal called...')
+    get_store().issue_action(ACTION_TYPES.MENU_UPDATE, {show_menu_modal:true});
+  }
+
+  handle_window_resize(state, data){
+    console.log('handle_show_menu_modal called...')
+    this.setState(data);
+  }
+
+
   render() {
+    //adjust title depending on screen width
+    let title = "LoTRO CL"
+
+    if(this.state.width > SCREEN_SIZES.SMALL){
+      title = "LoTRO Character Log";
+    }
+    //width is larger than the below full string at h1
+    if(this.state.width > 873){
+      title = "Lord of the Rings Online Character Log";
+    }
+
     return (
       <div className="lotro-app">
-        <div className='panel'>
-          <h1 className='page-title'>-ALPHA- Lord of the Rings Online Character Log -ALPHA-</h1>
+        <div className='title-panel'>
+
+          <ul className='title-panel-list'>
+            <li className='left'>
+              <h1 className='title'>{title}</h1>
+            </li>
+            <li className='right' onClick={this.handle_show_menu_modal}>
+              <h1 className='menu' onClick={this.handle_show_menu_modal}><i className="fa fa-bars" aria-hidden="true"></i></h1>
+            </li>
+          </ul>
+
+
+          <ReactModal
+            className="menu-modal-content panel"
+            overlayClassName="menu-modal-overlay"
+            isOpen={this.state.show_menu_modal}
+            onRequestClose={this.handle_menu_modal_close}>
+            <div className="about-panel">
+              <h3>Miscelaneous Items</h3>
+
+              {this.state.width >= SCREEN_SIZES.SMALL ? (
+                <div style={{display: 'inline-flex', alignItems:'center', height:'42px'}}>
+                  <h4>Debug Commands: </h4>
+                  <Button className='btn btn-danger' text='Reset DB' onClick={this.handle_reset_database} />
+                  <Button className='btn btn-danger' text='Reset SW' onClick={this.handle_reset_serviceworker} />
+                </div>
+              ):(
+                <div>
+                  <h4 style={{margin:'5px'}}>Debug Commands: </h4>
+                  <Button className='btn btn-danger' text='Reset DB' onClick={this.handle_reset_database} />
+                  <Button className='btn btn-danger' text='Reset SW' onClick={this.handle_reset_serviceworker} />
+                </div>
+              )}
+
+              <div style={{display: 'inline-flex', alignItems:'center', height:'42px'}}>
+                <h4>Source Code:</h4>
+                <a className='github-link' href="https://github.com/xevrem/lotro-cl">
+                  <i className="fa fa-github github-icon" aria-hidden="true"></i>
+                </a>
+              </div>
+
+            </div>
+          </ReactModal>
         </div>
-        <span style={{display: 'inline-flex', alignItems:'center', height:'42px'}}>
-          <h4>Debug Stuff: </h4>
-          <Button className='btn btn-danger' text='Reset DB' onClick={this.handle_reset_database} />
-          <Button className='btn btn-danger' text='Reset SW' onClick={this.handle_reset_serviceworker} />
-        </span>
+
         <div className='site'>
           <CharacterPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
           <SummaryPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
@@ -274,12 +379,7 @@ class LotroApp extends Component {
             deed_subcatetories={this.state.deed_subcategories}
             deed_subcategory_selected={this.state.deed_subcategory_selected}/>
         </div>
-        <div className="panel">
-          <a className='github-link' href="https://github.com/xevrem/lotro-cl">
-            {/* svg courtesy of fontawesome: https://fontawesome.com/license */}
-            <img className='github-svg' src='github.svg'></img>
-          </a>
-        </div>
+
       </div>
     );
   }

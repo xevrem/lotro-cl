@@ -1,0 +1,57 @@
+Category,Subcategory,Faction,Type,Deed,LP,Trait,Details,Title,Level,Party
+Instances Erebor,Iorbar's Peak,,M,Champion of Iorbar's Peak,-,-,Complete 3 deeds in Iorbar's Peak,,,
+Instances Erebor,Iorbar's Peak,,S,The Stone Giant's Demise,-,-,Complete quest: Iorbar's Peak - Tier 1,,,
+Instances Erebor,Iorbar's Peak,,S,Helf's Downfall,-,-,Complete quest: Iorbar's Peak - Tier 2,,,
+Instances Erebor,Iorbar's Peak,,S,Saviour of the Eagle Egg,-,-,Find the stolen eagle egg and rescue it. It must not be damaged.,,,
+Instances Erebor,Iorbar's Peak,,Q,Challenge: Iorbar's Peak,,,Auto bestowed – Tier 2,,Cap,Small Fellow
+Instances Erebor,Iorbar's Peak,,Q,Iorbar's Reak - Tier 1,,,Auto bestowed – Tier 1,,20^,Small Fellow
+Instances Erebor,Iorbar's Peak,,Q,Iorbar's Reak - Tier 2,,,Auto bestowed – Tier 2,,20^,Small Fellow
+Instances Erebor,Webs of the Scuttledells,,M,Defender of Thrandur's Halls,-,-,Complete 3 deeds and 'Spiders and Flies' in Webs of the Scuttledells,,,
+Instances Erebor,Webs of the Scuttledells,,S,Webs of the Scuttledells – Tier 1,-,-,Complete quest – Webs of the Scuttledells – Tier 1,,,
+Instances Erebor,Webs of the Scuttledells,,S,Webs of the Scuttledells – Tier 2,-,-,Complete quest – Webs of the Scuttledells – Tier 2,,,
+Instances Erebor,Webs of the Scuttledells,,S,Challenge,-,-,Burn all webs and cocoons before defeating Digelir,,,
+Instances Erebor,Webs of the Scuttledells,,Q,Challenge: Webs of the Scuttledells,,,Auto bestowed – Tier 2,,Cap,Small Fellow
+Instances Erebor,Webs of the Scuttledells,,Q,Webs of the Scuttledells – Tier 1,,,Auto bestowed – Tier 1,,20^,Small Fellow
+Instances Erebor,Webs of the Scuttledells,,Q,Webs of the Scuttledells – Tier 2,,,Auto bestowed – Tier 2,,20^,Small Fellow
+Instances Erebor,Webs of the Scuttledells,,Q,Spiders and Flies,,,Auto bestowed – Rescue the captured elves from the cocoons,,20^,Small Fellow
+Instances Erebor,Seat of the Great Goblin,,M,Usurper of the Great Goblin's Throne,-,-,Complete 4 deeds in Seat of the Great Goblin,,,
+Instances Erebor,Seat of the Great Goblin,,S,Seat of the Great Goblin – Tier 1,-,-,Complete quest – Seat of the Great Goblin – Tier 1,,,
+Instances Erebor,Seat of the Great Goblin,,S,Seat of the Great Goblin – Tier 2,-,-,Complete quest – Seat of the Great Goblin – Tier 2,,,
+Instances Erebor,Seat of the Great Goblin,,S,Challenge,-,-,Defeat the Great Goblin in under 4 minutes,,,
+Instances Erebor,Seat of the Great Goblin,,L,The Tale of Goblin-town,-,-,Discover 5 Goblin-murals within Seat of the Great Goblin,,,
+Instances Erebor,Seat of the Great Goblin,,Q,Challenge: Seat of the Great Goblin,,,Auto bestowed – Tier 2,,Cap,Small Fellow
+Instances Erebor,Seat of the Great Goblin,,Q,Seat of the Great Goblin – Tier 1,,,Auto bestowed – Tier 1,,20^,Small Fellow
+Instances Erebor,Seat of the Great Goblin,,Q,Seat of the Great Goblin – Tier 2,,,Auto bestowed – Tier 2,,20^,Small Fellow
+Instances Erebor,The Bells of Dale,,M,Defender of the Dale Lands,-,-,Complete 3 deeds and 'Tormentors of Dale' in The Bells of Dale,,,
+Instances Erebor,The Bells of Dale,,S,The Bells of Dale – Tier 1,-,-,Complete quest – The Bells of Dale – Tier 1,,,
+Instances Erebor,The Bells of Dale,,S,The Bells of Dale – Tier 2,-,-,Complete quest – The Bells of Dale – Tier 2,,,
+Instances Erebor,The Bells of Dale,,L,Challenge,-,-,Defeat Tabi-kohin without allowing any bells in Dale to fall,,,
+Instances Erebor,The Bells of Dale,,Q,Challenge: The Bells of Dale,,,Auto bestowed – Tier 2,,Cap,Fellow
+Instances Erebor,The Bells of Dale,,Q,The Bells of Dale – Tier 1,,,Auto bestowed – Tier 1,,20^,Fellow
+Instances Erebor,The Bells of Dale,,Q,The Bells of Dale – Tier 2,,,Auto bestowed – Tier 2,,20^,Fellow
+Instances Erebor,The Bells of Dale,,Q,Tormentors of Dale,,,Auto bestowed – Defeat Graz and Larz,,20^,Fellow
+Instances Erebor,Flight to the Lonely Mountain,,M,Defender of the Road,-,-,Complete 3 deeds in Flight to the Lonely Mountain,,,
+Instances Erebor,Flight to the Lonely Mountain,,F,Flight to the Lonely Mountain – Tier 1,-,-,Complete quest – Flight to the Lonely Mountain – Tier 1,,,
+Instances Erebor,Flight to the Lonely Mountain,,F,Flight to the Lonely Mountain – Tier 2,-,-,Complete quest – Flight to the Lonely Mountain – Tier 2,,,
+Instances Erebor,Flight to the Lonely Mountain,,F,An Army from the East,-,-,Defeat the Easterlings in the clearing,,,
+Instances Erebor,Flight to the Lonely Mountain,,Q,Challenge: An Army from the East,,,Auto bestowed – Tier 2,,Cap,Raid
+Instances Erebor,Flight to the Lonely Mountain,,Q,Flight to the Lonely Mountain – Tier 1,,,Auto bestowed – Tier 1,,20^,Raid
+Instances Erebor,Flight to the Lonely Mountain,,Q,Flight to the Lonely Mountain – Tier 2,,,Auto bestowed – Tier 2,,20^,Raid
+Instances Erebor,The Fires of Smaug,,M,Slayer of the Golden Dragon,-,-,Complete 3 deeds in The Fires of Smaug,,,
+Instances Erebor,The Fires of Smaug,,F,The Fires of Smaug – Tier 1,-,-,Complete quest – The Fires of Smaug – Tier 1,,,
+Instances Erebor,The Fires of Smaug,,F,The Fires of Smaug – Tier 2,-,-,Complete quest – The Fires of Smaug – Tier 2,,,
+Instances Erebor,The Fires of Smaug,,F,Challenge,-,-,"Defeat the grims fueling the furnace, allow no smoke to enter the caves",,,
+Instances Erebor,The Fires of Smaug,,Q,Challenge: The Fires of Smaug,,,Auto bestowed – Tier 2,,Cap,Raid
+Instances Erebor,The Fires of Smaug,,Q,The Fires of Smaug – Tier 1,,,Auto bestowed – Tier 1,,20^,Raid
+Instances Erebor,The Fires of Smaug,,Q,The Fires of Smaug – Tier 2,,,Auto bestowed – Tier 2,,20^,Raid
+Instances Erebor,The Battle for Erebor,,M,Warden of the Lonely Mountain,-,-,Complete 3 deeds in The Battle for Erebor,,,
+Instances Erebor,The Battle for Erebor,,F,The Battle for Erebor – Tier 1,-,-,Complete quest – The Battle for Erebor – Tier 1,,,
+Instances Erebor,The Battle for Erebor,,F,The Battle for Erebor – Tier 2,-,-,Complete quest – The Battle for Erebor – Tier 2,,,
+Instances Erebor,The Battle for Erebor,,F,Challenge,-,-,Drag down banners and define your terms before beginning the fight,,,
+Instances Erebor,The Battle for Erebor,,Q,Challenge: The Battle for Erebor,,,Auto bestowed – Tier 2,,Cap,Raid
+Instances Erebor,The Battle for Erebor,,Q,The Battle for Erebor – Tier 1,,,Auto bestowed – Tier 1,,20^,Raid
+Instances Erebor,The Battle for Erebor,,Q,The Battle for Erebor – Tier 2,,,Auto bestowed – Tier 2,,20^,Raid
+Instances Erebor,Meta Deeds and Summary,,M,In Defence of Erebor – Challenge,-,-,Complete challenge mode for 3 raids of Erebor – Tier 2 at level cap,,,
+Instances Erebor,Meta Deeds and Summary,,M,In Defence of Erebor – Tier 1,-,-,Complete Tier 1 for 3 raids of Erebor – Level cap,,,
+Instances Erebor,Meta Deeds and Summary,,M,In Defence of Erebor – Tier 2,-,-,Complete Tier 2 for 3 raids of Erebor – Level cap,,,
+Instances Erebor,Meta Deeds and Summary,,M,The Road to Erebor,-,-,Complete 7 meta deeds in The Road to Erebor instance cluster,,,

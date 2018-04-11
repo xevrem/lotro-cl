@@ -1,0 +1,174 @@
+Category,Subcategory,Faction,Type,Deed,LP,Trait,Details,Title,Level,Party
+SoA Instances,Great Barrow,,S,Great Barrow – The Gate to Sambrog,-,-,"Defeat Gaerdring and Gaerthal in Maze Wing, defeat Thadur in Water Wing",,,
+SoA Instances,Great Barrow,,I,Great Barrow –  Maze Wing,-,-,Complete 5 quests and challenge in Maze Wing,Maze Explorer,,
+SoA Instances,Great Barrow,,I,Great Barrow – Sambrog Wing,-,-,Complete 5 quests and challenge in Sambrog Wing,Sambrog Stopper,,
+SoA Instances,Great Barrow,,I,Great Barrow – Water Wing,-,-,Complete 5 quests and challenge in Water Wing,Watery Delver,,
+SoA Instances,Great Barrow,,Q,Grim Tomb-wight,,,Auto-bestowed – Maze Wing – Random,,20^,Fellow
+SoA Instances,Great Barrow,,Q,Crawling Arm,,,Auto-bestowed – Maze Wing – Random,,20^,Fellow
+SoA Instances,Great Barrow,,Q,Ancient Barrow-wights,,,Auto-bestowed – Maze Wing – Random,,20^,Fellow
+SoA Instances,Great Barrow,,Q,Ancient Flames – Maze,,,Auto-bestowed – Maze Wing – Random,,20^,Fellow
+SoA Instances,Great Barrow,,Q,Gaerdrel and Gaerthel,,,Auto-bestowed – Maze Wing,,20^,Fellow
+SoA Instances,Great Barrow,,Q,Challenge: Gaerdrel and Gaerthel,,,Auto-bestowed – Maze Wing,,Cap,Fellow
+SoA Instances,Great Barrow,,Q,Accursed Fell-spirit,,,Auto-bestowed – Sambrog Wing – Random,,20^,Fellow
+SoA Instances,Great Barrow,,Q,Consuming Barrow-crawler,,,Auto-bestowed – Sambrog Wing – Random,,20^,Fellow
+SoA Instances,Great Barrow,,Q,Barrow-wights,,,Auto-bestowed – Sambrog Wing – Random,,20^,Fellow
+SoA Instances,Great Barrow,,Q,Ancient Flames – Sambrog,,,Auto-bestowed – Sambrog Wing – Random,,20^,Fellow
+SoA Instances,Great Barrow,,Q,Sambrog,,,Auto-bestowed – Sambrog Wing,,20^,Fellow
+SoA Instances,Great Barrow,,Q,Challenge: Sambrog,,,Auto-bestowed – Sambrog Wing,,Cap,Fellow
+SoA Instances,Great Barrow,,Q,Guant Battle-caller,,,Auto-bestowed – Water Wing – Random,,20^,Fellow
+SoA Instances,Great Barrow,,Q,Chilled Barrow-wight,,,Auto-bestowed – Water Wing – Random,,20^,Fellow
+SoA Instances,Great Barrow,,Q,Barrow-wight Bowlord,,,Auto-bestowed – Water Wing – Random,,20^,Fellow
+SoA Instances,Great Barrow,,Q,Disturbed Remains,,,Auto-bestowed – Water Wing – Random,,20^,Fellow
+SoA Instances,Great Barrow,,Q,Thadur the Ravager,,,Auto-bestowed – Water Wing,,20^,Fellow
+SoA Instances,Great Barrow,,Q,Challenge: Thadur the Ravager,,,Auto-bestowed – Water Wing,,Cap,Fellow
+SoA Instances,Inn of the Forsaken,,M,Excavator of the Forsaken Inn,5,-,Complete 4 deeds in Inn of the Forsaken,Excavator of the Forsaken Inn,,
+SoA Instances,Inn of the Forsaken,,S,Mighty Umin,5,-,Defeat Umin,,,
+SoA Instances,Inn of the Forsaken,,S,The Necklace's Keeper,5,-,Defeat the Spirit of the Necklace – Tier 2,,,
+SoA Instances,Inn of the Forsaken,,L,The Perfect Fellowship,5,-,Complete quest – Challenge: The Perfect Fellowship,,,
+SoA Instances,Inn of the Forsaken,,L,The Journal of Captain Rabghul,5,-,Locate all 5 pages of Captain's Rabghul's journal,,,
+SoA Instances,Inn of the Forsaken,,L,Riddles Beneath the Inn,5,-,Solve all 83 riddles in the instance,Riddle-master,Cap,Small Fellow
+SoA Instances,Inn of the Forsaken,,Q,Challenge: The Perfect Fellowship,,,Auto-bestowed – Tier 2,,,
+SoA Instances,Fornost,,S,Fornost – The Gate to Earth,-,-,Defeat Megoriath in Water Wing,,,
+SoA Instances,Fornost,,S,Fornost – The Gate to Fire,-,-,Defeat Rhavameldir in Earth Wing,,,
+SoA Instances,Fornost,,S,Fornost – The Gate to Shadow,-,-,Defeat Brogadan in Fire Wing,,,
+SoA Instances,Fornost,,M,Fornost – Deadman's Dike [Hidden],10,-,Complete 4 instance deeds in Fornost,,,
+SoA Instances,Fornost,,I,Fornost – Wraith of Earth,-,-,Complete 4 quests in Earth Wing,,,
+SoA Instances,Fornost,,I,Fornost – Wraith of Fire,-,-,Complete 4 quests in Fire Wing,,,
+SoA Instances,Fornost,,I,Fornost – Wraith of Shadow,-,-,Complete 4 quests in Shadow Wing,,,
+SoA Instances,Fornost,,I,Fornost – Wraith of Water,-,-,Complete 4 quests in Water Wing,,,
+SoA Instances,Fornost,,Q,"Rhavameldir, Wraith of Earth",,,Auto-bestowed – Earth Wing,,25^,Fellow
+SoA Instances,Fornost,,Q,Challenge: Pillars of Earth,,,Auto-bestowed – Earth Wing – Tier 2,,Cap,Fellow
+SoA Instances,Fornost,,Q,The Jarn-olog,,,Auto-bestowed – Earth Wing,,25^,Fellow
+SoA Instances,Fornost,,Q,Weapons of War,,,Auto-bestowed – Earth Wing,,25^,Fellow
+SoA Instances,Fornost,,Q,"Brogadan, Wraith of Fire",,,Auto-bestowed – Fire Wing,,25^,Fellow
+SoA Instances,Fornost,,Q,Challenge: Into the Fire,,,Auto-bestowed – Fire Wing – Tier 2,,Cap,Fellow
+SoA Instances,Fornost,,Q,Leaders of Orcs,,,Auto-bestowed – Fire Wing,,25^,Fellow
+SoA Instances,Fornost,,Q,Idols of Sauron,,,Auto-bestowed – Fire Wing,,25^,Fellow
+SoA Instances,Fornost,,Q,"Remmenaeg, Wraith of Shadow",,,Auto-bestowed – Shadow Wing,,25^,Fellow
+SoA Instances,Fornost,,Q,Challenge: Light in the Dark,,,Auto-bestowed – Shadow Wing – Tier 2,,Cap,Fellow
+SoA Instances,Fornost,,Q,Ambassadors of Angmar,,,Auto-bestowed – Shadow Wing,,25^,Fellow
+SoA Instances,Fornost,,Q,Free the Fallen,,,Auto-bestowed – Shadow Wing,,25^,Fellow
+SoA Instances,Fornost,,Q,"Megoriath, Wraith of Water",,,Auto-bestowed – Water Wing,,25^,Fellow
+SoA Instances,Fornost,,Q,Challenge: The Deep End,,,Auto-bestowed – Water Wing – Tier 2,,Cap,Fellow
+SoA Instances,Fornost,,Q,The Brack,,,Auto-bestowed – Water Wing,,25^,Fellow
+SoA Instances,Fornost,,Q,The Forgotten Company,,,Auto-bestowed – Water Wing,,25^,Fellow
+SoA Instances,The Halls of Night,,M,Champion of the Halls of Night,10,-,Complete Raising Spirits and Facing Your Fears,,,
+SoA Instances,The Halls of Night,,S,Facing Your Fears,15,-,"Defeat Terror, Panic, and Nightmare in The Halls of Night",Dreamer,,
+SoA Instances,The Halls of Night,,L,Raising Spirits,10,-,Complete quest – Challenge: Raising Spirits,,,
+SoA Instances,The Halls of Night,,E,Discover the Halls of Night,10,-,"Find the Halls of Night [0.5 N, 37.6 W] – required to enter",,,
+SoA Instances,The Halls of Night,,Q,Facing Your Fears,,,Auto-bestowed,,40^,Small Fellow
+SoA Instances,The Halls of Night,,Q,Challenge: Raising Spirits,,,Auto-bestowed – Tier 2,,Cap,Small Fellow
+SoA Instances,Annuminas,,I,Annuminas – Glinghant,-,-,Complete 5 quests in Glinghant,Garden Guardian,,
+SoA Instances,Annuminas,,I,Annuminas – Haudh Valandil,-,-,Complete 5 quests in Haudh Valendil,Took the Tomb,,
+SoA Instances,Annuminas,,I,Annuminas – Ost Elendil,-,-,Complete 5 quests in Ost Elendil,Palace Protector,,
+SoA Instances,Annuminas,,Q,Impure Waters,,,Auto-bestowed – Glinghant – Random,,40^,Fellow
+SoA Instances,Annuminas,,Q,Keep it from the Enemy,,,Auto-bestowed – Glinghant – Random,,40^,Fellow
+SoA Instances,Annuminas,,Q,Darkest of Waters,,,Auto-bestowed – Glinghant – Random,,40^,Fellow
+SoA Instances,Annuminas,,Q,Glinghant Corrupted,,,Auto-bestowed – Glinghant,,40^,Fellow
+SoA Instances,Annuminas,,Q,Challenge: Glinghant,,,Auto-bestowed – Glinghant,,Cap,Fellow
+SoA Instances,Annuminas,,Q,New Home for Relics of Old,,,Auto-bestowed – Haudh Valendil – Random,,40^,Fellow
+SoA Instances,Annuminas,,Q,The Kergrim Stalk Haudh Valendil,,,Auto-bestowed – Haudh Valendil – Random,,40^,Fellow
+SoA Instances,Annuminas,,Q,Lights in Darkness,,,Auto-bestowed – Haudh Valendil – Random,,40^,Fellow
+SoA Instances,Annuminas,,Q,End Dolvaethor's Menace,,,Auto-bestowed – Haudh Valendil,,40^,Fellow
+SoA Instances,Annuminas,,Q,Challenge: Valandil and Dolvaethor,,,Auto-bestowed – Haudh Valendil,,Cap,Fellow
+SoA Instances,Annuminas,,Q,The Door-warden of the Inner Chamber,,,Auto-bestowed – Ost Elendil – Random,,40^,Fellow
+SoA Instances,Annuminas,,Q,Evil in Ost Elendil,,,Auto-bestowed – Ost Elendil – Random,,40^,Fellow
+SoA Instances,Annuminas,,Q,Blood-stained Runes,,,Auto-bestowed – Ost Elendil – Random,,40^,Fellow
+SoA Instances,Annuminas,,Q,"Balhest, Lord of Ost Elendil",,,Auto-bestowed – Ost Elendil,,40^,Fellow
+SoA Instances,Annuminas,,Q,Challenge: Balhest,,,Auto-bestowed – Ost Elendil,,Cap,Fellow
+SoA Instances,Helegrod,,S,Helegrod – The Gate to Thorog,-,-,Claim 3 wings of Helegrod,Challenger of Thorog,,
+SoA Instances,Helegrod,,S,Helegrod – Dragon Wing,-,-,Defeat Thorog in the Dragon Wing,De-animator of Thorog,,
+SoA Instances,Helegrod,,I,Helegrod – Drake Wing,-,-,Complete 4 quests in Drake Wing,Drake-dropper,,
+SoA Instances,Helegrod,,I,Helegrod – Giant Wing,-,-,Complete 4 quests in Giant Wing,Diminisher of Giants,,
+SoA Instances,Helegrod,,I,Helegrod – Spider Wing,-,-,Complete 4 quests in Spider Wing,Spider Spooker,,
+SoA Instances,Helegrod,,Q,Challenge: Grisgart,,,Auto-bestowed – Drake Wing,,Cap,Raid
+SoA Instances,Helegrod,,Q,Drake-wrangler,,,Auto-bestowed – Drake Wing,,50^,Raid
+SoA Instances,Helegrod,,Q,Keep Them from Hatching,,,Auto-bestowed – Drake Wing – Random,,50^,Raid
+SoA Instances,Helegrod,,Q,Fangs For Nothing,,,Auto-bestowed – Drake Wing – Random,,50^,Raid
+SoA Instances,Helegrod,,Q,Giants in the Service of Angmar,,,Auto-bestowed – Giant Wing – Random,,50^,Raid
+SoA Instances,Helegrod,,Q,Giant-slayer,,,Auto-bestowed – Giant Wing,,50^,Raid
+SoA Instances,Helegrod,,Q,Beasts of Snow,,,Auto-bestowed – Giant Wing – Random,,50^,Raid
+SoA Instances,Helegrod,,Q,Challenge: Storvangun,,,Auto-bestowed – Giant Wing,,Cap,Raid
+SoA Instances,Helegrod,,Q,"An Evil Place, Crawling with Spiders",,,Auto-bestowed – Spider Wing – Random,,50^,Raid
+SoA Instances,Helegrod,,Q,Zaudru's Brood,,,Auto-bestowed – Spider Wing – Random,,50^,Raid
+SoA Instances,Helegrod,,Q,Spider Squasher,,,Auto-bestowed – Spider Wing,,50^,Raid
+SoA Instances,Helegrod,,Q,Challenge: Zaudru,,,Auto-bestowed – Spider Wing,,Cap,Raid
+SoA Instances,Helegrod,,Q,Thorog Defeated,,,Auto-bestowed – Dragon Wing,Doom of Thorog Reborn,50^,Raid
+SoA Instances,Helegrod,,Q,Picks for Delivery,,,Othrikar – Ormulf Worm-hunter (follow-up to Fangs for Nothing),The Selfless,50,Raid
+SoA Instances,Helegrod,,Q,A New Queen for Deepest Helegrod,,,Archet – Atli Spider-bane (quest 2 of Atli's quest chain),Dispatcher of Zaudru,50,Raid
+SoA Instances,Helegrod,,Q,Reclaiming Eregion's Gift,,,The Spire of Meeting – Conediad (quest 2 of Old Friendships quest chain),Reclaimer of Mirdanant,50,Raid
+SoA Instances,Helegrod,,Q,Servants of Angmar,,,Elrond's Library – Elrond (quest 2 of Elrond's quest chain),Slayer of Servants Three,50,Raid
+SoA Instances,Helegrod,,Q,Storvagun the Traitor,,,Amon Nendir – Arifael (quest 2 of Arifael's quest chain),Storvagun's End,50,Raid
+SoA Instances,Helegrod,,Q,The Corcur of Helegrod,,,Thorenhad – Elladan (quest 2 of Elladan's quest chain),Enemy of the Corcur,50,Raid
+SoA Instances,Barad Gularan,,M,Toppling of Barad Gularan [Hidden],10,-,Complete all deeds in Barad Gularan,Rogmul's Bane,,
+SoA Instances,Barad Gularan,,L,Lore of the Enemy,10,-,Collect 6 Gularan books,Keeper of Books,,
+SoA Instances,Barad Gularan,,S,Allies of the Enemy,5,-,Defeat Hillmen in Barad Gularan (20),the Determined,,
+SoA Instances,Barad Gularan,,S,Allies of the Enemy (advanced),10,Compassion,Defeat Hillmen in Barad Gularan (40),,,
+SoA Instances,Barad Gularan,,S,Champions of Barad Gularan,5,-,Defeat 6 leaders in Barad Gularan,Defender Against the Terror,,
+SoA Instances,Barad Gularan,,S,The Dead That Live,5,-,Defeat The Dead in Barad Gularan (60),the Defiant,,
+SoA Instances,Barad Gularan,,S,The Dead That Live (advanced),10,Empathy,Defeat The Dead in Barad Gularan (120),,,
+SoA Instances,Barad Gularan,,S,The Minions of Wisdan,5,-,Defeat Angmarim in Barad Gularan (50),the Steadfast,,
+SoA Instances,Barad Gularan,,S,The Minions of Wisdan (advanced),10,Charity,Defeat Angmarim in Barad Gularan (100),,,
+SoA Instances,Urugarth,,M,Destruction of Urugarth [Hidden],10,-,Complete all deeds in Urugarth,Usurper of Urugarth,,
+SoA Instances,Urugarth,,E,The City of Orcs,5,Loyalty,Find 6 points of interest in Urugarth,,,
+SoA Instances,Urugarth,,E,The Foul Idols of Urugarth,5,-,Find and burn the idols of Urugarth,Torch-bearer,,
+SoA Instances,Urugarth,,L,Marching Orders,10,-,Collect 6 Marching Orders,Eyes Against the Enemy,,
+SoA Instances,Urugarth,,S,The Beasts of Urugarth,5,-,Defeat Beasts in Urugarth (100),the Agile,,
+SoA Instances,Urugarth,,S,The Beasts of Urugarth (advanced),10,Patience,Defeat Beasts in Urugarth (200),,,
+SoA Instances,Urugarth,,S,Champions of Urugarth,5,-,Defeat 5 leaders in Urugarth,Defender of the Ashen Wastes,,
+SoA Instances,Urugarth,,S,Champions of Urugarth (advanced),5,-,Defeat 4 additional leaders in Urugarth,Hero/Heroine of the Ashen Wastes,,
+SoA Instances,Urugarth,,S,Champions of Urugarth (final),5,Discipline,Defeat 4 additional leaders in Urugarth,Champion of the Ashen Wastes,,
+SoA Instances,Urugarth,,S,The Orcs of Urugarth,5,-,Defeat Orcs in Urugarth (80),the Mighty,,
+SoA Instances,Urugarth,,S,The Orcs of Urugarth (advanced),10,Honour,Defeat Orcs in Urugarth (160),,,
+SoA Instances,Urugarth,,S,The Trolls of Urugarth,5,-,Defeat Trolls in Urugarth (60),the Strong,,
+SoA Instances,Urugarth,,S,The Trolls of Urugarth (advanced),10,Valour,Defeat Trolls in Urugarth (120),,,
+SoA Instances,Carn Dum,,M,Downfall of Carn Dum [Hidden],10,-,Complete all deeds in Carn Dum,Crusader of Carn Dum,,
+SoA Instances,Carn Dum,,L,Plans of War,10,-,Collect 6 Plans of War,Foil of War,,
+SoA Instances,Carn Dum,,E,The Enemies Stronghold,5,Tolerance,Find 7 points of interest in Carn Dum,,,
+SoA Instances,Carn Dum,,S,Ancient Evil of Carn Dum,5,-,Defeat Ancient Evil in Carn Dum (30),the Fearless,,
+SoA Instances,Carn Dum,,S,Ancient Evil of Carn Dum (advanced),10,Innocence,Defeat Ancient Evil in Carn Dum (60),,,
+SoA Instances,Carn Dum,,S,The Angmarim of Carn Dum,5,-,Defeat Angmarim in Carn Dum (100),the Fearsome,,
+SoA Instances,Carn Dum,,S,The Angmarim of Carn Dum (advanced),10,Confidence,Defeat Angmarim in Carn Dum (200),,,
+SoA Instances,Carn Dum,,S,Champions of Carn Dum,5,-,Defeat 3 leaders in Carn Dum,Warden of the Ashen Wastes,,
+SoA Instances,Carn Dum,,S,Champions of Carn Dum (advanced),5,-,Defeat 4 additional leaders in Carn Dum,Master of the Ashen Wastes,,
+SoA Instances,Carn Dum,,S,Champions of Carn Dum (final),10,Valour,Defeat 5 additional leaders in Carn Dum,Lord/Lady of the Ashen Wastes,,
+SoA Instances,Carn Dum,,S,The Orcs of Carn Dum,5,-,Defeat Orc-kind in Carn Dum (100),the Brave,,
+SoA Instances,Carn Dum,,S,The Orcs of Carn Dum (advanced),10,Honour,Defeat Orc-kind in Carn Dum (200),,,
+SoA Instances,Carn Dum,,S,The Slugs of Carn Dum [Hidden],5,-,Defeat Slugs in Carn Dum (100),Slug-wrangler,,
+SoA Instances,Carn Dum,,S,The Trolls of Carn Dum,5,-,Defeat Troll-kind in Carn Dum (60),the Courageous,,
+SoA Instances,Carn Dum,,S,The Trolls of Carn Dum (advanced),10,Patience,Defeat Troll-kind in Carn Dum (120),,,
+SoA Instances,The Rift of Nurz Ghashu,,Q,Aiding the Eldgang,,,Upper Noruidor – Tortrygg,Ruination of Thrang,50,Raid
+SoA Instances,The Rift of Nurz Ghashu,,Q,An Ancient Threat,,,Norbar – Eimyr,Vanquisher of Thaurlach,50,Raid
+SoA Instances,The Rift of Nurz Ghashu,,Q,The Fall of Thaurlach,,,"Rift of Nurz Ghashu – Broken Chain Link, drops in raid",Lord/Lady of the Shattered Chain,50,Raid
+SoA Instances,The Rift of Nurz Ghashu,,Q,The Message,,,Upper Noruidor – Tortrygg,Saviour of the Eldgang,50,Raid
+SoA Instances,Tham Mirdain,,I,The Library at Tham Mirdain,-,-,"Complete quests, Invaders of Tham Mirdain (Library), and Lore deed",Library Liberator,,
+SoA Instances,Tham Mirdain,,L,Lore of the Forgotten Library,10,-,Find 4 lore items in Tham Mirdain (Library),Librarian,,
+SoA Instances,Tham Mirdain,,S,Invaders of Tham Mirdain (Library),10,-,Defeat 3 leaders in Tham Mirdain (Library),Saviour of the Forgotten Archive,,
+SoA Instances,Tham Mirdain,,S,Soldiers of the Enemy,5,-,Defeat Orcs in Tham Mirdain (40),Defier of Evil,,
+SoA Instances,Tham Mirdain,,S,Soldiers of the Enemy (advanced),10,Idealism,Defeat Orcs in Tham Mirdain (80),,,
+SoA Instances,Tham Mirdain,,S,The Pale Followers,5,-,Defeat Pale-folk in Tham Mirdain (150),the Sympathetic,,
+SoA Instances,Tham Mirdain,,S,The Pale Followers (advanced),10,Justice,Defeat Pale-folk in Tham Mirdain (300),,,
+SoA Instances,Tham Mirdain,,I,The School at Tham Mirdain,-,-,"Complete quests, Invaders of Tham Mirdain (School), and Lore deed",,,
+SoA Instances,Tham Mirdain,,L,Texts of the Crumbling School,10,-,Find 4 ledgers in Tham Mirdain (School),Tutor,,
+SoA Instances,Tham Mirdain,,S,Invaders of Tham Mirdain (School),10,-,Defeat 3 leaders in Tham Mirdain (School),Defender of the Crumbling School,,
+SoA Instances,Tham Mirdain,,S,Mercenaries of the White-hand,5,-,Defeat Dunlendings in Tham Mirdain (60),Diplomat,,
+SoA Instances,Tham Mirdain,,S,Mercenaries of the White-hand (advanced),10,Determination,Defeat Dunlendings in Tham Mirdain (120),,,
+SoA Instances,Tham Mirdain,,S,Warriors of the Enemy,5,-,Defeat Uruks in Tham Mirdain (40),the Daring,,
+SoA Instances,Tham Mirdain,,S,Warriors of the Enemy (advanced),10,Wisdom,Defeat Uruks in Tham Mirdain (80),,,
+SoA Instances,Tham Mirdain,,M,Invaders of Tham Mirdain (Complete) [Hidden],10,Compassion,"Complete Invaders of Tham Mirdain Ring-forge, Library, and School",Protector of Mirobel,,
+SoA Instances,Tham Mirdain,,L,Ring Lore of Tham Mirdain (Ring-forge),10,-,Collect 4 ring-lore items,Student of Celebrimbor,,
+SoA Instances,Tham Mirdain,,S,Invaders of Tham Mirdain (Ring-forge),10,-,Defeat 2 leaders in Tham Mirdain Ring-forge,Forge-warden,,
+SoA Instances,Tham Mirdain,,S,Scholars of Angmar,5,-,Defeat Angmarim in Ring-forge (40) – Use reflecting pool to re-enter,Patron of Mirobel,,
+SoA Instances,Tham Mirdain,,S,Scholars of Angmar (advanced),10,Discipline,Defeat Angmarim in Ring-forge (80) – Use reflecting pool to re-enter,,,
+SoA Instances,Tham Mirdain,,M,Marshall of Tham Mirdain [Hidden],15,-,Complete 6 deeds in Tham Mirdain,Marshall of Tham Mirdain,,
+SoA Instances,Tham Mirdain,,Q,Purging the Overmasters,,,Auto-bestowed – Library – Random,,50^,Small Fellow
+SoA Instances,Tham Mirdain,,Q,Matters of Knowledge,,,Auto-bestowed – Library – Random,,50^,Small Fellow
+SoA Instances,Tham Mirdain,,Q,Pillagers of Knowledge,,,Auto-bestowed – Library – Random,,50^,Small Fellow
+SoA Instances,Tham Mirdain,,Q,Chieftain Gursh,,,Auto-bestowed – Library,,50^,Small Fellow
+SoA Instances,Tham Mirdain,,Q,Challenge: Chieftain Gursh,,,Auto-bestowed – Library,,Cap,Small Fellow
+SoA Instances,Tham Mirdain,,Q,Musings and Teachings,,,Auto-bestowed – School – Random,,50^,Small Fellow
+SoA Instances,Tham Mirdain,,Q,Blade of the Dunlending,,,Auto-bestowed – School – Random,,50^,Small Fellow
+SoA Instances,Tham Mirdain,,Q,Biting the White-hand,,,Auto-bestowed – School – Random,,50^,Small Fellow
+SoA Instances,Tham Mirdain,,Q,Chieftain Tarsh,,,Auto-bestowed – School,,50^,Small Fellow
+SoA Instances,Tham Mirdain,,Q,Challenge: Flames of Knowledge,,,Auto-bestowed – School,,Cap,Small Fellow
+SoA Instances,Meta Deeds and Summary,,M,Saviour of Eriador,10,-,Complete 3 deeds in Shadows of Angmar instance cluster and 2 raid quests,Saviour of Eriador,,

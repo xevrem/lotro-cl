@@ -5,18 +5,88 @@
   color: $fg-color;
 }
 
-.page-title{
-  // font-family: lotro;
+.title-panel{
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  // margin: 10px;
+  background-color: white;
+  box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+  // padding: 5px;
+  padding: 0px;
+  margin: 0px 0px 15px 0px;
+  top: 0px;
+  left: 0px;
+}
+
+ul.title-panel-list{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.left{
+  float:left;
+}
+
+.right{
+  float:right;
+  cursor: pointer;
+}
+
+.title{
+  margin: 15px 15px 10px 15px;
+}
+
+.menu{
+  margin: 15px 15px 10px 15px;
+}
+
+li.right:hover{
+  background-color: lightgrey;
+}
+
+.about-panel{
+  text-align: center;
 }
 
 .github-link {
   margin: 0px;
   padding: 0px;
-  position:sticky;
   justify-content: center;
+  text-decoration: none;
+  color: black;
 }
 
-.github-svg{
-  margin: 15px 10px 5px 10px;
-  width: 64px;
+.github-icon{
+  margin: 5px;
+  font-size: 2em;
+}
+
+.menu-modal-content{
+  padding: 8px 0px;
+  margin: 0px;
+  position: absolute;
+  top: 25%;
+  width: 100%;
+}
+
+.menu-modal-overlay{
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+@media screen and (min-width: $small) {
+  .menu-modal-content{
+    width: 500px;
+    left: calc((98% - 500px)/2);
+  }
 }

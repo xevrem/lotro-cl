@@ -13,9 +13,12 @@ import {get_store} from './../Store';
  * @param {string} props.name deed name
  * @param {JSX.Element} props.children the child elemnts contained within the deed div
  */
-const Deed = ({selected, onClick, name, children}) =>{
+const Deed = ({name, selected, completed, onClick,  children}) =>{
+  //calculate which classes to add
+  let is_selected = selected?'deed clickable selected ':'deed clickable ';
+  let is_completed = completed? 'completed':'';
   return(
-    <div className={selected?'deed clickable selected':'deed clickable'} onClick={onClick}>
+    <div className={is_selected+is_completed} onClick={onClick}>
       <p>{name}</p>
       {children}
     </div>
@@ -79,6 +82,8 @@ class DeedPanel extends Component{
         return category === DEED_CATEGORIES.RACE ? "Race":"Reputation";
       case 'S':
         return "Slayer";
+      case 'So':
+        return "Social"
       default:
         return deed_type;
     }
@@ -147,16 +152,24 @@ class DeedPanel extends Component{
       //filter non-selected subcategories
       if(deed.Subcategory != this.props.deed_subcategory_selected) return;
 
+      //is this deed completed?
+      let completed = false;
+      if(this.props.deed_category_selected){
+        if(character.completed[this.props.deed_category_selected]){
+          completed = character.completed[this.props.deed_category_selected][i];
+        }
+      }
+
       //build the deed according to whether it is selected, its information, and if it is completed.
       return i === this.props.selected_deed ? (
         <div key={i} className ='deed-list-item'>
-          <Deed name={deed.Deed} selected={true} onClick={this.handle_selected.bind(this,i)}>
+          <Deed name={deed.Deed} selected={true} completed={completed} onClick={this.handle_selected.bind(this,i)}>
             {this.render_deed_details(deed, character, i)}
           </Deed>
         </div>
         ):(
           <div key={i}  className ='deed-list-item'>
-            <Deed name={deed.Deed} selected={false} onClick={this.handle_selected.bind(this,i)}/>
+            <Deed name={deed.Deed} selected={false} completed={completed} onClick={this.handle_selected.bind(this,i)}/>
           </div>
         )
     });

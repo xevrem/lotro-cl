@@ -60,12 +60,28 @@ export function initial_deed_population(db_promise){
 
     let skirm_deeds = _deed_fetch_and_store(db, '/data/skirm_deeds.json', DEED_CATEGORIES.SKIRMISH);
 
+    let soa_inst = _deed_fetch_and_store(db, '/data/soa_inst_deeds.json', DEED_CATEGORIES["INSTANCES SHADOWS OF ANGMAR"]);
+    let mom_inst = _deed_fetch_and_store(db, '/data/mom_inst_deeds.json', DEED_CATEGORIES["INSTANCES MINES OF MORIA"]);
+    let loth_inst = _deed_fetch_and_store(db, '/data/loth_inst_deeds.json', DEED_CATEGORIES["INSTANCES LOTHLORIEN"]);
+    let mirk_inst = _deed_fetch_and_store(db, '/data/mirk_inst_deeds.json', DEED_CATEGORIES["INSTANCES MIRKWOOD"]);
+    let ita_inst = _deed_fetch_and_store(db, '/data/ita_inst_deeds.json', DEED_CATEGORIES["INSTANCES IN THEIR ABSENCE"]);
+    let isen_inst = _deed_fetch_and_store(db, '/data/isen_inst_deeds.json', DEED_CATEGORIES["INSTANCES RISE OF ISENGUARD"]);
+    let ereb_inst = _deed_fetch_and_store(db, '/data/erebor_inst_deeds.json', DEED_CATEGORIES["INSTANCES ROAD TO EREBOR"]);
+    let osg_inst = _deed_fetch_and_store(db, '/data/osg_inst_deeds.json', DEED_CATEGORIES["INSTANCES ASHES OF OSGILIATH"]);
+    let pel_inst = _deed_fetch_and_store(db, '/data/pel_inst_deeds.json', DEED_CATEGORIES["INSTANCES BATTLE OF PELENNOR"]);
+
+    let seh_deeds = _deed_fetch_and_store(db, '/data/seh_deeds.json', DEED_CATEGORIES["SOCIAL, EVENTS, AND HOBBIES"]);
+    let special_deeds = _deed_fetch_and_store(db, '/data/bobb_deeds.json', DEED_CATEGORIES.SPECIAL);
+
     return Promise.all([
       class_deeds, race_deeds, soa_deeds,
       mom_deeds, aotk_deeds, tsos_deeds,
       bbom_deeds, rep_deeds, eriador_deeds,
       rhov_deeds, gondor_deeds, mordor_deeds,
-      skirm_deeds]).then(values=>{
+      skirm_deeds, soa_inst, mom_inst,
+      loth_inst, mirk_inst, ita_inst,
+      isen_inst, ereb_inst, osg_inst,
+      pel_inst, seh_deeds, special_deeds]).then(values=>{
       console.log('everything loaded fine...');
     }).catch(error=>{
       console.log('something went wrong...');
