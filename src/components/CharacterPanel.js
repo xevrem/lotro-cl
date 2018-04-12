@@ -64,7 +64,7 @@ class CharacterPanel extends Component{
   }
 
   handle_add_character(){
-    console.log('handle_add_character clicked...');
+    // console.log('handle_add_character clicked...');
 
     //create new character object
     let character = {
@@ -145,7 +145,7 @@ class CharacterPanel extends Component{
   }
 
   handle_download_characters(){
-    console.log('download_characters called...');
+    // console.log('download_characters called...');
 
     //build the blob out of the passed character data
     let blob = new Blob([JSON.stringify(this.props.characters)]);
@@ -164,7 +164,7 @@ class CharacterPanel extends Component{
   }
 
   handle_delete_character(){
-    console.log('handle_delete_character called...')
+    // console.log('handle_delete_character called...')
     if(this.props.selected_character < 0) return;
 
     let characters = this.props.characters;
@@ -182,12 +182,12 @@ class CharacterPanel extends Component{
   }
 
   handle_upload_character_clicked(){
-    console.log('handle_upload_character_clicked called...')
+    // console.log('handle_upload_character_clicked called...')
     this.setState({show_upload_modal: true});
   }
 
   handle_modal_request_close(){
-    console.log('handle_upload_focus_loss called...')
+    // console.log('handle_upload_focus_loss called...')
     this.setState({show_upload_modal: false});
   }
 

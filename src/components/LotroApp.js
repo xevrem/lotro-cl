@@ -87,7 +87,7 @@ class LotroApp extends Component {
   }
 
   componentDidMount(){
-    console.log('mounted...')
+    // console.log('mounted...')
 
     initial_deed_population(this.db_promise).then(()=>{
       this.retrieve_app_data();
@@ -95,7 +95,7 @@ class LotroApp extends Component {
   }
 
   retrieve_app_data(){
-    console.log('build_deed_data called...');
+    // console.log('retrieve_app_data called...');
 
     //get stored character data
     let character_data = new Promise((resolve,reject)=>{
@@ -145,12 +145,12 @@ class LotroApp extends Component {
   }
 
   handle_initialization(state, data){
-    console.log('handle_initialization called...');
+    // console.log('handle_initialization called...');
     this.setState(data);
   }
 
   handle_character_action(state, data){
-    console.log('handle_character_action called...');
+    // console.log('handle_character_action called...');
     this.setState(data);
 
     //save character data into db
@@ -158,7 +158,7 @@ class LotroApp extends Component {
   }
 
   handle_deed_action(stat, data){
-    console.log('handle_deed_action called...');
+    // console.log('handle_deed_action called...');
     this.setState(data);
   }
 
@@ -180,7 +180,7 @@ class LotroApp extends Component {
   }
 
   handle_deed_category_changed(state, data){
-    console.log('handle_deed_category_changed called...', data);
+    // console.log('handle_deed_category_changed called...', data);
     this.setState(data);
 
     //FIXME: this may be fixed later on, but for now switch is needed for development so
@@ -277,7 +277,7 @@ class LotroApp extends Component {
   }
 
   handle_subcategory_changed(state, data){
-    console.log('handle_subcategory_changed called...');
+    // console.log('handle_subcategory_changed called...');
     this.setState(data);
   }
 
@@ -312,22 +312,22 @@ class LotroApp extends Component {
   }
 
   handle_menu_update(state, data){
-    console.log('handle_menu_update called...');
+    // console.log('handle_menu_update called...');
     this.setState(data);
   }
 
   handle_menu_modal_close(){
-    console.log('handle_menu_modal_close called...')
+    // console.log('handle_menu_modal_close called...')
     get_store().issue_action(ACTION_TYPES.MENU_UPDATE, {show_menu_modal:false});
   }
 
   handle_show_menu_modal(){
-    console.log('handle_show_menu_modal called...')
+    // console.log('handle_show_menu_modal called...')
     get_store().issue_action(ACTION_TYPES.MENU_UPDATE, {show_menu_modal:true});
   }
 
   handle_window_resize(state, data){
-    console.log('handle_show_menu_modal called...')
+    // console.log('handle_show_menu_modal called...')
     this.setState(data);
   }
 
@@ -383,7 +383,7 @@ class LotroApp extends Component {
               <div style={{display: 'inline-flex', alignItems:'center', height:'42px'}}>
                 <h4>Source Code:</h4>
                 <a className='github-link' href="https://github.com/xevrem/lotro-cl">
-                  <i className="fa fa-github github-icon" aria-hidden="true"></i>
+                  <i className="fab fa-github github-icon" aria-hidden="true"></i>
                 </a>
               </div>
 

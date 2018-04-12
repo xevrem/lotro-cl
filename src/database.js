@@ -55,7 +55,7 @@ function _deed_fetch_and_store(db, url, deed_type){
 //perform initial deed fetching and storing into the indexeddb
 export function initial_deed_population(db_promise){
   return db_promise.then(db=>{
-    if(!db) console.log('something broke...');
+    if(!db) console.log('initial_deed_population something broke...');
 
 
     //fetch class deeds and store them
@@ -104,9 +104,9 @@ export function initial_deed_population(db_promise){
       loth_inst, mirk_inst, ita_inst,
       isen_inst, ereb_inst, osg_inst,
       pel_inst, seh_deeds, special_deeds]).then(values=>{
-      console.log('everything loaded fine...');
+      // console.log('everything loaded fine...');
     }).catch(error=>{
-      console.log('something went wrong...');
+      console.log('initial_deed_population something went wrong...');
     })
   })
 }
