@@ -34,27 +34,27 @@ SOFTWARE. -->
         <h4>Characters:</h4>
         <ul class="character-list">
           <li v-for="character in characters" class="character-list-item" />
-            {{character}}
+            <Character :character="character"/>
           </li>
         </ul>
       </div>
       <Modal
-        class="modal-content panel"
-        overlayClass="modal"
-        :isOpen="show_upload_modal"
-        @requestClose="handle_modal_request_close">
+        content_class="modal-content panel"
+        overlay_class="modal"
+        :is_open="show_upload_modal"
+        @request_close="handle_modal_request_close">
         <!-- FIXME: move this form's style into character panel's scss file -->
-          <form onSubmit={this.handle_submit.bind(this)}>
-            <h3 style="{textAlign:'center'; marginTop:'0px'}" >Select File to Load</h3>
-            <div style="{display:'inline-flex'; alignItems:'center'}">
-              <label htmlFor="file-load" class='modal-load-label btn'>
-                Browse...
-              </label>
-              <p style="{fontFamily:'sans-serif'; margin:'5px'}">File: {{filename}}</p>
-            </div>
-            <input id='file-load' type="file" @change="handle_input_change" />
-            <button type="submit" class='btn btn-primary'>Load File</button>
-          </form>
+        <form @submit.prevent="handle_submit">
+          <h3 :style="{textAlign:'center', marginTop:'0px'}" >Select File to Load</h3>
+          <div :style="{display:'inline-flex', alignItems:'center'}">
+            <label class='modal-load-label btn'>
+              Browse...
+              <input type="file" @change="handle_file_input_change" />
+            </label>
+            <p :style="{fontFamily:'sans-serif', margin:'5px'}">File: {{filename}}</p>
+          </div>
+          <button type="submit" class='btn btn-primary'>Load File</button>
+        </form>
       </Modal>
     </div>
   </div>
@@ -63,6 +63,7 @@ SOFTWARE. -->
 <script>
 import { mapState } from 'vuex';
 import Modal from 'components/ui/Modal.vue';
+import Character from './Character.vue';
 
 export default {
   data(){
@@ -72,6 +73,7 @@ export default {
     }
   },
   components:{
+    Character,
     Modal
   },
   computed:{
@@ -81,17 +83,18 @@ export default {
     ])
   },
   methods:{
-    handle_add_character(){},
+    handle_add_character(){console.info('handle_add_character()')},
     handle_save_all(){},
     handle_delete_character(){},
-    handle_upload_character_clicked(){},
+    handle_upload_character_clicked(){this.show_upload_modal = true},
     handle_download_characters(){},
-    handle_modal_request_close(){},
-    handle_input_change(){
+    handle_modal_request_close(){this.show_upload_modal = false},
+    handle_file_input_change(){
       //get the name of the selected file and
       let input = document.querySelector('#file-load');
       this.setState({filename:input.files[0].name});
-    }
+    },
+    handle_submit(){this.show_upload_modal = false;}
   }
 }
 </script>
@@ -104,7 +107,7 @@ export default {
 }
 
 .character-actions{
-  display:block;
+  display: block;
 }
 
 .character-list{
@@ -115,53 +118,6 @@ export default {
   list-style: none;
   margin: 5px;
   display: inline-flex;
-}
-
-.character {
-  margin: 5px;
-  padding: 5px;
-  width: 250px;
-  box-shadow: 0 0px 2px rgba(127, 127, 127, 1), 0 2px 4px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.24);
-}
-
-.character.selected{
-  box-shadow: 0px 0px 6px rgba(40, 167, 69, 1), 0 2px 8px rgba(19,82,34,.24), 0 4px 10px rgba(19,82,34,.48);
-}
-
-.character-form-div{
-  display: inline-flex;
-  vertical-align: middle;
-  text-align: left;
-  margin: 5px;
-  width: 220px;
-}
-
-.character-form{
-  width: 120px;
-  padding: 5px;
-  margin: 0px;
-  // border: 1px solid $fg-color;
-  border: none;
-  border-bottom: 2px solid $shadow;
-  // border-radius: 3px;
-}
-
-select.character-form{
-  width: 132px;
-}
-
-button.character-form{
-  margin: auto;
-}
-
-.character-label{
-  vertical-align: middle;
-  width: 75px;
-  padding: 5px;
-}
-
-.add-character-button{
-    // height: 50px;
 }
 
 </style>

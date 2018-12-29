@@ -9,7 +9,13 @@ import Vue from 'vue';
 //   );
 // }
 export const LButton = Vue.component('l-button',{
-
+  props:['lclass','bclass', 'label', 'text', 'click'],
+  template:`
+    <label :class="[lclass]">
+      {{label}}
+      <button :class="[bclass]" @click="click">{{text}}</button>
+    </label>
+  `
 });
 
 
@@ -48,7 +54,7 @@ export const LSelect = Vue.component('l-select', {
     <label class="label_class">
       {{label}}
       <select class="select_class" name="select_name" value="value" @change="change">
-        <option v-for="obj in object" :key="item.id" value="item.id">{{item.text}}</option>
+        <option v-for="obj in object" :key="obj.id" value="obj.id">{{obj.text}}</option>
       </select>
     </label>
   `

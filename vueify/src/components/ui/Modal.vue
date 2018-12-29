@@ -19,8 +19,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. -->
 
 <template lang="html">
-  <div v-if="show_menu_modal" class="">
-    <h1>hello world</h1>
+  <div v-if="show" :class="overlay_class" @click="handle_click">
+    <div :class="content_class">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -28,10 +30,17 @@ SOFTWARE. -->
 import { mapState } from 'vuex';
 
 export default {
+  props:['content_class', 'overlay_class', 'is_open'],
   computed:{
-    ...mapState('utils',[
-      'show_menu_modal'
-    ])
+    show(){
+      return !this.is_open ? false : this.is_open;
+    }
+  },
+  methods:{
+    handle_click(event){
+      if(event.target.className !== this.overlay_class) return;
+      this.$emit('request_close')
+    }
   }
 }
 </script>

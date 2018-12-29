@@ -34,10 +34,10 @@ SOFTWARE. -->
       </ul>
 
       <Modal
-        class="menu-modal-content panel"
-        overlayClass="menu-modal-overlay"
-        :isOpen="show_menu_modal"
-        @requestClose="handle_menu_modal_close">
+        content_class="modal-content panel"
+        overlay_class="modal"
+        :is_open="show_menu_modal"
+        @request_close="handle_menu_modal_close">
         <div class="about-panel">
           <h3>Miscelaneous Items</h3>
 
@@ -59,7 +59,6 @@ SOFTWARE. -->
               <i class="fab fa-github github-icon" aria-hidden="true"></i>
             </a>
           </div>
-
         </div>
       </Modal>
     </div>
@@ -84,7 +83,8 @@ export default {
   props:['message'],
   data(){
     return {
-      title:'LotRO Character Log'
+      title:'LotRO Character Log',
+      show_menu_modal: false
     }
   },
   components:{
@@ -98,31 +98,26 @@ export default {
     Promise.all([
       this.fetch_deeds(),
       this.fetch_characters()
-    ]).then(values=>{
-      console.log(values);
-    });
+    ]);
   },
   computed:{
     ...mapState('utils',[
       'width',
-      'show_menu_modal'
     ]),
     SCREEN_SIZES(){return SCREEN_SIZES}
   },
   methods:{
-    ...mapActions('utils',[
-      'toggle_menu'
-    ]),
     ...mapActions('deeds',[
       'fetch_deeds',
     ]),
     ...mapActions('characters',[
       'fetch_characters'
     ]),
+    toggle_menu(){this.show_menu_modal = !this.show_menu_modal},
     handle_reset_database(){},
     handle_reset_serviceworker(){},
     handle_show_menu_modal(){},
-    handle_menu_modal_close(){}
+    handle_menu_modal_close(){this.show_menu_modal = false}
   }
 }
 </script>
