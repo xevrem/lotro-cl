@@ -33,10 +33,7 @@ SOFTWARE. -->
       <div class="character-area">
         <h4>Characters:</h4>
         <ul class="character-list">
-          <li
-            v-for="character in characters"
-            class="character-list-item"
-          />
+          <li v-for="character in characters" class="character-list-item" />
             {{character}}
           </li>
         </ul>
@@ -55,9 +52,7 @@ SOFTWARE. -->
               </label>
               <p style="{fontFamily:'sans-serif'; margin:'5px'}">File: {{filename}}</p>
             </div>
-            <input id='file-load' type="file"
-              @change="handle_input_change"
-            />
+            <input id='file-load' type="file" @change="handle_input_change" />
             <button type="submit" class='btn btn-primary'>Load File</button>
           </form>
       </Modal>

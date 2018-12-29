@@ -1,9 +1,18 @@
-import {ACTION_TYPES} from 'utils/constants';
+import {get_url} from 'utils/urls';
+
+export const CHARACTERS_LOADED = 'characters/LOADED';
+export const CHARACTER_ADDED = 'character/ADD';
+export const CHARACTER_DELETED = 'character/DELETE';
+export const CHARACTER_SELECTED = 'character/SELECT';
+export const CHARACTER_UPDATED = 'character/UPDATE';
+
 
 const initial_state = {
   characters:[],
   character_selected:-1
 };
+
+
 
 export default {
   namespaced:true,
@@ -11,13 +20,27 @@ export default {
     ...initial_state
   },
   mutations:{
-    [ACTION_TYPES.CHARACTER_ADDED](state, payload){},
-    [ACTION_TYPES.CHARACTER_DELETED](state, payload){},
-    [ACTION_TYPES.CHARACTER_SELECTED](state, payload){},
-    [ACTION_TYPES.CHARACTER_UPDATED](state, payload){}
+    [CHARACTERS_LOADED](state, payload){
+      state.characters = payload;
+    },
+    [CHARACTER_ADDED](state, payload){},
+    [CHARACTER_DELETED](state, payload){},
+    [CHARACTER_SELECTED](state, payload){},
+    [CHARACTER_UPDATED](state, payload){}
   },
   actions:{
-
+    fetch_characters({dispatch, commit}){
+      return dispatch('api/get',{
+        url:  get_url('characters'),
+        options:{
+          mode:'cors',
+          credentials:'include'
+        }
+      },
+      {root:true}).then( data =>{
+        commit(CHARACTERS_LOADED, data);
+      });
+    }
   },
   getters:{
 

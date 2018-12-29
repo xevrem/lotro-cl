@@ -62,7 +62,10 @@ export default {
     ...mapState('characters',[
       'characters',
       'character_selected'
-    ])
+    ]),
+    deed_list(){
+      return this.deeds;
+    }
   }
 }
 </script>

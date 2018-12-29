@@ -113,8 +113,10 @@ export default {
     ...mapActions('utils',[
       'toggle_menu'
     ]),
-    ...mapActions('api',[
+    ...mapActions('deeds',[
       'fetch_deeds',
+    ]),
+    ...mapActions('characters',[
       'fetch_characters'
     ]),
     handle_reset_database(){},
