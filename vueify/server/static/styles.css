@@ -1,0 +1,12 @@
+html, body {
+  font-family: Garamond, Georgia, serif;
+  margin: 0;
+  color: #373a3c;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 940px;
+  background-color: white;
+  padding: 20px 20px;
+}

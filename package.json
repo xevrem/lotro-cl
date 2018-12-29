@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "gh-pages": "^1.1.0",
+    "jsdoc": "^3.5.5",
     "node-sass-chokidar": "^0.0.3"
   }
 }

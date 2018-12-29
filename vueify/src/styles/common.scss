@@ -1,0 +1,178 @@
+// all common css tags
+
+//colors
+$fg-color: rgba(58, 58, 58, 0.788);
+$bg-color: rgb(255, 249, 238);
+$shadow: rgba(156, 156, 156, 0.788);
+$border: rgb(143, 118, 65);
+$success: rgb(64, 173, 42);
+$primary: rgb(60, 109, 255);
+$danger: rgb(192, 61, 61);
+$deed-fg: rgb(143, 118, 65);
+$deed-bg: rgb(247, 226, 181);
+$highlight: #28a745;
+$light: rgba(200, 200, 200, 1);
+
+//sizes
+//// Small devices (landscape phones, 576px and up)
+$small: 576px;
+// Medium devices (tablets, 768px and up)
+$medium: 768px;
+// Large devices (desktops, 1024px and up)
+$large: 1024px;
+// Extra large devices (large desktops, 1200px and up)
+$xlarge: 1200px;
+
+.panel{
+  margin: 10px 0px;
+  background-color: white;
+  box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+  padding: 5px;
+}
+
+.panel-header{
+  font-size: 1.75em;
+  margin: 5px;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+.btn{
+  width: 130px;
+  // height: 44px;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid $light;
+  border-radius: 2px;
+  font-family: lotro;
+  font-size: .9em;
+  font-weight: bold;
+  background-color: $light;
+  cursor: pointer;
+}
+
+.btn:hover{
+  box-shadow: 0 0px 6px rgba(127, 127, 127,1), 0 2px 8px rgba(0, 0, 0,.24), 0 4px 10px rgba(0, 0, 0,.48);
+}
+
+.btn-success{
+  background-color: $success;
+  color:white;
+  border: 1px solid $success;
+}
+
+.btn-primary{
+  background-color: $primary;
+  color:white;
+  border: 1px solid $primary;
+}
+
+.btn-danger{
+  background-color: $danger;
+  color:white;
+  border: 1px solid $danger;
+}
+
+button:focus {outline:0;}
+
+input[type="file"] {
+    display: none;
+}
+
+.modal-load-label{
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  width: 118px;
+  text-align: center;
+  border: 1px solid $light;
+}
+
+.modal{
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  position: fixed;
+  background-color: white;
+  // margin: 15% auto;
+  padding: 20px;
+  // border: 1px solid #888;
+  width: 100%;
+  left: 0;
+  top: 15%;
+  outline: none;
+}
+
+@media screen and (min-width: $small) {
+  .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    // border: 1px solid #888;
+    width: 400px;
+    left: calc((98% - 400px)/2);
+    outline: none;
+  }
+}
+
+.pull-right{
+  float: right;
+}
+
+@supports (display: grid) {
+
+  @media screen and (min-width: $small) {
+    //remove margin if grid functions on screen sizes small or larger
+    .panel{
+      margin: 0px;
+    }
+
+    .site {
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "character character"
+        "summary summary"
+        "deed deed"
+    }
+  }
+
+  @media screen and (min-width: $medium) {
+
+  	.site {
+			display: grid;
+      grid-gap: 15px;
+			grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "character summary"
+        "deed deed"
+		}
+	}
+
+  @media screen and (min-width: $large) {
+
+  	.site {
+			display: grid;
+      grid-gap: 20px;
+			grid-template-columns: 1.4fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "character summary"
+        "deed deed"
+		}
+	}
+}
