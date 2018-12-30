@@ -6,10 +6,17 @@
         "root": [
           "./src"
         ]
-      }
-    ]
+      },
+    ],
   ],
   "presets": [
-    "@babel/preset-env"
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": ["last 2 Chrome versions"]
+        }
+      }
+    ]
   ]
 }

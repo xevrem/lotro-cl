@@ -36,8 +36,8 @@ export default {
     [DEED_SUBCATEGORY_CHANGED](state, payload){},
   },
   actions:{
-    fetch_deeds({dispatch, commit}){
-      return dispatch('api/get', {
+    async fetch_deeds({dispatch, commit}){
+      return await dispatch('api/get', {
         url: get_url('deeds'),
         options: {
           mode:'cors',

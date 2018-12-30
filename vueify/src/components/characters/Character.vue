@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex';
 import { RACES, CLASSES } from 'utils/constants';
 
 export default {
@@ -36,7 +37,11 @@ export default {
     CLASSES(){return CLASSES}
   },
   methods:{
-    handle_selected(){console.info('handle_selected()')},
+    ...mapActions('characters',['select_character']),
+    handle_selected(){
+      console.info('handle_selected()')
+      this.select_character(this.character.name);
+    },
     handle_change(){console.info('handle_change()')}
   }
 }

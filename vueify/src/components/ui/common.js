@@ -8,15 +8,12 @@ import Vue from 'vue';
 //     </button>
 //   );
 // }
-export const LButton = Vue.component('l-button',{
-  props:['lclass','bclass', 'label', 'text', 'click'],
-  template:`
-    <label :class="[lclass]">
-      {{label}}
-      <button :class="[bclass]" @click="click">{{text}}</button>
-    </label>
-  `
-});
+export const LButton = {
+  functional: true,
+  render(createElement, { data, children }) {
+    return createElement( 'button', data, children );
+  }
+};
 
 
 // function TextInput(props){

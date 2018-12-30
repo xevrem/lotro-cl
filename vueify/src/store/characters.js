@@ -25,12 +25,14 @@ export default {
     },
     [CHARACTER_ADDED](state, payload){},
     [CHARACTER_DELETED](state, payload){},
-    [CHARACTER_SELECTED](state, payload){},
+    [CHARACTER_SELECTED](state, name){
+      state.character_selected = name;
+    },
     [CHARACTER_UPDATED](state, payload){}
   },
   actions:{
-    fetch_characters({dispatch, commit}){
-      return dispatch('api/get',{
+    async fetch_characters({dispatch, commit}){
+      return await dispatch('api/get',{
         url:  get_url('characters'),
         options:{
           mode:'cors',
@@ -40,6 +42,9 @@ export default {
       {root:true}).then( data =>{
         commit(CHARACTERS_LOADED, data);
       });
+    },
+    select_character({commit}, name){
+      commit(CHARACTER_SELECTED, name);
     }
   },
   getters:{

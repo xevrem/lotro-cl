@@ -93,12 +93,13 @@ export default {
     Modal,
     SummariesPanel
   },
-  mounted(){
+  async mounted(){
     console.log('mounted');
-    Promise.all([
+    const values = await Promise.all([
       this.fetch_deeds(),
       this.fetch_characters()
     ]);
+    console.log('init done',values);
   },
   computed:{
     ...mapState('utils',[

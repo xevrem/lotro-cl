@@ -39,7 +39,7 @@ SOFTWARE. -->
       <div class="deed-panel-right">
         <h3>Deeds:</h3>
         <div class="deed-list deed-details-grid">
-          {{deed_list}}
+          <Deed v-for="deed in deeds" :deed="deed"/>
         </div>
       </div>
     </div>
@@ -48,6 +48,7 @@ SOFTWARE. -->
 
 <script>
 import {mapState} from 'vuex';
+import Deed from './Deed.vue';
 
 export default {
   computed:{
@@ -63,9 +64,6 @@ export default {
       'characters',
       'character_selected'
     ]),
-    deed_list(){
-      return this.deeds;
-    }
   }
 }
 </script>
