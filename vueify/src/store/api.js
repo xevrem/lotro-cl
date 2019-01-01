@@ -22,11 +22,9 @@ export default {
   },
   mutations:{
     [API_GET_REQUEST](state, payload){
-      console.info('API_GET_REQUEST', state, payload);
       state.response = payload;
     },
     [API_GET_SUCCESS](state, payload){
-      console.info('API_GET_SUCCESS', state, payload);
       state.response = payload;
     },
     [API_GET_FAILURE](state, payload){

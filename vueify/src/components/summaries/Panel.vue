@@ -20,18 +20,18 @@ SOFTWARE. -->
 
 <template lang="html">
   <div class='container panel summary-panel'>
-    <h2 class='panel-header'>Summary for {character.name}</h2>
+    <h2 class='panel-header'>Summary for {{character_selected.name}}</h2>
     <div class='summary-details'>
-      <p style="{display:'inline-flex'}">Deeds: </p>
-      <p class='summary-stat'>Total: {total_deeds}</p>
-      <p class='summary-stat'>Total Complete: {total_deeds_complete}</p>
-      <p class='summary-stat'>Percent Complete: {percent_deeds}%</p>
+      <p :style="{display:'inline-flex'}">Deeds: </p>
+      <p class='summary-stat'>Total: {{total_deeds}}</p>
+      <p class='summary-stat'>Total Complete: {{total_deeds_complete}}</p>
+      <p class='summary-stat'>Percent Complete: {{percent_deeds}}%</p>
     </div>
     <div class='summary-details'>
-      <p style="{display:'inline-flex'}">Quests: </p>
-      <p class='summary-stat'>Total: {total_quests}</p>
-      <p class='summary-stat'>Total Complete: {total_quests_complete}</p>
-      <p class='summary-stat'>Percent Complete: {percent_quests}%</p>
+      <p :style="{display:'inline-flex'}">Quests: </p>
+      <p class='summary-stat'>Total: {{total_quests}}</p>
+      <p class='summary-stat'>Total Complete: {{total_quests_complete}}</p>
+      <p class='summary-stat'>Percent Complete: {{percent_quests}}%</p>
     </div>
   </div>
 </template>
@@ -42,10 +42,27 @@ import {mapState} from 'vuex';
 export default {
   computed:{
     ...mapState('characters', [
-      'characters',
-      'selected_character'
-    ])
-  }
+      'character_selected'
+    ]),
+    total_deeds(){
+      return 5
+    },
+    total_quests(){
+      return 6;
+    },
+    total_deeds_complete(){
+      return 50;
+    },
+    total_quests_complete(){
+      return 60;
+    },
+    percent_deeds(){
+      return 0.5;
+    },
+    percent_quests(){
+      return 0.6;
+    }
+  },
 }
 </script>
 

@@ -9,10 +9,8 @@ export const CHARACTER_UPDATED = 'character/UPDATE';
 
 const initial_state = {
   characters:[],
-  character_selected:-1
+  character_selected:{},
 };
-
-
 
 export default {
   namespaced:true,
@@ -25,8 +23,8 @@ export default {
     },
     [CHARACTER_ADDED](state, payload){},
     [CHARACTER_DELETED](state, payload){},
-    [CHARACTER_SELECTED](state, name){
-      state.character_selected = name;
+    [CHARACTER_SELECTED](state, character){
+      state.character_selected = character;
     },
     [CHARACTER_UPDATED](state, payload){}
   },

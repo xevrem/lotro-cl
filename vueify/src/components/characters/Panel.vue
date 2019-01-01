@@ -34,7 +34,7 @@ SOFTWARE. -->
         <h4>Characters:</h4>
         <ul class="character-list">
           <li v-for="character in characters" class="character-list-item" />
-            <Character :character="character" :selected="character.name === character_selected"/>
+            <Character :character="character" :selected="character === character_selected"></Character>
           </li>
         </ul>
       </div>

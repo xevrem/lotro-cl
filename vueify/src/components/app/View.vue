@@ -21,7 +21,6 @@ SOFTWARE. -->
 <template lang="html">
   <div class="lotro-app">
     <div class="title-panel">
-
       <ul class="title-panel-list">
         <li class="left">
           <h1 class="title">{{title}}</h1>
@@ -32,42 +31,42 @@ SOFTWARE. -->
           </h1>
         </li>
       </ul>
-
-      <Modal
-        content_class="modal-content panel"
-        overlay_class="modal"
-        :is_open="show_menu_modal"
-        @request_close="handle_menu_modal_close">
-        <div class="about-panel">
-          <h3>Miscelaneous Items</h3>
-
-          <div v-if="width >= SCREEN_SIZES.SMALL"
-            :style="{display: 'inline-flex', alignItems:'center', height:'42px'}">
-            <h4>Debug Commands: </h4>
-            <button class="btn btn-danger" @click="handle_reset_database">Reset DB</button>
-            <button class="btn btn-danger" @click="handle_reset_serviceworker">Reset SW</button>
-          </div>
-          <div v-else>
-            <h4 :style="{margin:'5px'}">Debug Commands: </h4>
-            <button class="btn btn-danger" @click="handle_reset_database">Reset DB</button>
-            <button class="btn btn-danger" @click="handle_reset_serviceworker">Reset SW</button>
-          </div>
-
-          <div :style="{display: 'inline-flex', alignItems:'center', height:'42px'}">
-            <h4>Source Code:</h4>
-            <a class="github-link" href="https://github.com/xevrem/lotro-cl">
-              <i class="fab fa-github github-icon" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-      </Modal>
     </div>
 
     <div class="site">
-      <CharactersPanel />
-      <SummariesPanel />
-      <DeedsPanel />
+      <CharactersPanel></CharactersPanel>
+      <SummariesPanel></SummariesPanel>
+      <DeedsPanel></DeedsPanel>
     </div>
+
+    <Modal
+      content_class="modal-content panel"
+      overlay_class="modal"
+      :is_open="show_menu_modal"
+      @request_close="handle_menu_modal_close">
+      <div class="about-panel">
+        <h3>Miscelaneous Items</h3>
+
+        <div v-if="width >= SCREEN_SIZES.SMALL"
+          :style="{display: 'inline-flex', alignItems:'center', height:'42px'}">
+          <h4>Debug Commands: </h4>
+          <button class="btn btn-danger" @click="handle_reset_database">Reset DB</button>
+          <button class="btn btn-danger" @click="handle_reset_serviceworker">Reset SW</button>
+        </div>
+        <div v-else>
+          <h4 :style="{margin:'5px'}">Debug Commands: </h4>
+          <button class="btn btn-danger" @click="handle_reset_database">Reset DB</button>
+          <button class="btn btn-danger" @click="handle_reset_serviceworker">Reset SW</button>
+        </div>
+
+        <div :style="{display: 'inline-flex', alignItems:'center', height:'42px'}">
+          <h4>Source Code:</h4>
+          <a class="github-link" href="https://github.com/xevrem/lotro-cl">
+            <i class="fab fa-github github-icon" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </Modal>
   </div>
 </template>
 
@@ -94,12 +93,11 @@ export default {
     SummariesPanel
   },
   async mounted(){
-    console.log('mounted');
-    const values = await Promise.all([
+    Promise.all([
       this.fetch_deeds(),
       this.fetch_characters()
     ]);
-    console.log('init done',values);
+    console.log('init done');
   },
   computed:{
     ...mapState('utils',[
@@ -132,20 +130,16 @@ export default {
 }
 
 .title-panel{
-  display: flex;
-  flex-flow: column;
   width: 100%;
-  // margin: 10px;
   background-color: white;
   box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
-  // padding: 5px;
   padding: 0px;
   margin: 0px 0px 15px 0px;
-  top: 0px;
-  left: 0px;
 }
 
 ul.title-panel-list{
+  display: flex;
+  justify-content: space-between;
   list-style-type: none;
   padding: 0px;
   margin: 0px;

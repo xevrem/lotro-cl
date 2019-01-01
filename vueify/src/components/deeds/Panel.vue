@@ -26,20 +26,26 @@ SOFTWARE. -->
         <div class="nav-left">
           <h3>Category:</h3>
           <div class="deed-nav">
-            {{deed_categories}}
+            <button v-for="category in deed_categories"
+              :class="deed_category_selected === category ? 'clickable deed-nav-link active': 'clickable deed-nav-link'"
+              @click="select_category(category)">
+              {{category}}
+            </button>
           </div>
         </div>
         <div class="nav-right">
           <h3>Subcategory:</h3>
           <div class="deed-nav">
-            {{subcategories}}
+            <button v-for="subcategory in deed_subcategories">
+              {{subcategory}}
+            </button>
           </div>
         </div>
       </div>
       <div class="deed-panel-right">
         <h3>Deeds:</h3>
         <div class="deed-list deed-details-grid">
-          <Deed v-for="deed in deeds" :deed="deed"/>
+          <Deed v-for="deed in deeds" :deed="deed"></Deed>
         </div>
       </div>
     </div>
@@ -47,10 +53,13 @@ SOFTWARE. -->
 </template>
 
 <script>
-import {mapState} from 'vuex';
+import {mapState, mapActions} from 'vuex';
 import Deed from './Deed.vue';
 
 export default {
+  components:{
+    Deed
+  },
   computed:{
     ...mapState('deeds',[
       'deed_categories',
@@ -61,9 +70,11 @@ export default {
       'deed_subcategory_selected'
     ]),
     ...mapState('characters',[
-      'characters',
-      'character_selected'
+      'current_character'
     ]),
+  },
+  methods:{
+    ...mapActions('deeds',['select_category']),
   }
 }
 </script>

@@ -21,7 +21,7 @@
         Level:
         <input type="text" class="character-form-item" name="character-level" :value="character.level" @change="handle_change">
       </label>
-      <button class="btn btn-primary character-form-item" @click.prevent="handle_selected">Select</button>
+      <button class="btn btn-primary character-form-item" @click.prevent="select_character(character)">Select</button>
     </form>
   </div>
 </template>
@@ -38,10 +38,6 @@ export default {
   },
   methods:{
     ...mapActions('characters',['select_character']),
-    handle_selected(){
-      console.info('handle_selected()')
-      this.select_character(this.character.name);
-    },
     handle_change(){console.info('handle_change()')}
   }
 }
@@ -93,6 +89,4 @@ select.character-form-item{
 button.character-form-item{
   margin: auto;
 }
-
-
 </style>
