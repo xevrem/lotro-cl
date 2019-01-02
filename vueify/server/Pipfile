@@ -17,6 +17,7 @@ pytest = "==4.0.1"
 aiohttp_session = {extras = ["secure"],version = "==2.7.0"}
 pylint = "*"
 aiohttp-cors = "*"
+aiofiles = "*"
 
 [requires]
 python_version = "3.7"

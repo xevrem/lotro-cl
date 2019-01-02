@@ -8,10 +8,5 @@ new Vue({
   components:{
     AppView
   },
-  data:{
-    message:'hello world'
-  },
-  template:`
-    <AppView :message="message"/>
-  `
+  render: h => h(AppView)
 });

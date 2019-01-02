@@ -79,7 +79,6 @@ import Modal from 'components/ui/Modal.vue';
 import {SCREEN_SIZES} from 'utils/constants';
 
 export default {
-  props:['message'],
   data(){
     return {
       title:'LotRO Character Log',

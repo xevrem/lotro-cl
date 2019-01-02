@@ -11,6 +11,7 @@ import aiohttp_cors
 from .settings import Settings
 from .views import index
 from .api import deeds_get, characters_get
+from .deeds import setup_deeds
 
 
 THIS_DIR = Path(__file__).parent
@@ -27,6 +28,7 @@ def setup_cors_routes(cors, app):
 
   resource = cors.add(app.router.add_resource('/characters'))
   cors.add(resource.add_route('GET', characters_get))
+
 
 async def create_app():
   app = web.Application()
@@ -49,4 +51,5 @@ async def create_app():
 
   setup_routes(app)
   setup_cors_routes(cors, app)
+  await setup_deeds()
   return app

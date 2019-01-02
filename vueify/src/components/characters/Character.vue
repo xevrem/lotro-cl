@@ -7,14 +7,24 @@
       </label>
       <label class="character-form-label">
         Race:
-        <select class="character-form-item" name="character-race" :value="character.race" @change="handle_change">
-          <option v-for="race in RACES" :key="race.id" :value="race.text">{{race.text}}</option>
+        <select class="character-form-item" name="character-race" @change="handle_change">
+          <option v-for="race in RACES" 
+            :key="race.id" 
+            :value="race.text" 
+            :selected="character.race === race.id">
+            {{race.text}}
+          </option>
         </select>
       </label>
       <label class="character-form-label">
         Class:
-        <select class="character-form-item" name="character-class" :value="character.class" @change="handle_change">
-          <option v-for="cclass in CLASSES" :key="cclass.id" :value="cclass.text">{{cclass.text}}</option>
+        <select class="character-form-item" name="character-class" @change="handle_change">
+          <option v-for="cclass in CLASSES" 
+            :key="cclass.id" 
+            :value="cclass.text"
+            :selected="character.class === cclass.id">
+            {{cclass.text}}
+          </option>
         </select>
       </label>
       <label class="character-form-label">
