@@ -168,7 +168,6 @@ class DeedPanel extends Component{
       )
     });
 
-
     //build list of deeds to display
     let deed_list = this.props.deeds.map((deed,i)=>{
       //filter non-selected subcategories

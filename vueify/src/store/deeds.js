@@ -13,11 +13,11 @@ export const DEED_SUBCATEGORY_SELECTED = 'deed/subcategory/SELECTED';
 
 export const initial_state = {
   deed_selected:-1,
-  deed_category_selected: '',
-  deed_subcategory_selected: '',
-  deed_subcategories: [],
+  category_selected: '',
+  subcategory_selected: '',
   deeds: [],
-  deed_categories: Object.keys(DEED_CATEGORIES),
+  categories: Object.keys(DEED_CATEGORIES),
+  subcategories: []
 };
 
 export default {
@@ -30,13 +30,21 @@ export default {
       state.deeds = deeds;
     },
     [DEED_UPDATED](state, payload){},
-    [DEED_SELECTED](state, payload){},
+    [DEED_SELECTED](state, deed){
+      state.deed_selected = deed;
+    },
     [DEED_COMPLETED](state, payload){},
     [DEED_CATEGORY_SELECTED](state, category){
-      state.deed_category_selected = category;
+      state.category_selected = category;
+      //determine all the subcategories and update their list
+      let subcategories = new Set();
+      state.deeds[category].forEach(deed => {
+        subcategories.add(deed.Subcategory);
+      });
+      state.subcategories = [...subcategories];
     },
     [DEED_SUBCATEGORY_SELECTED](state, subcategory){
-      state.deed_subcategory_selected = subcategory;
+      state.subcategory_selected = subcategory;
     },
   },
   actions:{
@@ -56,9 +64,17 @@ export default {
     },
     select_subcategory({commit}, subcategory){
       commit(DEED_SUBCATEGORY_SELECTED, subcategory);
+    },
+    select_deed({commit}, deed){
+      commit(DEED_SELECTED, deed.Deed);
     }
   },
   getters:{
-
+    deed_list: state => {
+      if(!state.deeds[state.category_selected]) return [];
+      return state.deeds[state.category_selected].filter(deed => {
+        return state.subcategory_selected === deed.Subcategory;
+      });
+    }
   }
 };
