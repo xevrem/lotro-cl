@@ -21,7 +21,7 @@ SOFTWARE.
 
  */
 import React, { Component } from 'react';
-import './SummaryPanel.css';
+import './SummaryPanel.scss';
 
 import {Panel} from './Common';
 

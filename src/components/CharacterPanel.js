@@ -22,7 +22,7 @@ SOFTWARE.
  */
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
-import './CharacterPanel.css';
+import './CharacterPanel.scss';
 
 import {List, Panel, Button, SelectObject, TextInput} from './Common';
 import {RACES, CLASSES, ACTION_TYPES, DEED_CATEGORIES} from './../constants'

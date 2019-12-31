@@ -21,7 +21,7 @@ SOFTWARE.
 
  */
 import React, { Component } from 'react';
-import './DeedPanel.css';
+import './DeedPanel.scss';
 
 import {DoublePanel, List, Panel, Button} from './Common';
 import {ACTION_TYPES, DEED_CATEGORIES} from './../constants';

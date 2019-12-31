@@ -22,7 +22,7 @@ SOFTWARE.
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 
 import LotroApp from './components/LotroApp';
 import {BASE_URL} from './constants';

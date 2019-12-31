@@ -22,7 +22,7 @@ SOFTWARE.
  */
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
-import './LotroApp.css';
+import './LotroApp.scss';
 
 import CharacterPanel from './CharacterPanel';
 import DeedPanel from './DeedPanel';

@@ -20,13 +20,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-import idb from 'idb';
+import * as idb from 'idb';
 import {DEED_CATEGORIES, BASE_URL} from './constants';
 
 const DATABASE_VERSION = 2;
 
 export function open_database(){
-  return idb.open('lotro_store', DATABASE_VERSION, upgrade_db=>{
+  return idb.openDB('lotro_store', DATABASE_VERSION, upgrade_db=>{
     switch(upgrade_db.oldVersion){
       case 0:
         upgrade_db.createObjectStore('characters');
