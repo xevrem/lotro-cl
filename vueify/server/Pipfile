@@ -6,18 +6,8 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-aiohttp = "==3.4.4"
-cchardet = "*"
-aiodns = "*"
-aiohttp-devtools = "*"
-flake8 = "*"
-pytest-aiohttp = "==0.3.0"
-pytest-cov = "==2.6.0"
-pytest = "==4.0.1"
-aiohttp_session = {extras = ["secure"],version = "==2.7.0"}
-pylint = "*"
-aiohttp-cors = "*"
-aiofiles = "*"
+django = "*"
+django-cors-headers = "*"
 
 [requires]
 python_version = "3.7"

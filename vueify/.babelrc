@@ -6,17 +6,20 @@
         "root": [
           "./src"
         ]
-      },
+      }
     ],
+    "@babel/plugin-proposal-class-properties"
   ],
   "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "browsers": ["last 2 Chrome versions"]
-        }
+    "@babel/preset-env",
+    ["env", {
+      "targets": {
+        "browsers": [
+          "last 2 Chrome versions",
+          "last 2 Firefox versions",
+          "last 2 Safari versions"
+        ]
       }
-    ]
+    }]
   ]
 }

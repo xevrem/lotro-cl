@@ -6,32 +6,25 @@
   "author": "erika jonell <erika.jonell@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "vue": "^2.5.21",
-    "vuex": "^3.0.1"
+    "vue": "^2.6.11",
+    "vue-hot-reload-api": "^2.3.4",
+    "vuex": "^3.1.2"
   },
   "scripts": {
-    "dev": "parcel ./src/index.html --no-autoinstall -p 3000"
-  },
-  "alias": {
-    "vue": "./node_modules/vue/dist/vue.common.js"
+    "dev": "parcel ./src/index.html -p 3000"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
-    "@babel/preset-env": "^7.2.3",
-    "@vue/component-compiler-utils": "^2.3.1",
-    "babel-eslint": "^10.0.1",
-    "babel-plugin-module-resolver": "^3.1.1",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
+    "@vue/component-compiler-utils": "^3.1.0",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-module-resolver": "^4.0.0",
     "babel-preset-env": "^1.7.0",
-    "components": "^0.1.0",
-    "eslint": "^5.10.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-sass": "^4.0.2",
-    "parcel": "^1.11.0",
-    "vue-eslint-parser": "^4.0.3",
-    "vue-hot-reload-api": "^2.3.1",
-    "vue-template-compiler": "^2.5.21"
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^6.1.2",
+    "parcel-bundler": "^1.12.4",
+    "vue-template-compiler": "^2.6.11"
   },
   "moduleRoots": [
     "src"

@@ -22,13 +22,14 @@ export default {
   },
   mutations:{
     [API_GET_REQUEST](state, payload){
-      state.response = payload;
+      state.params = payload;
     },
     [API_GET_SUCCESS](state, payload){
       state.response = payload;
     },
-    [API_GET_FAILURE](state, payload){
-      console.info('API_GET_FAILURE', state, payload);
+    [API_GET_FAILURE](state, params, payload){
+      console.info('API_GET_FAILURE', state, params, payload);
+      state.params = params;
       state.response = payload;
     }
   },
@@ -44,7 +45,7 @@ export default {
         commit(API_GET_SUCCESS, json);
         return json;
       }).catch(error=> {
-        commit(API_GET_FAILURE, error.toString());
+        commit(API_GET_FAILURE, params, error.toString());
       });
     },
   },
