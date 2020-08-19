@@ -153,9 +153,9 @@ export function get_character(db_promise, index) {
  * @param  {[Array]} characters [characters to save]
  * @return {[Promise]}            [transaction promise]
  */
-export function save_characters(db, characters) {
+export async function save_characters(db, characters) {
   console.log('save_characters called...', db_promise, characters);
-  let tx = db.transaction('characters', 'readwrite');
+  let tx = await db.transaction('characters', 'readwrite');
   let character_store = tx.objectStore('characters');
 
   //update characters
