@@ -4,10 +4,10 @@
   "private": true,
   "homepage": "https://xevrem.github.io/lotro-cl",
   "dependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-modal": "^3.11.1",
-    "react-scripts": "^3.3.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-modal": "^3.11.2",
+    "react-scripts": "^3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -18,8 +18,8 @@
     "deploy": "gh-pages -d build"
   },
   "devDependencies": {
-    "gh-pages": "^2.1.1",
-    "node-sass": "^4.13.0"
+    "gh-pages": "^3.1.0",
+    "node-sass": "^4.14.1"
   },
   "browserslist": {
     "production": [

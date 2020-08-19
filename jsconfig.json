@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es2019",
-    "baseUrl": "src"
+    "target": "es2017",
+    "baseUrl": "./src"
   },
   "include": [
     "./src/**/*"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "./src/**/*.test.ts"
   ]
 }

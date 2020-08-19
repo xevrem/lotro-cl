@@ -28,16 +28,16 @@ import CharacterPanel from './CharacterPanel';
 import DeedPanel from './DeedPanel';
 import SummaryPanel from './SummaryPanel';
 
-import {create_store, get_store} from './../Store';
-import {ACTION_TYPES, DEED_CATEGORIES, BASE_URL, SCREEN_SIZES} from './../constants';
-import {open_database, initial_deed_population, get_deeds_of_type, save_characters, reset_database} from './../database';
+import { create_store, get_store } from './../Store';
+import { ACTION_TYPES, DEED_CATEGORIES, BASE_URL, SCREEN_SIZES } from './../constants';
+import { openDatabase, initial_deed_population, get_deeds_of_type, save_characters, reset_database } from './../database';
 import { Button } from './Common';
 
 ReactModal.setAppElement('#root');
 
 let initial_state = {
-  selected_character:-1,
-  selected_deed:-1,
+  selected_character: -1,
+  selected_deed: -1,
   deed_category_selected: 0,
   deed_subcategory_selected: '',
   deed_subcategories: null,
@@ -61,10 +61,9 @@ window.addEventListener('resize', update_window_dimensions);
 
 
 class LotroApp extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = get_store().get_state();
-    this.db_promise = open_database();
 
     this.handle_reset_database = this.handle_reset_database.bind(this);
     this.handle_menu_modal_close = this.handle_menu_modal_close.bind(this);
@@ -86,26 +85,27 @@ class LotroApp extends Component {
     get_store().subscribe(ACTION_TYPES.WINDOW_RESIZE, this.handle_window_resize.bind(this));
   }
 
-  componentDidMount(){
+  async componentDidMount() {
     // console.log('mounted...')
+    this.database = await openDatabase();
 
-    initial_deed_population(this.db_promise).then(()=>{
+    initial_deed_population(this.database).then(() => {
       this.retrieve_app_data();
     })
   }
 
-  retrieve_app_data(){
+  retrieve_app_data() {
     // console.log('retrieve_app_data called...');
 
     //get stored character data
-    let character_data = new Promise((resolve,reject)=>{
+    let character_data = new Promise((resolve, reject) => {
       //attempt to pull data from the db, otherwise fetch
-      this.db_promise.then(db=>{
+      this.database.then(db => {
         let tx = db.transaction('characters');
-        tx.objectStore('characters').getAll().then(data=>{
-          if(data.length>0){
+        tx.objectStore('characters').getAll().then(data => {
+          if (data.length > 0) {
             resolve(data);
-          }else{
+          } else {
             resolve([]);
           }
         })
@@ -115,22 +115,22 @@ class LotroApp extends Component {
     });
 
     //do initial class deed data load
-    let class_data = new Promise((resolve,reject)=>{
-      this.db_promise.then(db=>{
-        db.transaction('deeds').objectStore('deeds').get(DEED_CATEGORIES.CLASS).then(data=>{
+    let class_data = new Promise((resolve, reject) => {
+      this.database.then(db => {
+        db.transaction('deeds').objectStore('deeds').get(DEED_CATEGORIES.CLASS).then(data => {
           resolve(data);
         });
-      }).catch(error=>{
+      }).catch(error => {
         reject(error);
       });
     });
 
     //run promises async and set the data
-    Promise.all([character_data, class_data]).then(data=>{
+    Promise.all([character_data, class_data]).then(data => {
 
       let categories = new Set();
 
-      data[1].forEach(deed=>{
+      data[1].forEach(deed => {
         categories.add(deed.Subcategory);
       });
 
@@ -139,153 +139,153 @@ class LotroApp extends Component {
         deeds: data[1],
         deed_subcategories: categories
       });
-    }).catch(error=>{
-      console.log('retrieve_app_data error:',error);
+    }).catch(error => {
+      console.log('retrieve_app_data error:', error);
     })
   }
 
-  handle_initialization(state, data){
+  handle_initialization(state, data) {
     // console.log('handle_initialization called...');
     this.setState(data);
   }
 
-  handle_character_action(state, data){
+  handle_character_action(state, data) {
     // console.log('handle_character_action called...');
     this.setState(data);
 
     //save character data into db
-    save_characters(this.db_promise, state.characters);
+    save_characters(this.database, state.characters);
   }
 
-  handle_deed_action(stat, data){
+  handle_deed_action(stat, data) {
     // console.log('handle_deed_action called...');
     this.setState(data);
   }
 
-  switch_deed_category(db_promise, deed_data){
-    get_deeds_of_type(db_promise, deed_data.deed_category_selected).then(data=>{
+  switch_deed_category(db_promise, deed_data) {
+    get_deeds_of_type(db_promise, deed_data.deed_category_selected).then(data => {
       //create the subcategories
       let subs = new Set();
 
-      data.forEach(deed=>{
+      data.forEach(deed => {
         subs.add(deed.Subcategory);
       })
 
       get_store().issue_action(ACTION_TYPES.DEED_UPDATED, {
-        deeds:data,
-        deed_subcategories:subs,
+        deeds: data,
+        deed_subcategories: subs,
         deed_subcategory_selected: ''
       });
     });
   }
 
-  handle_deed_category_changed(state, data){
+  handle_deed_category_changed(state, data) {
     // console.log('handle_deed_category_changed called...', data);
     this.setState(data);
 
     //FIXME: this may be fixed later on, but for now switch is needed for development so
     //FIXME: that only existing data can be used
-    switch(data.deed_category_selected){
+    switch (data.deed_category_selected) {
       case DEED_CATEGORIES.CLASS://change to class deeds
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
 
       case DEED_CATEGORIES.RACE:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
 
       case DEED_CATEGORIES['SHADOWS OF ANGMAR']:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
 
       case DEED_CATEGORIES['THE MINES OF MORIA']:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
 
       case DEED_CATEGORIES['ALLIES TO THE KING']:
-        this.switch_deed_category(this.db_promise, data);
-      break;
+        this.switch_deed_category(this.database, data);
+        break;
 
       case DEED_CATEGORIES['THE STRENGTH OF SAURON']:
-        this.switch_deed_category(this.db_promise, data);
-      break;
+        this.switch_deed_category(this.database, data);
+        break;
 
       case DEED_CATEGORIES['THE BLACK BOOK OF MORDOR']:
-        this.switch_deed_category(this.db_promise, data);
-      break;
+        this.switch_deed_category(this.database, data);
+        break;
 
       case DEED_CATEGORIES.REPUTATION:
-        this.switch_deed_category(this.db_promise, data);
-      break;
+        this.switch_deed_category(this.database, data);
+        break;
 
       case DEED_CATEGORIES.ERIADOR://change to Eriador deeds
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
 
       case DEED_CATEGORIES.RHOVANION:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
 
       case DEED_CATEGORIES.GONDOR:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
 
       case DEED_CATEGORIES.MORDOR:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
 
       case DEED_CATEGORIES.SKIRMISH:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
 
       case DEED_CATEGORIES["INSTANCES SHADOWS OF ANGMAR"]:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
       case DEED_CATEGORIES["INSTANCES MINES OF MORIA"]:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
       case DEED_CATEGORIES["INSTANCES LOTHLORIEN"]:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
       case DEED_CATEGORIES["INSTANCES MIRKWOOD"]:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
       case DEED_CATEGORIES["INSTANCES IN THEIR ABSENCE"]:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
       case DEED_CATEGORIES["INSTANCES RISE OF ISENGUARD"]:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
       case DEED_CATEGORIES["INSTANCES ROAD TO EREBOR"]:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
       case DEED_CATEGORIES["INSTANCES ASHES OF OSGILIATH"]:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
       case DEED_CATEGORIES["INSTANCES BATTLE OF PELENNOR"]:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
       case DEED_CATEGORIES["SOCIAL, EVENTS, AND HOBBIES"]:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
       case DEED_CATEGORIES.SPECIAL:
-        this.switch_deed_category(this.db_promise, data);
+        this.switch_deed_category(this.database, data);
         break;
       default:
         break;
     }
   }
 
-  handle_subcategory_changed(state, data){
+  handle_subcategory_changed(state, data) {
     // console.log('handle_subcategory_changed called...');
     this.setState(data);
   }
 
   //purposefully clears entire database
-  handle_reset_database(){
+  handle_reset_database() {
     console.log('handle_reset_database called...');
 
-    reset_database(this.db_promise).then(()=>{
+    reset_database(this.database).then(() => {
       window.location.reload();
     }).catch(error => {
       console.log('handle_reset_database failure...', error);
@@ -293,40 +293,40 @@ class LotroApp extends Component {
   }
 
   //purposefully unregisteres this app's service-worker script
-  handle_reset_serviceworker(){
-    if('serviceWorker' in navigator){
-      navigator.serviceWorker.getRegistration(BASE_URL+'/').then(registration=>{
+  handle_reset_serviceworker() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistration(BASE_URL + '/').then(registration => {
 
         //tell service_worker to cleanup its cache
-        if(registration) registration.active.postMessage({action: 'CLEANUP'});
+        if (registration) registration.active.postMessage({ action: 'CLEANUP' });
 
         // console.log('sw:',registration);
-        registration.unregister().then(is_unregistered=>{
+        registration.unregister().then(is_unregistered => {
           //success, so refresh window
-          if(is_unregistered) window.location.reload();
-        }).catch(error=>{
+          if (is_unregistered) window.location.reload();
+        }).catch(error => {
           console.log('unregistration error', error);
         });
       });
     }
   }
 
-  handle_menu_update(state, data){
+  handle_menu_update(state, data) {
     // console.log('handle_menu_update called...');
     this.setState(data);
   }
 
-  handle_menu_modal_close(){
+  handle_menu_modal_close() {
     // console.log('handle_menu_modal_close called...')
-    get_store().issue_action(ACTION_TYPES.MENU_UPDATE, {show_menu_modal:false});
+    get_store().issue_action(ACTION_TYPES.MENU_UPDATE, { show_menu_modal: false });
   }
 
-  handle_show_menu_modal(){
+  handle_show_menu_modal() {
     // console.log('handle_show_menu_modal called...')
-    get_store().issue_action(ACTION_TYPES.MENU_UPDATE, {show_menu_modal:true});
+    get_store().issue_action(ACTION_TYPES.MENU_UPDATE, { show_menu_modal: true });
   }
 
-  handle_window_resize(state, data){
+  handle_window_resize(state, data) {
     // console.log('handle_show_menu_modal called...')
     this.setState(data);
   }
@@ -336,11 +336,11 @@ class LotroApp extends Component {
     //adjust title depending on screen width
     let title = "LoTRO CL"
 
-    if(this.state.width > SCREEN_SIZES.SMALL){
+    if (this.state.width > SCREEN_SIZES.SMALL) {
       title = "LoTRO Character Log";
     }
     //width is larger than the below full string at h1
-    if(this.state.width > 873){
+    if (this.state.width > 873) {
       title = "Lord of the Rings Online Character Log";
     }
 
@@ -367,20 +367,20 @@ class LotroApp extends Component {
               <h3>Miscelaneous Items</h3>
 
               {this.state.width >= SCREEN_SIZES.SMALL ? (
-                <div style={{display: 'inline-flex', alignItems:'center', height:'42px'}}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', height: '42px' }}>
                   <h4>Debug Commands: </h4>
                   <Button className='btn btn-danger' text='Reset DB' onClick={this.handle_reset_database} />
                   <Button className='btn btn-danger' text='Reset SW' onClick={this.handle_reset_serviceworker} />
                 </div>
-              ):(
-                <div>
-                  <h4 style={{margin:'5px'}}>Debug Commands: </h4>
-                  <Button className='btn btn-danger' text='Reset DB' onClick={this.handle_reset_database} />
-                  <Button className='btn btn-danger' text='Reset SW' onClick={this.handle_reset_serviceworker} />
-                </div>
-              )}
+              ) : (
+                  <div>
+                    <h4 style={{ margin: '5px' }}>Debug Commands: </h4>
+                    <Button className='btn btn-danger' text='Reset DB' onClick={this.handle_reset_database} />
+                    <Button className='btn btn-danger' text='Reset SW' onClick={this.handle_reset_serviceworker} />
+                  </div>
+                )}
 
-              <div style={{display: 'inline-flex', alignItems:'center', height:'42px'}}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', height: '42px' }}>
                 <h4>Source Code:</h4>
                 <a className='github-link' href="https://github.com/xevrem/lotro-cl">
                   <i className="fab fa-github github-icon" aria-hidden="true"></i>
@@ -392,14 +392,14 @@ class LotroApp extends Component {
         </div>
 
         <div className='site'>
-          <CharacterPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
-          <SummaryPanel characters={this.state.characters} selected_character={this.state.selected_character}/>
+          <CharacterPanel characters={this.state.characters} selected_character={this.state.selected_character} />
+          <SummaryPanel characters={this.state.characters} selected_character={this.state.selected_character} />
           <DeedPanel deeds={this.state.deeds} selected_deed={this.state.selected_deed}
             deed_categories={this.state.deed_categories} deed_text={this.state.deed_text}
             characters={this.state.characters} selected_character={this.state.selected_character}
             deed_category_selected={this.state.deed_category_selected}
             deed_subcatetories={this.state.deed_subcategories}
-            deed_subcategory_selected={this.state.deed_subcategory_selected}/>
+            deed_subcategory_selected={this.state.deed_subcategory_selected} />
         </div>
 
       </div>

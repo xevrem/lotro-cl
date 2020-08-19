@@ -7,41 +7,44 @@ export class IDB {
     this.dbname = dbname;
     this.version = version;
     this.upgraded = false;
-    this.old_version = -1;
+    this.oldVersion = -1;
   }
 
   /**
    * [open_db attempts to open the database for use]
-   * @param  {[Function]} [on_upgrade=null] [callback that is used when IndexedDB requires an upgrade]
+   * @param  {[Function]} [onUpdrade=null] [callback that is used when IndexedDB requires an upgrade]
    * @return {[Promise]}                    [a Promise resolving upon successful database opening or rejecting on error]
    */
-  open_db(on_upgrade = null) {
+  openDB(onUpdrade = null) {
     let request = window.indexedDB.open(this.dbname, this.version);
-    let idb = this;
 
-    return new Promise(function(resolve, reject) {
+    return new Promise((resolve, reject) => {
       //handle successful database opening
-      request.onsuccess = function(event) {
-        // console.log('open_db onsuccess called...');
-        idb.db = event.target.result;
-        resolve(idb);
+      request.onsuccess = (event) => {
+        console.log('idb:odb:os');
+        this.db = event.target.result;
+        resolve(this);
       };
 
       //handle errors on database opening
-      request.onerror = function(event) {
-        // console.log('open_db onerror called...');
+      request.onerror = (event) => {
         let error = event.target.error;
+        console.error('idb:odb:oe::', error);
         reject(error);
       };
 
+      request.onblocked = (event) => {
+        console.log('idb:odb:ob::', event)
+      }
+
       //if provided, allow for database upgrading
-      if (on_upgrade) {
-        request.onupgradeneeded = function(event) {
-          // console.log('open_db onupgradeneeded called...');
-          idb.upgraded = true;
-          idb.db = event.target.result;
-          idb.old_version = event.oldVersion;
-          on_upgrade(idb);
+      if (onUpdrade) {
+        request.onupgradeneeded = (event) => {
+          console.log('idb:odb:oun');
+          this.upgraded = true;
+          this.db = event.target.result;
+          this.oldVersion = event.oldVersion;
+          onUpdrade(this);
         };
       }
     });
@@ -54,31 +57,30 @@ export class IDB {
    * @param  {Function} callback [callback used to make modifications to store]
    * @return {[Promise]}         [Promise that resolves upon sucessful store creation and rejects on error]
    */
-  create_store(name, options = null, callback = null) {
-    let idb = this;
+  createStore(name, options = null, callback = null) {
     console.log('create_store called...');
-    return new Promise(function(resolve, reject) {
-      let object_store;
+    return new Promise((resolve, reject) => {
+      let objectStore;
       if (options) {
-        object_store = new ObjectStore(
-          idb.db.createObjectStore(name, options),
+        objectStore = new ObjectStore(
+          this.db.createObjectStore(name, options),
           name
         );
       } else {
-        object_store = new ObjectStore(idb.db.createObjectStore(name), name);
+        objectStore = new ObjectStore(this.db.createObjectStore(name), name);
       }
 
       //if everything goes well, resolve the promise
-      object_store.store.transaction.oncomplete = function() {
-        console.log('create_store onsuccess called...');
-        resolve(idb);
+      objectStore.store.transaction.oncomplete = () => {
+        console.log('idb:cs:oc');
+        resolve(this);
       };
 
       console.log('initial store created...');
       try {
         //store has been created, provide the store for manipulation
         if (callback) {
-          callback(object_store);
+          callback(objectStore);
         }
       } catch (error) {
         console.error('error during store creation...', error);
@@ -126,28 +128,28 @@ export class Transaction {
    */
   promisify() {
     return new Promise(
-      function(resolve, reject) {
-        this.transaction.oncomplete = function() {
+      (resolve, reject) => {
+        this.transaction.oncomplete = () => {
           //console.log('transaction complete...');
           if (this.callback) this.callback(this.idb);
-        }.bind(this);
+        };//.bind(this);
 
-        this.transaction.onerror = function(event) {
+        this.transaction.onerror = (event) => {
           // console.log('transaction onerror...');
           reject(event.target);
         };
 
-        this.transaction.onabort = function(event) {
+        this.transaction.onabort = (event) => {
           // console.log('transaction onabort...');
           reject(event.target);
         };
 
         try {
-          resolve(this);
+          resolve(this.transaction);
         } catch (error) {
           reject(error);
         }
-      }.bind(this)
+      }//.bind(this)
     );
   }
 
