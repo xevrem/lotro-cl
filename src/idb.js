@@ -100,7 +100,6 @@ export class IDB {
     let transaction = new Transaction(
       this,
       this.db.transaction(stores, mode),
-      callback
     );
     return transaction.promisify();
   }
@@ -114,12 +113,10 @@ export class Transaction {
    * [constructor Transaction manages IndexeDB transactions]
    * @param {[type]} idb                  [a reference to IDB]
    * @param {[IDBTransaction]} transaction          [the IDBTransaction this class wraps]
-   * @param {[type]} [callback=undefined] [callback called when transaction's oncomplete event is fired]
    */
-  constructor(idb, transaction, callback = undefined) {
+  constructor(idb, transaction) {
     this.idb = idb;
     this.transaction = transaction;
-    this.callback = callback;
   }
 
   /**
@@ -129,27 +126,18 @@ export class Transaction {
   promisify() {
     return new Promise(
       (resolve, reject) => {
-        this.transaction.oncomplete = () => {
-          //console.log('transaction complete...');
-          if (this.callback) this.callback(this.idb);
-        };//.bind(this);
-
         this.transaction.onerror = (event) => {
-          // console.log('transaction onerror...');
+          console.log('tx:onerror');
           reject(event.target);
         };
 
         this.transaction.onabort = (event) => {
-          // console.log('transaction onabort...');
+          console.log('tx:onabort');
           reject(event.target);
         };
 
-        try {
-          resolve(this.transaction);
-        } catch (error) {
-          reject(error);
-        }
-      }//.bind(this)
+        resolve(this);
+      }
     );
   }
 
@@ -158,7 +146,8 @@ export class Transaction {
    * @param  {[string]} name [name of store to open]
    * @return {[Promise]}      [Promes that resolves to the store or rejects on error]
    */
-  open_store(name) {
+  openStore(name) {
+    console.log('tx:os')
     let store = new ObjectStore(this.transaction.objectStore(name));
     return store;
   }
@@ -167,7 +156,20 @@ export class Transaction {
    * [abort calls the underlying IDBTransaction's abort method]
    */
   abort() {
+    console.log('tx:a')
     this.transaction.abort();
+  }
+
+  commit() {
+    console.log('tx:c')
+    const complete = new Promise((resolve, reject) => {
+      this.transaction.oncomplete = () => {
+        console.log('tx:oncomplete');
+        resolve(this);
+      };
+    });
+    this.transaction.commit();
+    return complete;
   }
 }
 
@@ -191,7 +193,7 @@ export class ObjectStore {
    * @param  {[string]} key_path          [the key that is being indexed]
    * @param  {[object]} [parameters=null] [additional index parameters]
    */
-  create_index(index_name, key_path, parameters = null) {
+  createIndex(index_name, key_path, parameters = null) {
     this.store.createIndex(index_name, key_path, parameters);
   }
 
@@ -231,7 +233,7 @@ export class ObjectStore {
    * [get_all values in a given store]
    * @return {[Promise]} [Promise that resolves to the records or rejects on error]
    */
-  get_all() {
+  getAll() {
     let request = new IdbRequest(this.store.getAll());
     return request.promisify();
   }
@@ -314,19 +316,19 @@ export class Cursor {
    */
   promisify() {
     return new Promise(
-      function(resolve, reject) {
-        this.cursor.onsuccess = function(event) {
+      (resolve, reject) => {
+        this.cursor.onsuccess = (event) => {
           if (event.target.result) {
             if (this.callback) this.callback(event.target.result);
           } else {
-            resolve();
+            resolve(event.target.result);
           }
-        }.bind(this);
+        }
 
-        this.cursor.onerror = function(event) {
+        this.cursor.onerror = (event) => {
           reject(event.target);
         };
-      }.bind(this)
+      }
     );
   }
 }
@@ -349,14 +351,14 @@ export class IdbRequest {
    */
   promisify() {
     return new Promise(
-      function(resolve, reject) {
-        this.request.onsuccess = function(event) {
+      (resolve, reject) => {
+        this.request.onsuccess = (event) => {
           resolve(event.target.result);
         };
-        this.request.onerror = function(event) {
+        this.request.onerror = (event) => {
           reject(event.target.error);
         };
-      }.bind(this)
+      }
     );
   }
 }

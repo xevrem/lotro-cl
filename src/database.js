@@ -42,19 +42,22 @@ export function openDatabase() {
 }
 
 //fetch deed data at the url and store it according to passed deed types
-function _deed_fetch_and_store(db, url, deed_type) {
-  return fetch(BASE_URL + url).then(resp => {
-    return resp.json();
-  }).then(data => {
-    let tx = db.transaction('deeds', 'readwrite');
-    let deed_store = tx.objectStore('deeds');
+async function deed_fetch_and_store(db, url, deed_type) {
+  try {
+    const resp = await fetch(BASE_URL + url);
+    console.log('resp', resp)
+    const data = await resp.json();
+    console.log('json', data)
+    const tx = await db.transaction('deeds', 'readwrite');
+    const deed_store = tx.openStore('deeds');
 
-    deed_store.put(data, deed_type);
+    await deed_store.put(data, deed_type);
 
-    return tx.complete;
-  }).catch(error => {
-    console.log('_deed_fetch_and_store error', error);
-  });
+    return tx.commit();
+  } catch (error) {
+    console.error('_deed_fetch_and_store error', error);
+    throw (error);
+  }
 }
 
 //perform initial deed fetching and storing into the indexeddb
@@ -63,43 +66,43 @@ export function initial_deed_population(db) {
 
 
   //fetch class deeds and store them
-  let class_deeds = _deed_fetch_and_store(db, '/data/class_deeds.json', DEED_CATEGORIES.CLASS);
+  let class_deeds = deed_fetch_and_store(db, '/data/class_deeds.json', DEED_CATEGORIES.CLASS);
 
   //fetch race deeds and store them
-  let race_deeds = _deed_fetch_and_store(db, '/data/race_deeds.json', DEED_CATEGORIES.RACE);
+  let race_deeds = deed_fetch_and_store(db, '/data/race_deeds.json', DEED_CATEGORIES.RACE);
 
   //fetch epic deeds and store them
-  let soa_deeds = _deed_fetch_and_store(db, '/data/soa_deeds.json', DEED_CATEGORIES['SHADOWS OF ANGMAR']);
-  let mom_deeds = _deed_fetch_and_store(db, '/data/mom_deeds.json', DEED_CATEGORIES['THE MINES OF MORIA']);
-  let aotk_deeds = _deed_fetch_and_store(db, '/data/aotk_deeds.json', DEED_CATEGORIES['ALLIES TO THE KING']);
-  let tsos_deeds = _deed_fetch_and_store(db, '/data/tsos_deeds.json', DEED_CATEGORIES['THE STRENGTH OF SAURON']);
-  let bbom_deeds = _deed_fetch_and_store(db, '/data/bbom_deeds.json', DEED_CATEGORIES['THE BLACK BOOK OF MORDOR']);
+  let soa_deeds = deed_fetch_and_store(db, '/data/soa_deeds.json', DEED_CATEGORIES['SHADOWS OF ANGMAR']);
+  let mom_deeds = deed_fetch_and_store(db, '/data/mom_deeds.json', DEED_CATEGORIES['THE MINES OF MORIA']);
+  let aotk_deeds = deed_fetch_and_store(db, '/data/aotk_deeds.json', DEED_CATEGORIES['ALLIES TO THE KING']);
+  let tsos_deeds = deed_fetch_and_store(db, '/data/tsos_deeds.json', DEED_CATEGORIES['THE STRENGTH OF SAURON']);
+  let bbom_deeds = deed_fetch_and_store(db, '/data/bbom_deeds.json', DEED_CATEGORIES['THE BLACK BOOK OF MORDOR']);
 
   //fetch reputation deeds and store them
-  let rep_deeds = _deed_fetch_and_store(db, '/data/rep_deeds.json', DEED_CATEGORIES.REPUTATION);
+  let rep_deeds = deed_fetch_and_store(db, '/data/rep_deeds.json', DEED_CATEGORIES.REPUTATION);
 
   //fetch overworld deeds and store them
-  let eriador_deeds = _deed_fetch_and_store(db, '/data/eriador_deeds.json', DEED_CATEGORIES.ERIADOR);
-  let rhov_deeds = _deed_fetch_and_store(db, '/data/rhov_deeds.json', DEED_CATEGORIES.RHOVANION);
-  let gondor_deeds = _deed_fetch_and_store(db, '/data/gondor_deeds.json', DEED_CATEGORIES.GONDOR);
-  let mordor_deeds = _deed_fetch_and_store(db, '/data/mordor_deeds.json', DEED_CATEGORIES.MORDOR);
+  let eriador_deeds = deed_fetch_and_store(db, '/data/eriador_deeds.json', DEED_CATEGORIES.ERIADOR);
+  let rhov_deeds = deed_fetch_and_store(db, '/data/rhov_deeds.json', DEED_CATEGORIES.RHOVANION);
+  let gondor_deeds = deed_fetch_and_store(db, '/data/gondor_deeds.json', DEED_CATEGORIES.GONDOR);
+  let mordor_deeds = deed_fetch_and_store(db, '/data/mordor_deeds.json', DEED_CATEGORIES.MORDOR);
 
-  let skirm_deeds = _deed_fetch_and_store(db, '/data/skirm_deeds.json', DEED_CATEGORIES.SKIRMISH);
+  let skirm_deeds = deed_fetch_and_store(db, '/data/skirm_deeds.json', DEED_CATEGORIES.SKIRMISH);
 
-  let soa_inst = _deed_fetch_and_store(db, '/data/soa_inst_deeds.json', DEED_CATEGORIES["INSTANCES SHADOWS OF ANGMAR"]);
-  let mom_inst = _deed_fetch_and_store(db, '/data/mom_inst_deeds.json', DEED_CATEGORIES["INSTANCES MINES OF MORIA"]);
-  let loth_inst = _deed_fetch_and_store(db, '/data/loth_inst_deeds.json', DEED_CATEGORIES["INSTANCES LOTHLORIEN"]);
-  let mirk_inst = _deed_fetch_and_store(db, '/data/mirk_inst_deeds.json', DEED_CATEGORIES["INSTANCES MIRKWOOD"]);
-  let ita_inst = _deed_fetch_and_store(db, '/data/ita_inst_deeds.json', DEED_CATEGORIES["INSTANCES IN THEIR ABSENCE"]);
-  let isen_inst = _deed_fetch_and_store(db, '/data/isen_inst_deeds.json', DEED_CATEGORIES["INSTANCES RISE OF ISENGUARD"]);
-  let ereb_inst = _deed_fetch_and_store(db, '/data/erebor_inst_deeds.json', DEED_CATEGORIES["INSTANCES ROAD TO EREBOR"]);
-  let osg_inst = _deed_fetch_and_store(db, '/data/osg_inst_deeds.json', DEED_CATEGORIES["INSTANCES ASHES OF OSGILIATH"]);
-  let pel_inst = _deed_fetch_and_store(db, '/data/pel_inst_deeds.json', DEED_CATEGORIES["INSTANCES BATTLE OF PELENNOR"]);
+  let soa_inst = deed_fetch_and_store(db, '/data/soa_inst_deeds.json', DEED_CATEGORIES["INSTANCES SHADOWS OF ANGMAR"]);
+  let mom_inst = deed_fetch_and_store(db, '/data/mom_inst_deeds.json', DEED_CATEGORIES["INSTANCES MINES OF MORIA"]);
+  let loth_inst = deed_fetch_and_store(db, '/data/loth_inst_deeds.json', DEED_CATEGORIES["INSTANCES LOTHLORIEN"]);
+  let mirk_inst = deed_fetch_and_store(db, '/data/mirk_inst_deeds.json', DEED_CATEGORIES["INSTANCES MIRKWOOD"]);
+  let ita_inst = deed_fetch_and_store(db, '/data/ita_inst_deeds.json', DEED_CATEGORIES["INSTANCES IN THEIR ABSENCE"]);
+  let isen_inst = deed_fetch_and_store(db, '/data/isen_inst_deeds.json', DEED_CATEGORIES["INSTANCES RISE OF ISENGUARD"]);
+  let ereb_inst = deed_fetch_and_store(db, '/data/erebor_inst_deeds.json', DEED_CATEGORIES["INSTANCES ROAD TO EREBOR"]);
+  let osg_inst = deed_fetch_and_store(db, '/data/osg_inst_deeds.json', DEED_CATEGORIES["INSTANCES ASHES OF OSGILIATH"]);
+  let pel_inst = deed_fetch_and_store(db, '/data/pel_inst_deeds.json', DEED_CATEGORIES["INSTANCES BATTLE OF PELENNOR"]);
 
-  let seh_deeds = _deed_fetch_and_store(db, '/data/seh_deeds.json', DEED_CATEGORIES["SOCIAL, EVENTS, AND HOBBIES"]);
-  let special_deeds = _deed_fetch_and_store(db, '/data/bobb_deeds.json', DEED_CATEGORIES.SPECIAL);
+  let seh_deeds = deed_fetch_and_store(db, '/data/seh_deeds.json', DEED_CATEGORIES["SOCIAL, EVENTS, AND HOBBIES"]);
+  let special_deeds = deed_fetch_and_store(db, '/data/bobb_deeds.json', DEED_CATEGORIES.SPECIAL);
 
-  return Promise.all([
+  return Promise.allSettled([
     class_deeds, race_deeds, soa_deeds,
     mom_deeds, aotk_deeds, tsos_deeds,
     bbom_deeds, rep_deeds, eriador_deeds,
@@ -107,11 +110,12 @@ export function initial_deed_population(db) {
     skirm_deeds, soa_inst, mom_inst,
     loth_inst, mirk_inst, ita_inst,
     isen_inst, ereb_inst, osg_inst,
-    pel_inst, seh_deeds, special_deeds]).then(values => {
-      // console.log('everything loaded fine...');
-    }).catch(error => {
-      console.log('initial_deed_population something went wrong...');
-    })
+    pel_inst, seh_deeds, special_deeds]);
+  // .then(values => {
+  //   // console.log('everything loaded fine...');
+  // }).catch(error => {
+  //   console.error('initial_deed_population something went wrong...', error);
+  // })
 }
 
 /**
@@ -154,16 +158,19 @@ export function get_character(db_promise, index) {
  * @return {[Promise]}            [transaction promise]
  */
 export async function save_characters(db, characters) {
-  console.log('save_characters called...', db_promise, characters);
+  console.log('save_characters called...', db, characters);
   let tx = await db.transaction('characters', 'readwrite');
-  let character_store = tx.objectStore('characters');
+  let characterStore = tx.openStore('characters');
 
   //update characters
+  const allPuts = [];
   characters.forEach((character, i) => {
-    character_store.put(character, i);
+    allPuts.push(characterStore.put(character, i));
   });
 
-  return tx.complete;
+  await Promise.all(allPuts);
+
+  return tx.commit()
 }
 
 //delete a specific character by index

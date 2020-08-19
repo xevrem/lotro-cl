@@ -89,47 +89,51 @@ class LotroApp extends Component {
     // console.log('mounted...')
     this.database = await openDatabase();
 
-    initial_deed_population(this.database).then(() => {
-      this.retrieve_app_data();
-    })
+    await initial_deed_population(this.database)
+
+    this.retrieve_app_data();
   }
 
-  retrieve_app_data() {
-    // console.log('retrieve_app_data called...');
+  async retrieve_app_data() {
+    console.log('retrieve_app_data called...');
 
     //get stored character data
-    let character_data = new Promise((resolve, reject) => {
+    const characterData = new Promise(async (resolve, reject) => {
       //attempt to pull data from the db, otherwise fetch
-      this.database.then(db => {
-        let tx = db.transaction('characters');
-        tx.objectStore('characters').getAll().then(data => {
-          if (data.length > 0) {
-            resolve(data);
-          } else {
-            resolve([]);
-          }
-        })
-      }).catch(error => {
+      // this.database.then(db => {
+      try {
+        const tx = await this.database.transaction('characters');
+        const data = await tx.openStore('characters').getAll();
+        if (data.length > 0) {
+          resolve(data);
+        } else {
+          resolve([]);
+        }
+      } catch (error) {
+        console.error('la:rad::characters transaction error')
         reject(error);
-      });
+      }
     });
 
     //do initial class deed data load
-    let class_data = new Promise((resolve, reject) => {
-      this.database.then(db => {
-        db.transaction('deeds').objectStore('deeds').get(DEED_CATEGORIES.CLASS).then(data => {
-          resolve(data);
-        });
-      }).catch(error => {
+    const classData = new Promise(async (resolve, reject) => {
+      try {
+        const tx = await this.database.transaction('deeds')
+        const data = await tx.openStore('deeds').get(DEED_CATEGORIES.CLASS)
+        resolve(data);
+      }
+      catch (error) {
+        console.error('la:rad::deeds transaction error')
         reject(error);
-      });
+      };
     });
 
-    //run promises async and set the data
-    Promise.all([character_data, class_data]).then(data => {
+    try {
+      //run promises async and set the data
+      const data = await Promise.all([characterData, classData])
 
       let categories = new Set();
-
+      console.log(data);
       data[1].forEach(deed => {
         categories.add(deed.Subcategory);
       });
@@ -139,9 +143,10 @@ class LotroApp extends Component {
         deeds: data[1],
         deed_subcategories: categories
       });
-    }).catch(error => {
+    }
+    catch (error) {
       console.log('retrieve_app_data error:', error);
-    })
+    }
   }
 
   handle_initialization(state, data) {
