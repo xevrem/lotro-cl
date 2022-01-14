@@ -28,7 +28,7 @@ SOFTWARE.
  * @param {number} 1
  * @returns {Store}
  */
-function create_store(
+function createStore(
   starting_state = {},
   dispatch_interval = 1000,
   dispatch_limit = -1
@@ -46,7 +46,7 @@ function create_store(
  * @returns {Store}
  * @throws {Error}
  */
-function get_store() {
+function getStore() {
   if (window.simple_state_store) {
     return window.simple_state_store;
   } else {
@@ -54,12 +54,6 @@ function get_store() {
   }
 }
 
-/**
- *
- * @param {} starting_state
- * @param {} 60
- * @param {} 1
- */
 class Store {
   constructor(
     starting_state = {},
@@ -73,7 +67,7 @@ class Store {
     this.dispatch_interval = dispatch_interval;
     this.dispatch_limit = dispatch_limit;
     this.is_dispatching = false;
-    this.dispatcher = this._dispatcher.bind(this);
+    this.dispatcher = this.dispatcher.bind(this);
     this.dispatcher_id = setTimeout(this.dispatcher, this.dispatch_interval);
   }
 
@@ -91,11 +85,7 @@ class Store {
     }.bind(this);
   }
 
-  issue_action(action, data) {
-    const foo = 5;
-
-    foo = 4;
-
+  issueAction(action, data) {
     this.dispatch_queue.push({ action: action, data: data });
     if (!this.is_dispatching) {
       //issue a new dispatch if not currently dispatching
@@ -105,11 +95,11 @@ class Store {
     }
   }
 
-  get_state() {
+  getState() {
     return this.state;
   }
 
-  _update_state(update) {
+  updateState(update) {
     let keys = Object.keys(update);
     for (let key of keys) {
       this.state[key] = update[key];
@@ -117,7 +107,7 @@ class Store {
     return this;
   }
 
-  _dispatcher() {
+  dispatcher() {
     // console.log('dispatching...', this.dispatch_queue.length, this.dispatch_queue);
 
     this.is_dispatching = true;
@@ -130,7 +120,7 @@ class Store {
         if (this.dispatch_queue.length > 0) {
           //pull item from front
           let cmd = this.dispatch_queue.shift();
-          let store = this._update_state(cmd.data);
+          let store = this.updateState(cmd.data);
 
           //issue callbacks
           if (store.listeners.hasOwnProperty(cmd.action)) {
@@ -147,7 +137,7 @@ class Store {
       while (this.dispatch_queue.length > 0) {
         //pull item from front
         let cmd = this.dispatch_queue.shift();
-        let store = this._update_state(cmd.data);
+        let store = this.updateState(cmd.data);
 
         //issue callbacks
         if (store.listeners.hasOwnProperty(cmd.action)) {
@@ -179,4 +169,4 @@ class Store {
   }
 }
 
-export { create_store, get_store, Store };
+export { createStore, getStore, Store };

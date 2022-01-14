@@ -28,7 +28,7 @@ import CharacterPanel from './CharacterPanel';
 import DeedPanel from './DeedPanel';
 import SummaryPanel from './SummaryPanel';
 
-import { create_store, get_store } from './../Store';
+import { createStore, getStore } from './../Store';
 import {
   ACTION_TYPES,
   DEED_CATEGORIES,
@@ -37,7 +37,7 @@ import {
 } from './../constants';
 import {
   openDatabase,
-  initial_deed_population,
+  initialDeedPopulation,
   get_deeds_of_type,
   save_characters,
   reset_database,
@@ -61,74 +61,74 @@ let initial_state = {
 };
 
 //create a store, update interval 16ms, dispatch all queued
-create_store(initial_state, 16, -1);
+createStore(initial_state, 16, -1);
 
 //update window resizing information in store
-const update_window_dimensions = event => {
-  get_store().issue_action(ACTION_TYPES.WINDOW_RESIZE, {
+const updateWindowDimensions = event => {
+  getStore().issueAction(ACTION_TYPES.WINDOW_RESIZE, {
     width: window.innerWidth,
     height: window.innerHeight,
   });
 };
 //ensure window resizing is captured
-window.addEventListener('resize', update_window_dimensions);
+window.addEventListener('resize', updateWindowDimensions);
 
 class LotroApp extends Component {
   constructor(props) {
     super(props);
-    this.state = get_store().get_state();
+    this.state = getStore().getState();
 
-    this.handle_reset_database = this.handle_reset_database.bind(this);
-    this.handle_menu_modal_close = this.handle_menu_modal_close.bind(this);
-    this.handle_show_menu_modal = this.handle_show_menu_modal.bind(this);
+    this.handle_reset_database = this.handleResetDatabase.bind(this);
+    this.handle_menu_modal_close = this.handleMenuModalClose.bind(this);
+    this.handle_show_menu_modal = this.handleShowMenuModal.bind(this);
 
     //create all subscriptions
-    get_store().subscribe(
+    getStore().subscribe(
       ACTION_TYPES.CHARACTER_ADDED,
       this.handle_character_action.bind(this)
     );
-    get_store().subscribe(
+    getStore().subscribe(
       ACTION_TYPES.CHARACTER_SELECTED,
       this.handle_character_action.bind(this)
     );
-    get_store().subscribe(
+    getStore().subscribe(
       ACTION_TYPES.CHARACTER_UPDATED,
       this.handle_character_action.bind(this)
     );
-    get_store().subscribe(
+    getStore().subscribe(
       ACTION_TYPES.CHARACTER_DELETED,
       this.handle_character_action.bind(this)
     );
-    get_store().subscribe(
+    getStore().subscribe(
       ACTION_TYPES.DEED_SELECTED,
       this.handle_deed_action.bind(this)
     );
-    get_store().subscribe(
+    getStore().subscribe(
       ACTION_TYPES.DEED_COMPLETED,
       this.handle_deed_action.bind(this)
     );
-    get_store().subscribe(
+    getStore().subscribe(
       ACTION_TYPES.DEED_UPDATED,
       this.handle_deed_action.bind(this)
     );
-    get_store().subscribe(
+    getStore().subscribe(
       ACTION_TYPES.DEED_CATEGORY_CHANGED,
       this.handle_deed_category_changed.bind(this)
     );
-    get_store().subscribe(
+    getStore().subscribe(
       ACTION_TYPES.DEED_SUBCATEGORY_CHANGED,
       this.handle_subcategory_changed.bind(this)
     );
-    get_store().subscribe(
+    getStore().subscribe(
       ACTION_TYPES.INITIALIZATION_DONE,
       this.handle_initialization.bind(this)
     );
-    get_store().subscribe(
+    getStore().subscribe(
       ACTION_TYPES.MENU_UPDATE,
       this.handle_menu_update.bind(this)
     );
 
-    get_store().subscribe(
+    getStore().subscribe(
       ACTION_TYPES.WINDOW_RESIZE,
       this.handle_window_resize.bind(this)
     );
@@ -138,7 +138,7 @@ class LotroApp extends Component {
     // console.log('mounted...')
     this.database = await openDatabase();
 
-    await initial_deed_population(this.database);
+    await initialDeedPopulation(this.database);
 
     this.retrieve_app_data();
   }
@@ -186,7 +186,7 @@ class LotroApp extends Component {
         categories.add(deed.Subcategory);
       });
 
-      get_store().issue_action(ACTION_TYPES.INITIALIZATION_DONE, {
+      getStore().issueAction(ACTION_TYPES.INITIALIZATION_DONE, {
         characters: data[0],
         deeds: data[1],
         deed_subcategories: categories,
@@ -224,7 +224,7 @@ class LotroApp extends Component {
           subs.add(deed.Subcategory);
         });
 
-        get_store().issue_action(ACTION_TYPES.DEED_UPDATED, {
+        getStore().issueAction(ACTION_TYPES.DEED_UPDATED, {
           deeds: data,
           deed_subcategories: subs,
           deed_subcategory_selected: '',
@@ -336,7 +336,7 @@ class LotroApp extends Component {
   }
 
   //purposefully clears entire database
-  handle_reset_database() {
+  handleResetDatabase() {
     console.log('handle_reset_database called...');
 
     reset_database(this.database)
@@ -377,16 +377,16 @@ class LotroApp extends Component {
     this.setState(data);
   }
 
-  handle_menu_modal_close() {
+  handleMenuModalClose() {
     // console.log('handle_menu_modal_close called...')
-    get_store().issue_action(ACTION_TYPES.MENU_UPDATE, {
+    getStore().issueAction(ACTION_TYPES.MENU_UPDATE, {
       show_menu_modal: false,
     });
   }
 
-  handle_show_menu_modal() {
+  handleShowMenuModal() {
     // console.log('handle_show_menu_modal called...')
-    get_store().issue_action(ACTION_TYPES.MENU_UPDATE, {
+    getStore().issueAction(ACTION_TYPES.MENU_UPDATE, {
       show_menu_modal: true,
     });
   }
@@ -415,8 +415,8 @@ class LotroApp extends Component {
             <li className="left">
               <h1 className="title">{title}</h1>
             </li>
-            <li className="right" onClick={this.handle_show_menu_modal}>
-              <h1 className="menu" onClick={this.handle_show_menu_modal}>
+            <li className="right" onClick={this.handleShowMenuModal}>
+              <h1 className="menu" onClick={this.handleShowMenuModal}>
                 <i className="fa fa-bars" aria-hidden="true"></i>
               </h1>
             </li>
@@ -426,7 +426,7 @@ class LotroApp extends Component {
             className="menu-modal-content panel"
             overlayClassName="menu-modal-overlay"
             isOpen={this.state.show_menu_modal}
-            onRequestClose={this.handle_menu_modal_close}
+            onRequestClose={this.handleMenuModalClose}
           >
             <div className="about-panel">
               <h3>Miscelaneous Items</h3>
@@ -443,7 +443,7 @@ class LotroApp extends Component {
                   <Button
                     className="btn btn-danger"
                     text="Reset DB"
-                    onClick={this.handle_reset_database}
+                    onClick={this.handleResetDatabase}
                   />
                   <Button
                     className="btn btn-danger"
@@ -457,7 +457,7 @@ class LotroApp extends Component {
                   <Button
                     className="btn btn-danger"
                     text="Reset DB"
-                    onClick={this.handle_reset_database}
+                    onClick={this.handleResetDatabase}
                   />
                   <Button
                     className="btn btn-danger"

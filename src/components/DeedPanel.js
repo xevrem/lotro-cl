@@ -26,7 +26,7 @@ import './DeedPanel.scss';
 import { DoublePanel, List, Panel, Button } from './Common';
 import { ACTION_TYPES, DEED_CATEGORIES } from './../constants';
 
-import { get_store } from './../Store';
+import { getStore } from './../Store';
 
 /**
  *
@@ -52,7 +52,7 @@ class DeedPanel extends Component {
     super(props);
 
     this.state = {
-      width: get_store().get_state().width,
+      width: getStore().getState().width,
     };
 
     //this.handle_deed_complete = this.handle_deed_complete.bind(this);
@@ -61,7 +61,7 @@ class DeedPanel extends Component {
 
   handle_category_click(index, event) {
     // console.log('nav clicked...', event.target.text);
-    get_store().issue_action(ACTION_TYPES.DEED_CATEGORY_CHANGED, {
+    getStore().issueAction(ACTION_TYPES.DEED_CATEGORY_CHANGED, {
       deed_category_selected: index,
     });
   }
@@ -80,19 +80,19 @@ class DeedPanel extends Component {
     //update the character deed completion data
     let updated_characters = this.props.characters;
     updated_characters[this.props.selected_character].completed = update;
-    get_store().issue_action(ACTION_TYPES.CHARACTER_UPDATED, {
+    getStore().issueAction(ACTION_TYPES.CHARACTER_UPDATED, {
       characters: updated_characters,
     });
   }
 
   handle_selected(index, event) {
-    get_store().issue_action(ACTION_TYPES.DEED_SELECTED, {
+    getStore().issueAction(ACTION_TYPES.DEED_SELECTED, {
       selected_deed: index,
     });
   }
 
   handle_subcategory_click(index, event) {
-    get_store().issue_action(ACTION_TYPES.DEED_SUBCATEGORY_CHANGED, {
+    getStore().issueAction(ACTION_TYPES.DEED_SUBCATEGORY_CHANGED, {
       deed_subcategory_selected: index,
     });
   }

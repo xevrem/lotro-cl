@@ -26,11 +26,12 @@ import { DEED_CATEGORIES, BASE_URL } from './constants';
 const DATABASE_VERSION = 2;
 
 /**
- *
- * @returns {Promise<IDB>}
+ * Function description.
+ * @returns {Promise<IDB>} Return description.
  */
 export function openDatabase() {
   const idb = new IDB('lotro_store', DATABASE_VERSION);
+
   return idb.openDB(db => {
     console.log('d:od::upgrading', db);
     switch (db.oldVersion) {
@@ -45,7 +46,15 @@ export function openDatabase() {
 }
 
 //fetch deed data at the url and store it according to passed deed types
-async function deed_fetch_and_store(db, url, deed_type) {
+/**
+ *
+ * @param {IDB} db
+ * @param {string} url
+ * @param {Number} deed_type
+ * @returns {}
+ * @throws {}
+ */
+async function deedFetchAndStore(db, url, deed_type) {
   try {
     const resp = await fetch(BASE_URL + url);
     console.log('resp', resp);
@@ -64,137 +73,137 @@ async function deed_fetch_and_store(db, url, deed_type) {
 }
 
 //perform initial deed fetching and storing into the indexeddb
-export function initial_deed_population(db) {
+export function initialDeedPopulation(db) {
   if (!db) console.log('initial_deed_population something broke...');
 
   //fetch class deeds and store them
-  let class_deeds = deed_fetch_and_store(
+  let class_deeds = deedFetchAndStore(
     db,
     '/data/class_deeds.json',
     DEED_CATEGORIES.CLASS
   );
 
   //fetch race deeds and store them
-  let race_deeds = deed_fetch_and_store(
+  let race_deeds = deedFetchAndStore(
     db,
     '/data/race_deeds.json',
     DEED_CATEGORIES.RACE
   );
 
   //fetch epic deeds and store them
-  let soa_deeds = deed_fetch_and_store(
+  let soa_deeds = deedFetchAndStore(
     db,
     '/data/soa_deeds.json',
     DEED_CATEGORIES['SHADOWS OF ANGMAR']
   );
-  let mom_deeds = deed_fetch_and_store(
+  let mom_deeds = deedFetchAndStore(
     db,
     '/data/mom_deeds.json',
     DEED_CATEGORIES['THE MINES OF MORIA']
   );
-  let aotk_deeds = deed_fetch_and_store(
+  let aotk_deeds = deedFetchAndStore(
     db,
     '/data/aotk_deeds.json',
     DEED_CATEGORIES['ALLIES TO THE KING']
   );
-  let tsos_deeds = deed_fetch_and_store(
+  let tsos_deeds = deedFetchAndStore(
     db,
     '/data/tsos_deeds.json',
     DEED_CATEGORIES['THE STRENGTH OF SAURON']
   );
-  let bbom_deeds = deed_fetch_and_store(
+  let bbom_deeds = deedFetchAndStore(
     db,
     '/data/bbom_deeds.json',
     DEED_CATEGORIES['THE BLACK BOOK OF MORDOR']
   );
 
   //fetch reputation deeds and store them
-  let rep_deeds = deed_fetch_and_store(
+  let rep_deeds = deedFetchAndStore(
     db,
     '/data/rep_deeds.json',
     DEED_CATEGORIES.REPUTATION
   );
 
   //fetch overworld deeds and store them
-  let eriador_deeds = deed_fetch_and_store(
+  let eriador_deeds = deedFetchAndStore(
     db,
     '/data/eriador_deeds.json',
     DEED_CATEGORIES.ERIADOR
   );
-  let rhov_deeds = deed_fetch_and_store(
+  let rhov_deeds = deedFetchAndStore(
     db,
     '/data/rhov_deeds.json',
     DEED_CATEGORIES.RHOVANION
   );
-  let gondor_deeds = deed_fetch_and_store(
+  let gondor_deeds = deedFetchAndStore(
     db,
     '/data/gondor_deeds.json',
     DEED_CATEGORIES.GONDOR
   );
-  let mordor_deeds = deed_fetch_and_store(
+  let mordor_deeds = deedFetchAndStore(
     db,
     '/data/mordor_deeds.json',
     DEED_CATEGORIES.MORDOR
   );
 
-  let skirm_deeds = deed_fetch_and_store(
+  let skirm_deeds = deedFetchAndStore(
     db,
     '/data/skirm_deeds.json',
     DEED_CATEGORIES.SKIRMISH
   );
 
-  let soa_inst = deed_fetch_and_store(
+  let soa_inst = deedFetchAndStore(
     db,
     '/data/soa_inst_deeds.json',
     DEED_CATEGORIES['INSTANCES SHADOWS OF ANGMAR']
   );
-  let mom_inst = deed_fetch_and_store(
+  let mom_inst = deedFetchAndStore(
     db,
     '/data/mom_inst_deeds.json',
     DEED_CATEGORIES['INSTANCES MINES OF MORIA']
   );
-  let loth_inst = deed_fetch_and_store(
+  let loth_inst = deedFetchAndStore(
     db,
     '/data/loth_inst_deeds.json',
     DEED_CATEGORIES['INSTANCES LOTHLORIEN']
   );
-  let mirk_inst = deed_fetch_and_store(
+  let mirk_inst = deedFetchAndStore(
     db,
     '/data/mirk_inst_deeds.json',
     DEED_CATEGORIES['INSTANCES MIRKWOOD']
   );
-  let ita_inst = deed_fetch_and_store(
+  let ita_inst = deedFetchAndStore(
     db,
     '/data/ita_inst_deeds.json',
     DEED_CATEGORIES['INSTANCES IN THEIR ABSENCE']
   );
-  let isen_inst = deed_fetch_and_store(
+  let isen_inst = deedFetchAndStore(
     db,
     '/data/isen_inst_deeds.json',
     DEED_CATEGORIES['INSTANCES RISE OF ISENGUARD']
   );
-  let ereb_inst = deed_fetch_and_store(
+  let ereb_inst = deedFetchAndStore(
     db,
     '/data/erebor_inst_deeds.json',
     DEED_CATEGORIES['INSTANCES ROAD TO EREBOR']
   );
-  let osg_inst = deed_fetch_and_store(
+  let osg_inst = deedFetchAndStore(
     db,
     '/data/osg_inst_deeds.json',
     DEED_CATEGORIES['INSTANCES ASHES OF OSGILIATH']
   );
-  let pel_inst = deed_fetch_and_store(
+  let pel_inst = deedFetchAndStore(
     db,
     '/data/pel_inst_deeds.json',
     DEED_CATEGORIES['INSTANCES BATTLE OF PELENNOR']
   );
 
-  let seh_deeds = deed_fetch_and_store(
+  let seh_deeds = deedFetchAndStore(
     db,
     '/data/seh_deeds.json',
     DEED_CATEGORIES['SOCIAL, EVENTS, AND HOBBIES']
   );
-  let special_deeds = deed_fetch_and_store(
+  let special_deeds = deedFetchAndStore(
     db,
     '/data/bobb_deeds.json',
     DEED_CATEGORIES.SPECIAL

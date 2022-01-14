@@ -1,5 +1,5 @@
 /**
- * [IDB is a simplified wrapper to ease use of IndexedDB]
+ * IDB is a simplified wrapper to ease use of IndexedDB
  */
 export class IDB {
   //eslint-disable-line
@@ -11,9 +11,9 @@ export class IDB {
   }
 
   /**
-   * [open_db attempts to open the database for use]
-   * @param  {Function} [onUpgrade=null] [callback that is used when IndexedDB requires an upgrade]
-   * @return {Promise<IDB>} [a Promise resolving upon successful database opening or rejecting on error]
+   * open_db attempts to open the database for use
+   * @param  {Function} onUpdrade callback that is used when IndexedDB requires an upgrade
+   * @return {Promise<IDB>} a Promise resolving upon successful database opening or rejecting on error
    */
   openDB(onUpgrade = null) {
     let request = window.indexedDB.open(this.dbname, this.version);
@@ -38,7 +38,7 @@ export class IDB {
       };
 
       //if provided, allow for database upgrading
-      if (onUpgrade) {
+      if (onUpdrade) {
         request.onupgradeneeded = event => {
           console.log('idb:odb:oun');
           this.upgraded = true;
@@ -51,11 +51,11 @@ export class IDB {
   }
 
   /**
-   * [create_store description]
-   * @param  {string} name     [name of store to create]
-   * @param  {object} options  [options for store]
-   * @param  {Function} callback [callback used to make modifications to store]
-   * @return {Promise<IDB>}         [Promise that resolves upon sucessful store creation and rejects on error]
+   * create_store description
+   * @param  {string} name     name of store to create
+   * @param  {object} options  options for store
+   * @param  {Function} callback callback used to make modifications to store
+   * @return {Promise<IDB>} Promise that resolves upon sucessful store creation and rejects on error
    */
   createStore(name, options = null, callback = null) {
     console.log('create_store called...');
@@ -90,11 +90,11 @@ export class IDB {
   }
 
   /**
-   * [transaction initiates an idb transaction]
-   * @param  {string|Array} stores  [string of store or array of stores that the transaction will act upon]
-   * @param  {string} [mode='readonly']     [transaction mode]
-   * @param  {type} [callback=null] [callback called upon transaction completion]
-   * @return {Promise<Transaction>}                 [Promse that resolves with a Transaction or rejects on error]
+   * transaction initiates an idb transaction
+   * @param  {string | Array} stores  string of store or array of stores that the transaction will act upon
+   * @param  {string} mode transaction mode
+   * @param  {Function} callback callback called upon transaction completion
+   * @return {Promise} Promse that resolves with a Transaction or rejects on error
    */
   transaction(stores, mode = 'readonly', callback = undefined) {
     let transaction = new Transaction(this, this.db.transaction(stores, mode));
@@ -103,13 +103,13 @@ export class IDB {
 }
 
 /**
- * [Transaction manages IndexeDB transactions]
+ * Transaction manages IndexeDB transactions
  */
 export class Transaction {
   /**
-   * [constructor Transaction manages IndexeDB transactions]
-   * @param {IDB} idb                  [a reference to IDB]
-   * @param {IDBTransaction} transaction          [the IDBTransaction this class wraps]
+   * constructor Transaction manages IndexeDB transactions
+   * @param {type} idb a reference to IDB
+   * @param {IDBTransaction} transaction the IDBTransaction this class wraps
    */
   constructor(idb, transaction) {
     this.idb = idb;
@@ -117,8 +117,8 @@ export class Transaction {
   }
 
   /**
-   * [promisify turns the IDBTransaction into a promise]
-   * @return {Promise<Transaction>} [Promise that resolves immediately with itself or rejects on error]
+   * promisify turns the IDBTransaction into a promise
+   * @return {Promise<Transaction>} Promise that resolves immediately with itself or rejects on error
    */
   promisify() {
     return new Promise((resolve, reject) => {
@@ -137,9 +137,9 @@ export class Transaction {
   }
 
   /**
-   * [open_store opens the given store for this transaction]
-   * @param  {string} name [name of store to open]
-   * @return {ObjectStore}      [Promes that resolves to the store or rejects on error]
+   * open_store opens the given store for this transaction
+   * @param  {string} name name of store to open
+   * @return {Promise<ObjectStore>} Promes that resolves to the store or rejects on error
    */
   openStore(name) {
     console.log('tx:os');
@@ -148,7 +148,7 @@ export class Transaction {
   }
 
   /**
-   * [abort calls the underlying IDBTransaction's abort method]
+   * abort calls the underlying IDBTransaction's abort method
    */
   abort() {
     console.log('tx:a');
@@ -173,13 +173,13 @@ export class Transaction {
 }
 
 /**
- * [ObjectStore manages object store access]
+ * ObjectStore manages object store access
  */
 export class ObjectStore {
   /**
-   * [constructor ObjectStore manages object store access]
-   * @param {IDBObjectStore} store [the IDBObjectStore object this wraps]
-   * @param {string} name  [the name of the store]
+   * constructor ObjectStore manages object store access
+   * @param {IDBObjectStore} store the IDBObjectStore object this wraps
+   * @param {string} name  the name of the store
    */
   constructor(store, name) {
     this.store = store;
@@ -187,17 +187,17 @@ export class ObjectStore {
   }
 
   /**
-   * [create_index creates an index within the store]
-   * @param  {string} index_name        [the name of the index to be created]
-   * @param  {string} key_path          [the key that is being indexed]
-   * @param  {object} [parameters=null] [additional index parameters]
+   * create_index creates an index within the store
+   * @param  {string} index_name the name of the index to be created
+   * @param  {string} key_path the key that is being indexed
+   * @param  {object} parameters additional index parameters
    */
   createIndex(index_name, key_path, parameters = null) {
     this.store.createIndex(index_name, key_path, parameters);
   }
 
   /**
-   * [add adds a key-value item to the store]
+   * add adds a key-value item to the store]
    * @param {object} value  [a value object to be added to the store]
    * @param {string} [key=undefined]   [key the item should be stored at]
    * @return {Promise}    [Promes that resolves on success or rejects on error]
