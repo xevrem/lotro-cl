@@ -41,3 +41,5 @@ yarn-error.log*
 .sass-cache
 *.css.map
 
+# yarn stuff
+/.yarn

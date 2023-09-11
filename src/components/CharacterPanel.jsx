@@ -21,7 +21,8 @@ SOFTWARE.
 
  */
 import React, { Component } from 'react';
-import ReactModal from 'react-modal';
+import PropTypes from 'prop-types';
+// import ReactModal from 'react-modal';
 import './CharacterPanel.scss';
 
 import { List, Panel, Button, SelectObject, TextInput } from './Common';
@@ -351,13 +352,13 @@ class CharacterPanel extends Component {
               {character_list}
             </List>
           </div>
+{/*
           <ReactModal
             className="modal-content panel"
             overlayClassName="modal"
             isOpen={this.state.show_upload_modal}
             onRequestClose={this.handle_modal_request_close.bind(this)}
           >
-            {/*FIXME: move this form's style into character panel's scss file  */}
             <form onSubmit={this.handle_submit.bind(this)}>
               <h3 style={{ textAlign: 'center', marginTop: '0px' }}>
                 Select File to Load
@@ -386,7 +387,8 @@ class CharacterPanel extends Component {
                 Load File
               </button>
             </form>
-          </ReactModal>
+            </ReactModal>
+  */}
         </div>
       </Panel>
     );

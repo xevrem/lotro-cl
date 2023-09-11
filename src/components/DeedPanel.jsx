@@ -20,13 +20,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-import React, { Component } from 'react';
-import './DeedPanel.scss';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import "./DeedPanel.scss";
 
-import { DoublePanel, List, Panel, Button } from './Common';
-import { ACTION_TYPES, DEED_CATEGORIES } from './../constants';
+import { DoublePanel, List, Panel, Button } from "./Common";
+import { ACTION_TYPES, DEED_CATEGORIES } from "./../constants";
 
-import { getStore } from './../Store';
+import { getStore } from "./../Store";
 
 /**
  *
@@ -37,8 +38,8 @@ import { getStore } from './../Store';
  */
 const Deed = ({ name, selected, completed, onClick, children }) => {
   //calculate which classes to add
-  let is_selected = selected ? 'deed clickable selected ' : 'deed clickable ';
-  let is_completed = completed ? 'completed' : '';
+  let is_selected = selected ? "deed clickable selected " : "deed clickable ";
+  let is_completed = completed ? "completed" : "";
   return (
     <div className={is_selected + is_completed} onClick={onClick}>
       <p>{name}</p>
@@ -99,24 +100,24 @@ class DeedPanel extends Component {
 
   deed_type_to_text(deed_type, category) {
     switch (deed_type) {
-      case 'C':
-        return 'Class';
-      case 'E':
-        return 'Exploration';
-      case 'F':
-        return 'Festival';
-      case 'L':
-        return 'Lore';
-      case 'M':
-        return 'Meta';
-      case 'Q':
-        return 'Quest';
-      case 'R':
-        return category === DEED_CATEGORIES.RACE ? 'Race' : 'Reputation';
-      case 'S':
-        return 'Slayer';
-      case 'So':
-        return 'Social';
+      case "C":
+        return "Class";
+      case "E":
+        return "Exploration";
+      case "F":
+        return "Festival";
+      case "L":
+        return "Lore";
+      case "M":
+        return "Meta";
+      case "Q":
+        return "Quest";
+      case "R":
+        return category === DEED_CATEGORIES.RACE ? "Race" : "Reputation";
+      case "S":
+        return "Slayer";
+      case "So":
+        return "Social";
       default:
         return deed_type;
     }
@@ -134,22 +135,22 @@ class DeedPanel extends Component {
       <div
         className={
           character.completed[this.props.deed_category_selected][index]
-            ? 'deed-details completed'
-            : 'deed-details'
+            ? "deed-details completed"
+            : "deed-details"
         }
       >
         <p>{deed.Details}</p>
         {deed.Faction && <p className="deed-stats">Faction: {deed.Faction}</p>}
         {deed.Type && (
           <p className="deed-stats">
-            Type:{' '}
+            Type:{" "}
             {this.deed_type_to_text(
               deed.Type,
               this.props.deed_category_selected
             )}
           </p>
         )}
-        {deed.LP && deed.LP != '-' && (
+        {deed.LP && deed.LP != "-" && (
           <p className="deed-stats">LP: {deed.LP}</p>
         )}
         {deed.Trait && <p className="deed-stats">Trait: {deed.Trait}</p>}
@@ -187,7 +188,7 @@ class DeedPanel extends Component {
       this.props.selected_character < 0 ||
       !this.props.characters
     )
-      return '';
+      return "";
 
     let character = this.props.characters[this.props.selected_character];
 

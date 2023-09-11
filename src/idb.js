@@ -1,8 +1,28 @@
 /**
+ * IDB callback
+ * @callback idbCallback
+ * @param {IDB} context - current IDB context
+ */
+
+/**
  * IDB is a simplified wrapper to ease use of IndexedDB
  */
 export class IDB {
-  //eslint-disable-line
+  /** @type {IDBDatabase} */
+  db;
+  /** @type {string} */
+  dbname;
+  /** @type {number} */
+  version;
+  /** @type {boolean} */
+  upgraded;
+  /** @type {number} */
+  oldVersion;
+
+  /**
+   * @param {string} dbname
+   * @param {number} version
+   */
   constructor(dbname, version) {
     this.dbname = dbname;
     this.version = version;
@@ -11,36 +31,36 @@ export class IDB {
   }
 
   /**
-   * open_db attempts to open the database for use
-   * @param  {Function} onUpdrade callback that is used when IndexedDB requires an upgrade
+   * attempts to open the database for use
+   * @param  {idbCallback?} onUpgrade - callback that is used when IndexedDB requires an upgrade
    * @return {Promise<IDB>} a Promise resolving upon successful database opening or rejecting on error
    */
   openDB(onUpgrade = null) {
     let request = window.indexedDB.open(this.dbname, this.version);
-
+    
     return new Promise((resolve, reject) => {
       //handle successful database opening
-      request.onsuccess = event => {
-        console.log('idb:odb:os');
+      request.onsuccess = (event) => {
+        console.log("idb:odb:os");
         this.db = event.target.result;
         resolve(this);
       };
 
       //handle errors on database opening
-      request.onerror = event => {
+      request.onerror = (event) => {
         let error = event.target.error;
-        console.error('idb:odb:oe::', error);
+        console.error("idb:odb:oe::", error);
         reject(error);
       };
 
-      request.onblocked = event => {
-        console.log('idb:odb:ob::', event);
+      request.onblocked = (event) => {
+        console.log("idb:odb:ob::", event);
       };
 
       //if provided, allow for database upgrading
-      if (onUpdrade) {
-        request.onupgradeneeded = event => {
-          console.log('idb:odb:oun');
+      if (onUpgrade) {
+        request.onupgradeneeded = (event) => {
+          console.log("idb:odb:oun");
           this.upgraded = true;
           this.db = event.target.result;
           this.oldVersion = event.oldVersion;
@@ -58,7 +78,7 @@ export class IDB {
    * @return {Promise<IDB>} Promise that resolves upon sucessful store creation and rejects on error
    */
   createStore(name, options = null, callback = null) {
-    console.log('create_store called...');
+    console.log("create_store called...");
     return new Promise((resolve, reject) => {
       let objectStore;
       if (options) {
@@ -72,18 +92,18 @@ export class IDB {
 
       //if everything goes well, resolve the promise
       objectStore.store.transaction.oncomplete = () => {
-        console.log('idb:cs:oc');
+        console.log("idb:cs:oc");
         resolve(this);
       };
 
-      console.log('initial store created...');
+      console.log("initial store created...");
       try {
         //store has been created, provide the store for manipulation
         if (callback) {
           callback(objectStore);
         }
       } catch (error) {
-        console.error('error during store creation...', error);
+        console.error("error during store creation...", error);
         reject(error);
       }
     });
@@ -96,8 +116,12 @@ export class IDB {
    * @param  {Function} callback callback called upon transaction completion
    * @return {Promise} Promse that resolves with a Transaction or rejects on error
    */
-  transaction(stores, mode = 'readonly', callback = undefined) {
-    let transaction = new Transaction(this, this.db.transaction(stores, mode));
+  transaction(stores, mode = "readonly", callback = undefined) {
+    let transaction = new Transaction(
+      this,
+      this.db.transaction(stores, mode),
+      callback
+    );
     return transaction.promisify();
   }
 }
@@ -106,14 +130,23 @@ export class IDB {
  * Transaction manages IndexeDB transactions
  */
 export class Transaction {
+  /** @type {IDB} */
+  idb;
+  /** @type {IDBTransaction} */
+  transaction;
+  /** @type {Function} */
+  callback;
+
   /**
    * constructor Transaction manages IndexeDB transactions
-   * @param {type} idb a reference to IDB
-   * @param {IDBTransaction} transaction the IDBTransaction this class wraps
+   * @param {IDB} idb - the IDB context
+   * @param {IDBTransaction} transaction - an IDBTransaction to wrap
+   * @param {Function} callback - a callback
    */
-  constructor(idb, transaction) {
+  constructor(idb, transaction, callback) {
     this.idb = idb;
     this.transaction = transaction;
+    this.callback = callback;
   }
 
   /**
@@ -122,15 +155,18 @@ export class Transaction {
    */
   promisify() {
     return new Promise((resolve, reject) => {
-      this.transaction.onerror = event => {
-        console.log('tx:onerror');
+      this.transaction.addEventListener("error", (event) => {
+        console.log("tx:onerror");
         reject(event.target);
-      };
-
-      this.transaction.onabort = event => {
-        console.log('tx:onabort');
+      });
+      // this.transaction.onerror = event => {
+      // };
+      this.transaction.addEventListener("abort", (event) => {
+        console.log("tx:onabort");
         reject(event.target);
-      };
+      });
+      // this.transaction.onabort = event => {
+      // };
 
       resolve(this);
     });
@@ -142,7 +178,7 @@ export class Transaction {
    * @return {Promise<ObjectStore>} Promes that resolves to the store or rejects on error
    */
   openStore(name) {
-    console.log('tx:os');
+    console.log("tx:os");
     let store = new ObjectStore(this.transaction.objectStore(name));
     return store;
   }
@@ -151,7 +187,7 @@ export class Transaction {
    * abort calls the underlying IDBTransaction's abort method
    */
   abort() {
-    console.log('tx:a');
+    console.log("tx:a");
     this.transaction.abort();
   }
 
@@ -160,12 +196,22 @@ export class Transaction {
    * @returns {Promise<Transaction>}
    */
   commit() {
-    console.log('tx:c');
+    console.log("tx:c");
     const complete = new Promise((resolve, reject) => {
-      this.transaction.oncomplete = () => {
-        console.log('tx:oncomplete');
+      // this.transaction.oncomplete = () => {};
+      this.transaction.addEventListener("complete", () => {
+        console.log("tx:commit:complete");
         resolve(this);
-      };
+        this.callback(this);
+      });
+
+      this.transaction.addEventListener("error", (error) => {
+        console.error("tx:commit:error", error);
+        reject(this);
+      });
+      // this.transaction.onerror = () => {
+      //   reject(this);
+      // };
     });
     this.transaction.commit();
     return complete;
@@ -315,7 +361,7 @@ export class Cursor {
    */
   promisify() {
     return new Promise((resolve, reject) => {
-      this.cursor.onsuccess = event => {
+      this.cursor.onsuccess = (event) => {
         if (event.target.result) {
           if (this.callback) this.callback(event.target.result);
         } else {
@@ -323,7 +369,7 @@ export class Cursor {
         }
       };
 
-      this.cursor.onerror = event => {
+      this.cursor.onerror = (event) => {
         reject(event.target);
       };
     });
@@ -335,7 +381,7 @@ export class Cursor {
  */
 export class IdbRequest {
   /**
-   * [constructor wrapper around an IDBRequest]
+   * constructor wrapper around an IDBRequest
    * @param {IDBRequest} request [IDBRequest being wrapped]
    */
   constructor(request) {
@@ -348,10 +394,10 @@ export class IdbRequest {
    */
   promisify() {
     return new Promise((resolve, reject) => {
-      this.request.onsuccess = event => {
+      this.request.onsuccess = (event) => {
         resolve(event.target.result);
       };
-      this.request.onerror = event => {
+      this.request.onerror = (event) => {
         reject(event.target.error);
       };
     });

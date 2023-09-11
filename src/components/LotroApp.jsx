@@ -20,37 +20,37 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-import React, { Component } from 'react';
-import ReactModal from 'react-modal';
-import './LotroApp.scss';
+import React, { Component } from "react";
+// import ReactModal from 'react-modal';
+import "./LotroApp.scss";
 
-import CharacterPanel from './CharacterPanel';
-import DeedPanel from './DeedPanel';
-import SummaryPanel from './SummaryPanel';
+import CharacterPanel from "./CharacterPanel";
+import DeedPanel from "./DeedPanel";
+import SummaryPanel from "./SummaryPanel";
 
-import { createStore, getStore } from './../Store';
+import { createStore, getStore } from "./../Store";
 import {
   ACTION_TYPES,
   DEED_CATEGORIES,
   BASE_URL,
   SCREEN_SIZES,
-} from './../constants';
+} from "./../constants";
 import {
   openDatabase,
   initialDeedPopulation,
   get_deeds_of_type,
   save_characters,
   reset_database,
-} from './../database';
-import { Button } from './Common';
+} from "./../database";
+import { Button } from "./Common";
 
-ReactModal.setAppElement('#root');
+// ReactModal.setAppElement('#root');
 
 let initial_state = {
   selected_character: -1,
   selected_deed: -1,
   deed_category_selected: 0,
-  deed_subcategory_selected: '',
+  deed_subcategory_selected: "",
   deed_subcategories: null,
   characters: [],
   deeds: [],
@@ -64,16 +64,16 @@ let initial_state = {
 createStore(initial_state, 16, -1);
 
 //update window resizing information in store
-const updateWindowDimensions = event => {
+const updateWindowDimensions = () => {
   getStore().issueAction(ACTION_TYPES.WINDOW_RESIZE, {
     width: window.innerWidth,
     height: window.innerHeight,
   });
 };
 //ensure window resizing is captured
-window.addEventListener('resize', updateWindowDimensions);
+window.addEventListener("resize", updateWindowDimensions);
 
-class LotroApp extends Component {
+export class LotroApp extends Component {
   constructor(props) {
     super(props);
     this.state = getStore().getState();
@@ -144,45 +144,56 @@ class LotroApp extends Component {
   }
 
   async retrieve_app_data() {
-    console.log('retrieve_app_data called...');
+    console.log("retrieve_app_data called...");
 
     //get stored character data
-    const characterData = new Promise(async (resolve, reject) => {
+    const characterData = new Promise((resolve, reject) => {
       //attempt to pull data from the db, otherwise fetch
-      // this.database.then(db => {
-      try {
-        const tx = await this.database.transaction('characters');
-        const data = await tx.openStore('characters').getAll();
-        if (data.length > 0) {
-          resolve(data);
-        } else {
-          resolve([]);
-        }
-      } catch (error) {
-        console.error('la:rad::characters transaction error');
-        reject(error);
-      }
+      return this.database
+        .transaction("characters")
+        .then((tx) =>
+          tx
+            .openStore("characters")
+            .getAll()
+            .then((data) => {
+              if (data.length > 0) {
+                return resolve(data);
+              } else {
+                return resolve([]);
+              }
+            })
+        )
+        .catch((error) => {
+          console.error("la:rad::characters transaction error");
+          return reject(error);
+        });
     });
 
     //do initial class deed data load
-    const classData = new Promise(async (resolve, reject) => {
-      try {
-        const tx = await this.database.transaction('deeds');
-        const data = await tx.openStore('deeds').get(DEED_CATEGORIES.CLASS);
-        resolve(data);
-      } catch (error) {
-        console.error('la:rad::deeds transaction error');
-        reject(error);
-      }
-    });
+    const classData = new Promise((resolve, reject) =>
+      this.database
+        .transaction("deeds")
+        .then((tx) =>
+          tx
+            .openStore("deeds")
+            .get(DEED_CATEGORIES.CLASS)
+            .then((data) => resolve(data))
+        )
+        .catch((error) => {
+          console.error("la:rad::deeds transaction error");
+          reject(error);
+        })
+    );
 
     try {
       //run promises async and set the data
       const data = await Promise.all([characterData, classData]);
 
       let categories = new Set();
+
       console.log(data);
-      data[1].forEach(deed => {
+
+      data[1].forEach((deed) => {
         categories.add(deed.Subcategory);
       });
 
@@ -192,7 +203,7 @@ class LotroApp extends Component {
         deed_subcategories: categories,
       });
     } catch (error) {
-      console.log('retrieve_app_data error:', error);
+      console.log("retrieve_app_data error:", error);
     }
   }
 
@@ -209,25 +220,25 @@ class LotroApp extends Component {
     save_characters(this.database, state.characters);
   }
 
-  handle_deed_action(stat, data) {
+  handle_deed_action(state, data) {
     // console.log('handle_deed_action called...');
     this.setState(data);
   }
 
   switch_deed_category(db_promise, deed_data) {
     get_deeds_of_type(db_promise, deed_data.deed_category_selected).then(
-      data => {
+      (data) => {
         //create the subcategories
         let subs = new Set();
 
-        data.forEach(deed => {
+        data.forEach((deed) => {
           subs.add(deed.Subcategory);
         });
 
         getStore().issueAction(ACTION_TYPES.DEED_UPDATED, {
           deeds: data,
           deed_subcategories: subs,
-          deed_subcategory_selected: '',
+          deed_subcategory_selected: "",
         });
       }
     );
@@ -248,23 +259,23 @@ class LotroApp extends Component {
         this.switch_deed_category(this.database, data);
         break;
 
-      case DEED_CATEGORIES['SHADOWS OF ANGMAR']:
+      case DEED_CATEGORIES["SHADOWS OF ANGMAR"]:
         this.switch_deed_category(this.database, data);
         break;
 
-      case DEED_CATEGORIES['THE MINES OF MORIA']:
+      case DEED_CATEGORIES["THE MINES OF MORIA"]:
         this.switch_deed_category(this.database, data);
         break;
 
-      case DEED_CATEGORIES['ALLIES TO THE KING']:
+      case DEED_CATEGORIES["ALLIES TO THE KING"]:
         this.switch_deed_category(this.database, data);
         break;
 
-      case DEED_CATEGORIES['THE STRENGTH OF SAURON']:
+      case DEED_CATEGORIES["THE STRENGTH OF SAURON"]:
         this.switch_deed_category(this.database, data);
         break;
 
-      case DEED_CATEGORIES['THE BLACK BOOK OF MORDOR']:
+      case DEED_CATEGORIES["THE BLACK BOOK OF MORDOR"]:
         this.switch_deed_category(this.database, data);
         break;
 
@@ -292,34 +303,34 @@ class LotroApp extends Component {
         this.switch_deed_category(this.database, data);
         break;
 
-      case DEED_CATEGORIES['INSTANCES SHADOWS OF ANGMAR']:
+      case DEED_CATEGORIES["INSTANCES SHADOWS OF ANGMAR"]:
         this.switch_deed_category(this.database, data);
         break;
-      case DEED_CATEGORIES['INSTANCES MINES OF MORIA']:
+      case DEED_CATEGORIES["INSTANCES MINES OF MORIA"]:
         this.switch_deed_category(this.database, data);
         break;
-      case DEED_CATEGORIES['INSTANCES LOTHLORIEN']:
+      case DEED_CATEGORIES["INSTANCES LOTHLORIEN"]:
         this.switch_deed_category(this.database, data);
         break;
-      case DEED_CATEGORIES['INSTANCES MIRKWOOD']:
+      case DEED_CATEGORIES["INSTANCES MIRKWOOD"]:
         this.switch_deed_category(this.database, data);
         break;
-      case DEED_CATEGORIES['INSTANCES IN THEIR ABSENCE']:
+      case DEED_CATEGORIES["INSTANCES IN THEIR ABSENCE"]:
         this.switch_deed_category(this.database, data);
         break;
-      case DEED_CATEGORIES['INSTANCES RISE OF ISENGUARD']:
+      case DEED_CATEGORIES["INSTANCES RISE OF ISENGUARD"]:
         this.switch_deed_category(this.database, data);
         break;
-      case DEED_CATEGORIES['INSTANCES ROAD TO EREBOR']:
+      case DEED_CATEGORIES["INSTANCES ROAD TO EREBOR"]:
         this.switch_deed_category(this.database, data);
         break;
-      case DEED_CATEGORIES['INSTANCES ASHES OF OSGILIATH']:
+      case DEED_CATEGORIES["INSTANCES ASHES OF OSGILIATH"]:
         this.switch_deed_category(this.database, data);
         break;
-      case DEED_CATEGORIES['INSTANCES BATTLE OF PELENNOR']:
+      case DEED_CATEGORIES["INSTANCES BATTLE OF PELENNOR"]:
         this.switch_deed_category(this.database, data);
         break;
-      case DEED_CATEGORIES['SOCIAL, EVENTS, AND HOBBIES']:
+      case DEED_CATEGORIES["SOCIAL, EVENTS, AND HOBBIES"]:
         this.switch_deed_category(this.database, data);
         break;
       case DEED_CATEGORIES.SPECIAL:
@@ -337,36 +348,36 @@ class LotroApp extends Component {
 
   //purposefully clears entire database
   handleResetDatabase() {
-    console.log('handle_reset_database called...');
+    console.log("handle_reset_database called...");
 
     reset_database(this.database)
       .then(() => {
         window.location.reload();
       })
-      .catch(error => {
-        console.log('handle_reset_database failure...', error);
+      .catch((error) => {
+        console.log("handle_reset_database failure...", error);
       });
   }
 
   //purposefully unregisteres this app's service-worker script
   handle_reset_serviceworker() {
-    if ('serviceWorker' in navigator) {
+    if ("serviceWorker" in navigator) {
       navigator.serviceWorker
-        .getRegistration(BASE_URL + '/')
-        .then(registration => {
+        .getRegistration(BASE_URL + "/")
+        .then((registration) => {
           //tell service_worker to cleanup its cache
           if (registration)
-            registration.active.postMessage({ action: 'CLEANUP' });
+            registration.active.postMessage({ action: "CLEANUP" });
 
           // console.log('sw:',registration);
           registration
             .unregister()
-            .then(is_unregistered => {
+            .then((is_unregistered) => {
               //success, so refresh window
               if (is_unregistered) window.location.reload();
             })
-            .catch(error => {
-              console.log('unregistration error', error);
+            .catch((error) => {
+              console.log("unregistration error", error);
             });
         });
     }
@@ -398,14 +409,14 @@ class LotroApp extends Component {
 
   render() {
     //adjust title depending on screen width
-    let title = 'LoTRO CL';
+    let title = "LoTRO CL";
 
     if (this.state.width > SCREEN_SIZES.SMALL) {
-      title = 'LoTRO Character Log';
+      title = "LoTRO Character Log";
     }
     //width is larger than the below full string at h1
     if (this.state.width > 873) {
-      title = 'Lord of the Rings Online Character Log';
+      title = "Lord of the Rings Online Character Log";
     }
 
     return (
@@ -421,72 +432,73 @@ class LotroApp extends Component {
               </h1>
             </li>
           </ul>
+          {/*
+                                        <ReactModal
+                                                className="menu-modal-content panel"
+                                                overlayClassName="menu-modal-overlay"
+                                                isOpen={this.state.show_menu_modal}
+                                                onRequestClose={this.handleMenuModalClose}
+                                        >
+                                                <div className="about-panel">
+                                                        <h3>Miscelaneous Items</h3>
 
-          <ReactModal
-            className="menu-modal-content panel"
-            overlayClassName="menu-modal-overlay"
-            isOpen={this.state.show_menu_modal}
-            onRequestClose={this.handleMenuModalClose}
-          >
-            <div className="about-panel">
-              <h3>Miscelaneous Items</h3>
+                                                        {this.state.width >= SCREEN_SIZES.SMALL ? (
+                                                                <div
+                                                                        style={{
+                                                                                display: 'inline-flex',
+                                                                                alignItems: 'center',
+                                                                                height: '42px',
+                                                                        }}
+                                                                >
+                                                                        <h4>Debug Commands: </h4>
+                                                                        <Button
+                                                                                className="btn btn-danger"
+                                                                                text="Reset DB"
+                                                                                onClick={this.handleResetDatabase}
+                                                                        />
+                                                                        <Button
+                                                                                className="btn btn-danger"
+                                                                                text="Reset SW"
+                                                                                onClick={this.handle_reset_serviceworker}
+                                                                        />
+                                                                </div>
+                                                        ) : (
+                                                                <div>
+                                                                        <h4 style={{ margin: '5px' }}>Debug Commands: </h4>
+                                                                        <Button
+                                                                                className="btn btn-danger"
+                                                                                text="Reset DB"
+                                                                                onClick={this.handleResetDatabase}
+                                                                        />
+                                                                        <Button
+                                                                                className="btn btn-danger"
+                                                                                text="Reset SW"
+                                                                                onClick={this.handle_reset_serviceworker}
+                                                                        />
+                                                                </div>
+                                                        )}
 
-              {this.state.width >= SCREEN_SIZES.SMALL ? (
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    height: '42px',
-                  }}
-                >
-                  <h4>Debug Commands: </h4>
-                  <Button
-                    className="btn btn-danger"
-                    text="Reset DB"
-                    onClick={this.handleResetDatabase}
-                  />
-                  <Button
-                    className="btn btn-danger"
-                    text="Reset SW"
-                    onClick={this.handle_reset_serviceworker}
-                  />
-                </div>
-              ) : (
-                <div>
-                  <h4 style={{ margin: '5px' }}>Debug Commands: </h4>
-                  <Button
-                    className="btn btn-danger"
-                    text="Reset DB"
-                    onClick={this.handleResetDatabase}
-                  />
-                  <Button
-                    className="btn btn-danger"
-                    text="Reset SW"
-                    onClick={this.handle_reset_serviceworker}
-                  />
-                </div>
-              )}
-
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  height: '42px',
-                }}
-              >
-                <h4>Source Code:</h4>
-                <a
-                  className="github-link"
-                  href="https://github.com/xevrem/lotro-cl"
-                >
-                  <i
-                    className="fab fa-github github-icon"
-                    aria-hidden="true"
-                  ></i>
-                </a>
-              </div>
-            </div>
-          </ReactModal>
+                                                        <div
+                                                                style={{
+                                                                        display: 'inline-flex',
+                                                                        alignItems: 'center',
+                                                                        height: '42px',
+                                                                }}
+                                                        >
+                                                                <h4>Source Code:</h4>
+                                                                <a
+                                                                        className="github-link"
+                                                                        href="https://github.com/xevrem/lotro-cl"
+                                                                >
+                                                                        <i
+                                                                                className="fab fa-github github-icon"
+                                                                                aria-hidden="true"
+                                                                        ></i>
+                                                                </a>
+                                                        </div>
+                                                </div>
+                                        </ReactModal>
+  */}
         </div>
 
         <div className="site">

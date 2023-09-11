@@ -21,16 +21,42 @@ SOFTWARE.
 
  */
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import './index.scss';
 
-import LotroApp from './components/LotroApp';
+import { LotroApp } from './components/LotroApp';
 import { BASE_URL } from './constants';
 
-let refreshing = false;
+// let refreshing = false;
+const elem = document.getElementById('root');
 
-ReactDOM.render(<LotroApp />, document.getElementById('root'));
-register_service_worker();
+if(!elem) throw new Error('failed to create element');
+
+const root = createRoot(elem);
+root.render(<LotroApp />);
+
+/**
+ * let user know service worker can update
+ * @param {ServiceWorker} worker
+ */
+function update_ready(worker) {
+  console.log('update_ready called...');
+  worker.postMessage({ action: 'SKIP_WAITING' });
+}
+
+/**
+ * create an state change tracker for this service worker
+ * @param {ServiceWorker} worker
+ */
+function track_installing(worker) {
+  console.log('track_installing called...');
+  //if this service worker finished installing, tell it to take over.
+  worker.addEventListener('statechange', () => {
+    if (worker.state === 'installed') {
+      update_ready(worker);
+    }
+  });
+}
 
 function register_service_worker() {
   if (!navigator.serviceWorker) return;
@@ -53,7 +79,9 @@ function register_service_worker() {
 
         //has a new service worker appeared?
         registration.addEventListener('updatefound', () => {
-          track_installing(registration.installing);
+          if (registration.installing) {
+            track_installing(registration.installing);
+          }
         });
       });
 
@@ -65,19 +93,5 @@ function register_service_worker() {
   });
 }
 
-//let user know service worker can update
-function update_ready(worker) {
-  console.log('update_ready called...');
-  worker.postMessage({ action: 'SKIP_WAITING' });
-}
 
-//create an state change tracker for this service worker
-function track_installing(worker) {
-  console.log('track_installing called...');
-  //if this service worker finished installing, tell it to take over.
-  worker.addEventListener('statechange', () => {
-    if (worker.state === 'installed') {
-      update_ready(worker);
-    }
-  });
-}
+register_service_worker();

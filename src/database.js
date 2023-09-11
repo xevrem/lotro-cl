@@ -20,8 +20,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-import { IDB } from './idb';
-import { DEED_CATEGORIES, BASE_URL } from './constants';
+import { IDB } from "./idb";
+import { DEED_CATEGORIES, BASE_URL } from "./constants";
 
 const DATABASE_VERSION = 2;
 
@@ -30,17 +30,19 @@ const DATABASE_VERSION = 2;
  * @returns {Promise<IDB>} Return description.
  */
 export function openDatabase() {
-  const idb = new IDB('lotro_store', DATABASE_VERSION);
+  const idb = new IDB("lotro_store", DATABASE_VERSION);
 
-  return idb.openDB(db => {
-    console.log('d:od::upgrading', db);
+  return idb.openDB((db) => {
+    console.log("d:od::upgrading", db);
     switch (db.oldVersion) {
       case 0:
-        console.log('d:od:c0');
-        db.createStore('characters');
+        console.log("d:od:c0");
+        db.createStore("characters");
       case 1:
-        console.log('d:od:c1');
-        db.createStore('deeds');
+        console.log("d:od:c1");
+        db.createStore("deeds");
+      default:
+        break;
     }
   });
 }
@@ -50,162 +52,162 @@ export function openDatabase() {
  *
  * @param {IDB} db
  * @param {string} url
- * @param {Number} deed_type
- * @returns {}
- * @throws {}
+ * @param {number} deed_type
+ * @returns {Promise<IDB>}
+ * @throws {Error}
  */
 async function deedFetchAndStore(db, url, deed_type) {
   try {
     const resp = await fetch(BASE_URL + url);
-    console.log('resp', resp);
+    console.log("resp", resp);
     const data = await resp.json();
-    console.log('json', data);
-    const tx = await db.transaction('deeds', 'readwrite');
-    const deed_store = tx.openStore('deeds');
+    console.log("json", data);
+    const tx = await db.transaction("deeds", "readwrite");
+    const deedStore = tx.openStore("deeds");
 
-    await deed_store.put(data, deed_type);
+    await deedStore.put(data, deed_type);
 
     return tx.commit();
   } catch (error) {
-    console.error('_deed_fetch_and_store error', error);
+    console.error("deedFetchAndStore error", error);
     throw error;
   }
 }
 
 //perform initial deed fetching and storing into the indexeddb
 export function initialDeedPopulation(db) {
-  if (!db) console.log('initial_deed_population something broke...');
+  if (!db) console.log("initial_deed_population something broke...");
 
   //fetch class deeds and store them
   let class_deeds = deedFetchAndStore(
     db,
-    '/data/class_deeds.json',
+    "/data/class_deeds.json",
     DEED_CATEGORIES.CLASS
   );
 
   //fetch race deeds and store them
   let race_deeds = deedFetchAndStore(
     db,
-    '/data/race_deeds.json',
+    "/data/race_deeds.json",
     DEED_CATEGORIES.RACE
   );
 
   //fetch epic deeds and store them
   let soa_deeds = deedFetchAndStore(
     db,
-    '/data/soa_deeds.json',
-    DEED_CATEGORIES['SHADOWS OF ANGMAR']
+    "/data/soa_deeds.json",
+    DEED_CATEGORIES["SHADOWS OF ANGMAR"]
   );
   let mom_deeds = deedFetchAndStore(
     db,
-    '/data/mom_deeds.json',
-    DEED_CATEGORIES['THE MINES OF MORIA']
+    "/data/mom_deeds.json",
+    DEED_CATEGORIES["THE MINES OF MORIA"]
   );
   let aotk_deeds = deedFetchAndStore(
     db,
-    '/data/aotk_deeds.json',
-    DEED_CATEGORIES['ALLIES TO THE KING']
+    "/data/aotk_deeds.json",
+    DEED_CATEGORIES["ALLIES TO THE KING"]
   );
   let tsos_deeds = deedFetchAndStore(
     db,
-    '/data/tsos_deeds.json',
-    DEED_CATEGORIES['THE STRENGTH OF SAURON']
+    "/data/tsos_deeds.json",
+    DEED_CATEGORIES["THE STRENGTH OF SAURON"]
   );
   let bbom_deeds = deedFetchAndStore(
     db,
-    '/data/bbom_deeds.json',
-    DEED_CATEGORIES['THE BLACK BOOK OF MORDOR']
+    "/data/bbom_deeds.json",
+    DEED_CATEGORIES["THE BLACK BOOK OF MORDOR"]
   );
 
   //fetch reputation deeds and store them
   let rep_deeds = deedFetchAndStore(
     db,
-    '/data/rep_deeds.json',
+    "/data/rep_deeds.json",
     DEED_CATEGORIES.REPUTATION
   );
 
   //fetch overworld deeds and store them
   let eriador_deeds = deedFetchAndStore(
     db,
-    '/data/eriador_deeds.json',
+    "/data/eriador_deeds.json",
     DEED_CATEGORIES.ERIADOR
   );
   let rhov_deeds = deedFetchAndStore(
     db,
-    '/data/rhov_deeds.json',
+    "/data/rhov_deeds.json",
     DEED_CATEGORIES.RHOVANION
   );
   let gondor_deeds = deedFetchAndStore(
     db,
-    '/data/gondor_deeds.json',
+    "/data/gondor_deeds.json",
     DEED_CATEGORIES.GONDOR
   );
   let mordor_deeds = deedFetchAndStore(
     db,
-    '/data/mordor_deeds.json',
+    "/data/mordor_deeds.json",
     DEED_CATEGORIES.MORDOR
   );
 
   let skirm_deeds = deedFetchAndStore(
     db,
-    '/data/skirm_deeds.json',
+    "/data/skirm_deeds.json",
     DEED_CATEGORIES.SKIRMISH
   );
 
   let soa_inst = deedFetchAndStore(
     db,
-    '/data/soa_inst_deeds.json',
-    DEED_CATEGORIES['INSTANCES SHADOWS OF ANGMAR']
+    "/data/soa_inst_deeds.json",
+    DEED_CATEGORIES["INSTANCES SHADOWS OF ANGMAR"]
   );
   let mom_inst = deedFetchAndStore(
     db,
-    '/data/mom_inst_deeds.json',
-    DEED_CATEGORIES['INSTANCES MINES OF MORIA']
+    "/data/mom_inst_deeds.json",
+    DEED_CATEGORIES["INSTANCES MINES OF MORIA"]
   );
   let loth_inst = deedFetchAndStore(
     db,
-    '/data/loth_inst_deeds.json',
-    DEED_CATEGORIES['INSTANCES LOTHLORIEN']
+    "/data/loth_inst_deeds.json",
+    DEED_CATEGORIES["INSTANCES LOTHLORIEN"]
   );
   let mirk_inst = deedFetchAndStore(
     db,
-    '/data/mirk_inst_deeds.json',
-    DEED_CATEGORIES['INSTANCES MIRKWOOD']
+    "/data/mirk_inst_deeds.json",
+    DEED_CATEGORIES["INSTANCES MIRKWOOD"]
   );
   let ita_inst = deedFetchAndStore(
     db,
-    '/data/ita_inst_deeds.json',
-    DEED_CATEGORIES['INSTANCES IN THEIR ABSENCE']
+    "/data/ita_inst_deeds.json",
+    DEED_CATEGORIES["INSTANCES IN THEIR ABSENCE"]
   );
   let isen_inst = deedFetchAndStore(
     db,
-    '/data/isen_inst_deeds.json',
-    DEED_CATEGORIES['INSTANCES RISE OF ISENGUARD']
+    "/data/isen_inst_deeds.json",
+    DEED_CATEGORIES["INSTANCES RISE OF ISENGUARD"]
   );
   let ereb_inst = deedFetchAndStore(
     db,
-    '/data/erebor_inst_deeds.json',
-    DEED_CATEGORIES['INSTANCES ROAD TO EREBOR']
+    "/data/erebor_inst_deeds.json",
+    DEED_CATEGORIES["INSTANCES ROAD TO EREBOR"]
   );
   let osg_inst = deedFetchAndStore(
     db,
-    '/data/osg_inst_deeds.json',
-    DEED_CATEGORIES['INSTANCES ASHES OF OSGILIATH']
+    "/data/osg_inst_deeds.json",
+    DEED_CATEGORIES["INSTANCES ASHES OF OSGILIATH"]
   );
   let pel_inst = deedFetchAndStore(
     db,
-    '/data/pel_inst_deeds.json',
-    DEED_CATEGORIES['INSTANCES BATTLE OF PELENNOR']
+    "/data/pel_inst_deeds.json",
+    DEED_CATEGORIES["INSTANCES BATTLE OF PELENNOR"]
   );
 
   let seh_deeds = deedFetchAndStore(
     db,
-    '/data/seh_deeds.json',
-    DEED_CATEGORIES['SOCIAL, EVENTS, AND HOBBIES']
+    "/data/seh_deeds.json",
+    DEED_CATEGORIES["SOCIAL, EVENTS, AND HOBBIES"]
   );
   let special_deeds = deedFetchAndStore(
     db,
-    '/data/bobb_deeds.json',
+    "/data/bobb_deeds.json",
     DEED_CATEGORIES.SPECIAL
   );
 
@@ -249,12 +251,12 @@ export function initialDeedPopulation(db) {
  * @return {[Array]}            [Array of deeds]
  */
 export function get_deeds_of_type(db_promise, deed_type) {
-  return db_promise.then(db => {
+  return db_promise.then((db) => {
     return db
-      .transaction('deeds')
-      .objectStore('deeds')
+      .transaction("deeds")
+      .objectStore("deeds")
       .get(deed_type)
-      .then(data => {
+      .then((data) => {
         return data;
       });
   });
@@ -262,12 +264,12 @@ export function get_deeds_of_type(db_promise, deed_type) {
 
 //get all deeds
 export function get_all_deeds(db_promise) {
-  return db_promise.then(db => {
+  return db_promise.then((db) => {
     return db
-      .transaction('deeds')
-      .objectStore('deeds')
+      .transaction("deeds")
+      .objectStore("deeds")
       .getAll()
-      .then(data => {
+      .then((data) => {
         // console.log('get_all_deeds called...', data);
         return data;
       });
@@ -276,12 +278,12 @@ export function get_all_deeds(db_promise) {
 
 //get character from database at index
 export function get_character(db_promise, index) {
-  return db_promise.then(db => {
+  return db_promise.then((db) => {
     return db
-      .transaction('characters')
-      .objectStore('characters')
+      .transaction("characters")
+      .objectStore("characters")
       .get(index)
-      .then(data => {
+      .then((data) => {
         return data;
       });
   });
@@ -294,9 +296,9 @@ export function get_character(db_promise, index) {
  * @return {[Promise]}            [transaction promise]
  */
 export async function save_characters(db, characters) {
-  console.log('save_characters called...', db, characters);
-  let tx = await db.transaction('characters', 'readwrite');
-  let characterStore = tx.openStore('characters');
+  console.log("save_characters called...", db, characters);
+  let tx = await db.transaction("characters", "readwrite");
+  let characterStore = tx.openStore("characters");
 
   //update characters
   const allPuts = [];
@@ -311,9 +313,9 @@ export async function save_characters(db, characters) {
 
 //delete a specific character by index
 export function delete_character(db_promise, character_index) {
-  return db_promise.then(db => {
-    let tx = db.transaction('characters', 'readwrite');
-    let character_store = tx.objectStore('characters');
+  return db_promise.then((db) => {
+    let tx = db.transaction("characters", "readwrite");
+    let character_store = tx.objectStore("characters");
     character_store.delete(character_index);
     return tx.complete;
   });
@@ -321,9 +323,9 @@ export function delete_character(db_promise, character_index) {
 
 //delete all characters
 export function clear_characters(db_promise) {
-  return db_promise.then(db => {
-    let tx = db.transaction('characters', 'readwrite');
-    let character_store = tx.objectStore('characters');
+  return db_promise.then((db) => {
+    let tx = db.transaction("characters", "readwrite");
+    let character_store = tx.objectStore("characters");
     character_store.clear();
     return tx.complete;
   });
@@ -332,26 +334,26 @@ export function clear_characters(db_promise) {
 export function reset_database(db_promise) {
   let reset_characters = new Promise((resolve, reject) => {
     return db_promise
-      .then(db => {
-        let tx = db.transaction('characters', 'readwrite');
-        tx.objectStore('characters').clear();
+      .then((db) => {
+        let tx = db.transaction("characters", "readwrite");
+        tx.objectStore("characters").clear();
 
         resolve(tx.complete);
       })
-      .catch(error => {
+      .catch((error) => {
         reject(error);
       });
   });
 
   let reset_deeds = new Promise((resolve, reject) => {
     return db_promise
-      .then(db => {
-        let tx = db.transaction('deeds', 'readwrite');
-        tx.objectStore('deeds').clear();
+      .then((db) => {
+        let tx = db.transaction("deeds", "readwrite");
+        tx.objectStore("deeds").clear();
 
         resolve(tx.complete);
       })
-      .catch(error => {
+      .catch((error) => {
         reject(error);
       });
   });

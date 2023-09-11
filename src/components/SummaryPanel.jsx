@@ -21,6 +21,7 @@ SOFTWARE.
 
  */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './SummaryPanel.scss';
 
 import { Panel } from './Common';
@@ -30,6 +31,12 @@ import { ACTION_TYPES } from './../constants';
 import { openDatabase, get_all_deeds } from './../database';
 
 class SummaryPanel extends Component {
+  /** @type {{
+  characters: any[];
+  selected_character: number;
+  }} */
+  props;
+
   constructor(props) {
     super(props);
     this.state = { deeds: null };
@@ -41,7 +48,7 @@ class SummaryPanel extends Component {
     );
   }
 
-  async handle_deeds_update(state, action) {
+  async handle_deeds_update() {
     //refresh deed data
     const database = await openDatabase();
     const deeds = await get_all_deeds(database);
@@ -124,3 +131,8 @@ class SummaryPanel extends Component {
 }
 
 export default SummaryPanel;
+
+SummaryPanel.propTypes = {
+  characters: PropTypes.array,
+  selected_character: PropTypes.number,
+};

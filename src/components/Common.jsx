@@ -1,5 +1,4 @@
-/*
-* Copyright 2018 Erika Jonell
+/** Copyright 2018 Erika Jonell
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -21,11 +20,11 @@ SOFTWARE.
 
 */
 
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function List(props) {
-  if(!props.children) return ('');
+  if(!props.children) return <></>
 
   let list_items = props.children.map((item, i) =>{
     return(
@@ -42,6 +41,12 @@ function List(props) {
   );
 }
 
+List.propTypes = {
+  children: PropTypes.node,
+  list_class: PropTypes.string,
+  list_item_class: PropTypes.string,
+};
+
 function Panel(props) {
   return (
     <div className={props.panel_class}>
@@ -49,6 +54,11 @@ function Panel(props) {
     </div>
   );
 }
+
+Panel.propTypes = {
+  children: PropTypes.node,
+  panel_class: PropTypes.string,
+};
 
 function DoublePanel(props){
   return(
@@ -64,6 +74,15 @@ function DoublePanel(props){
   );
 }
 
+DoublePanel.propTypes = {
+  children: PropTypes.node,
+  left_class: PropTypes.string,
+  left: PropTypes.element,
+  panel_class: PropTypes.string,
+  right_class: PropTypes.string,
+  right: PropTypes.element
+}
+
 function Button(props){
   return(
     <button className={props.className} onClick={props.onClick}>
@@ -71,6 +90,13 @@ function Button(props){
     </button>
   );
 }
+
+Button.propTypes = {
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  text: PropTypes.string,
+}
+
 
 /**
  * @param  {} props.object
@@ -93,14 +119,38 @@ function SelectObject(props){
     </div>
   );
 }
+SelectObject.propTypes = {
+  className: PropTypes.string,
+  div_class: PropTypes.string,
+  default: PropTypes.string,
+  label_class: PropTypes.string,
+  label: PropTypes.string,
+  id: PropTypes.string,
+  name: PropTypes.string,
+  object: PropTypes.object,
+  onChange: PropTypes.func,
+}
 
 function TextInput(props){
   return(
     <div className={props.div_class}>
       <label className={props.label_class} htmlFor={props.id}>{props.label}</label>
-      <input className={props.className} type='text' id={props.id} value={props.value} onChange={props.onChange} name={props.name} placeholder={props.placeholder} />
+      <input className={props.className} type='text' id={props.id} value={props.value} 
+             onChange={props.onChange} name={props.name} placeholder={props.placeholder} />
     </div>
   );
+}
+
+TextInput.propTypes = {
+  className: PropTypes.string,
+  div_class: PropTypes.string,
+  id: PropTypes.string,
+  label_class: PropTypes.string,
+  label: PropTypes.element,
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.string,
 }
 
 export {DoublePanel, List, Panel, Button, SelectObject, TextInput};

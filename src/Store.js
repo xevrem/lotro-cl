@@ -72,7 +72,7 @@ class Store {
   }
 
   subscribe(action, listener) {
-    if (this.listeners.hasOwnProperty(action)) {
+    if (action in this.listeners) {
       this.listeners[action].push(listener);
     } else {
       this.listeners[action] = [listener];
@@ -123,7 +123,7 @@ class Store {
           let store = this.updateState(cmd.data);
 
           //issue callbacks
-          if (store.listeners.hasOwnProperty(cmd.action)) {
+          if (cmd.action in store.listeners) {
             store.listeners[cmd.action].forEach(callback => {
               callback(store.state, cmd.data);
             });
@@ -140,7 +140,7 @@ class Store {
         let store = this.updateState(cmd.data);
 
         //issue callbacks
-        if (store.listeners.hasOwnProperty(cmd.action)) {
+        if (cmd.action in store.listeners) {
           store.listeners[cmd.action].forEach(callback => {
             callback(store.state, cmd.data);
           });
