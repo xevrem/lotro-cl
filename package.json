@@ -4,8 +4,9 @@
   "private": true,
   "homepage": "https://xevrem.github.io/lotro-cl",
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "prop-types": "15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-scripts": "^5.0.1"
   },
   "scripts": {
@@ -13,18 +14,23 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "pnpm build",
     "deploy": "gh-pages -d build"
   },
   "devDependencies": {
+    "@eslint/js": "^9.2.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "gh-pages": "^6.0.0",
-    "eslint": "^8.25.0",
-    "prettier": "^2.7.1",
-    "sass": "^1.66.1",
-    "typescript": "^5.2.2"
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "gh-pages": "^6.1.1",
+    "globals": "^15.1.0",
+    "prettier": "^2.8.8",
+    "sass": "^1.76.0",
+    "typescript": "^4.9.5"
   },
   "eslintConfig": {
     "extends": [
