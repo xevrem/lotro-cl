@@ -53,7 +53,7 @@ export function openDatabase() {
  * @param {IDB} db
  * @param {string} url
  * @param {number} deed_type
- * @returns {Promise<IDB>}
+ * @returns {Promise<IDB?>}
  * @throws {Error}
  */
 async function deedFetchAndStore(db, url, deed_type) {
@@ -64,7 +64,7 @@ async function deedFetchAndStore(db, url, deed_type) {
     console.log("json", data);
     const tx = await db.transaction("deeds", "readwrite");
     const deedStore = tx.openStore("deeds");
-
+    if(!deedStore) return null;
     await deedStore.put(data, deed_type);
 
     return tx.commit();
@@ -74,8 +74,13 @@ async function deedFetchAndStore(db, url, deed_type) {
   }
 }
 
-//perform initial deed fetching and storing into the indexeddb
-export function initialDeedPopulation(db) {
+/**
+ * perform initial deed fetching and storing into the indexeddb 
+ *
+ * @param {IDB} db 
+ * @returns {Promise<void>} 
+ */
+export async function initialDeedPopulation(db) {
   if (!db) console.log("initial_deed_population something broke...");
 
   //fetch class deeds and store them
@@ -211,37 +216,41 @@ export function initialDeedPopulation(db) {
     DEED_CATEGORIES.SPECIAL
   );
 
-  return Promise.allSettled([
-    class_deeds,
-    race_deeds,
-    soa_deeds,
-    mom_deeds,
-    aotk_deeds,
-    tsos_deeds,
-    bbom_deeds,
-    rep_deeds,
-    eriador_deeds,
-    rhov_deeds,
-    gondor_deeds,
-    mordor_deeds,
-    skirm_deeds,
-    soa_inst,
-    mom_inst,
-    loth_inst,
-    mirk_inst,
-    ita_inst,
-    isen_inst,
-    ereb_inst,
-    osg_inst,
-    pel_inst,
-    seh_deeds,
-    special_deeds,
-  ]);
-  // .then(values => {
-  //   // console.log('everything loaded fine...');
-  // }).catch(error => {
-  //   console.error('initial_deed_population something went wrong...', error);
-  // })
+  try {
+    const results = await Promise.allSettled([
+      class_deeds,
+      race_deeds,
+      soa_deeds,
+      mom_deeds,
+      aotk_deeds,
+      tsos_deeds,
+      bbom_deeds,
+      rep_deeds,
+      eriador_deeds,
+      rhov_deeds,
+      gondor_deeds,
+      mordor_deeds,
+      skirm_deeds,
+      soa_inst,
+      mom_inst,
+      loth_inst,
+      mirk_inst,
+      ita_inst,
+      isen_inst,
+      ereb_inst,
+      osg_inst,
+      pel_inst,
+      seh_deeds,
+      special_deeds,
+    ]);
+    if (results.every(result => result.status === "fulfilled")){
+      console.log('d:idp::everything loaded fine...');
+    }else {
+      console.error('d:idp::initial_deed_population something went wrong...', results);
+    }
+  } catch(error) {
+    console.error('d:idp::initial_deed_population deed fetch error:\n', error);
+  }
 }
 
 /**

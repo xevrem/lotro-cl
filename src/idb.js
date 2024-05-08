@@ -37,7 +37,7 @@ export class IDB {
    */
   openDB(onUpgrade = null) {
     let request = window.indexedDB.open(this.dbname, this.version);
-    
+
     return new Promise((resolve, reject) => {
       //handle successful database opening
       request.onsuccess = (event) => {
@@ -134,16 +134,16 @@ export class Transaction {
   idb;
   /** @type {IDBTransaction} */
   transaction;
-  /** @type {Function} */
+  /** @type {((tx: Transaction) => void) | undefined} */
   callback;
 
   /**
    * constructor Transaction manages IndexeDB transactions
    * @param {IDB} idb - the IDB context
    * @param {IDBTransaction} transaction - an IDBTransaction to wrap
-   * @param {Function} callback - a callback
+   * @param {(tx: Transaction) => void} [callback] - a callback
    */
-  constructor(idb, transaction, callback) {
+  constructor(idb, transaction, callback = undefined) {
     this.idb = idb;
     this.transaction = transaction;
     this.callback = callback;
@@ -191,6 +191,17 @@ export class Transaction {
     this.transaction.abort();
   }
 
+  commit_complete(resolve) {
+    console.log("tx:commit:complete");
+    resolve(this);
+    this.callback && this.callback(this);
+  }
+
+  commit_error(reject, error) {
+    console.error("tx:commit:error", error);
+    reject(this);
+  }
+
   /**
    *
    * @returns {Promise<Transaction>}
@@ -198,20 +209,14 @@ export class Transaction {
   commit() {
     console.log("tx:c");
     const complete = new Promise((resolve, reject) => {
-      // this.transaction.oncomplete = () => {};
-      this.transaction.addEventListener("complete", () => {
-        console.log("tx:commit:complete");
-        resolve(this);
-        this.callback(this);
-      });
-
-      this.transaction.addEventListener("error", (error) => {
-        console.error("tx:commit:error", error);
-        reject(this);
-      });
-      // this.transaction.onerror = () => {
-      //   reject(this);
-      // };
+      this.transaction.addEventListener(
+        "complete",
+        this.commit_complete.bind(this, resolve)
+      );
+      this.transaction.addEventListener(
+        "error",
+        this.commit_error.bind(this, reject)
+      );
     });
     this.transaction.commit();
     return complete;

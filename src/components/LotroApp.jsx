@@ -187,19 +187,17 @@ export class LotroApp extends Component {
 
     try {
       //run promises async and set the data
-      const data = await Promise.all([characterData, classData]);
-
+      const [characters, deeds] = await Promise.all([characterData, classData]);
+      if(!characters || !deeds) return;
       let categories = new Set();
 
-      console.log(data);
-
-      data[1].forEach((deed) => {
+      deeds.forEach((deed) => {
         categories.add(deed.Subcategory);
       });
 
       getStore().issueAction(ACTION_TYPES.INITIALIZATION_DONE, {
-        characters: data[0],
-        deeds: data[1],
+        characters,
+        deeds,
         deed_subcategories: categories,
       });
     } catch (error) {
@@ -228,6 +226,7 @@ export class LotroApp extends Component {
   switch_deed_category(db_promise, deed_data) {
     get_deeds_of_type(db_promise, deed_data.deed_category_selected).then(
       (data) => {
+        if(!data) return;
         //create the subcategories
         let subs = new Set();
 
