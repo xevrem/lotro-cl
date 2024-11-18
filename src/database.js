@@ -23,6 +23,52 @@ SOFTWARE.
 import { IDB } from "./idb";
 import { DEED_CATEGORIES, BASE_URL } from "./constants";
 
+/**
+ * @typedef {Object} CharacterData
+ * @property {string} name
+    "name":"Aehelgyth",
+ * @property {string} race
+    "race":"HIGH_ELF",
+ * @property {string} class
+    "class":"RUNE_KEEPER",
+ * @property {number} level
+    "level":105,
+ * @property {Array<Array<boolean>>} completed 
+    "completed":[
+      [false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false]
+    ]
+  },
+ */
+
+/**
+* deed data
+ * @typedef {Object} DeedData
+  {
+ * @property {string} Category
+    "Category": "Mines of Moria",
+ * @property {string} Subcategory
+    "Subcategory": "Meta",
+ * @property {string} Faction
+    "Faction": "",
+ * @property {string} Type
+    "Type": "M",
+ * @property {string} Deed
+    "Deed": "The Mines of Moria Part 1",
+ * @property {string} LP
+    "LP": "10",
+ * @property {string} Trait
+    "Trait": "",
+ * @property {string} Details
+    "Details": "Complete Volume 2, Books 1 - 6",
+ * @property {string} Title
+    "Title": "Avenger of Khazad-dum",
+ * @property {string} Level
+    "Level": "50-60",
+ * @property {string} Party
+    "Party": ""
+  },
+ */
+
 const DATABASE_VERSION = 2;
 
 /**
@@ -260,7 +306,7 @@ export async function initialDeedPopulation(db) {
  * @template T
  * @param  {IDB} db idb database Promise
  * @param  {string} deed_type DEED_TYPE desired
- * @return {Promise<Array<T>>} Array of deeds
+ * @return {Promise<Array<DeedData>>} Array of deeds
  */
 export async function get_deeds_of_type(db, deed_type) {
   // const db = await db_promise;
@@ -282,9 +328,8 @@ export async function get_deeds_of_type(db, deed_type) {
 
 /**
  * get all deeds
- * @template T
  * @param {Promise<IDB>} db_promise
- * @returns {Promise<T[]>}
+ * @returns {Promise<Array<Array<DeedData>>>}
  */
 export async function get_all_deeds(db_promise) {
   const db = await db_promise;
@@ -310,7 +355,7 @@ export async function get_all_deeds(db_promise) {
  * @template T
  * @param {Promise<IDB>} db_promise
  * @param {string} index
- * @returns {Promise<T>}
+ * @returns {Promise<CharacterData>}
  */
 export async function get_character(db_promise, index) {
   const db = await db_promise;
@@ -322,9 +367,8 @@ export async function get_character(db_promise, index) {
 
 /**
  * save_characters description
- * @template T
  * @param  {IDB} db idb database promise
- * @param  {T[]} characters characters to save
+ * @param  {Array<CharacterData>} characters characters to save
  * @return {Promise<void>} transaction promise
  */
 export async function save_characters(db, characters) {
@@ -370,19 +414,19 @@ export async function clear_characters(db) {
 }
 
 /**
- * 
+ * reset the database
  *
- * @param {IDB} db 
- * @returns {Promise<void>} 
+ * @param {IDB} db
+ * @returns {Promise<void>}
  */
 export async function reset_database(db) {
   // reset characters
   let tx = await db.transaction("characters", "readwrite");
   await tx.openStore("characters").clear();
-  await tx.commit()
-  
+  await tx.commit();
+
   // reset deeds
   tx = await db.transaction("deeds", "readwrite");
   await tx.openStore("deeds").clear();
-  await tx.commit()
+  await tx.commit();
 }
