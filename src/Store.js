@@ -19,13 +19,20 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-*/
+ */
+
+/**
+ * @typedef {Object} StoreOnWindow
+ * @property {Store} [simple_state_store]
+ *
+ * @typedef {Window & typeof globalThis & StoreOnWindow} WindowWithStore
+ */
 
 /**
  *
- * @param {any} starting_state
- * @param {number} 1000
- * @param {number} 1
+ * @param {any} [starting_state={}]
+ * @param {number} [dispatch_interval=1000]
+ * @param {number} [dispatch_limit=-1]
  * @returns {Store}
  */
 function createStore(
@@ -33,12 +40,14 @@ function createStore(
   dispatch_interval = 1000,
   dispatch_limit = -1
 ) {
-  window.simple_state_store = new Store(
+  /** @type {WindowWithStore}*/
+  const win = window;
+  win.simple_state_store = new Store(
     starting_state,
     dispatch_interval,
     dispatch_limit
   );
-  return window.simple_state_store;
+  return win.simple_state_store;
 }
 
 /**
@@ -47,14 +56,21 @@ function createStore(
  * @throws {Error}
  */
 function getStore() {
-  if (window.simple_state_store) {
-    return window.simple_state_store;
+  /** @type {WindowWithStore}*/
+  const win = window;
+  if (win.simple_state_store) {
+    return win.simple_state_store;
   } else {
-    throw new Error('No Store Exists!');
+    throw new Error("No Store Exists!");
   }
 }
 
 class Store {
+  /** @type {Record<string, Array<any>>}*/
+  listeners;
+  /** @type {Record<string, any>}*/
+  state;
+
   constructor(
     starting_state = {},
     dispatch_interval = 60,
@@ -63,7 +79,7 @@ class Store {
     this.state = starting_state;
     this.subscribers = {};
     this.listeners = {};
-    this.dispatch_queue = [];
+    this.dispatch_queue = new Array();
     this.dispatch_interval = dispatch_interval;
     this.dispatch_limit = dispatch_limit;
     this.is_dispatching = false;
@@ -71,6 +87,13 @@ class Store {
     this.dispatcher_id = setTimeout(this.dispatcher, this.dispatch_interval);
   }
 
+  /**
+   *
+   *
+   * @param {string} action
+   * @param {Function} listener
+   * @returns {Function}
+   */
   subscribe(action, listener) {
     if (action in this.listeners) {
       this.listeners[action].push(listener);
@@ -78,20 +101,27 @@ class Store {
       this.listeners[action] = [listener];
     }
 
-    return function unsubscribe() {
-      this.listeners[action] = this.listeners[action].filter(callback => {
+    return () => {
+      this.listeners[action] = this.listeners[action].filter((callback) => {
         return callback !== listener;
       });
-    }.bind(this);
+    };
   }
 
+  /**
+   *
+   *
+   * @param {*} action
+   * @param {*} data
+   * @returns {*}
+   */
   issueAction(action, data) {
     this.dispatch_queue.push({ action: action, data: data });
     if (!this.is_dispatching) {
       //issue a new dispatch if not currently dispatching
       this.dispatcher();
     } else {
-      console.log('dispatcher busy...');
+      console.log("dispatcher busy...");
     }
   }
 
@@ -99,6 +129,12 @@ class Store {
     return this.state;
   }
 
+  /**
+   *
+   *
+   * @param {*} update
+   * @returns {Store}
+   */
   updateState(update) {
     let keys = Object.keys(update);
     for (let key of keys) {
@@ -106,6 +142,8 @@ class Store {
     }
     return this;
   }
+
+  dispatch() {}
 
   dispatcher() {
     // console.log('dispatching...', this.dispatch_queue.length, this.dispatch_queue);
@@ -124,7 +162,7 @@ class Store {
 
           //issue callbacks
           if (cmd.action in store.listeners) {
-            store.listeners[cmd.action].forEach(callback => {
+            store.listeners[cmd.action].forEach((callback) => {
               callback(store.state, cmd.data);
             });
           }
@@ -141,7 +179,7 @@ class Store {
 
         //issue callbacks
         if (cmd.action in store.listeners) {
-          store.listeners[cmd.action].forEach(callback => {
+          store.listeners[cmd.action].forEach((callback) => {
             callback(store.state, cmd.data);
           });
         }
@@ -157,7 +195,7 @@ class Store {
       if (elapsed > this.dispatch_interval) {
         // console.log('exceeded interval time...');
         //exceeded interval time, immediately dispatch
-        this.dispatch();
+        this.dispatcher();
       } else {
         // console.log('dispatching again in:', this.dispatch_interval-elapsed);
         //dispatch in standard not to exceed interval time
