@@ -20,10 +20,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-import React, { Component } from "react";
-// import ReactModal from 'react-modal';
-import "./LotroApp.scss";
-
+import { Component } from "react";
+import PropTypes from "prop-types";
 import CharacterPanel from "./CharacterPanel";
 import DeedPanel from "./DeedPanel";
 import SummaryPanel from "./SummaryPanel";
@@ -43,6 +41,9 @@ import {
   reset_database,
 } from "./../database";
 import { Button } from "./Common";
+import { IDB } from "../idb";
+
+import "./LotroApp.scss";
 
 // ReactModal.setAppElement('#root');
 
@@ -74,6 +75,13 @@ const updateWindowDimensions = () => {
 window.addEventListener("resize", updateWindowDimensions);
 
 export class LotroApp extends Component {
+  /** @type{IDB?} */
+  database = null;
+
+  /**
+   *
+   * @param {any} props
+   */
   constructor(props) {
     super(props);
     this.state = getStore().getState();
@@ -147,8 +155,10 @@ export class LotroApp extends Component {
     console.log("retrieve_app_data called...");
 
     //get stored character data
+    /** @type {Promise<Array<import("./../database").CharacterData>>} */
     const characterData = new Promise((resolve, reject) => {
       //attempt to pull data from the db, otherwise fetch
+      if (!this.database) throw new Error("NO DATABASE");
       return this.database
         .transaction("characters")
         .then((tx) =>
@@ -170,8 +180,10 @@ export class LotroApp extends Component {
     });
 
     //do initial class deed data load
-    const classData = new Promise((resolve, reject) =>
-      this.database
+    /** @type {Promise<Array<import("./../database").DeedData>>} */
+    const classData = new Promise((resolve, reject) => {
+      if (!this.database) throw new Error("NO DATABASE");
+      return this.database
         .transaction("deeds")
         .then((tx) =>
           tx
@@ -181,14 +193,14 @@ export class LotroApp extends Component {
         )
         .catch((error) => {
           console.error("la:rad::deeds transaction error");
-          reject(error);
-        })
-    );
+          return reject(error);
+        });
+    });
 
     try {
       //run promises async and set the data
       const [characters, deeds] = await Promise.all([characterData, classData]);
-      if(!characters || !deeds) return;
+      if (!characters || !deeds) return;
       let categories = new Set();
 
       deeds.forEach((deed) => {
@@ -223,24 +235,29 @@ export class LotroApp extends Component {
     this.setState(data);
   }
 
-  switch_deed_category(db_promise, deed_data) {
-    get_deeds_of_type(db_promise, deed_data.deed_category_selected).then(
-      (data) => {
-        if(!data) return;
-        //create the subcategories
-        let subs = new Set();
+  /**
+   *
+   *
+   * @param {IDB} db
+   * @param {*} deed_data
+   * @returns {*}
+   */
+  switch_deed_category(db, deed_data) {
+    get_deeds_of_type(db, deed_data.deed_category_selected).then((data) => {
+      if (!data) return;
+      //create the subcategories
+      let subs = new Set();
 
-        data.forEach((deed) => {
-          subs.add(deed.Subcategory);
-        });
+      data.forEach((deed) => {
+        subs.add(deed.Subcategory);
+      });
 
-        getStore().issueAction(ACTION_TYPES.DEED_UPDATED, {
-          deeds: data,
-          deed_subcategories: subs,
-          deed_subcategory_selected: "",
-        });
-      }
-    );
+      getStore().issueAction(ACTION_TYPES.DEED_UPDATED, {
+        deeds: data,
+        deed_subcategories: subs,
+        deed_subcategory_selected: "",
+      });
+    });
   }
 
   handle_deed_category_changed(state, data) {
@@ -525,5 +542,7 @@ export class LotroApp extends Component {
     );
   }
 }
+
+LotroApp.PropTypes = PropTypes.any;
 
 export default LotroApp;
