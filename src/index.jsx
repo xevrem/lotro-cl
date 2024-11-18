@@ -20,16 +20,17 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-import {createRoot} from 'react-dom/client';
-import './index.scss';
 
-import { LotroApp } from './components/LotroApp';
-import { BASE_URL } from './constants';
+import { createRoot } from "react-dom/client";
+import "./index.scss";
+
+import { LotroApp } from "./components/LotroApp";
+import { BASE_URL } from "./constants";
 
 // let refreshing = false;
-const elem = document.getElementById('root');
+const elem = document.getElementById("root");
 
-if(!elem) throw new Error('failed to create element');
+if (!elem) throw new Error("failed to create element");
 
 const root = createRoot(elem);
 root.render(<LotroApp />);
@@ -39,8 +40,8 @@ root.render(<LotroApp />);
  * @param {ServiceWorker} worker
  */
 function update_ready(worker) {
-  console.log('update_ready called...');
-  worker.postMessage({ action: 'SKIP_WAITING' });
+  console.log("update_ready called...");
+  worker.postMessage({ action: "SKIP_WAITING" });
 }
 
 /**
@@ -48,10 +49,10 @@ function update_ready(worker) {
  * @param {ServiceWorker} worker
  */
 function track_installing(worker) {
-  console.log('track_installing called...');
+  console.log("track_installing called...");
   //if this service worker finished installing, tell it to take over.
-  worker.addEventListener('statechange', () => {
-    if (worker.state === 'installed') {
+  worker.addEventListener("statechange", () => {
+    if (worker.state === "installed") {
       update_ready(worker);
     }
   });
@@ -60,10 +61,10 @@ function track_installing(worker) {
 function register_service_worker() {
   if (!navigator.serviceWorker) return;
 
-  window.addEventListener('load', function () {
+  window.addEventListener("load", function () {
     navigator.serviceWorker
-      .register(BASE_URL + '/service_worker.js')
-      .then(registration => {
+      .register(BASE_URL + "/service_worker.js")
+      .then((registration) => {
         // is this a service worker that is waiting to take over?
         if (registration.waiting) {
           update_ready(registration.waiting);
@@ -77,7 +78,7 @@ function register_service_worker() {
         }
 
         //has a new service worker appeared?
-        registration.addEventListener('updatefound', () => {
+        registration.addEventListener("updatefound", () => {
           if (registration.installing) {
             track_installing(registration.installing);
           }
@@ -85,12 +86,11 @@ function register_service_worker() {
       });
 
     //if the current service worker has changed, reload this page
-    navigator.serviceWorker.addEventListener('controllerchange', () => {
-      console.log('reloading...');
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      console.log("reloading...");
       window.location.reload();
     });
   });
 }
 
-
-register_service_worker();
+// register_service_worker();
