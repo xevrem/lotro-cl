@@ -139,12 +139,19 @@ export class IDB {
 
   /**
    * transaction initiates an idb transaction
-   * @param  {string | Array<string>} stores  string of store or array of stores that the transaction will act upon
-   * @param  {IDBTransactionMode} mode transaction mode
-   * @param  {TransactionCallback} [callback] callback called upon transaction completion
-   * @return {Promise<Transaction?>} Promse that resolves with a Transaction or rejects on error
+   * @param {string | Array<string>} stores  string of store or array of stores that the transaction will act upon
+   * @param {IDBTransactionMode} mode transaction mode
+   * @param {IDBTransactionOptions} [options] transaction options
+   * @param {TransactionCallback} [callback] callback called upon transaction completion
+   * @return {Promise<Transaction>} Promse that resolves with a Transaction or rejects on error
+   * @throws {Error}
    */
-  transaction(stores, mode = "readonly", callback) {
+  transaction(
+    stores,
+    mode = "readonly",
+    options = undefined,
+    callback = undefined
+  ) {
     if (this.db) {
       let transaction = new Transaction(
         this,
@@ -153,7 +160,7 @@ export class IDB {
       );
       return transaction.promisify();
     } else {
-      return Promise.reject(null);
+      throw new Error("NO DATABASE PROVIDED");
     }
   }
 }
@@ -222,20 +229,13 @@ export class Transaction {
    * @param {(tx: Transaction) => void} resolve
    * @param {Event} event
    */
-  commit_complete(resolve, event) {
-    console.log("tx:commit:complete");
-    resolve(this);
-    this.callback && this.callback(this);
-  }
+  commitComplete(resolve, event) {}
 
   /**
    * @param {(tx: Transaction) => void} reject
    * @param {Event} error
    */
-  commit_error(reject, error) {
-    console.error("tx:commit:error", error);
-    reject(this);
-  }
+  commitError(reject, error) {}
 
   /**
    *
@@ -243,18 +243,18 @@ export class Transaction {
    */
   commit() {
     console.log("tx:c");
-    const complete = new Promise((resolve, reject) => {
-      this.transaction.addEventListener(
-        "complete",
-        this.commit_complete.bind(this, resolve)
-      );
-      this.transaction.addEventListener(
-        "error",
-        this.commit_error.bind(this, reject)
-      );
+    return new Promise((resolve, reject) => {
+      this.transaction.commit();
+      this.transaction.oncomplete = (event) => {
+        console.log("tx:commit:complete");
+        this.callback && this.callback(this);
+        resolve(this);
+      };
+      this.transaction.onerror = (event) => {
+        console.error("tx:commit:error", event);
+        reject(this);
+      };
     });
-    this.transaction.commit();
-    return complete;
   }
 }
 
@@ -287,10 +287,10 @@ export class ObjectStore {
    * @template T
    * @param {T} value a value object to be added to the store
    * @param {IDBValidKey} [key] key the item should be stored at
-   * @return {Promise<IdbRequest>} resolves on success or rejects on error
+   * @return {Promise<IDBValidKey>} resolves on success or rejects on error
    */
   add(value, key = undefined) {
-    let request = new IdbRequest(this.store.add(value, key));
+    const request = new IdbRequest(this.store.add(value, key));
     return request.promisify();
   }
 
@@ -299,7 +299,7 @@ export class ObjectStore {
    * @template T
    * @param {T} value a value object to be updated/added to the store
    * @param {IDBValidKey} [key] key the item should be stored at
-   * @return {Promise<IdbRequest>} Promes that resolves on success or rejects on error
+   * @return {Promise<IDBValidKey>} Promes that resolves on success or rejects on error
    */
   put(value, key = undefined) {
     let request = new IdbRequest(this.store.put(value, key));
@@ -308,8 +308,9 @@ export class ObjectStore {
 
   /**
    * [get a value with the given key]
-   * @param  {IDBValidKey} key key of the value you want to get
-   * @return {Promise<IdbRequest>} Promise that resolves to the record or rejects on error
+   * @template T
+   * @param  {IDBValidKey | IDBKeyRange} key key of the value you want to get
+   * @return {Promise<T>} Promise that resolves to the record or rejects on error
    */
   get(key) {
     let request = new IdbRequest(this.store.get(key));
@@ -318,7 +319,8 @@ export class ObjectStore {
 
   /**
    * get_all values in a given store
-   * @return {Promise<IdbRequest>} Promise that resolves to the records or rejects on error
+   * @template T
+   * @return {Promise<T[]>} Promise that resolves to the records or rejects on error
    */
   getAll() {
     let request = new IdbRequest(this.store.getAll());
@@ -338,7 +340,7 @@ export class ObjectStore {
   /**
    * delete value with provided key
    * @param  {IDBValidKey} key key of record desired to be deleted
-   * @return {Promise<IdbRequest>} Promise that resolves on deletion or rejects on error
+   * @return {Promise<undefined>} Promise that resolves on deletion or rejects on error
    */
   delete(key) {
     let request = new IdbRequest(this.store.delete(key));
@@ -347,7 +349,7 @@ export class ObjectStore {
 
   /**
    * clear removes all records from the store
-   * @return {Promise<IdbRequest>} Promise that resolves on clear or rejects on error
+   * @return {Promise<undefined>} Promise that resolves on clear or rejects on error
    */
   clear() {
     let request = new IdbRequest(this.store.clear());
@@ -431,11 +433,12 @@ export class Cursor {
 
 /**
  * IdbRequest wrapper around an IDBRequest
+ * @template T
  */
 export class IdbRequest {
   /**
    * constructor wrapper around an IDBRequest
-   * @param {IDBRequest} request IDBRequest being wrapped
+   * @param {IDBRequest<T>} request IDBRequest being wrapped
    */
   constructor(request) {
     this.request = request;
@@ -443,7 +446,7 @@ export class IdbRequest {
 
   /**
    * promisify turns the IdbRequest into a promise
-   * @return {Promise<IdbRequest>} Promise that resolves on success or rejects on error
+   * @return {Promise<T>} Promise that resolves on success or rejects on error
    */
   promisify() {
     return new Promise((resolve, reject) => {
