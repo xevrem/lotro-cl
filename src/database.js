@@ -53,7 +53,7 @@ export function openDatabase() {
  * @param {IDB} db
  * @param {string} url
  * @param {number} deed_type
- * @returns {Promise<IDB?>}
+ * @returns {Promise<IDB>}
  * @throws {Error}
  */
 async function deedFetchAndStore(db, url, deed_type) {
@@ -64,10 +64,9 @@ async function deedFetchAndStore(db, url, deed_type) {
     console.log("json", data);
     const tx = await db.transaction("deeds", "readwrite");
     const deedStore = tx.openStore("deeds");
-    if(!deedStore) return null;
     await deedStore.put(data, deed_type);
-
-    return tx.commit();
+    await tx.commit();
+    return db;
   } catch (error) {
     console.error("deedFetchAndStore error", error);
     throw error;
@@ -75,10 +74,10 @@ async function deedFetchAndStore(db, url, deed_type) {
 }
 
 /**
- * perform initial deed fetching and storing into the indexeddb 
+ * perform initial deed fetching and storing into the indexeddb
  *
- * @param {IDB} db 
- * @returns {Promise<void>} 
+ * @param {IDB} db
+ * @returns {Promise<void>}
  */
 export async function initialDeedPopulation(db) {
   if (!db) console.log("initial_deed_population something broke...");
@@ -243,129 +242,147 @@ export async function initialDeedPopulation(db) {
       seh_deeds,
       special_deeds,
     ]);
-    if (results.every(result => result.status === "fulfilled")){
-      console.log('d:idp::everything loaded fine...');
-    }else {
-      console.error('d:idp::initial_deed_population something went wrong...', results);
+    if (results.every((result) => result.status === "fulfilled")) {
+      console.log("d:idp::everything loaded fine...");
+    } else {
+      console.error(
+        "d:idp::initial_deed_population something went wrong...",
+        results
+      );
     }
-  } catch(error) {
-    console.error('d:idp::initial_deed_population deed fetch error:\n', error);
+  } catch (error) {
+    console.error("d:idp::initial_deed_population deed fetch error:\n", error);
   }
 }
 
 /**
- * [return all deeds of passed DEED_TYPE]
- * @param  {[Promise]} db_promise [idb database Promise]
- * @param  {[DEED_TYPE]} deed_type  [DEED_TYPE desired]
- * @return {[Array]}            [Array of deeds]
+ * return all deeds of passed DEED_TYPE
+ * @template T
+ * @param  {IDB} db idb database Promise
+ * @param  {string} deed_type DEED_TYPE desired
+ * @return {Promise<Array<T>>} Array of deeds
  */
-export function get_deeds_of_type(db_promise, deed_type) {
-  return db_promise.then((db) => {
-    return db
-      .transaction("deeds")
-      .objectStore("deeds")
-      .get(deed_type)
-      .then((data) => {
-        return data;
-      });
-  });
-}
-
-//get all deeds
-export function get_all_deeds(db_promise) {
-  return db_promise.then((db) => {
-    return db
-      .transaction("deeds")
-      .objectStore("deeds")
-      .getAll()
-      .then((data) => {
-        // console.log('get_all_deeds called...', data);
-        return data;
-      });
-  });
-}
-
-//get character from database at index
-export function get_character(db_promise, index) {
-  return db_promise.then((db) => {
-    return db
-      .transaction("characters")
-      .objectStore("characters")
-      .get(index)
-      .then((data) => {
-        return data;
-      });
-  });
+export async function get_deeds_of_type(db, deed_type) {
+  // const db = await db_promise;
+  // let bewp =  db_promise.then( async (db) => {
+  const tx = await db.transaction("deeds");
+  const deedStore = tx.openStore("deeds");
+  const deedRequest = await deedStore.get(deed_type);
+  return deedRequest;
+  // const foo =  db
+  //   .transaction("deeds")
+  //   .objectStore("deeds")
+  //   .get(deed_type)
+  //   .then((data) => {
+  //     return data;
+  //   });
+  // return foo;
+  // });
 }
 
 /**
- * [save_characters description]
- * @param  {IDB} db_promise [idb database promise]
- * @param  {[Array]} characters [characters to save]
- * @return {[Promise]}            [transaction promise]
+ * get all deeds
+ * @template T
+ * @param {Promise<IDB>} db_promise
+ * @returns {Promise<T[]>}
+ */
+export async function get_all_deeds(db_promise) {
+  const db = await db_promise;
+  const tx = await db.transaction("deeds");
+  const deedStore = tx.openStore("deeds");
+  const deedRequest = await deedStore.getAll();
+  return deedRequest;
+
+  // return db_promise.then((db) => {
+  //   return db
+  //     .transaction("deeds")
+  //     .objectStore("deeds")
+  //     .getAll()
+  //     .then((data) => {
+  //       // console.log('get_all_deeds called...', data);
+  //       return data;
+  //     });
+  // });
+}
+
+/**
+ * get character from database at index
+ * @template T
+ * @param {Promise<IDB>} db_promise
+ * @param {string} index
+ * @returns {Promise<T>}
+ */
+export async function get_character(db_promise, index) {
+  const db = await db_promise;
+  const tx = await db.transaction("characters");
+  const deedStore = tx.openStore("characters");
+  const deedRequest = await deedStore.get(index);
+  return deedRequest;
+}
+
+/**
+ * save_characters description
+ * @template T
+ * @param  {IDB} db idb database promise
+ * @param  {T[]} characters characters to save
+ * @return {Promise<void>} transaction promise
  */
 export async function save_characters(db, characters) {
   console.log("save_characters called...", db, characters);
-  let tx = await db.transaction("characters", "readwrite");
-  let characterStore = tx.openStore("characters");
+  const tx = await db.transaction("characters", "readwrite");
+  const characterStore = tx.openStore("characters");
 
   //update characters
-  const allPuts = [];
+  /** @type {Promise<IDBValidKey>[]}*/
+  const allPuts = new Array();
   characters.forEach((character, i) => {
     allPuts.push(characterStore.put(character, i));
   });
-
   await Promise.all(allPuts);
-
-  return tx.commit();
+  await tx.commit();
 }
 
-//delete a specific character by index
-export function delete_character(db_promise, character_index) {
-  return db_promise.then((db) => {
-    let tx = db.transaction("characters", "readwrite");
-    let character_store = tx.objectStore("characters");
-    character_store.delete(character_index);
-    return tx.complete;
-  });
+/**
+ * delete a specific character by index
+ *
+ * @param {IDB} db
+ * @param {string} character_index
+ * @returns {Promise<void>}
+ */
+export async function delete_character(db, character_index) {
+  const tx = await db.transaction("characters", "readwrite");
+  const characterStore = tx.openStore("characters");
+  await characterStore.delete(character_index);
+  await tx.commit();
 }
 
-//delete all characters
-export function clear_characters(db_promise) {
-  return db_promise.then((db) => {
-    let tx = db.transaction("characters", "readwrite");
-    let character_store = tx.objectStore("characters");
-    character_store.clear();
-    return tx.complete;
-  });
+/**
+ * delete all characters
+ *
+ * @param {IDB} db
+ * @returns {Promise<void>}
+ */
+export async function clear_characters(db) {
+  const tx = await db.transaction("characters", "readwrite");
+  const characterStore = tx.openStore("characters");
+  await characterStore.clear();
+  await tx.commit();
 }
 
-export function reset_database(db_promise) {
-  let reset_characters = new Promise((resolve, reject) => {
-    return db_promise
-      .then((db) => {
-        let tx = db.transaction("characters", "readwrite");
-        tx.objectStore("characters").clear();
-
-        resolve(tx.complete);
-      })
-      .catch((error) => {
-        reject(error);
-      });
-  });
-
-  let reset_deeds = new Promise((resolve, reject) => {
-    return db_promise
-      .then((db) => {
-        let tx = db.transaction("deeds", "readwrite");
-        tx.objectStore("deeds").clear();
-
-        resolve(tx.complete);
-      })
-      .catch((error) => {
-        reject(error);
-      });
-  });
-
-  return Promise.all([reset_characters, reset_deeds]);
+/**
+ * 
+ *
+ * @param {IDB} db 
+ * @returns {Promise<void>} 
+ */
+export async function reset_database(db) {
+  // reset characters
+  let tx = await db.transaction("characters", "readwrite");
+  await tx.openStore("characters").clear();
+  await tx.commit()
+  
+  // reset deeds
+  tx = await db.transaction("deeds", "readwrite");
+  await tx.openStore("deeds").clear();
+  await tx.commit()
 }
