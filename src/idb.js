@@ -1,14 +1,34 @@
 /**
  * IDB callback
- * @callback idbCallback
+ * @callback IdbUpgradeCallback
  * @param {IDB} context - current IDB context
+ * @param {IDBVersionChangeEvent} event upgrade event
+ */
+
+/**
+ * ObjectStore callback
+ * @callback ObjectStoreCallback
+ * @param {ObjectStore} context - current IDB context
+ */
+
+/**
+ * Transaction callback
+ * @callback TransactionCallback
+ * @param {Transaction} context - current IDB context
+ */
+
+/**
+ * Cursor callback
+ * @template {IDBCursor | IDBCursorWithValue} T
+ * @callback CursorCallback
+ * @param {T} context - current IDB context
  */
 
 /**
  * IDB is a simplified wrapper to ease use of IndexedDB
  */
 export class IDB {
-  /** @type {IDBDatabase} */
+  /** @type {IDBDatabase?} */
   db;
   /** @type {string} */
   dbname;
@@ -24,6 +44,7 @@ export class IDB {
    * @param {number} version
    */
   constructor(dbname, version) {
+    this.db = null;
     this.dbname = dbname;
     this.version = version;
     this.upgraded = false;
@@ -32,29 +53,33 @@ export class IDB {
 
   /**
    * attempts to open the database for use
-   * @param  {idbCallback?} onUpgrade - callback that is used when IndexedDB requires an upgrade
+   * @param  {IdbUpgradeCallback} [onUpgrade] callback that is used when IndexedDB requires an upgrade
    * @return {Promise<IDB>} a Promise resolving upon successful database opening or rejecting on error
    */
-  openDB(onUpgrade = null) {
-    let request = window.indexedDB.open(this.dbname, this.version);
-
+  openDB(onUpgrade = undefined) {
     return new Promise((resolve, reject) => {
+      let request = window.indexedDB.open(this.dbname, this.version);
       //handle successful database opening
       request.onsuccess = (event) => {
         console.log("idb:odb:os");
-        this.db = event.target.result;
-        resolve(this);
+        if (event.target) {
+          this.db = request.result;
+          // this.db = event.target.result;
+          resolve(this);
+        } else {
+          reject("OPENDB:ONSUCCESS - NO EVENT");
+        }
       };
 
       //handle errors on database opening
       request.onerror = (event) => {
-        let error = event.target.error;
-        console.error("idb:odb:oe::", error);
-        reject(error);
+        console.error("idb:odb:oe::", event, request.error);
+        reject(request.error);
       };
 
       request.onblocked = (event) => {
-        console.log("idb:odb:ob::", event);
+        console.warn("idb:odb:ob::", event);
+        reject(event);
       };
 
       //if provided, allow for database upgrading
@@ -62,9 +87,10 @@ export class IDB {
         request.onupgradeneeded = (event) => {
           console.log("idb:odb:oun");
           this.upgraded = true;
-          this.db = event.target.result;
+          // this.db = event.target.result;
+          this.db = request.result;
           this.oldVersion = event.oldVersion;
-          onUpgrade(this);
+          onUpgrade(this, event);
         };
       }
     });
@@ -73,21 +99,23 @@ export class IDB {
   /**
    * create_store description
    * @param  {string} name     name of store to create
-   * @param  {object} options  options for store
-   * @param  {Function} callback callback used to make modifications to store
+   * @param  {IDBObjectStoreParameters} [options]  options for store
+   * @param  {ObjectStoreCallback} [callback] callback used to make modifications to store
    * @return {Promise<IDB>} Promise that resolves upon sucessful store creation and rejects on error
    */
-  createStore(name, options = null, callback = null) {
+  createStore(name, options = undefined, callback = undefined) {
     console.log("create_store called...");
     return new Promise((resolve, reject) => {
       let objectStore;
-      if (options) {
+      if (options && this.db) {
         objectStore = new ObjectStore(
           this.db.createObjectStore(name, options),
           name
         );
-      } else {
+      } else if (this.db) {
         objectStore = new ObjectStore(this.db.createObjectStore(name), name);
+      } else {
+        return reject("IDB:CreateStore - NO DATABASE");
       }
 
       //if everything goes well, resolve the promise
@@ -111,18 +139,22 @@ export class IDB {
 
   /**
    * transaction initiates an idb transaction
-   * @param  {string | Array} stores  string of store or array of stores that the transaction will act upon
-   * @param  {string} mode transaction mode
-   * @param  {Function} callback callback called upon transaction completion
-   * @return {Promise} Promse that resolves with a Transaction or rejects on error
+   * @param  {string | Array<string>} stores  string of store or array of stores that the transaction will act upon
+   * @param  {IDBTransactionMode} mode transaction mode
+   * @param  {TransactionCallback} [callback] callback called upon transaction completion
+   * @return {Promise<Transaction?>} Promse that resolves with a Transaction or rejects on error
    */
-  transaction(stores, mode = "readonly", callback = undefined) {
-    let transaction = new Transaction(
-      this,
-      this.db.transaction(stores, mode),
-      callback
-    );
-    return transaction.promisify();
+  transaction(stores, mode = "readonly", callback) {
+    if (this.db) {
+      let transaction = new Transaction(
+        this,
+        this.db.transaction(stores, mode),
+        callback
+      );
+      return transaction.promisify();
+    } else {
+      return Promise.reject(null);
+    }
   }
 }
 
@@ -141,7 +173,7 @@ export class Transaction {
    * constructor Transaction manages IndexeDB transactions
    * @param {IDB} idb - the IDB context
    * @param {IDBTransaction} transaction - an IDBTransaction to wrap
-   * @param {(tx: Transaction) => void} [callback] - a callback
+   * @param {TransactionCallback} [callback] - a callback
    */
   constructor(idb, transaction, callback = undefined) {
     this.idb = idb;
@@ -155,19 +187,14 @@ export class Transaction {
    */
   promisify() {
     return new Promise((resolve, reject) => {
-      this.transaction.addEventListener("error", (event) => {
-        console.log("tx:onerror");
-        reject(event.target);
-      });
-      // this.transaction.onerror = event => {
-      // };
-      this.transaction.addEventListener("abort", (event) => {
-        console.log("tx:onabort");
-        reject(event.target);
-      });
-      // this.transaction.onabort = event => {
-      // };
-
+      this.transaction.onerror = (event) => {
+        console.error("tx:onerror", event);
+        reject(event);
+      };
+      this.transaction.onabort = (event) => {
+        console.error("tx:onabort", event);
+        reject(event);
+      };
       resolve(this);
     });
   }
@@ -175,11 +202,11 @@ export class Transaction {
   /**
    * open_store opens the given store for this transaction
    * @param  {string} name name of store to open
-   * @return {Promise<ObjectStore>} Promes that resolves to the store or rejects on error
+   * @return {ObjectStore} Promes that resolves to the store or rejects on error
    */
   openStore(name) {
     console.log("tx:os");
-    let store = new ObjectStore(this.transaction.objectStore(name));
+    let store = new ObjectStore(this.transaction.objectStore(name), name);
     return store;
   }
 
@@ -191,12 +218,20 @@ export class Transaction {
     this.transaction.abort();
   }
 
-  commit_complete(resolve) {
+  /**
+   * @param {(tx: Transaction) => void} resolve
+   * @param {Event} event
+   */
+  commit_complete(resolve, event) {
     console.log("tx:commit:complete");
     resolve(this);
     this.callback && this.callback(this);
   }
 
+  /**
+   * @param {(tx: Transaction) => void} reject
+   * @param {Event} error
+   */
   commit_error(reject, error) {
     console.error("tx:commit:error", error);
     reject(this);
@@ -241,17 +276,18 @@ export class ObjectStore {
    * create_index creates an index within the store
    * @param  {string} index_name the name of the index to be created
    * @param  {string} key_path the key that is being indexed
-   * @param  {object} parameters additional index parameters
+   * @param  {IDBIndexParameters} [parameters] additional index parameters
    */
-  createIndex(index_name, key_path, parameters = null) {
+  createIndex(index_name, key_path, parameters = undefined) {
     this.store.createIndex(index_name, key_path, parameters);
   }
 
   /**
-   * add adds a key-value item to the store]
-   * @param {object} value  [a value object to be added to the store]
-   * @param {string} [key=undefined]   [key the item should be stored at]
-   * @return {Promise}    [Promes that resolves on success or rejects on error]
+   * add adds a key-value item to the store
+   * @template T
+   * @param {T} value a value object to be added to the store
+   * @param {IDBValidKey} [key] key the item should be stored at
+   * @return {Promise<IdbRequest>} resolves on success or rejects on error
    */
   add(value, key = undefined) {
     let request = new IdbRequest(this.store.add(value, key));
@@ -259,10 +295,11 @@ export class ObjectStore {
   }
 
   /**
-   * [put updates/adds a key-value item to the store]
-   * @param {object} value  [a value object to be updated/added to the store]
-   * @param {string} [key=undefined]   [key the item should be stored at]
-   * @return {Promise}    [Promes that resolves on success or rejects on error]
+   * put updates/adds a key-value item to the store
+   * @template T
+   * @param {T} value a value object to be updated/added to the store
+   * @param {IDBValidKey} [key] key the item should be stored at
+   * @return {Promise<IdbRequest>} Promes that resolves on success or rejects on error
    */
   put(value, key = undefined) {
     let request = new IdbRequest(this.store.put(value, key));
@@ -271,8 +308,8 @@ export class ObjectStore {
 
   /**
    * [get a value with the given key]
-   * @param  {string} key [key of the value you want to get]
-   * @return {Promise}     [Promise that resolves to the record or rejects on error]
+   * @param  {IDBValidKey} key key of the value you want to get
+   * @return {Promise<IdbRequest>} Promise that resolves to the record or rejects on error
    */
   get(key) {
     let request = new IdbRequest(this.store.get(key));
@@ -280,8 +317,8 @@ export class ObjectStore {
   }
 
   /**
-   * [get_all values in a given store]
-   * @return {Promise} [Promise that resolves to the records or rejects on error]
+   * get_all values in a given store
+   * @return {Promise<IdbRequest>} Promise that resolves to the records or rejects on error
    */
   getAll() {
     let request = new IdbRequest(this.store.getAll());
@@ -289,9 +326,9 @@ export class ObjectStore {
   }
 
   /**
-   * [index get index in the store with a given name]
-   * @param  {string} name [name of index to retrieve]
-   * @return {Index}      [the index desired]
+   * index get index in the store with a given name
+   * @param  {string} name name of index to retrieve
+   * @return {Index} the index desired
    */
   index(name) {
     let index = new Index(this.store.index(name));
@@ -299,9 +336,9 @@ export class ObjectStore {
   }
 
   /**
-   * [delete value with provided key]
-   * @param  {string} key [key of record desired to be deleted]
-   * @return {Promise}     [Promise that resolves on deletion or rejects on error]
+   * delete value with provided key
+   * @param  {IDBValidKey} key key of record desired to be deleted
+   * @return {Promise<IdbRequest>} Promise that resolves on deletion or rejects on error
    */
   delete(key) {
     let request = new IdbRequest(this.store.delete(key));
@@ -309,8 +346,8 @@ export class ObjectStore {
   }
 
   /**
-   * [clear removes all records from the store]
-   * @return {Promise} [Promise that resolves on clear or rejects on error]
+   * clear removes all records from the store
+   * @return {Promise<IdbRequest>} Promise that resolves on clear or rejects on error
    */
   clear() {
     let request = new IdbRequest(this.store.clear());
@@ -319,27 +356,36 @@ export class ObjectStore {
 }
 
 /**
- * [Index IDBIndex wrapper]
+ * Index IDBIndex wrapper
  */
 export class Index {
   /**
-   * [constructor IDBIndex wrapper]
-   * @param {IDBIndex} index [the IDBIndex being wrapped]
+   * constructor IDBIndex wrapper
+   * @param {IDBIndex} index the IDBIndex being wrapped
    */
   constructor(index) {
     this.index = index;
   }
 
   /**
-   * [cursor gets the cursor of the index and calls the callback on success]
-   * @param  {Function} callback [callback called when cursor onsuccess event is fired]
-   * @return {Promise}            [Promise that resolves when cursor has no more records or rejects on error]
+   * cursor gets the cursor of the index and calls the callback on success
+   * @param {CursorCallback<IDBCursorWithValue>} callback callback called when cursor onsuccess event is fired
+   * @param {(IDBValidKey | IDBKeyRange)?} [query] query for the cursor
+   * @param {IDBCursorDirection} [direction] cursor direction
+   * @return {Promise<IDBCursorWithValue>} Promise that resolves when cursor has no more records or rejects on error
    */
-  open_cursor(callback, query = undefined) {
-    let cursor = new Cursor(this.index.openCursor(query), callback);
+  open_cursor(callback, query = undefined, direction = undefined) {
+    let cursor = new Cursor(this.index.openCursor(query, direction), callback);
     return cursor.promisify();
   }
 
+  /**
+   *
+   *
+   * @param {CursorCallback<IDBCursor>} callback callback called when cursor onsuccess event is fired
+   * @param {(IDBValidKey | IDBKeyRange)?} [query] query for the cursor
+   * @return {Promise<IDBCursor>} Promise that resolves when cursor has no more records or rejects on error
+   */
   open_key_cursor(callback, query = undefined) {
     let cursor = new Cursor(this.index.openKeyCursor(query), callback);
     return cursor.promisify();
@@ -347,63 +393,69 @@ export class Index {
 }
 
 /**
- * [Cursor is a wrapper around a IDBCursor]
+ * Cursor is a wrapper around a IDBCursor
+ * @template {IDBCursor | IDBCursorWithValue} T
  */
 export class Cursor {
   /**
-   * [constructor a wrapper around a IDBCursor]
-   * @param {IDBCursor}   cursor   [the IDBCursor being wrapped]
-   * @param {Function} callback [callback called when cursor onsuccess event is fired]
+   * constructor a wrapper around a IDBCursor
+   * @param {IDBRequest<T?>} cursorRequest the IDBCursor being wrapped
+   * @param {CursorCallback<T>} callback callback called when cursor onsuccess event is fired
    */
-  constructor(cursor, callback) {
-    this.cursor = cursor;
+  constructor(cursorRequest, callback) {
+    this.request = cursorRequest;
     this.callback = callback;
   }
 
   /**
-   * [promisify turns the IDBCursor into a promise]
-   * @return {Promise} [Promise that resolves when cursor has no more records or rejects on error]
+   * promisify turns the IDBCursor into a promise
+   * @return {Promise<T>} Promise that resolves when cursor has no more records or rejects on error
    */
   promisify() {
     return new Promise((resolve, reject) => {
-      this.cursor.onsuccess = (event) => {
-        if (event.target.result) {
-          if (this.callback) this.callback(event.target.result);
+      this.request.onsuccess = (event) => {
+        if (this.request.result) {
+          if (this.callback) this.callback(this.request.result);
+          resolve(this.request.result);
         } else {
-          resolve(event.target.result);
+          reject(new Error("Cursor:Promisify:OnSuccess - NO RESULT"));
         }
       };
 
-      this.cursor.onerror = (event) => {
-        reject(event.target);
+      this.request.onerror = (event) => {
+        reject(event);
       };
     });
   }
 }
 
 /**
- * [IdbRequest wrapper around an IDBRequest]
+ * IdbRequest wrapper around an IDBRequest
  */
 export class IdbRequest {
   /**
    * constructor wrapper around an IDBRequest
-   * @param {IDBRequest} request [IDBRequest being wrapped]
+   * @param {IDBRequest} request IDBRequest being wrapped
    */
   constructor(request) {
     this.request = request;
   }
 
   /**
-   * [promisify turns the IDBCursor into a promise]
-   * @return {Promise<IdbRequest>} [Promise that resolves on success or rejects on error]
+   * promisify turns the IdbRequest into a promise
+   * @return {Promise<IdbRequest>} Promise that resolves on success or rejects on error
    */
   promisify() {
     return new Promise((resolve, reject) => {
       this.request.onsuccess = (event) => {
-        resolve(event.target.result);
+        if (this.request.result) {
+          resolve(this.request.result);
+        } else {
+          reject(new Error("IdbRequest:Promisify:OnSuccess - NO RESULT"));
+        }
       };
       this.request.onerror = (event) => {
-        reject(event.target.error);
+        reject(event);
       };
     });
   }
