@@ -1,42 +1,52 @@
 {
-  description = "behavey nix env";
+  description = "lotro nix env";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-  };
-
-  outputs = { self, nixpkgs }:
-  let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    rustPkgs = with pkgs; [
-      emacs-lsp-booster
-    ];
-    nodePkgs = with pkgs.nodePackages; [
-      eslint
-      pnpm
-      prettier
-      stylelint
-      typescript
-      typescript-language-server
-      vscode-langservers-extracted
-      yaml-language-server
-    ];
-    in
-    {
-      devShells.${system}.default =
-        pkgs.mkShell {
-          # buildInputs = with pkgs; [
-          # ];
-          
-          packages = with pkgs; [
-            marksman
-            nodejs_20
-          ] ++ nodePkgs ++ rustPkgs;
-
-          shellHook = ''
-              echo "<nix development shell>"
-            '';
-        };
+    flake-utils= {
+      url = "github:numtide/flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+  };
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    ...
+  }@inputs:
+    flake-utils.lib.eachDefaultSystem (
+      system: let
+        pkgs = import nixpkgs {inherit system;};
+        rustPkgs = with pkgs; [
+          emacs-lsp-booster
+        ];
+        nodePkgs = with pkgs.nodePackages; [
+          eslint
+          pnpm
+          prettier
+          stylelint
+          typescript
+          typescript-language-server
+          vscode-langservers-extracted
+          yaml-language-server
+          yarn
+        ];
+      in
+        {
+          devShells.default = pkgs.mkShell rec {
+            nativeBuildInputs = (with pkgs; [
+              pkg-config
+            ]);
+          
+            packages = with pkgs; [
+              marksman
+              nodejs_22
+            ] ++ nodePkgs ++ rustPkgs;
+
+            # NIX_LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath buildInputs;
+            # shellHook = ''
+            #   echo "<nix development shell>"
+            # '';
+          };
+        }
+    );
 }
