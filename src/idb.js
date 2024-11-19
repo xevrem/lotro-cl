@@ -302,6 +302,7 @@ export class ObjectStore {
    * @return {Promise<IDBValidKey>} Promes that resolves on success or rejects on error
    */
   put(value, key = undefined) {
+    console.log('ObjectStore:Put - store, key, value', this, key, value);
     let request = new IdbRequest(this.store.put(value, key));
     return request.promisify();
   }
@@ -416,7 +417,7 @@ export class Cursor {
   promisify() {
     return new Promise((resolve, reject) => {
       this.request.onsuccess = (event) => {
-        if (this.request.result) {
+        if (this.request.result != null) {
           if (this.callback) this.callback(this.request.result);
           resolve(this.request.result);
         } else {
@@ -451,7 +452,8 @@ export class IdbRequest {
   promisify() {
     return new Promise((resolve, reject) => {
       this.request.onsuccess = (event) => {
-        if (this.request.result) {
+        console.log('IdbRequest:Promisify:OnSuccess - self, event', this, event);
+        if (this.request.result != null) {
           resolve(this.request.result);
         } else {
           reject(new Error("IdbRequest:Promisify:OnSuccess - NO RESULT"));
