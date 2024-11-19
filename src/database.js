@@ -33,7 +33,7 @@ import { DEED_CATEGORIES, BASE_URL } from "./constants";
     "class":"RUNE_KEEPER",
  * @property {number} level
     "level":105,
- * @property {Array<Array<boolean>>} completed 
+ * @property {boolean[][]} completed 
     "completed":[
       [false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false]
     ]
@@ -105,9 +105,7 @@ export function openDatabase() {
 async function deedFetchAndStore(db, url, deed_type) {
   try {
     const resp = await fetch(BASE_URL + url);
-    console.log("resp", resp);
     const data = await resp.json();
-    console.log("json", data);
     const tx = await db.transaction("deeds", "readwrite");
     const deedStore = tx.openStore("deeds");
     await deedStore.put(data, deed_type);
@@ -306,7 +304,7 @@ export async function initialDeedPopulation(db) {
  * @template T
  * @param  {IDB} db idb database Promise
  * @param  {string} deed_type DEED_TYPE desired
- * @return {Promise<Array<DeedData>>} Array of deeds
+ * @return {Promise<DeedData[]>} Array of deeds
  */
 export async function get_deeds_of_type(db, deed_type) {
   // const db = await db_promise;
@@ -329,7 +327,7 @@ export async function get_deeds_of_type(db, deed_type) {
 /**
  * get all deeds
  * @param {Promise<IDB>} db_promise
- * @returns {Promise<Array<Array<DeedData>>>}
+ * @returns {Promise<DeedData[][]>}
  */
 export async function get_all_deeds(db_promise) {
   const db = await db_promise;
@@ -368,7 +366,7 @@ export async function get_character(db_promise, index) {
 /**
  * save_characters description
  * @param  {IDB} db idb database promise
- * @param  {Array<CharacterData>} characters characters to save
+ * @param  {CharacterData[]} characters characters to save
  * @return {Promise<void>} transaction promise
  */
 export async function save_characters(db, characters) {
