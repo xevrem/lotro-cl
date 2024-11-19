@@ -22,13 +22,13 @@ SOFTWARE.
  */
 
 /**
- * @template {Record<string, any>} State
+ * @template [State=any]
  * @typedef {Object} StoreOnWindow
  * @property {Store<State>} [simple_state_store]
  */
 
 /**
- * @template {Record<string, any>} State
+ * @template [State=any]
  * @typedef {Window & typeof globalThis & StoreOnWindow<State>} WindowWithStore
  */
 
@@ -41,7 +41,7 @@ SOFTWARE.
  */
 
 /**
- * @template {Record<string, any>} State
+ * @template [State=any]
  * @function
  * @typedef StoreListener
  * @type {(state: State, update: Partial<State>)=> void}
@@ -49,7 +49,7 @@ SOFTWARE.
 
 /**
  *
- * @template {Record<string, any>} State
+ * @template [State=any]
  * @param {any} [starting_state={}]
  * @param {number} [dispatch_interval=1000]
  * @param {number} [dispatch_limit=-1]
@@ -72,7 +72,7 @@ function createStore(
 
 /**
  *
- * @template {Record<string, any>} State
+ * @template [State=any]
  * @returns {Store<State>}
  * @throws {Error}
  */
@@ -87,19 +87,17 @@ function getStore() {
 }
 
 /**
- * @template {Record<string, any>} State
+ * @template [State=any]
  */
 class Store {
-  /** @type {Array<Action<Partial<State>>>}*/
+  /** @type {Action<Partial<State>>[]}*/
   dispatch_queue;
-  /** @type {Record<string, Array<StoreListener<State>>>}*/
+  /** @type {Record<string, StoreListener<State>[]>}*/
   listeners;
   /** @type {State}*/
   state;
 
   /**
-   *
-   *
    * @param {State} starting_state
    * @param {number} [dispatch_interval=60]
    * @param {*} [dispatch_limit=-1]
@@ -152,6 +150,10 @@ class Store {
     }
   }
 
+  /**
+   *
+   * @returns {State}
+   */
   getState() {
     return this.state;
   }
@@ -165,15 +167,11 @@ class Store {
   updateState(update) {
     const keys = Object.keys(update);
     for (const key of keys) {
-      this.state = {
-        ...this.state,
-        [key]: update[key],
-      };
+      // @ts-ignore because it is very dumb in JS
+      this.state[key] = update[key];
     }
     return this;
   }
-
-  dispatch() {}
 
   dispatcher() {
     // console.log('dispatching...', this.dispatch_queue.length, this.dispatch_queue);
