@@ -22,25 +22,45 @@ SOFTWARE.
  */
 
 /**
+ * @template {Record<string, any>} State
  * @typedef {Object} StoreOnWindow
- * @property {Store} [simple_state_store]
- *
- * @typedef {Window & typeof globalThis & StoreOnWindow} WindowWithStore
+ * @property {Store<State>} [simple_state_store]
+ */
+
+/**
+ * @template {Record<string, any>} State
+ * @typedef {Window & typeof globalThis & StoreOnWindow<State>} WindowWithStore
  */
 
 /**
  *
+ * @template ActionData
+ * @typedef {object} Action
+ * @property {string} action
+ * @property {ActionData} data
+ */
+
+/**
+ * @template {Record<string, any>} State
+ * @function
+ * @typedef StoreListener
+ * @type {(state: State, update: Partial<State>)=> void}
+ */
+
+/**
+ *
+ * @template {Record<string, any>} State
  * @param {any} [starting_state={}]
  * @param {number} [dispatch_interval=1000]
  * @param {number} [dispatch_limit=-1]
- * @returns {Store}
+ * @returns {Store<State>}
  */
 function createStore(
   starting_state = {},
   dispatch_interval = 1000,
   dispatch_limit = -1
 ) {
-  /** @type {WindowWithStore}*/
+  /** @type {WindowWithStore<State>}*/
   const win = window;
   win.simple_state_store = new Store(
     starting_state,
@@ -52,11 +72,12 @@ function createStore(
 
 /**
  *
- * @returns {Store}
+ * @template {Record<string, any>} State
+ * @returns {Store<State>}
  * @throws {Error}
  */
 function getStore() {
-  /** @type {WindowWithStore}*/
+  /** @type {WindowWithStore<State>}*/
   const win = window;
   if (win.simple_state_store) {
     return win.simple_state_store;
@@ -65,17 +86,25 @@ function getStore() {
   }
 }
 
+/**
+ * @template {Record<string, any>} State
+ */
 class Store {
-  /** @type {Record<string, Array<any>>}*/
+  /** @type {Array<Action<Partial<State>>>}*/
+  dispatch_queue;
+  /** @type {Record<string, Array<StoreListener<State>>>}*/
   listeners;
-  /** @type {Record<string, any>}*/
+  /** @type {State}*/
   state;
 
-  constructor(
-    starting_state = {},
-    dispatch_interval = 60,
-    dispatch_limit = -1
-  ) {
+  /**
+   *
+   *
+   * @param {State} starting_state
+   * @param {number} [dispatch_interval=60]
+   * @param {*} [dispatch_limit=-1]
+   */
+  constructor(starting_state, dispatch_interval = 60, dispatch_limit = -1) {
     this.state = starting_state;
     this.subscribers = {};
     this.listeners = {};
@@ -89,10 +118,9 @@ class Store {
 
   /**
    *
-   *
    * @param {string} action
-   * @param {Function} listener
-   * @returns {Function}
+   * @param {StoreListener<State>} listener
+   * @returns {Function} unsubscription function
    */
   subscribe(action, listener) {
     if (action in this.listeners) {
@@ -110,10 +138,9 @@ class Store {
 
   /**
    *
-   *
-   * @param {*} action
-   * @param {*} data
-   * @returns {*}
+   * @template ActionData
+   * @param {string} action
+   * @param {Partial<State>} data
    */
   issueAction(action, data) {
     this.dispatch_queue.push({ action: action, data: data });
@@ -130,15 +157,18 @@ class Store {
   }
 
   /**
+   * update the state
    *
-   *
-   * @param {*} update
-   * @returns {Store}
+   * @param {Partial<State>} update
+   * @returns {Store<State>}
    */
   updateState(update) {
-    let keys = Object.keys(update);
-    for (let key of keys) {
-      this.state[key] = update[key];
+    const keys = Object.keys(update);
+    for (const key of keys) {
+      this.state = {
+        ...this.state,
+        [key]: update[key],
+      };
     }
     return this;
   }
@@ -153,18 +183,21 @@ class Store {
     let start = Date.now();
 
     if (this.dispatch_limit > 0) {
-      //dispatch limited number
+      // dispatch limited number
       for (let i = 0; i < this.dispatch_limit; i++) {
         if (this.dispatch_queue.length > 0) {
-          //pull item from front
+          // pull item from front
           let cmd = this.dispatch_queue.shift();
-          let store = this.updateState(cmd.data);
+          if (cmd) {
+            let store = this.updateState(cmd.data);
 
-          //issue callbacks
-          if (cmd.action in store.listeners) {
-            store.listeners[cmd.action].forEach((callback) => {
-              callback(store.state, cmd.data);
-            });
+            // issue callbacks
+            if (cmd.action in store.listeners) {
+              store.listeners[cmd.action].forEach((callback) => {
+                // because tsc lang server is dumb, we have to re-verify cmd here
+                cmd && callback(store.state, cmd.data);
+              });
+            }
           }
         } else {
           break; //break loop early since there is nothing to do
@@ -175,13 +208,16 @@ class Store {
       while (this.dispatch_queue.length > 0) {
         //pull item from front
         let cmd = this.dispatch_queue.shift();
-        let store = this.updateState(cmd.data);
+        if (cmd) {
+          let store = this.updateState(cmd.data);
 
-        //issue callbacks
-        if (cmd.action in store.listeners) {
-          store.listeners[cmd.action].forEach((callback) => {
-            callback(store.state, cmd.data);
-          });
+          //issue callbacks
+          if (cmd.action in store.listeners) {
+            store.listeners[cmd.action].forEach((callback) => {
+              // because tsc lang server is dumb, we have to re-verify cmd here
+              cmd && callback(store.state, cmd.data);
+            });
+          }
         }
       }
     }
