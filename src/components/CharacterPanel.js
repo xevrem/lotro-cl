@@ -20,19 +20,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import { Component } from "react";
+import PropTypes from "prop-types";
 // import ReactModal from 'react-modal';
-import './CharacterPanel.scss';
+import "./CharacterPanel.scss";
 
-import { List, Panel, Button, SelectObject, TextInput } from './Common';
-import { RACES, CLASSES, ACTION_TYPES, DEED_CATEGORIES } from './../constants';
-import { getStore } from './../Store';
-import { openDatabase, clear_characters } from './../database';
+import { List, Panel, Button, SelectObject, TextInput } from "./Common";
+import { RACES, CLASSES, ACTION_TYPES, DEED_CATEGORIES } from "./../constants";
+import { getStore } from "./../Store";
+import { openDatabase, clear_characters } from "./../database";
 
-const Character = props => {
+function Character(props) {
   return (
-    <div className={props.selected ? 'character selected' : 'character'}>
+    <div className={props.selected ? "character selected" : "character"}>
       <TextInput
         div_class="character-form-div"
         className="character-form"
@@ -67,7 +67,7 @@ const Character = props => {
         className="character-form"
         label_class="character-label"
         name="character-level"
-        value={props.level}
+        value={props.level.toString()}
         label="Level: "
         onChange={props.onChange}
       />
@@ -80,6 +80,16 @@ const Character = props => {
       </div>
     </div>
   );
+}
+
+Character.propTypes = {
+  name: PropTypes.string,
+  race: PropTypes.string,
+  class: PropTypes.string,
+  level: PropTypes.number,
+  selected: PropTypes.bool,
+  onChange: PropTypes.func,
+  onSelected: PropTypes.func,
 };
 
 class CharacterPanel extends Component {
@@ -88,32 +98,29 @@ class CharacterPanel extends Component {
 
     this.state = {
       show_upload_modal: false,
-      filename: 'none selected...',
+      filename: "none selected...",
     };
 
-    this.handle_add_character = this.handle_add_character.bind(this);
-    this.handle_save_all = this.handle_save_all.bind(this);
-    this.handle_download_characters = this.handle_download_characters.bind(
-      this
-    );
-    this.handle_delete_character = this.handle_delete_character.bind(this);
-    this.handle_upload_character_clicked = this.handle_upload_character_clicked.bind(
-      this
-    );
+    this.handleAddCharacter = this.handleAddCharacter.bind(this);
+    this.handleSaveAll = this.handleSaveAll.bind(this);
+    this.handleDownloadCharacters = this.handleDownloadCharacters.bind(this);
+    this.handleDeleteCharacter = this.handleDeleteCharacter.bind(this);
+    this.handleUploadCharacterClicked =
+      this.handleUploadCharacterClicked.bind(this);
   }
 
-  handle_add_character() {
+  handleAddCharacter() {
     // console.log('handle_add_character clicked...');
 
     //create new character object
     let character = {
-      name: '',
-      race: '',
-      class: '',
+      name: "",
+      race: "",
+      class: "",
       level: 1,
       completed: [
         //create all the dummy deed completed arrays required for a new character
-        ...Object.keys(DEED_CATEGORIES).map(category => {
+        ...Object.keys(DEED_CATEGORIES).map((category) => {
           return [false];
         }),
       ],
@@ -138,16 +145,16 @@ class CharacterPanel extends Component {
     let characters = this.props.characters;
     //determine what to update
     switch (event.target.name) {
-      case 'character-name':
+      case "character-name":
         characters[index].name = event.target.value;
         break;
-      case 'character-race':
+      case "character-race":
         characters[index].race = event.target.value;
         break;
-      case 'character-class':
+      case "character-class":
         characters[index].class = event.target.value;
         break;
-      case 'character-level':
+      case "character-level":
         characters[index].level = event.target.value;
         break;
       default:
@@ -169,37 +176,36 @@ class CharacterPanel extends Component {
     });
   }
 
-  handle_save_all() {
-    openDatabase()
-      .then(db => {
-        let tx = db.transaction('characters', 'readwrite');
-        let character_store = tx.objectStore('characters');
+  async handleSaveAll() {
+    const db = await openDatabase();
+    const tx = await db.transaction("characters", "readwrite");
+    const charactersStore = tx.openStore("characters");
 
-        //create/update all characters in db
-        this.props.characters.forEach((character, i) => {
-          character_store.put(character, i);
-        });
+    // create/update all characters in db
+    await Promise.all(
+      this.props.characters.map((character, i) =>
+        charactersStore.put(character, i)
+      )
+    );
 
-        return tx.complete;
-      })
-      .then(() => {
-        console.log('characters saved...');
-        alert('characters saved!');
-      });
+    await tx.commit();
+    alert("characters saved!");
   }
 
-  handle_download_characters() {
+  handleDownloadCharacters() {
     // console.log('download_characters called...');
 
     //build the blob out of the passed character data
-    let blob = new Blob([JSON.stringify(this.props.characters)]);
+    let blob = new Blob([JSON.stringify(this.props.characters)], {
+      type: "text/json",
+    });
 
     //create a temporary anchor
-    let a = window.document.createElement('a');
+    let a = window.document.createElement("a");
 
     //create a 'link' to our data blob
-    a.href = window.URL.createObjectURL(blob, { type: 'text/json' });
-    a.download = 'lotro_cl_characters.json';
+    a.href = window.URL.createObjectURL(blob);
+    a.download = "lotro_cl_characters.json";
 
     //append the link, activate it, then immediately remove it
     document.body.appendChild(a);
@@ -207,27 +213,26 @@ class CharacterPanel extends Component {
     document.body.removeChild(a);
   }
 
-  handle_delete_character() {
+  async handleDeleteCharacter() {
     // console.log('handle_delete_character called...')
-    if (this.props.selected_character < 0) return;
+    // if (this.props.selected_character < 0) return;
 
-    let characters = this.props.characters;
-    characters.splice(this.props.selected_character, 1);
+    // let characters = this.props.characters;
+    // characters.splice(this.props.selected_character, 1);
 
-    let db_promise = openDatabase();
-    clear_characters(db_promise)
-      .then(() => {
-        getStore().issueAction(ACTION_TYPES.CHARACTER_DELETED, {
-          characters: characters,
-          selected_character: -1,
-        });
-      })
-      .catch(error => {
-        console.log('handle_delete_character failed...', error);
-      });
+    // try {
+    //   let db_promise = await openDatabase();
+    //   await clear_characters(db_promise);
+    //   getStore().issueAction(ACTION_TYPES.CHARACTER_DELETED, {
+    //     characters: characters,
+    //     selected_character: -1,
+    //   });
+    // } catch (error) {
+    //   console.log("handle_delete_character failed...", error);
+    // }
   }
 
-  handle_upload_character_clicked() {
+  handleUploadCharacterClicked() {
     // console.log('handle_upload_character_clicked called...')
     this.setState({ show_upload_modal: true });
   }
@@ -237,62 +242,62 @@ class CharacterPanel extends Component {
     this.setState({ show_upload_modal: false });
   }
 
-  handle_submit(event) {
-    //prevent default submission behavior (i.e., dont reload the page)
-    event.preventDefault();
+  // handle_submit(event) {
+  //   //prevent default submission behavior (i.e., dont reload the page)
+  //   event.preventDefault();
 
-    if (this.file_input.files.length === 0) {
-      alert('You must choose a file to upload!');
-      return;
-    }
+  //   if (this.file_input.files.length === 0) {
+  //     alert("You must choose a file to upload!");
+  //     return;
+  //   }
 
-    console.log('handle_submit called...', this.file_input.files[0].name);
+  //   console.log("handle_submit called...", this.file_input.files[0].name);
 
-    if (this.file_input.files.length > 1) {
-      alert('No more than 1 file can be loaded at a time!');
-      return;
-    }
+  //   if (this.file_input.files.length > 1) {
+  //     alert("No more than 1 file can be loaded at a time!");
+  //     return;
+  //   }
 
-    //attempt to read the file
-    let reader = new FileReader();
-    reader.onload = event => {
-      try {
-        //attempt to parse the file into JSON
-        let data = JSON.parse(event.target.result);
+  //   //attempt to read the file
+  //   let reader = new FileReader();
+  //   reader.onload = (event) => {
+  //     try {
+  //       //attempt to parse the file into JSON
+  //       let data = JSON.parse(event.target.result);
 
-        //add new characters to existing characters
-        let characters = this.props.characters;
-        data.forEach(character => {
-          characters.push(character);
-        });
+  //       //add new characters to existing characters
+  //       let characters = this.props.characters;
+  //       data.forEach((character) => {
+  //         characters.push(character);
+  //       });
 
-        //issue the update to the store
-        getStore().issueAction(ACTION_TYPES.CHARACTER_ADDED, {
-          characters: characters,
-          selected_character: -1,
-        });
-      } catch (error) {
-        console.log('file parsing failed:', error);
-        alert('an error occurred, no character data loaded...');
-      } finally {
-        //close the modal
-        this.setState({
-          show_upload_modal: false,
-          filename: 'none selected...',
-        });
-      }
-    };
+  //       //issue the update to the store
+  //       getStore().issueAction(ACTION_TYPES.CHARACTER_ADDED, {
+  //         characters: characters,
+  //         selected_character: -1,
+  //       });
+  //     } catch (error) {
+  //       console.log("file parsing failed:", error);
+  //       alert("an error occurred, no character data loaded...");
+  //     } finally {
+  //       //close the modal
+  //       this.setState({
+  //         show_upload_modal: false,
+  //         filename: "none selected...",
+  //       });
+  //     }
+  //   };
 
-    //the reader encountered an error
-    reader.onerror = error => {
-      console.log('file read failed:', error);
-      alert('an error occurred, no character data loaded...');
-      this.setState({ show_upload_modal: false });
-    };
+  //   //the reader encountered an error
+  //   reader.onerror = (error) => {
+  //     console.log("file read failed:", error);
+  //     alert("an error occurred, no character data loaded...");
+  //     this.setState({ show_upload_modal: false });
+  //   };
 
-    //read the file
-    reader.readAsText(this.file_input.files[0]);
-  }
+  //   //read the file
+  //   reader.readAsText(this.file_input.files[0]);
+  // }
 
   render() {
     let character_list = [];
@@ -324,23 +329,23 @@ class CharacterPanel extends Component {
             <Button
               className="btn btn-primary"
               text="Add Character"
-              onClick={this.handle_add_character}
+              onClick={this.handleAddCharacter}
             />
             {/* <Button className='btn btn-success' text='Save All Characters' onClick={this.save_all_handler}/> */}
             <Button
               className="btn btn-danger"
               text="Delete Selected"
-              onClick={this.handle_delete_character}
+              onClick={this.handleDeleteCharacter}
             />
             <Button
               className="btn btn-primary"
               text="Load Characters"
-              onClick={this.handle_upload_character_clicked}
+              onClick={this.handleUploadCharacterClicked}
             />
             <Button
               className="btn btn-primary"
               text="Download Characters"
-              onClick={this.handle_download_characters}
+              onClick={this.handleDownloadCharacters}
             />
           </div>
           <div className="character-area">
@@ -352,7 +357,7 @@ class CharacterPanel extends Component {
               {character_list}
             </List>
           </div>
-{/*
+          {/*
           <ReactModal
             className="modal-content panel"
             overlayClassName="modal"
@@ -394,5 +399,9 @@ class CharacterPanel extends Component {
     );
   }
 }
+
+CharacterPanel.propTypes = {
+  name: PropTypes.string,
+};
 
 export default CharacterPanel;

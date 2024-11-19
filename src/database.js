@@ -20,7 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-import { IDB } from "./idb";
+import { IDB } from "idbp";
 import { DEED_CATEGORIES, BASE_URL } from "./constants";
 
 /**
@@ -75,10 +75,10 @@ const DATABASE_VERSION = 2;
  * Function description.
  * @returns {Promise<IDB>} Return description.
  */
-export function openDatabase() {
+export async function openDatabase() {
   const idb = new IDB("lotro_store", DATABASE_VERSION);
 
-  return idb.openDB((db) => {
+  const openDb = await idb.openDB((db) => {
     console.log("d:od::upgrading", db);
     switch (db.oldVersion) {
       case 0:
@@ -91,6 +91,7 @@ export function openDatabase() {
         break;
     }
   });
+  return openDb;
 }
 
 //fetch deed data at the url and store it according to passed deed types
@@ -303,7 +304,7 @@ export async function initialDeedPopulation(db) {
  * return all deeds of passed DEED_TYPE
  * @template T
  * @param  {IDB} db idb database Promise
- * @param  {string} deed_type DEED_TYPE desired
+ * @param  {number} deed_type DEED_TYPE desired
  * @return {Promise<DeedData[]>} Array of deeds
  */
 export async function get_deeds_of_type(db, deed_type) {

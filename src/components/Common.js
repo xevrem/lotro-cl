@@ -20,39 +20,36 @@ SOFTWARE.
 
 */
 
-import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 function List(props) {
-  if(!props.children) return <></>
+  if (!props.children) return <></>;
 
-  let list_items = props.children.map((item, i) =>{
-    return(
+  let list_items = props.children.map((item, i) => {
+    return (
       <li key={i} className={props.list_item_class}>
         {item}
       </li>
     );
   });
 
-  return (
-    <ul className={props.list_class}>
-      {list_items}
-    </ul>
-  );
+  return <ul className={props.list_class}>{list_items}</ul>;
 }
 
 List.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
   list_class: PropTypes.string,
   list_item_class: PropTypes.string,
 };
 
+/**
+ *
+ *
+ * @param {*} props
+ * @returns {*}
+ */
 function Panel(props) {
-  return (
-    <div className={props.panel_class}>
-      {props.children}
-    </div>
-  );
+  return <div className={props.panel_class}>{props.children}</div>;
 }
 
 Panel.propTypes = {
@@ -60,16 +57,18 @@ Panel.propTypes = {
   panel_class: PropTypes.string,
 };
 
-function DoublePanel(props){
-  return(
+/**
+ *
+ *
+ * @param {*} props
+ * @returns {*}
+ */
+function DoublePanel(props) {
+  return (
     <Panel panel_class={props.panel_class}>
       {props.children}
-      <div className={props.left_class}>
-        {props.left}
-      </div>
-      <div className={props.right_class}>
-        {props.right}
-      </div>
+      <div className={props.left_class}>{props.left}</div>
+      <div className={props.right_class}>{props.right}</div>
     </Panel>
   );
 }
@@ -80,11 +79,11 @@ DoublePanel.propTypes = {
   left: PropTypes.element,
   panel_class: PropTypes.string,
   right_class: PropTypes.string,
-  right: PropTypes.element
-}
+  right: PropTypes.element,
+};
 
-function Button(props){
-  return(
+function Button(props) {
+  return (
     <button className={props.className} onClick={props.onClick}>
       {props.text}
     </button>
@@ -95,25 +94,30 @@ Button.propTypes = {
   className: PropTypes.string,
   onClick: PropTypes.func,
   text: PropTypes.string,
-}
+};
 
-
-/**
- * @param  {} props.object
- * @param  {} props.select_name
- * @param  {} props.default
- */
-function SelectObject(props){
+function SelectObject(props) {
   let key_list = Object.keys(props.object);
-  let options = key_list.map((key, i)=>{
+  let options = key_list.map((key, i) => {
     let item = props.object[key];
-    return <option key={i} value={item.id}>{item.text}</option>
-  })
+    return (
+      <option key={i} value={item.id}>
+        {item.text}
+      </option>
+    );
+  });
 
-  return(
+  return (
     <div className={props.div_class}>
-      <label className={props.label_class} htmlFor={props.id}>{props.label}</label>
-      <select className={props.className} name={props.name} value={props.default} onChange={props.onChange}>
+      <label className={props.label_class} htmlFor={props.id}>
+        {props.label}
+      </label>
+      <select
+        className={props.className}
+        name={props.name}
+        value={props.default}
+        onChange={props.onChange}
+      >
         {options}
       </select>
     </div>
@@ -129,14 +133,23 @@ SelectObject.propTypes = {
   name: PropTypes.string,
   object: PropTypes.object,
   onChange: PropTypes.func,
-}
+};
 
-function TextInput(props){
-  return(
+function TextInput(props) {
+  return (
     <div className={props.div_class}>
-      <label className={props.label_class} htmlFor={props.id}>{props.label}</label>
-      <input className={props.className} type='text' id={props.id} value={props.value} 
-             onChange={props.onChange} name={props.name} placeholder={props.placeholder} />
+      <label className={props.label_class} htmlFor={props.id}>
+        {props.label}
+      </label>
+      <input
+        className={props.className}
+        type="text"
+        id={props.id}
+        value={props.value}
+        onChange={props.onChange}
+        name={props.name}
+        placeholder={props.placeholder}
+      />
     </div>
   );
 }
@@ -146,11 +159,11 @@ TextInput.propTypes = {
   div_class: PropTypes.string,
   id: PropTypes.string,
   label_class: PropTypes.string,
-  label: PropTypes.element,
+  label: PropTypes.string,
   name: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   value: PropTypes.string,
-}
+};
 
-export {DoublePanel, List, Panel, Button, SelectObject, TextInput};
+export { DoublePanel, List, Panel, Button, SelectObject, TextInput };

@@ -106,7 +106,7 @@ class Store {
     this.state = starting_state;
     this.subscribers = {};
     this.listeners = {};
-    this.dispatch_queue = new Array();
+    this.dispatch_queue = [];
     this.dispatch_interval = dispatch_interval;
     this.dispatch_limit = dispatch_limit;
     this.is_dispatching = false;
