@@ -60,15 +60,9 @@ export class IDB {
     return new Promise((resolve, reject) => {
       let request = window.indexedDB.open(this.dbname, this.version);
       //handle successful database opening
-      request.onsuccess = (event) => {
-        console.log("idb:odb:os");
-        if (event.target) {
-          this.db = request.result;
-          // this.db = event.target.result;
-          resolve(this);
-        } else {
-          reject("OPENDB:ONSUCCESS - NO EVENT");
-        }
+      request.onsuccess = (_event) => {
+        this.db = request.result;
+        resolve(this);
       };
 
       //handle errors on database opening
@@ -85,9 +79,7 @@ export class IDB {
       //if provided, allow for database upgrading
       if (onUpgrade) {
         request.onupgradeneeded = (event) => {
-          console.log("idb:odb:oun");
           this.upgraded = true;
-          // this.db = event.target.result;
           this.db = request.result;
           this.oldVersion = event.oldVersion;
           onUpgrade(this, event);
@@ -104,7 +96,6 @@ export class IDB {
    * @return {Promise<IDB>} Promise that resolves upon sucessful store creation and rejects on error
    */
   createStore(name, options = undefined, callback = undefined) {
-    console.log("create_store called...");
     return new Promise((resolve, reject) => {
       let objectStore;
       if (options && this.db) {
@@ -120,18 +111,16 @@ export class IDB {
 
       //if everything goes well, resolve the promise
       objectStore.store.transaction.oncomplete = () => {
-        console.log("idb:cs:oc");
         resolve(this);
       };
 
-      console.log("initial store created...");
       try {
         //store has been created, provide the store for manipulation
         if (callback) {
           callback(objectStore);
         }
       } catch (error) {
-        console.error("error during store creation...", error);
+        console.error("idb:cs:: error during store creation...", error);
         reject(error);
       }
     });
@@ -155,11 +144,12 @@ export class IDB {
     if (this.db) {
       let transaction = new Transaction(
         this,
-        this.db.transaction(stores, mode),
+        this.db.transaction(stores, mode, options),
         callback
       );
       return transaction.promisify();
     } else {
+      console.error("idb:t:: NO DATABASE PROVIDED");
       throw new Error("NO DATABASE PROVIDED");
     }
   }
@@ -212,7 +202,6 @@ export class Transaction {
    * @return {ObjectStore} Promes that resolves to the store or rejects on error
    */
   openStore(name) {
-    console.log("tx:os");
     let store = new ObjectStore(this.transaction.objectStore(name), name);
     return store;
   }
@@ -221,7 +210,6 @@ export class Transaction {
    * abort calls the underlying IDBTransaction's abort method
    */
   abort() {
-    console.log("tx:a");
     this.transaction.abort();
   }
 
@@ -242,16 +230,14 @@ export class Transaction {
    * @returns {Promise<Transaction>}
    */
   commit() {
-    console.log("tx:c");
     return new Promise((resolve, reject) => {
       this.transaction.commit();
       this.transaction.oncomplete = (event) => {
-        console.log("tx:commit:complete");
         this.callback && this.callback(this);
         resolve(this);
       };
       this.transaction.onerror = (event) => {
-        console.error("tx:commit:error", event);
+        console.error("tx:c:oe:: COMMIT ERROR", event);
         reject(this);
       };
     });
@@ -302,7 +288,6 @@ export class ObjectStore {
    * @return {Promise<IDBValidKey>} Promes that resolves on success or rejects on error
    */
   put(value, key = undefined) {
-    console.log('ObjectStore:Put - store, key, value', this, key, value);
     let request = new IdbRequest(this.store.put(value, key));
     return request.promisify();
   }
@@ -452,10 +437,10 @@ export class IdbRequest {
   promisify() {
     return new Promise((resolve, reject) => {
       this.request.onsuccess = (event) => {
-        console.log('IdbRequest:Promisify:OnSuccess - self, event', this, event);
         if (this.request.result != null) {
           resolve(this.request.result);
         } else {
+          console.error("idbr:p:os:: NO RESULT", event, this);
           reject(new Error("IdbRequest:Promisify:OnSuccess - NO RESULT"));
         }
       };
