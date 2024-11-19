@@ -42,4 +42,10 @@ yarn-error.log*
 *.css.map
 
 # yarn stuff
-/.yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
