@@ -26,7 +26,7 @@ import CharacterPanel from "./CharacterPanel";
 import DeedPanel from "./DeedPanel";
 import SummaryPanel from "./SummaryPanel";
 
-import { createStore, getStore } from "./../Store";
+import { createStore, getStore, Store } from "./../Store";
 import {
   ACTION_TYPES,
   DEED_CATEGORIES,
@@ -53,6 +53,7 @@ let initial_state = {
   deed_category_selected: 0,
   deed_subcategory_selected: "",
   deed_subcategories: null,
+  deed_text: "",
   characters: [],
   deeds: [],
   deed_categories: Object.keys(DEED_CATEGORIES),
@@ -60,6 +61,11 @@ let initial_state = {
   height: window.innerHeight,
   show_menu_modal: false,
 };
+
+/**
+ * @typedef LotroState
+ * @type {typeof initial_state}
+ */
 
 //create a store, update interval 16ms, dispatch all queued
 createStore(initial_state, 16, -1);
@@ -77,6 +83,8 @@ window.addEventListener("resize", updateWindowDimensions);
 export class LotroApp extends Component {
   /** @type{IDB?} */
   database = null;
+  /** @type {LotroState} */
+  state;
 
   /**
    *
@@ -217,19 +225,31 @@ export class LotroApp extends Component {
     }
   }
 
+  /**
+   * @param {LotroState} state
+   * @param {Partial<LotroState>} data
+   */
   handle_initialization(state, data) {
     // console.log('handle_initialization called...');
     this.setState(data);
   }
 
+  /**
+   * @param {LotroState} state
+   * @param {Partial<LotroState>} data
+   */
   handle_character_action(state, data) {
     // console.log('handle_character_action called...');
     this.setState(data);
 
     //save character data into db
-    save_characters(this.database, state.characters);
+    this.database && save_characters(this.database, state.characters);
   }
 
+  /**
+   * @param {LotroState} state
+   * @param {Partial<LotroState>} data
+   */
   handle_deed_action(state, data) {
     // console.log('handle_deed_action called...');
     this.setState(data);
@@ -260,10 +280,15 @@ export class LotroApp extends Component {
     });
   }
 
+  /**
+   * @param {LotroState} state
+   * @param {Partial<LotroState>} data
+   */
   handle_deed_category_changed(state, data) {
     // console.log('handle_deed_category_changed called...', data);
     this.setState(data);
 
+    if (!this.database) return;
     //FIXME: this may be fixed later on, but for now switch is needed for development so
     //FIXME: that only existing data can be used
     switch (data.deed_category_selected) {
@@ -357,6 +382,10 @@ export class LotroApp extends Component {
     }
   }
 
+  /**
+   * @param {LotroState} state
+   * @param {Partial<LotroState>} data
+   */
   handle_subcategory_changed(state, data) {
     // console.log('handle_subcategory_changed called...');
     this.setState(data);
@@ -366,39 +395,43 @@ export class LotroApp extends Component {
   handleResetDatabase() {
     console.log("handle_reset_database called...");
 
-    reset_database(this.database)
-      .then(() => {
-        window.location.reload();
-      })
-      .catch((error) => {
-        console.log("handle_reset_database failure...", error);
-      });
+    this.database &&
+      reset_database(this.database)
+        .then(() => {
+          window.location.reload();
+        })
+        .catch((error) => {
+          console.log("handle_reset_database failure...", error);
+        });
   }
 
   //purposefully unregisteres this app's service-worker script
   handle_reset_serviceworker() {
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .getRegistration(BASE_URL + "/")
-        .then((registration) => {
-          //tell service_worker to cleanup its cache
-          if (registration)
-            registration.active.postMessage({ action: "CLEANUP" });
-
-          // console.log('sw:',registration);
-          registration
-            .unregister()
-            .then((is_unregistered) => {
-              //success, so refresh window
-              if (is_unregistered) window.location.reload();
-            })
-            .catch((error) => {
-              console.log("unregistration error", error);
-            });
-        });
-    }
+    // if ("serviceWorker" in navigator) {
+    //   navigator.serviceWorker
+    //     .getRegistration(BASE_URL + "/")
+    //     .then((registration) => {
+    //       //tell service_worker to cleanup its cache
+    //       if (registration)
+    //         registration.active.postMessage({ action: "CLEANUP" });
+    //       // console.log('sw:',registration);
+    //       registration
+    //         .unregister()
+    //         .then((is_unregistered) => {
+    //           //success, so refresh window
+    //           if (is_unregistered) window.location.reload();
+    //         })
+    //         .catch((error) => {
+    //           console.log("unregistration error", error);
+    //         });
+    //     });
+    // }
   }
 
+  /**
+   * @param {LotroState} state
+   * @param {Partial<LotroState>} data
+   */
   handle_menu_update(state, data) {
     // console.log('handle_menu_update called...');
     this.setState(data);
@@ -418,6 +451,10 @@ export class LotroApp extends Component {
     });
   }
 
+  /**
+   * @param {LotroState} state
+   * @param {Partial<LotroState>} data
+   */
   handle_window_resize(state, data) {
     // console.log('handle_show_menu_modal called...')
     this.setState(data);
@@ -543,6 +580,6 @@ export class LotroApp extends Component {
   }
 }
 
-LotroApp.PropTypes = PropTypes.any;
+// LotroApp.propTypes = PropTypes.any;
 
 export default LotroApp;
