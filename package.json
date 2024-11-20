@@ -24,7 +24,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "no-fallthrough": "off"
+    }
   },
   "browserslist": {
     "production": [

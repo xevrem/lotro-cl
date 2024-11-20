@@ -343,7 +343,7 @@ export async function save_characters(db, characters) {
   const characterStore = tx.openStore("characters");
   // update characters
   /** @type {Promise<IDBValidKey>[]}*/
-  const allPuts = new Array();
+  const allPuts = [];
   characters.forEach((character, i) => {
     allPuts.push(characterStore.put(character, i));
   });

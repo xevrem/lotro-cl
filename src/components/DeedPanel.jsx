@@ -207,7 +207,7 @@ class DeedPanel extends Component {
             )}
           </p>
         )}
-        {deed.LP && deed.LP != "-" && (
+        {deed.LP && deed.LP !== "-" && (
           <p className="deed-stats">LP: {deed.LP}</p>
         )}
         {deed.Trait && <p className="deed-stats">Trait: {deed.Trait}</p>}
@@ -289,10 +289,10 @@ class DeedPanel extends Component {
       }
     );
 
-    //build list of deeds to display
+    // build list of deeds to display
     let deed_list = this.props.deeds.map((deed, i) => {
       //filter non-selected subcategories
-      if (deed.Subcategory != this.props.deed_subcategory_selected) return;
+      if (deed.Subcategory !== this.props.deed_subcategory_selected) return null;
 
       //is this deed completed?
       let completed = false;

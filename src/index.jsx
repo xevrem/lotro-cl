@@ -93,4 +93,4 @@ function register_service_worker() {
   });
 }
 
-// register_service_worker();
+register_service_worker();
