@@ -181,7 +181,7 @@ SelectObject.propTypes = {
 };
 
 /**
- *
+ * creates a text input
  *
  * @param {{
    className: string,
