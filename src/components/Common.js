@@ -22,6 +22,16 @@ SOFTWARE.
 
 import PropTypes from "prop-types";
 
+/**
+ * 
+ *
+ * @param {{
+   children: React.ReactNode[],
+   list_class: string,
+   list_item_class: string
+   }} props 
+ * @returns {JSX.Element}
+ */
 function List(props) {
   if (!props.children) return <></>;
 
@@ -43,10 +53,11 @@ List.propTypes = {
 };
 
 /**
- *
- *
- * @param {*} props
- * @returns {*}
+ * @param {{
+   children: React.ReactNode[],
+   panel_class: string
+ * }} props
+ * @returns {JSX.Element}
  */
 function Panel(props) {
   return <div className={props.panel_class}>{props.children}</div>;
@@ -58,10 +69,15 @@ Panel.propTypes = {
 };
 
 /**
- *
- *
- * @param {*} props
- * @returns {*}
+ * @param {{
+   children: React.ReactNode[],
+   left_class: string,
+   right_class: string,
+   left: React.ReactElement,
+   right: React.ReactElement,
+   panel_class: string
+ * }} props
+ * @returns {JSX.Element}
  */
 function DoublePanel(props) {
   return (
@@ -82,6 +98,16 @@ DoublePanel.propTypes = {
   right: PropTypes.element,
 };
 
+/**
+ * 
+ *
+ * @param {{
+   className: string,
+   onClick: React.MouseEventHandler<HTMLButtonElement>,
+   text: string
+   }} props 
+ * @returns {JSX.Element}
+ */
 function Button(props) {
   return (
     <button className={props.className} onClick={props.onClick}>
@@ -96,6 +122,25 @@ Button.propTypes = {
   text: PropTypes.string,
 };
 
+/**
+ * creates a select element
+ *
+ * @param {{
+   object: {
+     id: string,
+     text: string
+   },
+   div_class: string,
+   label_class:string,
+   id: string,
+   className: string,
+   name: string,
+   label: string,
+   default: any,
+   onChange: React.ChangeEventHandler<HTMLSelectElement>
+   }} props 
+ * @returns {JSX.Element}
+ */
 function SelectObject(props) {
   let key_list = Object.keys(props.object);
   let options = key_list.map((key, i) => {
@@ -135,6 +180,22 @@ SelectObject.propTypes = {
   onChange: PropTypes.func,
 };
 
+/**
+ *
+ *
+ * @param {{
+   className: string,
+   div_class: string,
+   id: string,
+   label: string,
+   label_class: string,
+   name: string,
+   onChange: React.ChangeEventHandler<HTMLInputElement>
+   placeholder: string
+   value: string,
+}} props
+ * @returns {JSX.Element}
+ */
 function TextInput(props) {
   return (
     <div className={props.div_class}>
