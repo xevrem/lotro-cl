@@ -59,37 +59,37 @@ function track_installing(worker) {
 }
 
 function register_service_worker() {
-  if (!navigator.serviceWorker) return;
-
   window.addEventListener("load", function () {
-    navigator.serviceWorker
-      .register(BASE_URL + "/service_worker.js")
-      .then((registration) => {
-        // is this a service worker that is waiting to take over?
-        if (registration.waiting) {
-          update_ready(registration.waiting);
-          return;
-        }
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register(BASE_URL + "/service_worker.js")
+        .then((registration) => {
+          // is this a service worker that is waiting to take over?
+          if (registration.waiting) {
+            update_ready(registration.waiting);
+            return;
+          }
 
-        //is this a service worker that is installing?
-        if (registration.installing) {
-          track_installing(registration.installing);
-          return;
-        }
-
-        //has a new service worker appeared?
-        registration.addEventListener("updatefound", () => {
+          //is this a service worker that is installing?
           if (registration.installing) {
             track_installing(registration.installing);
+            return;
           }
-        });
-      });
 
-    //if the current service worker has changed, reload this page
-    navigator.serviceWorker.addEventListener("controllerchange", () => {
-      console.log("reloading...");
-      window.location.reload();
-    });
+          //has a new service worker appeared?
+          registration.addEventListener("updatefound", () => {
+            if (registration.installing) {
+              track_installing(registration.installing);
+            }
+          });
+        });
+
+      //if the current service worker has changed, reload this page
+      navigator.serviceWorker.addEventListener("controllerchange", () => {
+        console.log("reloading...");
+        window.location.reload();
+      });
+    }
   });
 }
 
