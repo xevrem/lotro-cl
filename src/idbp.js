@@ -214,25 +214,13 @@ export class Transaction {
   }
 
   /**
-   * @param {(tx: Transaction) => void} resolve
-   * @param {Event} event
-   */
-  commitComplete(resolve, event) {}
-
-  /**
-   * @param {(tx: Transaction) => void} reject
-   * @param {Event} error
-   */
-  commitError(reject, error) {}
-
-  /**
    *
    * @returns {Promise<Transaction>}
    */
   commit() {
     return new Promise((resolve, reject) => {
       this.transaction.commit();
-      this.transaction.oncomplete = (event) => {
+      this.transaction.oncomplete = (_event) => {
         this.callback && this.callback(this);
         resolve(this);
       };
@@ -401,8 +389,8 @@ export class Cursor {
    */
   promisify() {
     return new Promise((resolve, reject) => {
-      this.request.onsuccess = (event) => {
-        if (this.request.result != null) {
+      this.request.onsuccess = (_event) => {
+        if (this.request.result !== null) {
           if (this.callback) this.callback(this.request.result);
           resolve(this.request.result);
         } else {
@@ -437,7 +425,7 @@ export class IdbRequest {
   promisify() {
     return new Promise((resolve, reject) => {
       this.request.onsuccess = (event) => {
-        if (this.request.result != null) {
+        if (this.request.result !== null) {
           resolve(this.request.result);
         } else {
           console.error("idbr:p:os:: NO RESULT", event, this);
