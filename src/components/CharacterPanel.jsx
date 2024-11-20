@@ -266,7 +266,7 @@ class CharacterPanel extends Component {
     this.setState({ show_upload_modal: true });
   }
 
-  handle_modal_request_close() {
+  handleModalRequestClose() {
     this.setState({ show_upload_modal: false });
   }
 
@@ -396,8 +396,8 @@ class CharacterPanel extends Component {
           <Modal
             className="modal-content panel"
             overlayClassName="modal"
-            isOpen={this.state.show_upload_modal}
-            onRequestClose={this.handle_modal_request_close.bind(this)}
+            show={this.state.show_upload_modal}
+            onRequestClose={this.handleModalRequestClose.bind(this)}
           >
             <form onSubmit={this.handleSubmit.bind(this)}>
               <h3 style={{ textAlign: "center", marginTop: "0px" }}>

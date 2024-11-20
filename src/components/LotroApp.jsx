@@ -396,19 +396,21 @@ export class LotroApp extends Component {
   handleResetServiceWorker() {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.getRegistration(BASE_URL).then((registration) => {
-        //tell service_worker to cleanup its cache
-        if (registration)
+        // tell service_worker to cleanup its cache
+        if (registration) {
           registration.active.postMessage({ action: "CLEANUP" });
-        // console.log('sw:',registration);
-        registration
-          .unregister()
-          .then((is_unregistered) => {
-            //success, so refresh window
-            if (is_unregistered) window.location.reload();
-          })
-          .catch((error) => {
-            console.log("unregistration error", error);
-          });
+          registration
+            .unregister()
+            .then((is_unregistered) => {
+              // success, so refresh window
+              if (is_unregistered) window.location.reload();
+            })
+            .catch((error) => {
+              console.error("unregistration error", error);
+            });
+        } else {
+          alert("No ServiceWorker Is Registered...");
+        }
       });
     }
   }
