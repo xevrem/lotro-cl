@@ -8,15 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@types/prop-types':
-        specifier: ^15.7.13
-        version: 15.7.13
-      '@types/react':
-        specifier: ^18.3.12
-        version: 18.3.12
-      '@types/react-dom':
-        specifier: ^18.3.1
-        version: 18.3.1
       prop-types:
         specifier: ^15.8.1
         version: 15.8.1
@@ -29,9 +20,6 @@ importers:
       react-scripts:
         specifier: ^5.0.1
         version: 5.0.1(@babel/plugin-syntax-flow@7.26.0(@babel/core@7.26.0))(@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.26.0))(@types/babel__core@7.20.5)(eslint@8.57.1)(react@18.3.1)(sass@1.81.0)(type-fest@0.21.3)(typescript@4.9.5)
-      typescript:
-        specifier: ^4.9.5
-        version: 4.9.5
     devDependencies:
       '@testing-library/dom':
         specifier: ^10.4.0
@@ -45,6 +33,18 @@ importers:
       '@testing-library/user-event':
         specifier: ^13.5.0
         version: 13.5.0(@testing-library/dom@10.4.0)
+      '@types/node':
+        specifier: ^22.9.1
+        version: 22.9.1
+      '@types/prop-types':
+        specifier: ^15.7.13
+        version: 15.7.13
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.12
+      '@types/react-dom':
+        specifier: ^18.3.1
+        version: 18.3.1
       gh-pages:
         specifier: ^6.2.0
         version: 6.2.0
@@ -54,6 +54,9 @@ importers:
       sass:
         specifier: ^1.81.0
         version: 1.81.0
+      typescript:
+        specifier: ^4.9.5
+        version: 4.9.5
 
 packages:
 
