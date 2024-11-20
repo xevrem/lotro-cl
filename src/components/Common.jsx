@@ -20,19 +20,79 @@ SOFTWARE.
 
 */
 
-import PropTypes from "prop-types";
+import { Component, createRef } from "react";
 
 /**
- * 
+ * @typedef {{
+ * id: string;
+ * className: string;
+ * onRequestClose: Function;
+ * show: boolean;
+ * }} ModalProps
+ */
+
+export class Modal extends Component {
+  /**
+   * @param {ModalProps} props
+   */
+  constructor(props) {
+    super(props);
+    this.overlayRef = createRef();
+    this.contentRef = createRef();
+  }
+
+  /**
+   * @param {ModalProps} prevProps
+   */
+  componentDidUpdate(prevProps) {
+    // open dialog
+    if (this.overlayRef.current && this.props.show && !prevProps.show) {
+      this.overlayRef.current.showModal();
+    }
+
+    // close dialog
+    if (this.overlayRef.current && !this.props.show && prevProps.show) {
+      this.overlayRef.current.close();
+    }
+  }
+
+  /**
+   * @param {React.MouseEvent} event
+   */
+  handleOnClick(event) {
+    // close if we click outside the dialog
+    if (this.props.show && !this.contentRef.current.contains(event.target)) {
+      this.props.onRequestClose();
+    }
+  }
+
+  render() {
+    return (
+      <dialog
+        ref={this.overlayRef}
+        id={this.props.id}
+        className={this.props.overlayClassName}
+        onClick={this.handleOnClick.bind(this)}
+      >
+        <div ref={this.contentRef} className={this.props.className}>
+          {this.props.children}
+        </div>
+      </dialog>
+    );
+  }
+}
+
+/**
+ *
  *
  * @param {{
-   children: React.ReactNode[],
-   list_class: string,
-   list_item_class: string
-   }} props 
+ * children: React.ReactNode[];
+ * list_class: string;
+ * list_item_class: string;
+ * }} props
  * @returns {JSX.Element}
  */
-function List(props) {
+export function List(props) {
   if (!props.children) return <></>;
 
   let list_items = props.children.map((item, i) => {
@@ -46,40 +106,29 @@ function List(props) {
   return <ul className={props.list_class}>{list_items}</ul>;
 }
 
-List.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
-  list_class: PropTypes.string,
-  list_item_class: PropTypes.string,
-};
-
 /**
  * @param {{
-   children: React.ReactNode[],
-   panel_class: string
+ * children: React.ReactNode[];
+ * panel_class: string;
  * }} props
  * @returns {JSX.Element}
  */
-function Panel(props) {
+export function Panel(props) {
   return <div className={props.panel_class}>{props.children}</div>;
 }
 
-Panel.propTypes = {
-  children: PropTypes.node,
-  panel_class: PropTypes.string,
-};
-
 /**
  * @param {{
-   children: React.ReactNode[],
-   left_class: string,
-   right_class: string,
-   left: React.ReactElement,
-   right: React.ReactElement,
-   panel_class: string
+ * children: React.ReactNode[];
+ * left_class: string;
+ * right_class: string;
+ * left: React.ReactElement;
+ * right: React.ReactElement;
+ * panel_class: string
  * }} props
  * @returns {JSX.Element}
  */
-function DoublePanel(props) {
+export function DoublePanel(props) {
   return (
     <Panel panel_class={props.panel_class}>
       {props.children}
@@ -89,26 +138,17 @@ function DoublePanel(props) {
   );
 }
 
-DoublePanel.propTypes = {
-  children: PropTypes.node,
-  left_class: PropTypes.string,
-  left: PropTypes.element,
-  panel_class: PropTypes.string,
-  right_class: PropTypes.string,
-  right: PropTypes.element,
-};
-
 /**
- * 
+ * button element
  *
  * @param {{
-   className: string,
-   onClick: React.MouseEventHandler<HTMLButtonElement>,
-   text: string
-   }} props 
+ * className: string;
+ * onClick: React.MouseEventHandler<HTMLButtonElement>;
+ * text: string
+ * }} props
  * @returns {JSX.Element}
  */
-function Button(props) {
+export function Button(props) {
   return (
     <button className={props.className} onClick={props.onClick}>
       {props.text}
@@ -116,32 +156,26 @@ function Button(props) {
   );
 }
 
-Button.propTypes = {
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-  text: PropTypes.string,
-};
-
 /**
  * creates a select element
  *
- * @param {{
-   object: {
-     id: string,
-     text: string
-   },
-   div_class: string,
-   label_class:string,
-   id: string,
-   className: string,
-   name: string,
-   label: string,
-   default: any,
-   onChange: React.ChangeEventHandler<HTMLSelectElement>
-   }} props 
+ * @param {Partial<{
+ * object: Record<string, {
+ * id: string;
+ * text: string;
+ * }>;
+ * div_class: string;
+ * label_class: string;
+ * id: string;
+ * className: string;
+ * name: string;
+ * label: string;
+ * default: any;
+ * onChange: React.ChangeEventHandler<HTMLSelectElement>
+ * }>} props
  * @returns {JSX.Element}
  */
-function SelectObject(props) {
+export function SelectObject(props) {
   let key_list = Object.keys(props.object);
   let options = key_list.map((key, i) => {
     let item = props.object[key];
@@ -168,35 +202,24 @@ function SelectObject(props) {
     </div>
   );
 }
-SelectObject.propTypes = {
-  className: PropTypes.string,
-  div_class: PropTypes.string,
-  default: PropTypes.string,
-  label_class: PropTypes.string,
-  label: PropTypes.string,
-  id: PropTypes.string,
-  name: PropTypes.string,
-  object: PropTypes.object,
-  onChange: PropTypes.func,
-};
 
 /**
  * creates a text input
  *
- * @param {{
-   className: string,
-   div_class: string,
-   id: string,
-   label: string,
-   label_class: string,
-   name: string,
-   onChange: React.ChangeEventHandler<HTMLInputElement>
-   placeholder: string
-   value: string,
-}} props
+ * @param {Partial<{
+ * className: string;
+ * div_class: string;
+ * id: string;
+ * label: string;
+ * label_class: string;
+ * name: string;
+ * onChange: React.ChangeEventHandler<HTMLInputElement>
+ * placeholder: string
+ * value: string;
+ * }>} props
  * @returns {JSX.Element}
  */
-function TextInput(props) {
+export function TextInput(props) {
   return (
     <div className={props.div_class}>
       <label className={props.label_class} htmlFor={props.id}>
@@ -214,17 +237,3 @@ function TextInput(props) {
     </div>
   );
 }
-
-TextInput.propTypes = {
-  className: PropTypes.string,
-  div_class: PropTypes.string,
-  id: PropTypes.string,
-  label_class: PropTypes.string,
-  label: PropTypes.string,
-  name: PropTypes.string,
-  placeholder: PropTypes.string,
-  onChange: PropTypes.func,
-  value: PropTypes.string,
-};
-
-export { DoublePanel, List, Panel, Button, SelectObject, TextInput };

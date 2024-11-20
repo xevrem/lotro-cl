@@ -21,15 +21,27 @@ SOFTWARE.
 
  */
 import { Component } from "react";
-import PropTypes from "prop-types";
-// import ReactModal from 'react-modal';
+import { List, Panel, Button, SelectObject, TextInput, Modal } from "./Common";
+import { RACES, CLASSES, ACTION_TYPES, DEED_CATEGORIES } from "constants";
+import { getStore } from "Store";
+import { openDatabase, delete_character } from "database";
+
 import "./CharacterPanel.scss";
 
-import { List, Panel, Button, SelectObject, TextInput } from "./Common";
-import { RACES, CLASSES, ACTION_TYPES, DEED_CATEGORIES } from "./../constants";
-import { getStore } from "./../Store";
-import { openDatabase, clear_characters } from "./../database";
-
+/**
+ *
+ *
+ * @param {{
+ * name: string;
+ * race: string;
+ * class: string;
+ * level: string;
+ * selected: boolean;
+ * onChange: React.ChangeEventHandler;
+ * onSelected: React.MouseEventHandler;
+ * }} props
+ * @returns {JSX.Element}
+ */
 function Character(props) {
   return (
     <div className={props.selected ? "character selected" : "character"}>
@@ -67,7 +79,7 @@ function Character(props) {
         className="character-form"
         label_class="character-label"
         name="character-level"
-        value={props.level.toString()}
+        value={props.level}
         label="Level: "
         onChange={props.onChange}
       />
@@ -82,17 +94,31 @@ function Character(props) {
   );
 }
 
-Character.propTypes = {
-  name: PropTypes.string,
-  race: PropTypes.string,
-  class: PropTypes.string,
-  level: PropTypes.number,
-  selected: PropTypes.bool,
-  onChange: PropTypes.func,
-  onSelected: PropTypes.func,
-};
+/**
+ * @typedef {{
+ * characters: import('database').CharacterData[];
+ * selected_character: number;
+ * }} CharacterPanelProps
+ */
+
+/**
+ * @typedef {{
+ * show_upload_modal: boolean;
+ * filename: string;
+ * }} CharacterPanelState
+ */
 
 class CharacterPanel extends Component {
+  /** @type {CharacterPanelProps} */
+  props;
+  /** @type {CharacterPanelState} */
+  state;
+
+  /**
+   *
+   *
+   * @param {CharacterPanelProps} props
+   */
   constructor(props) {
     super(props);
 
@@ -110,8 +136,6 @@ class CharacterPanel extends Component {
   }
 
   handleAddCharacter() {
-    // console.log('handle_add_character clicked...');
-
     //create new character object
     let character = {
       name: "",
@@ -120,7 +144,7 @@ class CharacterPanel extends Component {
       level: 1,
       completed: [
         //create all the dummy deed completed arrays required for a new character
-        ...Object.keys(DEED_CATEGORIES).map((category) => {
+        ...Object.keys(DEED_CATEGORIES).map((_category) => {
           return [false];
         }),
       ],
@@ -139,9 +163,12 @@ class CharacterPanel extends Component {
     });
   }
 
-  ///called whenever character information is changed
-  handle_change(index, event) {
-    // console.log('handle_change called', index);
+  /**
+   * called whenever character information is changed
+   * @param {number} index
+   * @param {React.ChangeEvent<HTMLInputElement>} event
+   */
+  handleChange(index, event) {
     let characters = this.props.characters;
     //determine what to update
     switch (event.target.name) {
@@ -168,7 +195,14 @@ class CharacterPanel extends Component {
   }
 
   //update global state with current selected character index
-  selected_handler(index, event) {
+  /**
+   *
+   *
+   * @param {number} index
+   * @param {React.MouseEvent} _event
+   * @returns {*}
+   */
+  selected_handler(index, _event) {
     getStore().issueAction(ACTION_TYPES.CHARACTER_SELECTED, {
       selected_character: index,
       deed_category_selected: -1,
@@ -193,8 +227,6 @@ class CharacterPanel extends Component {
   }
 
   handleDownloadCharacters() {
-    // console.log('download_characters called...');
-
     //build the blob out of the passed character data
     let blob = new Blob([JSON.stringify(this.props.characters)], {
       type: "text/json",
@@ -214,90 +246,94 @@ class CharacterPanel extends Component {
   }
 
   async handleDeleteCharacter() {
-    // console.log('handle_delete_character called...')
-    // if (this.props.selected_character < 0) return;
-
-    // let characters = this.props.characters;
-    // characters.splice(this.props.selected_character, 1);
-
-    // try {
-    //   let db_promise = await openDatabase();
-    //   await clear_characters(db_promise);
-    //   getStore().issueAction(ACTION_TYPES.CHARACTER_DELETED, {
-    //     characters: characters,
-    //     selected_character: -1,
-    //   });
-    // } catch (error) {
-    //   console.log("handle_delete_character failed...", error);
-    // }
+    if (this.props.selected_character < 0) return;
+    let characters = this.props.characters;
+    characters.splice(this.props.selected_character, 1);
+    try {
+      const db = await openDatabase();
+      await delete_character(db, this.props.selected_character.toString());
+      getStore().issueAction(ACTION_TYPES.CHARACTER_DELETED, {
+        characters,
+        selected_character: -1,
+      });
+    } catch (error) {
+      console.error("handle_delete_character failed...", error);
+      alert("character deletion failed...");
+    }
   }
 
   handleUploadCharacterClicked() {
-    // console.log('handle_upload_character_clicked called...')
     this.setState({ show_upload_modal: true });
   }
 
   handle_modal_request_close() {
-    // console.log('handle_upload_focus_loss called...')
     this.setState({ show_upload_modal: false });
   }
 
-  // handle_submit(event) {
-  //   //prevent default submission behavior (i.e., dont reload the page)
-  //   event.preventDefault();
+  /**
+   *
+   * @param {React.FormEvent<HTMLFormElement>} event
+   */
+  handleSubmit(event) {
+    //prevent default submission behavior (i.e., dont reload the page)
+    event.preventDefault();
 
-  //   if (this.file_input.files.length === 0) {
-  //     alert("You must choose a file to upload!");
-  //     return;
-  //   }
+    if (this.file_input.files.length === 0) {
+      alert("You must choose a file to upload!");
+      return;
+    }
 
-  //   console.log("handle_submit called...", this.file_input.files[0].name);
+    if (this.file_input.files.length > 1) {
+      alert("No more than 1 file can be loaded at a time!");
+      return;
+    }
 
-  //   if (this.file_input.files.length > 1) {
-  //     alert("No more than 1 file can be loaded at a time!");
-  //     return;
-  //   }
+    //attempt to read the file
+    let reader = new FileReader();
+    reader.onload = (event) => {
+      try {
+        if (typeof event.target.result === "string") {
+          //attempt to parse the file into JSON
+          /** @type {import('database').CharacterData[]} */
+          const data = JSON.parse(event.target.result);
 
-  //   //attempt to read the file
-  //   let reader = new FileReader();
-  //   reader.onload = (event) => {
-  //     try {
-  //       //attempt to parse the file into JSON
-  //       let data = JSON.parse(event.target.result);
+          //add new characters to existing characters
+          let characters = this.props.characters;
+          data.forEach((character) => {
+            characters.push(character);
+          });
 
-  //       //add new characters to existing characters
-  //       let characters = this.props.characters;
-  //       data.forEach((character) => {
-  //         characters.push(character);
-  //       });
+          //issue the update to the store
+          getStore().issueAction(ACTION_TYPES.CHARACTER_ADDED, {
+            characters: characters,
+            selected_character: -1,
+          });
+        } else {
+          console.error("invalid file submitted");
+          alert("please only submit text/json files...");
+        }
+      } catch (error) {
+        console.error("file parsing failed:", error);
+        alert("an error occurred, no character data loaded...");
+      } finally {
+        //close the modal
+        this.setState({
+          show_upload_modal: false,
+          filename: "none selected...",
+        });
+      }
+    };
 
-  //       //issue the update to the store
-  //       getStore().issueAction(ACTION_TYPES.CHARACTER_ADDED, {
-  //         characters: characters,
-  //         selected_character: -1,
-  //       });
-  //     } catch (error) {
-  //       console.log("file parsing failed:", error);
-  //       alert("an error occurred, no character data loaded...");
-  //     } finally {
-  //       //close the modal
-  //       this.setState({
-  //         show_upload_modal: false,
-  //         filename: "none selected...",
-  //       });
-  //     }
-  //   };
+    //the reader encountered an error
+    reader.onerror = (error) => {
+      console.error("file read failed:", error);
+      alert("an error occurred, no character data loaded...");
+      this.setState({ show_upload_modal: false });
+    };
 
-  //   //the reader encountered an error
-  //   reader.onerror = (error) => {
-  //     console.log("file read failed:", error);
-  //     alert("an error occurred, no character data loaded...");
-  //     this.setState({ show_upload_modal: false });
-  //   };
-
-  //   //read the file
-  //   reader.readAsText(this.file_input.files[0]);
-  // }
+    //read the file
+    reader.readAsText(this.file_input.files[0]);
+  }
 
   render() {
     let character_list = [];
@@ -313,7 +349,7 @@ class CharacterPanel extends Component {
             class={character.class}
             level={character.level}
             selected={i === this.props.selected_character}
-            onChange={this.handle_change.bind(this, i)}
+            onChange={this.handleChange.bind(this, i)}
             onSelected={this.selected_handler.bind(this, i)}
           />
         );
@@ -357,51 +393,44 @@ class CharacterPanel extends Component {
               {character_list}
             </List>
           </div>
-          {/*
-          <ReactModal
+          <Modal
             className="modal-content panel"
             overlayClassName="modal"
             isOpen={this.state.show_upload_modal}
             onRequestClose={this.handle_modal_request_close.bind(this)}
           >
-            <form onSubmit={this.handle_submit.bind(this)}>
-              <h3 style={{ textAlign: 'center', marginTop: '0px' }}>
+            <form onSubmit={this.handleSubmit.bind(this)}>
+              <h3 style={{ textAlign: "center", marginTop: "0px" }}>
                 Select File to Load
               </h3>
-              <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+              <span style={{ display: "inline-flex", alignItems: "center" }}>
                 <label htmlFor="file-load" className="modal-load-label btn">
                   Browse...
                 </label>
-                <p style={{ fontFamily: 'sans-serif', margin: '5px' }}>
+                <p style={{ fontFamily: "sans-serif", margin: "5px" }}>
                   File: {this.state.filename}
                 </p>
               </span>
               <input
                 id="file-load"
                 type="file"
-                ref={input => {
+                ref={(input) => {
                   this.file_input = input;
                 }}
                 onChange={() => {
-                  //get the name of the selected file and
-                  let input = document.querySelector('#file-load');
-                  this.setState({ filename: input.files[0].name });
+                  // get the name of the selected file and
+                  this.setState({ filename: this.file_input.files[0].name });
                 }}
               />
               <button type="submit" className="btn btn-primary">
                 Load File
               </button>
             </form>
-            </ReactModal>
-  */}
+          </Modal>
         </div>
       </Panel>
     );
   }
 }
-
-CharacterPanel.propTypes = {
-  name: PropTypes.string,
-};
 
 export default CharacterPanel;

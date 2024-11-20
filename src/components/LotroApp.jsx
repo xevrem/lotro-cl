@@ -23,7 +23,12 @@ SOFTWARE.
 import { Component } from "react";
 import { createStore, getStore } from "Store";
 
-import { ACTION_TYPES, DEED_CATEGORIES, SCREEN_SIZES } from "./../constants";
+import {
+  ACTION_TYPES,
+  BASE_URL,
+  DEED_CATEGORIES,
+  SCREEN_SIZES,
+} from "constants";
 import {
   openDatabase,
   initialDeedPopulation,
@@ -36,10 +41,11 @@ import DeedPanel from "./DeedPanel";
 import SummaryPanel from "./SummaryPanel";
 
 import "./LotroApp.scss";
+import { Button, Modal } from "./Common";
 
 // ReactModal.setAppElement('#root');
 
-let initial_state = {
+const initial_state = {
   selected_character: -1,
   selected_deed: -1,
   deed_category_selected: 0,
@@ -55,11 +61,26 @@ let initial_state = {
 };
 
 /**
- * @typedef LotroState
- * @type {typeof initial_state}
+ * @typedef {{
+ * characters: import("database").CharacterData[];
+ * deeds: import("database").DeedData[];
+ * deed_category_selected: number;
+ * deed_categories: string[];
+ * deed_subcategories: string[];
+ * deed_subcategory_selected: string;
+ * deed_text: string;
+ * height: number;
+ * selected_character: number;
+ * selected_deed: number;
+ * width: number;
+ * show_menu_modal: boolean;
+ * }} LotroState
  */
 
-//create a store, update interval 16ms, dispatch all queued
+/**
+ * create a store, update interval 16ms, dispatch all queued
+ * @type {import('Store').Store<LotroState>}
+ */
 createStore(initial_state, 16, -1);
 
 //update window resizing information in store
@@ -78,6 +99,9 @@ export class LotroApp extends Component {
   /** @type {LotroState} */
   state;
 
+  /**
+   * @param {undefined} props
+   */
   constructor(props) {
     super(props);
     this.state = getStore().getState();
@@ -139,7 +163,6 @@ export class LotroApp extends Component {
   }
 
   async componentDidMount() {
-    // console.log('mounted...')
     this.database = await openDatabase();
 
     await initialDeedPopulation(this.database);
@@ -150,7 +173,7 @@ export class LotroApp extends Component {
   async retrieve_app_data() {
     //get stored character data
     /** @type {Promise<import("database").CharacterData[]>} */
-    const characterData = new Promise((resolve, reject) => {
+    const characterData = new Promise(async (resolve, reject) => {
       //attempt to pull data from the db, otherwise fetch
       if (!this.database) throw new Error("NO DATABASE");
       return this.database
@@ -174,8 +197,8 @@ export class LotroApp extends Component {
     });
 
     //do initial class deed data load
-    /** @type {Promise<Array<import("./../database").DeedData>>} */
-    const classData = new Promise((resolve, reject) => {
+    /** @type {Promise<import("database").DeedData[]>} */
+    const classData = new Promise(async (resolve, reject) => {
       if (!this.database) throw new Error("NO DATABASE");
       return this.database
         .transaction("deeds")
@@ -212,11 +235,10 @@ export class LotroApp extends Component {
   }
 
   /**
-   * @param {LotroState} state
+   * @param {LotroState} _state
    * @param {Partial<LotroState>} data
    */
-  handleInitialization(state, data) {
-    // console.log('handle_initialization called...');
+  handleInitialization(_state, data) {
     this.setState(data);
   }
 
@@ -225,7 +247,6 @@ export class LotroApp extends Component {
    * @param {Partial<LotroState>} data
    */
   handleCharacterAction(state, data) {
-    // console.log('handle_character_action called...');
     this.setState(data);
 
     //save character data into db
@@ -233,11 +254,10 @@ export class LotroApp extends Component {
   }
 
   /**
-   * @param {LotroState} state
+   * @param {LotroState} _state
    * @param {Partial<LotroState>} data
    */
-  handleDeedAction(state, data) {
-    // console.log('handle_deed_action called...');
+  handleDeedAction(_state, data) {
     this.setState(data);
   }
 
@@ -265,11 +285,10 @@ export class LotroApp extends Component {
   }
 
   /**
-   * @param {LotroState} state
+   * @param {LotroState} _state
    * @param {Partial<LotroState>} data
    */
-  handleDeedCategoryChanged(state, data) {
-    // console.log('handle_deed_category_changed called...', data);
+  handleDeedCategoryChanged(_state, data) {
     this.setState(data);
 
     if (!this.database) return;
@@ -354,11 +373,10 @@ export class LotroApp extends Component {
   }
 
   /**
-   * @param {LotroState} state
+   * @param {LotroState} _state
    * @param {Partial<LotroState>} data
    */
-  handleSubcategoryChanged(state, data) {
-    // console.log('handle_subcategory_changed called...');
+  handleSubcategoryChanged(_state, data) {
     this.setState(data);
   }
 
@@ -376,32 +394,30 @@ export class LotroApp extends Component {
 
   //purposefully unregisteres this app's service-worker script
   handleResetServiceWorker() {
-    // if ("serviceWorker" in navigator) {
-    //   navigator.serviceWorker
-    //     .getRegistration(BASE_URL + "/")
-    //     .then((registration) => {
-    //       //tell service_worker to cleanup its cache
-    //       if (registration)
-    //         registration.active.postMessage({ action: "CLEANUP" });
-    //       // console.log('sw:',registration);
-    //       registration
-    //         .unregister()
-    //         .then((is_unregistered) => {
-    //           //success, so refresh window
-    //           if (is_unregistered) window.location.reload();
-    //         })
-    //         .catch((error) => {
-    //           console.log("unregistration error", error);
-    //         });
-    //     });
-    // }
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.getRegistration(BASE_URL).then((registration) => {
+        //tell service_worker to cleanup its cache
+        if (registration)
+          registration.active.postMessage({ action: "CLEANUP" });
+        // console.log('sw:',registration);
+        registration
+          .unregister()
+          .then((is_unregistered) => {
+            //success, so refresh window
+            if (is_unregistered) window.location.reload();
+          })
+          .catch((error) => {
+            console.log("unregistration error", error);
+          });
+      });
+    }
   }
 
   /**
-   * @param {LotroState} state
+   * @param {LotroState} _state
    * @param {Partial<LotroState>} data
    */
-  handleMenuUpdate(state, data) {
+  handleMenuUpdate(_state, data) {
     // console.log('handle_menu_update called...');
     this.setState(data);
   }
@@ -421,10 +437,10 @@ export class LotroApp extends Component {
   }
 
   /**
-   * @param {LotroState} state
+   * @param {LotroState} _state
    * @param {Partial<LotroState>} data
    */
-  handleWindowResize(state, data) {
+  handleWindowResize(_state, data) {
     // console.log('handle_show_menu_modal called...')
     this.setState(data);
   }
@@ -454,11 +470,10 @@ export class LotroApp extends Component {
               </h1>
             </li>
           </ul>
-          {/*
-          <ReactModal
+          <Modal
             className="menu-modal-content panel"
             overlayClassName="menu-modal-overlay"
-            isOpen={this.state.show_menu_modal}
+            show={this.state.show_menu_modal}
             onRequestClose={this.handleMenuModalClose}
           >
             <div className="about-panel">
@@ -481,7 +496,7 @@ export class LotroApp extends Component {
                   <Button
                     className="btn btn-danger"
                     text="Reset SW"
-                    onClick={this.handle_reset_serviceworker}
+                    onClick={this.handleResetServiceWorker}
                   />
                 </div>
               ) : (
@@ -495,7 +510,7 @@ export class LotroApp extends Component {
                   <Button
                     className="btn btn-danger"
                     text="Reset SW"
-                    onClick={this.handle_reset_serviceworker}
+                    onClick={this.handleResetServiceWorker}
                   />
                 </div>
               )}
@@ -519,8 +534,7 @@ export class LotroApp extends Component {
                 </a>
               </div>
             </div>
-          </ReactModal>
-          */}
+          </Modal>
         </div>
 
         <div className="site">

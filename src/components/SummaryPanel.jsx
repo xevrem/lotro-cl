@@ -20,23 +20,32 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import './SummaryPanel.scss';
+import { Component } from "react";
+import { Panel } from "./Common";
+import { getStore } from "Store";
+import { ACTION_TYPES } from "constants";
+import { openDatabase, get_all_deeds } from "database";
 
-import { Panel } from './Common';
+import "./SummaryPanel.scss";
 
-import { getStore } from './../Store';
-import { ACTION_TYPES } from './../constants';
-import { openDatabase, get_all_deeds } from './../database';
-
+/**
+ *
+ *
+ */
 class SummaryPanel extends Component {
-  /** @type {{
-  characters: any[];
-  selected_character: number;
-  }} */
-  props;
+  /**
+   * @type {{
+   * deeds?: import("./../database").DeedData[][];
+   * }}
+   */
+  state;
 
+  /**
+   * @param {{
+   * characters: any[];
+   * selected_character: number;
+   * }} props
+   */
   constructor(props) {
     super(props);
     this.state = { deeds: null };
@@ -50,8 +59,8 @@ class SummaryPanel extends Component {
 
   async handle_deeds_update() {
     //refresh deed data
-    const database = await openDatabase();
-    const deeds = await get_all_deeds(database);
+    const db = await openDatabase();
+    const deeds = await get_all_deeds(db);
     this.setState({ deeds });
   }
 
@@ -62,7 +71,7 @@ class SummaryPanel extends Component {
       this.props.selected_character < 0 ||
       !this.state.deeds
     )
-      return '';
+      return "";
 
     let total_deeds = 0; //1926;
     let total_quests = 0; //1553;
@@ -77,7 +86,7 @@ class SummaryPanel extends Component {
     this.state.deeds.forEach((deed_type, i) => {
       deed_type.forEach((deed, j) => {
         switch (deed.Type) {
-          case 'Q': //count quests separately
+          case "Q": //count quests separately
             total_quests++;
             if (completed[i]) {
               if (completed[i][j]) {
@@ -105,20 +114,20 @@ class SummaryPanel extends Component {
       100.0 *
       (total_quests_complete / total_quests)
     ).toFixed(2);
-    percent_deeds = percent_deeds === 'NaN' ? 0.0 : percent_deeds;
-    percent_quests = percent_quests === 'NaN' ? 0.0 : percent_quests;
+    percent_deeds = Number.isNaN(percent_deeds) ? "0.0" : percent_deeds;
+    percent_quests = percent_quests === "NaN" ? "0.0" : percent_quests;
 
     return (
       <Panel panel_class="container panel summary-panel">
         <h2 className="panel-header">Summary for {character.name}</h2>
         <div className="summary-details">
-          <p style={{ display: 'inline-flex' }}>Deeds: </p>
+          <p style={{ display: "inline-flex" }}>Deeds: </p>
           <p className="summary-stat">Total: {total_deeds}</p>
           <p className="summary-stat">Total Complete: {total_deeds_complete}</p>
           <p className="summary-stat">Percent Complete: {percent_deeds}%</p>
         </div>
         <div className="summary-details">
-          <p style={{ display: 'inline-flex' }}>Quests: </p>
+          <p style={{ display: "inline-flex" }}>Quests: </p>
           <p className="summary-stat">Total: {total_quests}</p>
           <p className="summary-stat">
             Total Complete: {total_quests_complete}
@@ -131,8 +140,3 @@ class SummaryPanel extends Component {
 }
 
 export default SummaryPanel;
-
-SummaryPanel.propTypes = {
-  characters: PropTypes.array,
-  selected_character: PropTypes.number,
-};

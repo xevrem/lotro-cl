@@ -21,22 +21,27 @@ SOFTWARE.
 
  */
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import "./DeedPanel.scss";
 
-import { DoublePanel, List, Panel, Button } from "./Common";
+import { Button } from "./Common";
 import { ACTION_TYPES, DEED_CATEGORIES } from "./../constants";
 
 import { getStore } from "./../Store";
 
 /**
+ * a deed item
  *
- * @param {boolean} props.selected is this deed currently selected
- * @param {callback} props.onClick called when clicked
- * @param {string} props.name deed name
- * @param {JSX.Element} props.children the child elemnts contained within the deed div
+ * @param {Partial<{
+ * name: string;
+ * selected: boolean;
+ * completed: boolean;
+ * onClick: React.MouseEventHandler<HTMLDivElement>;
+ * children: React.ReactNode[];
+ * }>} props
+ * @returns {JSX.Element}
  */
-const Deed = ({ name, selected, completed, onClick, children }) => {
+function Deed(props) {
+  const { name, selected, completed, onClick, children } = props;
   //calculate which classes to add
   let is_selected = selected ? "deed clickable selected " : "deed clickable ";
   let is_completed = completed ? "completed" : "";
@@ -46,9 +51,39 @@ const Deed = ({ name, selected, completed, onClick, children }) => {
       {children}
     </div>
   );
-};
+}
 
+/**
+ * @typedef {{
+ * characters: import("database").CharacterData[];
+ * deeds: import("database").DeedData[];
+ * deed_category_selected: number;
+ * deed_categories: string[];
+ * deed_subcatetories: string[];
+ * deed_subcategory_selected: string;
+ * deed_text: string;
+ * selected_character: number;
+ * selected_deed: number;
+ * }} DeedPanelProps
+ */
+/**
+ * @typedef {{
+ *  width: number;
+ * }} DeedPanelState
+ */
+
+/**
+ * a panel of deeds
+ */
 class DeedPanel extends Component {
+  /** @type {DeedPanelProps} */
+  props;
+  /** @type {DeedPanelState} */
+  state;
+
+  /**
+   * @param {DeedPanelProps} props
+   */
   constructor(props) {
     super(props);
 
@@ -57,17 +92,25 @@ class DeedPanel extends Component {
     };
 
     //this.handle_deed_complete = this.handle_deed_complete.bind(this);
-    this.render_deed_details = this.render_deed_details.bind(this);
+    this.renderDeedDetails = this.renderDeedDetails.bind(this);
   }
 
-  handle_category_click(index, event) {
+  /**
+   * @param {number} index
+   * @param {React.MouseEvent} _event
+   */
+  handleCategoryClick(index, _event) {
     // console.log('nav clicked...', event.target.text);
     getStore().issueAction(ACTION_TYPES.DEED_CATEGORY_CHANGED, {
       deed_category_selected: index,
     });
   }
 
-  handle_deed_complete(deed_type, event) {
+  /**
+   * @param {string} deed_type
+   * @param {React.MouseEvent} _event
+   */
+  handleDeedComplete(deed_type, _event) {
     // console.log('deed complete...', this.props.selected_deed);
 
     //toggle the specific deed
@@ -86,18 +129,32 @@ class DeedPanel extends Component {
     });
   }
 
-  handle_selected(index, event) {
+  /**
+   * @param {number} index
+   * @param {React.MouseEvent} _event
+   */
+  handleSelected(index, _event) {
     getStore().issueAction(ACTION_TYPES.DEED_SELECTED, {
       selected_deed: index,
     });
   }
 
-  handle_subcategory_click(index, event) {
+  /**
+   * @param {number} index
+   * @param {React.MouseEvent} _event
+   */
+  handleSubcategoryClick(index, _event) {
     getStore().issueAction(ACTION_TYPES.DEED_SUBCATEGORY_CHANGED, {
       deed_subcategory_selected: index,
     });
   }
 
+  /**
+   *
+   * @param {string} deed_type
+   * @param {number} category
+   * @returns {string}
+   */
   deed_type_to_text(deed_type, category) {
     switch (deed_type) {
       case "C":
@@ -124,13 +181,13 @@ class DeedPanel extends Component {
   }
 
   /**
-   * [renders the deed details for the given character, deed and completion index]
-   * @param  {[type]} deed      [deed for which details will be displayed]
-   * @param  {[type]} character [character from which completion data will be retrieved]
-   * @param  {[type]} index     [index within the current category of deeds]
-   * @return {[type]}           [deed details element]
+   * renders the deed details for the given character, deed and completion index
+   * @param  {*} deed      deed for which details will be displayed
+   * @param  {*} character character from which completion data will be retrieved
+   * @param  {*} index     index within the current category of deeds
+   * @return {*}           deed details element
    */
-  render_deed_details(deed, character, index) {
+  renderDeedDetails(deed, character, index) {
     return (
       <div
         className={
@@ -161,7 +218,7 @@ class DeedPanel extends Component {
           <Button
             className="deed-completed-btn btn btn-success"
             text="Completed!"
-            onClick={this.handle_deed_complete.bind(
+            onClick={this.handleDeedComplete.bind(
               this,
               this.props.deed_category_selected
             )}
@@ -170,7 +227,7 @@ class DeedPanel extends Component {
           <Button
             className="deed-completed-btn btn btn-primary"
             text="Complete?"
-            onClick={this.handle_deed_complete.bind(
+            onClick={this.handleDeedComplete.bind(
               this,
               this.props.deed_category_selected
             )}
@@ -199,14 +256,14 @@ class DeedPanel extends Component {
           key={i}
           className="clickable deed-nav-link active"
           text={category}
-          onClick={this.handle_category_click.bind(this, i)}
+          onClick={this.handleCategoryClick.bind(this, i)}
         />
       ) : (
         <Button
           key={i}
           className="clickable deed-nav-link"
           text={category}
-          onClick={this.handle_category_click.bind(this, i)}
+          onClick={this.handleCategoryClick.bind(this, i)}
         />
       );
     });
@@ -219,14 +276,14 @@ class DeedPanel extends Component {
             key={i}
             className="clickable deed-nav-link active"
             text={subcategory}
-            onClick={this.handle_subcategory_click.bind(this, subcategory)}
+            onClick={this.handleSubcategoryClick.bind(this, subcategory)}
           />
         ) : (
           <Button
             key={i}
             className="clickable deed-nav-link"
             text={subcategory}
-            onClick={this.handle_subcategory_click.bind(this, subcategory)}
+            onClick={this.handleSubcategoryClick.bind(this, subcategory)}
           />
         );
       }
@@ -252,9 +309,9 @@ class DeedPanel extends Component {
             name={deed.Deed}
             selected={true}
             completed={completed}
-            onClick={this.handle_selected.bind(this, i)}
+            onClick={this.handleSelected.bind(this, i)}
           >
-            {this.render_deed_details(deed, character, i)}
+            {this.renderDeedDetails(deed, character, i)}
           </Deed>
         </div>
       ) : (
@@ -263,7 +320,7 @@ class DeedPanel extends Component {
             name={deed.Deed}
             selected={false}
             completed={completed}
-            onClick={this.handle_selected.bind(this, i)}
+            onClick={this.handleSelected.bind(this, i)}
           />
         </div>
       );
