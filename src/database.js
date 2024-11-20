@@ -31,7 +31,7 @@ import { DEED_CATEGORIES, BASE_URL } from "./constants";
     "race":"HIGH_ELF",
  * @property {string} class
     "class":"RUNE_KEEPER",
- * @property {number} level
+ * @property {string} level
     "level":105,
  * @property {boolean[][]} completed 
     "completed":[
@@ -79,13 +79,10 @@ export async function openDatabase() {
   const idb = new IDB("lotro_store", DATABASE_VERSION);
 
   const openDb = await idb.openDB((db) => {
-    console.log("d:od::upgrading", db);
     switch (db.oldVersion) {
       case 0:
-        console.log("d:od:c0");
         db.createStore("characters");
       case 1:
-        console.log("d:od:c1");
         db.createStore("deeds");
       default:
         break;
@@ -125,136 +122,132 @@ async function deedFetchAndStore(db, url, deed_type) {
  * @returns {Promise<void>}
  */
 export async function initialDeedPopulation(db) {
-  if (!db) console.log("initial_deed_population something broke...");
+  if (!db) {
+    console.error("initial_deed_population something broke...");
+    throw new Error("ERROR PEFORMING INITIAL DEED POPULATION");
+  }
 
   //fetch class deeds and store them
-  let class_deeds = deedFetchAndStore(
+  const class_deeds = deedFetchAndStore(
     db,
     "/data/class_deeds.json",
     DEED_CATEGORIES.CLASS
   );
-
   //fetch race deeds and store them
-  let race_deeds = deedFetchAndStore(
+  const race_deeds = deedFetchAndStore(
     db,
     "/data/race_deeds.json",
     DEED_CATEGORIES.RACE
   );
-
   //fetch epic deeds and store them
-  let soa_deeds = deedFetchAndStore(
+  const soa_deeds = deedFetchAndStore(
     db,
     "/data/soa_deeds.json",
     DEED_CATEGORIES["SHADOWS OF ANGMAR"]
   );
-  let mom_deeds = deedFetchAndStore(
+  const mom_deeds = deedFetchAndStore(
     db,
     "/data/mom_deeds.json",
     DEED_CATEGORIES["THE MINES OF MORIA"]
   );
-  let aotk_deeds = deedFetchAndStore(
+  const aotk_deeds = deedFetchAndStore(
     db,
     "/data/aotk_deeds.json",
     DEED_CATEGORIES["ALLIES TO THE KING"]
   );
-  let tsos_deeds = deedFetchAndStore(
+  const tsos_deeds = deedFetchAndStore(
     db,
     "/data/tsos_deeds.json",
     DEED_CATEGORIES["THE STRENGTH OF SAURON"]
   );
-  let bbom_deeds = deedFetchAndStore(
+  const bbom_deeds = deedFetchAndStore(
     db,
     "/data/bbom_deeds.json",
     DEED_CATEGORIES["THE BLACK BOOK OF MORDOR"]
   );
-
   //fetch reputation deeds and store them
-  let rep_deeds = deedFetchAndStore(
+  const rep_deeds = deedFetchAndStore(
     db,
     "/data/rep_deeds.json",
     DEED_CATEGORIES.REPUTATION
   );
-
   //fetch overworld deeds and store them
-  let eriador_deeds = deedFetchAndStore(
+  const eriador_deeds = deedFetchAndStore(
     db,
     "/data/eriador_deeds.json",
     DEED_CATEGORIES.ERIADOR
   );
-  let rhov_deeds = deedFetchAndStore(
+  const rhov_deeds = deedFetchAndStore(
     db,
     "/data/rhov_deeds.json",
     DEED_CATEGORIES.RHOVANION
   );
-  let gondor_deeds = deedFetchAndStore(
+  const gondor_deeds = deedFetchAndStore(
     db,
     "/data/gondor_deeds.json",
     DEED_CATEGORIES.GONDOR
   );
-  let mordor_deeds = deedFetchAndStore(
+  const mordor_deeds = deedFetchAndStore(
     db,
     "/data/mordor_deeds.json",
     DEED_CATEGORIES.MORDOR
   );
-
-  let skirm_deeds = deedFetchAndStore(
+  const skirm_deeds = deedFetchAndStore(
     db,
     "/data/skirm_deeds.json",
     DEED_CATEGORIES.SKIRMISH
   );
-
-  let soa_inst = deedFetchAndStore(
+  const soa_inst = deedFetchAndStore(
     db,
     "/data/soa_inst_deeds.json",
     DEED_CATEGORIES["INSTANCES SHADOWS OF ANGMAR"]
   );
-  let mom_inst = deedFetchAndStore(
+  const mom_inst = deedFetchAndStore(
     db,
     "/data/mom_inst_deeds.json",
     DEED_CATEGORIES["INSTANCES MINES OF MORIA"]
   );
-  let loth_inst = deedFetchAndStore(
+  const loth_inst = deedFetchAndStore(
     db,
     "/data/loth_inst_deeds.json",
     DEED_CATEGORIES["INSTANCES LOTHLORIEN"]
   );
-  let mirk_inst = deedFetchAndStore(
+  const mirk_inst = deedFetchAndStore(
     db,
     "/data/mirk_inst_deeds.json",
     DEED_CATEGORIES["INSTANCES MIRKWOOD"]
   );
-  let ita_inst = deedFetchAndStore(
+  const ita_inst = deedFetchAndStore(
     db,
     "/data/ita_inst_deeds.json",
     DEED_CATEGORIES["INSTANCES IN THEIR ABSENCE"]
   );
-  let isen_inst = deedFetchAndStore(
+  const isen_inst = deedFetchAndStore(
     db,
     "/data/isen_inst_deeds.json",
     DEED_CATEGORIES["INSTANCES RISE OF ISENGUARD"]
   );
-  let ereb_inst = deedFetchAndStore(
+  const ereb_inst = deedFetchAndStore(
     db,
     "/data/erebor_inst_deeds.json",
     DEED_CATEGORIES["INSTANCES ROAD TO EREBOR"]
   );
-  let osg_inst = deedFetchAndStore(
+  const osg_inst = deedFetchAndStore(
     db,
     "/data/osg_inst_deeds.json",
     DEED_CATEGORIES["INSTANCES ASHES OF OSGILIATH"]
   );
-  let pel_inst = deedFetchAndStore(
+  const pel_inst = deedFetchAndStore(
     db,
     "/data/pel_inst_deeds.json",
     DEED_CATEGORIES["INSTANCES BATTLE OF PELENNOR"]
   );
-
-  let seh_deeds = deedFetchAndStore(
+  const seh_deeds = deedFetchAndStore(
     db,
     "/data/seh_deeds.json",
     DEED_CATEGORIES["SOCIAL, EVENTS, AND HOBBIES"]
   );
-  let special_deeds = deedFetchAndStore(
+  const special_deeds = deedFetchAndStore(
     db,
     "/data/bobb_deeds.json",
     DEED_CATEGORIES.SPECIAL
@@ -287,71 +280,46 @@ export async function initialDeedPopulation(db) {
       seh_deeds,
       special_deeds,
     ]);
-    if (results.every((result) => result.status === "fulfilled")) {
-      console.log("d:idp::everything loaded fine...");
-    } else {
+    if (results.every((result) => result.status !== "fulfilled")) {
       console.error(
         "d:idp::initial_deed_population something went wrong...",
         results
       );
+      throw new Error("ERROR IN AN INITIAL DEED POPULATION FETCH");
     }
   } catch (error) {
     console.error("d:idp::initial_deed_population deed fetch error:\n", error);
+    throw new Error("ERROR FETCHING INITIAL DEED POPULATIONS");
   }
 }
 
 /**
  * return all deeds of passed DEED_TYPE
- * @template T
  * @param  {IDB} db idb database Promise
  * @param  {number} deed_type DEED_TYPE desired
  * @return {Promise<DeedData[]>} Array of deeds
  */
 export async function get_deeds_of_type(db, deed_type) {
-  // const db = await db_promise;
-  // let bewp =  db_promise.then( async (db) => {
   const tx = await db.transaction("deeds");
   const deedStore = tx.openStore("deeds");
   const deedRequest = await deedStore.get(deed_type);
   return deedRequest;
-  // const foo =  db
-  //   .transaction("deeds")
-  //   .objectStore("deeds")
-  //   .get(deed_type)
-  //   .then((data) => {
-  //     return data;
-  //   });
-  // return foo;
-  // });
 }
 
 /**
  * get all deeds
- * @param {Promise<IDB>} db_promise
+ * @param {IDB} db
  * @returns {Promise<DeedData[][]>}
  */
-export async function get_all_deeds(db_promise) {
-  const db = await db_promise;
+export async function get_all_deeds(db) {
   const tx = await db.transaction("deeds");
   const deedStore = tx.openStore("deeds");
   const deedRequest = await deedStore.getAll();
   return deedRequest;
-
-  // return db_promise.then((db) => {
-  //   return db
-  //     .transaction("deeds")
-  //     .objectStore("deeds")
-  //     .getAll()
-  //     .then((data) => {
-  //       // console.log('get_all_deeds called...', data);
-  //       return data;
-  //     });
-  // });
 }
 
 /**
  * get character from database at index
- * @template T
  * @param {Promise<IDB>} db_promise
  * @param {string} index
  * @returns {Promise<CharacterData>}
@@ -371,11 +339,9 @@ export async function get_character(db_promise, index) {
  * @return {Promise<void>} transaction promise
  */
 export async function save_characters(db, characters) {
-  console.log("save_characters called...", db, characters);
   const tx = await db.transaction("characters", "readwrite");
   const characterStore = tx.openStore("characters");
-
-  //update characters
+  // update characters
   /** @type {Promise<IDBValidKey>[]}*/
   const allPuts = new Array();
   characters.forEach((character, i) => {
