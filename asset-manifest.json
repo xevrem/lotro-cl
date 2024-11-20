@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/lotro-cl/static/css/main.59e340aa.css",
+    "main.js": "/lotro-cl/static/js/main.9dc4dee3.js",
+    "static/media/lotro.woff": "/lotro-cl/static/media/lotro.e88f2c95eebe77f7cfbe.woff",
+    "index.html": "/lotro-cl/index.html",
+    "main.59e340aa.css.map": "/lotro-cl/static/css/main.59e340aa.css.map",
+    "main.9dc4dee3.js.map": "/lotro-cl/static/js/main.9dc4dee3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.59e340aa.css",
+    "static/js/main.9dc4dee3.js"
+  ]
+}
