@@ -1,0 +1,20 @@
+[
+  {
+    "name":"Aehelgyth",
+    "race":"HIGH_ELF",
+    "class":"RUNE_KEEPER",
+    "level":105,
+    "completed":[
+      [false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false]
+    ]
+  },
+  {
+    "name":"Azdalen",
+    "race":"HUMAN",
+    "class":"LORE_MASTER",
+    "level":84,
+    "completed":[
+      [false],[false],[false],[false],[false],[false],[false],[false],[false],[false],[false]
+    ]
+  }
+]

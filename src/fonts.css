@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'lotro';
+  src: url('lotro.woff');// format('woff');
+}
+
+body {
+  font-family: 'lotro', sans-serif;
+}

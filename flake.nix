@@ -1,5 +1,5 @@
 {
-  description = "lotro nix env";
+  description = "game-of-life nix env";
 
   inputs = {
     flake-utils= {
@@ -31,20 +31,23 @@
             nativeBuildInputs = (with pkgs; [
               pkg-config
             ]);
-
+            
             buildInputs = with pkgs; [
               nodejs_22
             ];
-            
+          
             packages = with pkgs; [
-              corepack_22
+              jq
               marksman
-            ];
+            ] ++ nodePkgs;
 
-            LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath buildInputs;
+            libInputs = buildInputs ++ nativeBuildInputs;
+            libraryPkgs = pkgs.lib.makeLibraryPath libInputs;
+
             # shellHook = ''
-            #   echo "<nix development shell>"
+            #   export LD_LIBRARY_PATH="${libraryPkgs}:$LD_LIBRARY_PATH"
             # '';
+            LD_LIBRARY_PATH = libraryPkgs;
           };
         }
     );

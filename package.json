@@ -4,34 +4,42 @@
   "private": true,
   "homepage": "https://xevrem.github.io/lotro-cl",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "pnpm run build && pnpm gh-pages -d ./build"
+    "build": "npm run setup:publish;node build.mjs",
+    "postinstall": "npm run setup:start",
+    "publish": "npm run build",
+    "setup:publish": "echo \"setting up publish...\";npm run setup:publish:dirs;npm run setup:publish:files;npm run setup:publish:img;npm run setup:publish:fonts;echo \"publish setup done.\"",
+    "setup:publish:dirs": "mkdir -p ./public/images;mkdir -p ./public/data",
+    "setup:publish:files": "cp ./src/index.html ./public/.;cp ./src/manifest.json ./public/.;cp ./src/data/* ./public/data/.",
+    "setup:publish:fonts": "cp ./src/fonts.css ./public/.;cp ./src/lotro.woff ./public/.",
+    "setup:publish:img": "cp ./images/* ./public/images/.;cp ./src/favicon.ico ./public/.",
+    "setup:start": "echo \"setting up start...\";npm run setup:start:dirs;npm run setup:start:files;npm run setup:start:img;npm run setup:start:fonts;echo \"start setup done.\"",
+    "setup:start:dirs": "mkdir -p ./build/images;mkdir -p ./build/data",
+    "setup:start:files": "cp ./src/index.html ./build/.;cp ./src/manifest.json ./build/.;cp ./src/data/* ./build/data/.",
+    "setup:start:fonts": "cp ./src/fonts.css ./build/.;cp ./src/lotro.woff ./build/.",
+    "setup:start:img": "cp ./images/* ./build/images/.;cp ./src/favicon.ico ./build/.",
+    "start": "npm run setup:start;node start.mjs",
+    "deploy": "npm run setup:publish && pnpm gh-pages -d ./public"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/node": "^22.9.1",
-    "@types/prop-types": "^15.7.13",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
+    "@babel/core": "^7.27.7",
+    "@babel/eslint-parser": "^7.27.5",
+    "@babel/eslint-plugin": "^7.27.1",
+    "@types/node": "^24.0.7",
+    "@types/prop-types": "^15.7.15",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "esbuild": "^0.25.5",
+    "esbuild-inline-sass": "^0.4.4",
+    "eslint": "^9.29.0",
+    "eslint-plugin-react": "^7.37.5",
     "gh-pages": "^6.2.0",
-    "prettier": "^2.8.8",
-    "sass": "^1.81.0",
-    "typescript": "^4.9.5"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "rules": {
-      "no-fallthrough": "off"
-    }
+    "prettier": "^3.6.1",
+    "sass": "^1.81.0"
   },
   "browserslist": {
     "production": [
@@ -44,12 +52,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "packageManager": "pnpm@9.13.2+sha512.88c9c3864450350e65a33587ab801acf946d7c814ed1134da4a924f6df5a2120fd36b46aab68f7cd1d413149112d53c7db3a4136624cfd00ff1846a0c6cef48a",
-  "dependencies": {
-    "prop-types": "^15.8.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-scripts": "^5.0.1"
   }
 }
