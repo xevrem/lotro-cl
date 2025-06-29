@@ -15,30 +15,33 @@
     flake-utils.lib.eachDefaultSystem (
       system: let
         pkgs = import nixpkgs {inherit system;};
-        rustPkgs = with pkgs; [
-          emacs-lsp-booster
+        nodePkgs = with pkgs.nodePackages; [
+          eslint
+          prettier
+          stylelint
+          typescript
+          typescript-language-server
+          vscode-langservers-extracted
+          yaml-language-server
+          yarn
         ];
-        # nodePkgs = with pkgs.nodePackages; [
-        #   typescript
-        #   typescript-language-server
-        #   vscode-langservers-extracted
-        #   yaml-language-server
-        # ];
       in
         {
           devShells.default = pkgs.mkShell rec {
             nativeBuildInputs = (with pkgs; [
               pkg-config
             ]);
-          
+
+            buildInputs = with pkgs; [
+              nodejs_22
+            ];
+            
             packages = with pkgs; [
               corepack_22
               marksman
-              nodejs_22
-            ] ++ rustPkgs;
-            # ] ++ nodePkgs ++ rustPkgs;
+            ];
 
-            # NIX_LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath buildInputs;
+            LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath buildInputs;
             # shellHook = ''
             #   echo "<nix development shell>"
             # '';
