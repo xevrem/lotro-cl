@@ -48,7 +48,7 @@ import { Button, Modal } from "./Common";
 const initial_state = {
   selected_character: -1,
   selected_deed: -1,
-  deed_category_selected: 0,
+  deed_category_selected: -1,
   deed_subcategory_selected: "",
   deed_subcategories: null,
   deed_text: "",

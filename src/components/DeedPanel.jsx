@@ -203,7 +203,7 @@ class DeedPanel extends Component {
             Type:{" "}
             {this.deed_type_to_text(
               deed.Type,
-              this.props.deed_category_selected
+              this.props.deed_category_selected,
             )}
           </p>
         )}
@@ -220,7 +220,7 @@ class DeedPanel extends Component {
             text="Completed!"
             onClick={this.handleDeedComplete.bind(
               this,
-              this.props.deed_category_selected
+              this.props.deed_category_selected,
             )}
           />
         ) : (
@@ -229,7 +229,7 @@ class DeedPanel extends Component {
             text="Complete?"
             onClick={this.handleDeedComplete.bind(
               this,
-              this.props.deed_category_selected
+              this.props.deed_category_selected,
             )}
           />
         )}
@@ -269,30 +269,32 @@ class DeedPanel extends Component {
     });
 
     //build subcategories
-    let subcategories = [...this.props.deed_subcatetories].map(
-      (subcategory, i) => {
-        return subcategory === this.props.deed_subcategory_selected ? (
-          <Button
-            key={i}
-            className="clickable deed-nav-link active"
-            text={subcategory}
-            onClick={this.handleSubcategoryClick.bind(this, subcategory)}
-          />
-        ) : (
-          <Button
-            key={i}
-            className="clickable deed-nav-link"
-            text={subcategory}
-            onClick={this.handleSubcategoryClick.bind(this, subcategory)}
-          />
-        );
-      }
-    );
+    let subcategories =
+      this.props.deed_category_selected >= 0
+        ? [...this.props.deed_subcatetories].map((subcategory, i) => {
+            return subcategory === this.props.deed_subcategory_selected ? (
+              <Button
+                key={i}
+                className="clickable deed-nav-link active"
+                text={subcategory}
+                onClick={this.handleSubcategoryClick.bind(this, subcategory)}
+              />
+            ) : (
+              <Button
+                key={i}
+                className="clickable deed-nav-link"
+                text={subcategory}
+                onClick={this.handleSubcategoryClick.bind(this, subcategory)}
+              />
+            );
+          })
+        : [];
 
     // build list of deeds to display
     let deed_list = this.props.deeds.map((deed, i) => {
       //filter non-selected subcategories
-      if (deed.Subcategory !== this.props.deed_subcategory_selected) return null;
+      if (deed.Subcategory !== this.props.deed_subcategory_selected)
+        return null;
 
       //is this deed completed?
       let completed = false;
